@@ -1,0 +1,26 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * File: mnTxtGlob.var
+ * Author: hunholz
+ * Created: November 25, 2011
+ ********************************************************************
+ * Global variables of project IFPOWERTRANSplusLoad
+ ********************************************************************)
+(*KONSTANTEN*)
+VAR CONSTANT
+	MNTXT_LOAD_FUNCTIONTEXT : BOOL := TRUE; (*Lade die Funktionstexte*)
+	MNTXT_LOAD_INSTANCETEXT : BOOL := TRUE; (*Lade die Instanztexte*)
+	MNTXT_LOAD_PARAMETERTEXT : BOOL := TRUE; (*Lade die Parametertexte*)
+	MNTXT_LOAD_PARAMTERHELPTEXT : BOOL := TRUE; (*Lade die Parameterhilfstexte*)
+	MNTXT_MAX_IDX_TXT_INSTANCE : UINT := 30; (*Entsprechend der Anzahl möglicher Instanztexte*)
+	MNTXT_MAX_IDX_TXT_FUNCTION : UINT := 50; (*Entsprechend der Anzahl möglicher Funktionstexte*)
+	MNTXT_MAX_IDX_TXT_PARAMETER : UINT := 500; (*Entsprechend der Anzahl möglicher Parametertexte*)
+END_VAR
+(*Anzahl der maximal möglichen Meldungstexte kommen aus mnMsg*)
+VAR CONSTANT
+	MNTXT_IDX_KGMSGSTAT : UINT := 18;
+	MNTXT_TEMPREADCSVSIZE : UDINT := 150000;
+	MNTXT_MAXPARSELINES : UINT := 3000; (*2.000 Zeilen*)
+	MNTXT_MAX_IDX_LCID : UINT := 19; (*Maximal 19 + 1 Sprache möglich*)
+END_VAR

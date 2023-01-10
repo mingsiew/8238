@@ -1,0 +1,17 @@
+VAR
+	myBuffer : ARRAY[0..511] OF INT;
+	myAsIoTrcGet : AsIoTrcGet;
+	mO_info : MO_info;
+	test : UINT;
+	datObjCreate : DatObjCreate;
+	FileCreate_0 : FileCreate;
+	FileInfo_0 : FileInfo;
+	FileOpen_0 : FileOpen;
+	ident : UDINT;
+	Path : STRING[80];
+	fileRW : fileReadWrite;
+	sysFileName : STRING[10];
+	getModuleName : GetModuleName;
+	moduleAddress : STRING[30];
+	testUsint : USINT;
+END_VAR

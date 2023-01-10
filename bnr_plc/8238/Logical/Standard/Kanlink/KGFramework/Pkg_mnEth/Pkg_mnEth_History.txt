@@ -1,0 +1,17 @@
+2.01.0	2011-09-07	AH Änderung der Standardnetzwerkmaske auf 20 bit
+2.02.0	2011-09-20	AH Schaut jetzt auf mnParamStatAd.xParamOK, setzt Version 0.5 von mnParam voraus
+2.02.1	2011-09-28	AH Interface für PCTs korregiert
+2.03.0	2011-10-06	AH Maschinennummer aus _Info_, IP-Adresse usw. NONVOLATILE
+2.04.0	2011-10-20	AH Umstellung auf AS 3.0.90
+2.05.0	2012-01-10	AH PackageVersion wird nun in mnEthStatAd angezeigt
+2.06.0	2012-01-27	AH Unabhängig von NetLink
+2.07.0	2012-02-03	AH Es wird kein USB-Stick mehr als Device gelinkt. Es wird vorausgesetzt, dass die
+					   Devices (Siehe Konstanten KG_DEVICE_USBSTICK1 und KG_DEVICE_USBSTICK2 bereits
+					   in der sysconf festgelegt sind) Setzt KGStandard 1.14.0 voraus.
+2.08.0	2012-02-08	AH Kompatibel zu KGStandard 1.15.0 (KGstdLib 1.03.0)
+2.09.0	2012-02-23	AH Kompatibel zu hlKanLink 0.94.0
+					   - Hostname auf 15 Zeichen gekürzt
+					   Kompatibel mit mnTest
+2.09.1	2012-03-20	AH Abhängigkeiten ergänzt
+2.10.0	2012-05-11	AH Auswertung USB in den zyklischen Teil gelegt.
+2.10.1	2012-07-17	AH Filehandle wurde nach Create nicht freigegeben.

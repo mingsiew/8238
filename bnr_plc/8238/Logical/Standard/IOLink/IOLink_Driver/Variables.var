@@ -1,0 +1,17 @@
+VAR
+	n : USINT;
+	fuseSettingStructure : IO_Link_FuseSettings_type;
+	openFile : FileOpen;
+	readFile : FileRead;
+	closeFile : FileClose;
+	writeFile : FileWrite;
+	offset : USINT;
+	statusState : USINT;
+	statusValue : ARRAY[0..49] OF REAL;
+	tempString : STRING[10];
+	backUp : BackUp;
+	state : state_enum;
+	count : USINT;
+	loop : UINT;
+	tempString2 : STRING[5];
+END_VAR

@@ -1,0 +1,36 @@
+VAR CONSTANT
+  MAX_TCP_CONNECTIONS : USINT := 20; (*Max number of simultaneous connections*)
+  SERVER_IDLE : TCP_SERVER_TYP := (State:=TCP_SERVER_IDLE,Ident:=0,IpAddress:='',ResponsePort:=0);
+END_VAR
+(*Server behaviour constants*)
+VAR CONSTANT
+  KEEP_ALIVE_ON : UDINT := 1; (*Enable the tcp keep alive function*)
+  KEEP_ALIVE_CNT : UDINT := 20; (*Number of packet to send on keep alive before connection is dropped.*)
+  KEEP_ALIVE_IDLE_TIME : UDINT := 60; (*Time in seconds between the last data packet and first keep alive msg*)
+  KEEP_ALIVE_INTVL_TIME : UDINT := 60; (*Time in seconds between keep alive signals*)
+END_VAR
+(*Process Vars*)
+VAR
+  socketState : TCP_SOCKET_STATE_ENUM;
+  tcpOpen : TcpOpen;
+  tcpServer : TcpServer;
+  tcp_Ioctl : TcpIoctl;
+  socketClose : TcpClose;
+  ident : REFERENCE TO UDINT;
+  state : REFERENCE TO TCP_SERVER_STATE_ENUM;
+  tcpRecv : REFERENCE TO TcpRecv;
+  tcpSend : REFERENCE TO TcpSend;
+  tcpClose : REFERENCE TO TcpClose;
+  ton_NoData : REFERENCE TO TON;
+  ipAddress : {REDUND_UNREPLICABLE} STRING[16];
+  sendSize : ARRAY[0..MAX_TCP_CONNECTIONS] OF UDINT;
+  usedIdentList : ARRAY[0..254] OF UDINT;
+  n : UINT;
+  connectCount : UDINT;
+  listenPort : UINT;
+  server : ARRAY[0..MAX_TCP_CONNECTIONS] OF TCP_SERVER_TYP;
+  x : UINT;
+  start : UINT;
+  length : UINT;
+  messages : REFERENCE TO RailMessages_typ;
+END_VAR

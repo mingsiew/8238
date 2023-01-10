@@ -1,0 +1,7 @@
+VAR CONSTANT
+	MAX_STATIONS : USINT := 120; (*Maximum counting stations*)
+	LIVE_DATA_TYPE_STATION_COUNTS : UINT := 5001; (*Packet ID for the UDP Packet*)
+END_VAR
+VAR
+	SortingBins : Sorting_typ;
+END_VAR

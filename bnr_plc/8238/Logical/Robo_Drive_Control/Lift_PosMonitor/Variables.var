@@ -1,0 +1,9 @@
+VAR
+	AutoRefTolerance : UINT;
+	n : UINT;
+	i_refSwitch : BOOL;
+	refPLS : ARRAY[0..MaxRobo] OF R_TRIG;
+	PositionError : DINT;
+	debugRB : UINT;
+	lastPosError : DINT;
+END_VAR

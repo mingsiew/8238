@@ -1,0 +1,4 @@
+VAR
+	i : INT;
+	testweight : UINT;
+END_VAR

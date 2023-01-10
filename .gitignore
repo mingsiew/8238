@@ -1,0 +1,9 @@
+bnr_plc/**/Temp/**
+bnr_plc/**/Binaries/**
+bnr_plc/**/Diagnosis/**
+bnr_plc/**/*.isopen
+bnr_plc/**/*.dock
+bnr_plc/**/*.state
+
+# Excel temporary
+~$*.xls*

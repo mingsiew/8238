@@ -1,0 +1,28 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Library: KGlibMsg
+ * File: KGlibMsg.var
+ * Author: hunholz
+ * Created: May 30, 2011
+ * Changed: June 15, 2011
+ ********************************************************************
+ * Constants of library KGlibMsg
+ ********************************************************************)
+VAR CONSTANT
+	MNMSG_CLASS_NO_ACK : USINT := 255;
+	MNMSG_CLASS_MAINTENANCE : USINT := 20;
+	MNMSG_CLASS_INFO : USINT := 11;
+	MNMSG_CLASS_WARNING : USINT := 10;
+	MNMSG_CLASS_EXTFAULT : USINT := 1;
+	MNMSG_CLASS_INTFAULT : USINT := 0;
+	MNMSG_EVENT_COME : UINT := 1;
+	MNMSG_EVENT_ACK : UINT := 2;
+	MNMSG_EVENT_GONE : UINT := 3;
+	MNMSG_EVENT_GONE_TWO : UINT := 4;
+	MNMSG_STAT_NOTFOUND : UINT := 1;
+	MNMSG_STAT_WRITEPTR : UINT := 2;
+	MNMSG_STAT_READPTR : UINT := 3;
+	MNMSG_STAT_RBNOREAD : UINT := 10;
+	MNMSG_MAX_MSGLIST : UINT := 39;
+END_VAR

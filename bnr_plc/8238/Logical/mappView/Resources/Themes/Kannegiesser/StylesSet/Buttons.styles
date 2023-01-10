@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles id="KannegiesserButtons" xmlns="http://www.br-automation.com/iat2015/styles/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<!-- Navigation button -->
+	<Style id="Kannegiesser1" xsi:type="widgets.brease.NavigationButton" fontSize="12px" bold="true" textColor="#474747" mouseDownTextColor="#474747" checkedTextColor="#474747" cornerRadius="5px" borderWidth="0px 0px 0px 0px" mouseDownBorderWidth="4px 4px 4px 4px" borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" mouseDownBorderColor="rgba(30, 87, 153, 1)" checkedBorderColor="rgba(30, 87, 153, 1)" backGroundGradient="linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(229,229,229,1) 100%)" mouseDownBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " checkedBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " disabledBackGroundGradient="linear-gradient(135deg, #777777 0%,#bbbbbb 0%,#777777 4%,#777777 4%,#777777 86%,#eeeeee 98%)" shadow="4px 4px 10px 0px rgba(62, 79, 92, 0.75)" mouseDownShadow="2px 2px 6px 0px rgba(62, 79, 92, 0.75)" />
+	<Style id="Kannegiesser2" xsi:type="widgets.brease.NavigationButton" backColor="transparent" borderWidth="0px" mouseDownBackColor="transparent" checkedBackColor="transparent" mouseDownBorderWidth="0px" fontSize="16px" bold="true" textColor="#474747" />
+	
+	<!-- Toggle button-->
+	<Style id="Kannegiesser1" xsi:type="widgets.brease.ToggleButton" fontSize="12px" bold="true" textColor="#474747" mouseDownTextColor="#474747" checkedTextColor="#474747" disabledTextColor="#474747" disabledCheckedTextColor="#474747" cornerRadius="5px" borderWidth="0px 0px 0px 0px" mouseDownBorderWidth="4px 4px 4px 4px" borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" mouseDownBorderColor="rgba(30, 87, 153, 1)" checkedBorderColor="rgba(30, 87, 153, 1)" backGroundGradient="linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(229,229,229,1) 100%)" mouseDownBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " checkedBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " disabledBackGroundGradient="linear-gradient(135deg, #777777 0%,#bbbbbb 0%,#777777 4%,#777777 4%,#777777 86%,#eeeeee 98%)" shadow="4px 4px 10px 0px rgba(62, 79, 92, 0.75)" mouseDownShadow="2px 2px 6px 0px rgba(62, 79, 92, 0.75)" />
+	
+	<!-- Push button-->
+	<Style id="Kannegiesser1" xsi:type="widgets.brease.PushButton" fontSize="12px" bold="true" textColor="#474747" mouseDownTextColor="#066dab" cornerRadius="5px" borderWidth="0px 0px 0px 0px" mouseDownBorderWidth="0px 0px 0px 0px" borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" mouseDownBorderColor="#FFA947 #FD7B01 #FD7B01 #FFA947" backGroundGradient="linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(229,229,229,1) 100%)" mouseDownBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " disabledBackGroundGradient="linear-gradient(135deg, #777777 0%,#bbbbbb 0%,#777777 4%,#777777 4%,#777777 86%,#eeeeee 98%)" />
+	
+	<!-- Momentary Push button-->
+	<Style id="Kannegiesser1" xsi:type="widgets.brease.MomentaryPushButton" fontSize="12px" bold="true" textColor="#474747" mouseDownTextColor="#066dab" cornerRadius="5px" borderWidth="0px 0px 0px 0px" mouseDownBorderWidth="0px 0px 0px 0px" borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" mouseDownBorderColor="#FFA947 #FD7B01 #FD7B01 #FFA947" backGroundGradient="linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(229,229,229,1) 100%)" mouseDownBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " disabledBackGroundGradient="linear-gradient(135deg, #777777 0%,#bbbbbb 0%,#777777 4%,#777777 4%,#777777 86%,#eeeeee 98%)" />
+	
+	<!-- Dropdown -->
+	<Style id="Kannegiesser1" xsi:type="widgets.brease.DropDownBox" fontSize="12px" bold="false" textColor="#474747" backGroundGradient="linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)"  disabledBackGroundGradient="linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)" mouseDownTextColor="#FFFFFF" cornerRadius="5px" listBackColor="#077cc5"  borderWidth="0px 0px 0px 5px" mouseDownBorderWidth="0px 0px 0px 2px" borderColor="#A899A0 #FF8A00 #5F5F5F #077cc5" mouseDownBorderColor="#FFA947 #FD7B01 #FD7B01 #FD7B01" activeTextColor="#FFFFFF" activeBackGroundGradient="linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)" listBorderWidth="0px" textAlign="left" />
+	
+	<!--language selector-->
+
+	<Style id="Kannegiesser1" xsi:type="widgets.brease.LanguageSelector" fontSize="16px" bold="true" textColor="#474747" mouseDownTextColor="#FFFFFF"	cornerRadius="8px" borderWidth="0px 0px 0px 0px" listBorderWidth="0px 0px 0px 0px" mouseDownBorderWidth="0px 0px 0px 0px" backGroundGradient="linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)" activeBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%) " disabledBackGroundGradient="linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)" shadow="4px 4px 14px 0px rgba(62, 79, 92, 0.75)"	/>
+	
+	<!--Button-->
+	<Style id="Kannegiesser1" 
+		xsi:type="widgets.brease.Button" 
+		fontSize="12px" 
+		bold="true" 
+		textColor="#474747" 
+		mouseDownTextColor="#066dab" 
+		cornerRadius="5px" 
+		borderWidth="0px 0px 0px 0px" 
+		mouseDownBorderWidth="0px 0px 0px 0px" 
+		borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" 
+		mouseDownBorderColor="#FFA947 #FD7B01 #FD7B01 #FFA947" 
+		backGroundGradient="linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(229,229,229,1) 100%)"
+		mouseDownBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " 
+		disabledBackGroundGradient="linear-gradient(135deg, #777777 0%,#bbbbbb 0%,#777777 4%,#777777 4%,#777777 86%,#eeeeee 98%)" 
+		shadow="4px 4px 10px 0px rgba(62, 79, 92, 0.75)" 
+		mouseDownShadow="2px 2px 6px 0px rgba(62, 79, 92, 0.75)"
+	/>	
+	
+	<Style id="KG_on_off" xsi:type="widgets.brease.ToggleSwitch" 
+		fontSize="12px" 
+		bold="true" 
+		backColor="rgba(8,140,221,1)"
+		disabledBackColor="rgba(8,140,221,1)"
+		mouseDownBackColor="rgba(8,140,221,1)"
+		foreColor="rgba(255, 255, 255, 1)"
+		disabledForeColor="rgba(255, 255, 255, 1)"
+		borderStyle ="none"
+		textColor="rgba(255, 255, 255, 1)"
+		mouseDownTextColor="rgba(255, 255, 255, 1)"
+		cornerRadius="0px" 
+		foreGroundGradient="linear-gradient(to left,#F7F7F7 0%,#C6C6C6 50%, #F7F7F7 100%)" 
+		backGroundGradient="linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)" 
+		mouseDownBackGroundGradient="linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)"  
+		disabledBackGroundGradient="linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)" 
+		shadow="4px 4px 14px 0px rgba(62, 79, 92, 0.75)" 
+		mouseDownShadow="2px 2px 8px 0px rgba(62, 79, 92, 0.75)" />
+	
+	<Style id="orange" xsi:type="widgets.brease.MomentaryPushButton" 
+		fontSize="12px" 
+		bold="true" 
+		textColor="#474747"
+		backColor="rgba(219, 219, 219, 1)"
+		mouseDownTextColor="#FFFFFF" 
+		cornerRadius="4px" 
+		borderWidth="0px 0px 0px 0px" 
+		mouseDownBorderWidth="0px 0px 0px 0px" 
+		backGroundGradient="linear-gradient(to bottom,#F7F7F7 0%,#FF920A 100%)" 
+		mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%) " 
+		disabledBackGroundGradient="linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)" 
+		shadow="none" 
+	mouseDownShadow="2px 2px 8px 0px rgba(62, 79, 92, 0.75)" />
+	
+	
+	<Style id="User_Off" 
+		xsi:type="widgets.brease.Button" 
+		fontSize="12px" 
+		bold="true" 
+		textColor="#474747" 
+		mouseDownTextColor="#066dab" 
+		cornerRadius="5px" 
+		borderWidth="0px 0px 0px 0px" 
+		mouseDownBorderWidth="0px 0px 0px 0px" 
+		borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" 
+		mouseDownBorderColor="#FFA947 #FD7B01 #FD7B01 #FFA947" 
+		backGroundGradient="linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(229,229,229,1) 100%)"
+		mouseDownBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " 
+		disabledBackGroundGradient="linear-gradient(135deg, #777777 0%,#bbbbbb 0%,#777777 4%,#777777 4%,#777777 86%,#eeeeee 98%)" 
+		shadow="4px 4px 10px 0px rgba(62, 79, 92, 0.75)" 
+		mouseDownShadow="2px 2px 6px 0px rgba(62, 79, 92, 0.75)"
+	/>	
+	
+	<Style id="User_Selected" 
+		xsi:type="widgets.brease.Button" 
+		fontSize="12px" 
+		bold="true" 
+		textColor="#474747" 
+		mouseDownTextColor="#066dab" 
+		cornerRadius="5px" 
+		borderWidth="0px 0px 0px 0px" 
+		mouseDownBorderWidth="0px 0px 0px 0px" 
+		borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" 
+		mouseDownBorderColor="#FFA947 #FD7B01 #FD7B01 #FFA947" 
+		backGroundGradient="linear-gradient(to top, #c5deea 0%,#8abbd7 31%,#67a6e4 100%)"
+		mouseDownBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " 
+		disabledBackGroundGradient="linear-gradient(135deg, #777777 0%,#bbbbbb 0%,#777777 4%,#777777 4%,#777777 86%,#eeeeee 98%)" 
+		shadow="4px 4px 10px 0px rgba(62, 79, 92, 0.75)" 
+		mouseDownShadow="2px 2px 6px 0px rgba(62, 79, 92, 0.75)"
+	/>	
+	
+	
+</Styles>

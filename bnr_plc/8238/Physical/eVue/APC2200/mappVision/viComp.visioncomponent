@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gCamera_2" Type="visioncomponent">
+    <Property ID="VisionApplicationReference" Value="ViAppBarcode" />
+  </Element>
+  <Element ID="gCamera_1" Type="visioncomponent">
+    <Property ID="VisionApplicationReference" Value="ViAppBarcode" />
+  </Element>
+  <Element ID="gCamera_3" Type="visioncomponent">
+    <Property ID="VisionApplicationReference" Value="ViAppBarcode" />
+  </Element>
+  <Element ID="gCamera_4" Type="visioncomponent">
+    <Property ID="VisionApplicationReference" Value="ViAppBarcode" />
+  </Element>
+  <Element ID="gCamera_5" Type="visioncomponent">
+    <Property ID="VisionApplicationReference" Value="ViAppBarcode" />
+  </Element>
+</Configuration>

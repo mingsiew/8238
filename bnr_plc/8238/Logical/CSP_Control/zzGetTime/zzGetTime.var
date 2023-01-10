@@ -1,0 +1,14 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Program: zzGetTime
+ * File: zzGetTime.var
+ * Author: treamsbottom
+ * Created: June 04, 2014
+ ********************************************************************
+ * Local variables of program zzGetTime
+ ********************************************************************)
+VAR
+	GetTimeStamp : DTGetTime;
+	setTimeStamp : DTSetTime;
+END_VAR

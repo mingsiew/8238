@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="0.09.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global data types">Pkg_mnTxt.typ</Object>
+    <Object Type="File" Description="Global variables">Pkg_mnTxt.var</Object>
+    <Object Type="Program" Language="IEC" Description="Text-Manager">mnTxt</Object>
+    <Object Type="File">mnTxt_History.txt</Object>
+  </Objects>
+  <Dependencies>
+    <Dependency ObjectName="dataobj" />
+    <Dependency ObjectName="fileio" />
+    <Dependency ObjectName="KGlibMsg" />
+    <Dependency ObjectName="asmem" />
+    <Dependency ObjectName="sys_lib" />
+    <Dependency ObjectName="KGstdLib" />
+  </Dependencies>
+</Package>

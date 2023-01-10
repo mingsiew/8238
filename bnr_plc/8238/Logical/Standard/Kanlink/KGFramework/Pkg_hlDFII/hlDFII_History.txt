@@ -1,0 +1,41 @@
+1.03.0		28.9.2011	AH Auf mnParam 0.05.0 umgestellt
+1.04.0		11.10.2011	AH Auf mnParam 0.06.0 umgestellt, Maschinennummer kommt aus Datei
+1.04.1		18.11.2011	AH Zwischenversion. Maschinenregistrierung startet jetzt automatisch.
+						AH Attribute werden mit in die Meldungshistorie eingetragen
+1.05.0		03.11.2011	AH Umstellung auf AS 3.0.90. IF ist eindeutig mit Ein- und Ausgangskanal definiert
+			14.11.2011	AH Schnittstelle zu mnCnt umgestellt
+1.06.0		21.12.2011	AH SPS-Log und UDP-Logging eingeführt
+						AH Fehlerhandling geändert. Bei Fehlern wird grundsätzlich die Verbindung abgebaut.
+1.07.0		03.01.2012	AH Packetversion wird in hlDFIIStatAd ausgegeben
+1.08.0		12.01.2012	AH Kategorie-Programm-Zuordnung wird gecachet
+1.09.0		24.01.2012	AH Anpassung an KGStandard 1.13.0 (Ringbuffer)
+1.10.0		26.01.2012  AH Erweiterter Substatus für Zeitzähler mnCnt 0.14.0
+1.10.1		07.02.2012  AH Schließendes Anführungszeichen im SQL-String Batch-Event für die MachineID fehlte
+						AH Logeintrag erweitert
+1.10.2		07.02.2012	AH Bei Batchevent mit 0 Teilposten hat sich die Sendeschrittkette aufgehängt
+1.10.3		07.02.2012	AH GO ist kein gültiger TSQL-Befehl
+1.10.4		07.02.2012	AH SQL-String Batchevent zu Debugzwecken kopiert. Log-String auf 511 Zeichen verlängert.
+1.10.5		09.02.2012	AH Ziel- und Quellnamen für Postenevent ergänzt.
+1.10.6		10.02.2012	AH Bei spInsEventStatItem_StateTime ein Komma zu viel
+1.11.0		10.02.2012	AH Batchevent gibt jetzt immer Quell- und Zielort an. Dazu ist auch mnCnt 0.15.0 notwendig
+1.11.1		10.02.2012	AH Wieder ein Komma zu viel
+1.11.2		10.02.2012	AH Anführungszeichen hinter Maschinennummer oftmals zu wenig
+1.11.3		10.02.2012	AH FromOutside und ToOutside müssen beim BatchEvent immer beide definiert sein
+1.12.0		13.02.2012	AH Einige Korrekturen auf Anregung von Thomas Horn (Fehler in Strings, Komma usw.)
+						   Anpassung an mnCnt 0.16.0
+1.12.1		14.02.2012	AH Error-Logging erweitert und Debugging korrigiert. Logging-Port ist jetzt per Konstante definiert
+						   HLDFII_UDP_PORT_LOG4NET
+1.12.2		14.02.2012	AH Jetzt sollte auch der richtige String an Log4Net geschickt werden
+1.13.0		20.02.2012	AH Client muss per Konfiguration freigeschaltet werden und kann per Parameter deaktiviert werden
+							- Package gibt im IFhlDFII.Out.wStatus den aktuellen Status OK, Init oder Disabled aus (siehe Konstanten)
+1.14.0		13.03.2012	AH Client muss per Konstante freigeschaltet werden. Andernfalls läuft er nicht an. Parameter von 1.13.0 entfallen wieder.
+						   Mehr UDP-Logging
+1.14.1		20.03.2012	AH Abhängigkeiten
+1.14.2		28.03.2012	AH Bugfix: Logger. Parameter Start wurde nicht übergeben.
+						   Connectionstring: Entweder Port oder Instanz.
+1.15.0		03.04.2012	AH Category Cache entfernt.
+						   xConnected eingeführt
+1.16.0		11.04.2012	AH Maschinenregistrierung sendet jetzt auch den Maschinennamen
+1.17.0		22.06.2012	AH Zweiter SQL-Client implementiert, der Maschinenstati und Postenverfolgungsinformationen meldet.
+						   Kann unabhängig von DFII laufen.
+						   ACHTUNG: Parameterstruktur hat sich verändert!!!

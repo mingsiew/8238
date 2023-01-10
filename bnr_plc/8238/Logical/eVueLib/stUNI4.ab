@@ -1,0 +1,14 @@
+FUNCTION_BLOCK stUNI4
+		(* Implementation of UNI4 *)
+	
+	;Add 4 single digits USINT together
+	
+	DataOUT = 0
+	
+	IF Enable THEN
+		DataOUT = DataIN[3] * 1000
+		DataOUT = DataOUT + (DataIN[2] * 100)
+		DataOUT = DataOUT + (DataIN[1] * 10)
+		DataOUT = DataOUT + DataIN[0]
+	ENDIF
+END_FUNCTION_BLOCK

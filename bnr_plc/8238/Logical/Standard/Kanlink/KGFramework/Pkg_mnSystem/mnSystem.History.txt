@@ -1,0 +1,13 @@
+1.00.0	2012-03-16	AH	Neu
+1.00.1	2012-03-20 	AH	Abhängigkeiten ergänzt
+1.01.0	2012-03-23	AH	Lüfterüberwachung, Temperaturüberwachung
+1.02.0	2012-03-23	AH	USB-Stick Überwachung
+1.02.1	2012-04-17	AH	Bei unbekannter Modul-ID wird die Modul-ID als CPU-Typ zurückgegeben.
+1.03.0	2012-05-11	AH	IO-Variablen eines PowerPanel ergänzt
+1.04.0	2012-06-04	AH	USB-Stick-Scan wird sofort nach dem Hochlauf schon einmal durchgeführt. IFmnSystem wurde
+						um xUSBStickScanned erweitert.
+1.05.0	2012-06-18	AH	CP1584 ergänzt
+1.06.0	2012-06-25	AH	Modulüberwachung ergänzt
+1.07.0	2012-07-08	AH	Schaltschrankkühlung (2 mögliche Kreise, CPU-Temperatur ist dem 1. Kreis zugeordnet)
+						1s- und 500ms-Takt
+1.08.0	2012-09-18	AH	CP3484 ergänzt.

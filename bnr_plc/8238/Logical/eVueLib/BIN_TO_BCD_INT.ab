@@ -1,0 +1,24 @@
+FUNCTION_BLOCK BIN_TO_BCD_INT
+
+		(* Implementation of BIN_TO_BCD *)
+
+	RegisterOUT = 0
+
+
+		remain = RegisterIN
+
+;		f = remain / 100000
+;		remain = remain - (f * 100000)
+;		e = remain / 10000
+;		remain = remain - (e * 10000)
+		d = remain / 1000
+		remain = remain - (d * 1000)
+		c = remain / 100
+		remain = remain - (c * 100)
+		b = remain / 10
+		a = remain - (b * 10)
+		RegisterOUT = RegisterIN + (b * 6) + (c * 156) + (d * 3096)// + (e * 55536)// + (f * 948576)
+
+
+
+END_FUNCTION_BLOCK

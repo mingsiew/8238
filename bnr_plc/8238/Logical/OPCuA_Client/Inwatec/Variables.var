@@ -1,0 +1,7 @@
+VAR
+	i : UINT;
+	iw : REFERENCE TO Inwatec_typ;
+	iw_d : REFERENCE TO Inwatec_data_typ;
+	comm : REFERENCE TO Comm_typ;
+	iw_r : REFERENCE TO Inwatec_data_typ;
+END_VAR

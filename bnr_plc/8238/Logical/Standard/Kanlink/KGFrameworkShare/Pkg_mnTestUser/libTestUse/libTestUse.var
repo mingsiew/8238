@@ -1,0 +1,14 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Library: libTestUse
+ * File: libTestUse.var
+ * Author: hunholz
+ * Created: March 06, 2012
+ ********************************************************************
+ * Constants of library libTestUse
+ ********************************************************************)
+VAR CONSTANT
+	LIBTEST_CNT_TSTCMD : UINT := 40;
+	LIBTEST_CNT_TSTPARAM : UINT := 3;
+END_VAR

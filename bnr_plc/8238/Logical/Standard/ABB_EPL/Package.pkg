@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.2.98?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Exported constants">Constants_ABB.var</Object>
+    <Object Type="File">ABB_EPL.var</Object>
+    <Object Type="File">ABB_EPL.typ</Object>
+    <Object Type="Program" Language="IEC">ABB_Driver</Object>
+    <Object Type="Library" Language="Binary" Description="The AsEPL library is used to access service data objects of Ethernet-Powerlink stations">AsEPL</Object>
+    <Object Type="File">ACS380_v2.04.0.3_FEPL-02_1.0_filerev1.0.xdd</Object>
+    <Object Type="File" Description="Commissioning guide">ABB Drive Commissioning Guide.docx</Object>
+    <Object Type="File" Description="ABB pdf manual">ABB380Manual.pdf</Object>
+  </Objects>
+</Package>

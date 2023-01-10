@@ -1,0 +1,65 @@
+1.00.7 horn	23.09.2019
+Fehler behoben. In KLLib_Clinet_Timer Maximalwert für Laufvariable korrigiert.
+
+1.00.6 horn	02.05.2019
+Fehler behoben. Bei der Zusammenfassung von mehreren Client Anfragen, konnte es passieren, dass Clients gar nicht angefragt wurden.
+Ein solcher Fall tritt nur dann auf, wenn mit mehreren unterschiedlichen Steuerungen kommuniziert wird.
+
+1.00.5 horn	29.01.2019
+hlKanLink kann mehrere Anfragen nach Postendaten in einem Telegramm beantworten.
+Der Stand mit mehreren Clients ist für die Serie freigegeben.
+
+1.00.4 horn	02.07.2018
+hlKanLink wurde so geändert, dass mehrere Client anfragen zusammengefasst werden und in einem Telegramm zum Server geschickt werden
+Der Server beantwortet die Anfragen auch wieder in einem zusammengefassten Telegramm.
+Sowohl Server als auch Client seitig ist der neue KanLink kompatibel zu älteren Versionen.
+Die Konstante HLKANLINK_MAX_MU_CLIENTCONNS muss in der KL_UserLib angelegt werden. 
+Sie bestimmt zu wie vielen Steuerungen mehrere Telegramme zusammengefasst werden dürfen. DEFAULT Empfehlung 5.
+
+1.00.3 horn 20.03.2017
+hlKanLink wurde so erweitert, dass jetzt beim Server und Client eine beliebige IP-Adresse eingegeben werden kann.
+AdvMode		Freischalten der Eingabe der gesamten IP-Adresse
+AdrAdvMode	gesamte IP-Adresse der Gegenstelle.
+
+1.00.2 horn 20.01.2016
+Es werden jetzt keine Warnmeldungen mehr erzeugt.
+
+1.00.1 sta 1.4.2015 sta
+KG Framework - Kompatibel
+Der Client kann nun einen UDINT Tag zum Server senden. Unterstützt der Server den Tag 
+wird ein Server-Tag zurückgesendet. 
+ifhlKanlink
+
+0.94.5 sta 16.12.2014
+udp_open mit IP-Adresse binden
+27.3.12/sta/Struktur für Visualisierung
+
+20.3.12/sta/Kommando Typen in einzelne Dateien geteilt
+Compiler schalter "Autonom" eingefügt, Lib Autonom erstellt
+Cmd WetExt angepasst
+
+7.3.12/sta/version Kgframework 
+hlKanlink Version 
+
+21.02.12 sta 0.93
+Client kann mit state gesteuert werden
+
+8.2.12 sta 0.92
+Fehler bei Server-Key behoben
+2.2.12 sta
+Zum einrichten eines Server und Client KLLib_CfgServer und KLLib_CfgClient integriert. 
+Konf sowohl über Parameter und mit den Funktionen möglich
+
+
+30.1.12 sta
+interface  umbenannt
+MaxServerConn und MaxClientCon in userlib
+
+todo:
+"OneShot" Client-Statevariable
+Überprüfung Längen der Commandos
+Logger wieder inbetriebnehmen
+
+
+
+Startversion 0.900

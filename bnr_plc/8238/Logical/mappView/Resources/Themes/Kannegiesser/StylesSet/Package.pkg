@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.2.98?>
+<Package SubType="StylesSetPackage" PackageType="StylesSetPackage" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Styles Set">StylesSet.stylesset</Object>
+    <Object Type="File">Buttons.styles</Object>
+    <Object Type="File">Text.styles</Object>
+    <Object Type="File">Numeric.styles</Object>
+    <Object Type="File">TabCtrl.styles</Object>
+    <Object Type="File">MessageBox.styles</Object>
+    <Object Type="File">Login.styles</Object>
+    <Object Type="File">Pickers.styles</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,120 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Program: mnCnt
+ * File: mnCnt.var
+ * Author: hunholz
+ * Created: November 11, 2011
+ ********************************************************************
+ * Local variables of program mnCnt
+ ********************************************************************)
+VAR
+	_sPkgName : STRING[11];
+	_VerStruc : MoVerStruc_typ;
+END_VAR
+(*Datenobjekte zum Speichern der Statistik und der Event-Ringbuffer*)
+VAR
+	_DataObjectName : mnCnt_DatObjNames_typ;
+	_doBatchStat : DatObjInfo;
+	_dcBatchStat : DatObjCreate;
+	_dwBatchStat : DatObjWrite;
+	_doCounterStat : DatObjInfo;
+	_ddCounterStat : DatObjDelete;
+	_dcCounterStat : DatObjCreate;
+	_dwCounterStat : DatObjWrite;
+	_doTimerStat : DatObjInfo;
+	_ddTimerStat : DatObjDelete;
+	_dcTimerStat : DatObjCreate;
+	_dwTimerStat : DatObjWrite;
+	_doDosingStat : DatObjInfo;
+	_ddDosingStat : DatObjDelete;
+	_dcDosingStat : DatObjCreate;
+	_dwDosingStat : DatObjWrite;
+END_VAR
+(*Zeiger auf Statistiken*)
+VAR
+	_BatchStat : REFERENCE TO mnCnt_BatchStat_typ;
+	_CounterStat : REFERENCE TO mnCnt_CounterStat_typ;
+	_TimerStat : REFERENCE TO mnCnt_TimerStat_typ;
+	_DoseStat : REFERENCE TO mnCnt_DoseStat_typ;
+END_VAR
+(*Zeiger auf Ringbuffer*)
+VAR
+	_BatchRB : REFERENCE TO ARRAY[1..MNCNT_MAX_RBENTRY_BATCH] OF mnCntEventBatch_Typ;
+	_CounterRB : REFERENCE TO ARRAY[1..MNCNT_MAX_RBENTRY_COUNTER] OF mnCntEventCounter_Typ;
+	_TimerRB : REFERENCE TO ARRAY[1..MNCNT_MAX_RBENTRY_TIME] OF mnCntEventTime_Typ;
+	_DoseRB : REFERENCE TO ARRAY[1..MNCNT_MAX_RBENTRY_DOSE] OF mnCntEventDosingId_Typ;
+END_VAR
+(*Status von Statistiken und Ringbuffern*)
+VAR
+	_xBatchStatOK : BOOL;
+	_xBatchRbOK : BOOL;
+	_xCounterStatOK : BOOL;
+	_xCounterRbOK : BOOL;
+	_xTimerStatOK : BOOL;
+	_xTimerRbOK : BOOL;
+	_xDoseStatOK : BOOL;
+	_xDoseRbOK : BOOL;
+END_VAR
+(*Ringbuffer Batch*)
+VAR
+	_kgRBcreateBatch : kgRBcreate;
+	_rbBatchIns : kgRBinsert;
+	_rbBatchRead : kgRBread;
+END_VAR
+VAR RETAIN
+	_wPtrWriteBatch : UINT;
+	_wPtrReadBatch : UINT;
+	_wPtrStartBatch : UINT;
+END_VAR
+(*Ringbuffer Counter*)
+VAR RETAIN
+	_wPtrReadCounter : UINT := 0;
+	_wPtrWriteCounter : UINT;
+	_wPtrStartCounter : UINT;
+END_VAR
+VAR
+	_kgRBcreateCounter : kgRBcreate;
+	_rbCounterIns : kgRBinsert;
+	_rbCounterRead : kgRBread;
+END_VAR
+(*Ringbuffer Timer*)
+VAR RETAIN
+	_wPtrReadTimer : UINT;
+	_wPtrWriteTimer : UINT;
+	_wPtrStartTimer : UINT;
+END_VAR
+VAR
+	_kgRBcreateTimer : kgRBcreate;
+	_rbTimerIns : kgRBinsert;
+	_rbTimerRead : kgRBread;
+END_VAR
+(*Ringbuffer Dosing*)
+VAR RETAIN
+	_wPtrReadDose : UINT;
+	_wPtrWriteDose : UINT;
+	_wPtrStartDose : UINT;
+END_VAR
+VAR
+	_kgRBcreateDosing : kgRBcreate;
+	_rbDoseIns : kgRBinsert;
+	_rbDoseRead : kgRBread;
+END_VAR
+(*Hilfsvariablen*)
+VAR
+	_i : UINT;
+	_lSumWeight : UDINT;
+	_lCounter : UDINT;
+	_lTime : UDINT;
+	_rDoseingAmount : REAL;
+	_TONrepeatDFIIBatchEvt : TON;
+	_xRepeatDFIIBatchEvt : BOOL;
+	_ii : UINT;
+	_DosingEvent : mnCntEventDosingId_Typ;
+	_TONrepeatDFIICounterEvt : TON;
+	_xRepeatDFIICounterEvt : BOOL;
+	_TONrepeatDFIITimerEvt : TON;
+	_xRepeatDFIITimerEvt : BOOL;
+	_xRepeatDFIIDoseEvt : BOOL;
+	_TONrepeatDFIIDoseEvt : TON;
+END_VAR

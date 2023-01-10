@@ -1,0 +1,51 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Package: Pkg_mnTxt
+ * File: Pkg_mnTxt.var
+ * Author: hunholz
+ * Created: November 25, 2011
+ ********************************************************************
+ * Variables of package Pkg_mnTxt
+ ********************************************************************)
+(*KONSTANTEN*)
+VAR CONSTANT
+	MNTXT_DATOBJNAME_INSTXT : STRING[11] := '_mnTxtI'; (*Name des Datenmoduls, in dem die Instanztexte abgelegt sind*)
+	MNTXT_DATOBJNAME_FUNTXT : STRING[11] := '_mnTxtF'; (*Name des Datenmoduls, in dem die Funktionstexte abgelegt sind*)
+	MNTXT_DATOBJNAME_PARTXT : STRING[11] := '_mnTxtP'; (*Name des Datenmoduls, in dem die Parametertexte abgelegt sind*)
+	MNTXT_DATOBJNAME_PARHELPTXT : STRING[11] := '_mnTxtPh'; (*Name des Datenmoduls, in dem die Parameterhilfstexte abgelegt sind*)
+	MNTXT_DATOBJNAME_MSGTXT : STRING[11] := '_mnTxtM'; (*Name des Datenmoduls, in dem die Meldungstexte abgelegt sind*)
+	MNTXT_DATOBJNAME_MSGHELPTXT : STRING[11] := '_mnTxtMh'; (*Name des Datenmoduls, in dem die Meldungshilfstexte abgelegt sind*)
+END_VAR
+(*-- LCID --*)
+VAR CONSTANT
+	MNTXT_LCID_GERMAN : UINT := 1031; (*LCID German*)
+	MNTXT_LCID_ENGLISH_US : UINT := 1033; (*LCID English USA*)
+END_VAR
+(*-- Stati --*)
+VAR CONSTANT
+	MNTXT_STAT_OK : UINT := 0;
+	MNTXT_STAT_NOLANGUAGE : UINT := 1; (*Keine gültige Sprache geladen*)
+	MNTXT_STAT_INIT : UINT := 100;
+	MNTXT_STAT_ERRDATOBJ : UINT := 60000; (*Datenobjekte für Texte konnten nicht erstellt werden.*)
+	MNTXT_STAT_ERRMSGCFG : UINT := 60001; (*Message-Config Fehler*)
+	MNTXT_STAT_ERRMEM : UINT := 60002; (*Speicher nicht allokierbar oder nicht ausreichend*)
+	MNTXT_STAT_ERRLCID : UINT := 60003; (*Fehler beim laden von LCID.csv*)
+	MNTXT_STAT_ERRFUNCTIONTXT : UINT := 60004;
+	MNTXT_STAT_ERRINSTANCETXT : UINT := 60005;
+	MNTXT_STAT_ERRMESSAGETXT : UINT := 60006;
+	MNTXT_STAT_ERRPARAMTXT : UINT := 60007;
+	MNTXT_STAT_LOADING : UINT := 65535;
+END_VAR
+(*Interface*)
+VAR
+	IFmnTxt : IFmnTxt_Typ;
+END_VAR
+(*Status*)
+VAR
+	mnTxtStatAd : mnTxtStatAd_Typ;
+END_VAR
+(*Parameter*)
+VAR
+	mnTxtPar : mnTxtPar_Typ;
+END_VAR

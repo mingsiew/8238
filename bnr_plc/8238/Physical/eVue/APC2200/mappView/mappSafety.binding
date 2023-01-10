@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="MappSafetyBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.Transfer.Enable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Transfer" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.Transfer.Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Transfer" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::mappSafety:safetyInfo.Status.SetupModeActive" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="LabeldiElecFuse9" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.Exchange.Enable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Exchange" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.Exchange.Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Exchange" attribute="visible" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.Complete.Enable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Complete" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.Complete.Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Complete" attribute="visible" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.Restart.Enable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Restart" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.Restart.Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Restart" attribute="visible" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.Format.Enable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Format" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.Format.Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Format" attribute="visible" />
+		</Binding>
+		
+	<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.ActivateSetupMode.Visible" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_SetupMode" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.ActivateSetupMode.Enable" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_SetupMode" attribute="enable" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mappSafety:sState" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="tp_CommState" attribute="selectedValue" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mappSafety:safetyInfo.SafeApplication.ExistOnSafeLogic" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="Rectangle48" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mappSafety:safetyInfo.SafeApplication.Acknowledged" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="Rectangle36" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.ResetError.Enable" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Format1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Commands.ResetError" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Format1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Visu.ResetError.Visible" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Format1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mappSafety:sSafeOsState" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="tp_CommState1" attribute="selectedValue" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mappSafety:sSafeNodeState" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="tp_CommState2" attribute="selectedValue" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mappSafety:sSystemState" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="tp_CommState3" attribute="selectedValue" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mappSafety:sOperationalModeState" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="tp_CommState4" attribute="selectedValue" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Commands.Format" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Format" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Commands.Restart" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Restart" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Commands.ActivateSetupMode" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_SetupMode" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Commands.Exchange" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Exchange" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Commands.Complete" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Complete" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MappSafety.Commands.Transfer" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MappSafety" widgetRefId="btn_Transfer" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

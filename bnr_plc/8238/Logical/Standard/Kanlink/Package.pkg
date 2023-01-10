@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Package" Description="*Kanlink constants">Supertrack_Kanlink_Constants</Object>
+    <Object Type="File" Description="Global data types">KanLink_A19.typ</Object>
+    <Object Type="File" Description="Global variables">KanLink_A19.var</Object>
+    <Object Type="Program" Language="IEC" Description="*Configuration of Kanlink">zz_KanlinkConfig</Object>
+    <Object Type="Program" Language="IEC" Description="*Kanlink Driver Server and Client">Kan_Driver</Object>
+    <Object Type="Package" Description="Standard-Packages">KGFramework</Object>
+    <Object Type="Package" Description="Benutzereinstellungen">KGFrameworkShare</Object>
+    <Object Type="File">KanLink Release Notes.docx</Object>
+    <Object Type="Package" Description="CAN Communication Variables">CAN</Object>
+    <Object Type="Program" Language="IEC" Description="*Custom task to convert Kanlink PLC to eVue Comms">kanlink_map</Object>
+  </Objects>
+</Package>

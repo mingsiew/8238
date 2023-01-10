@@ -1,0 +1,31 @@
+(********************************************************************
+ * COPYRIGHT -- Kannegiesser GmbH
+ ********************************************************************
+ * Program: mnSystem
+ * File: mnSystem.var
+ * Author: horn
+ * Created: January 10, 2012
+ ********************************************************************
+ * Local variables of program mnSystem
+ ********************************************************************)
+(*Konstanten*)
+VAR CONSTANT
+	MNSYSTEM_MSG_BATTERY : UINT := 3;
+	MNSYSTEM_MSG_FAN : UINT := 4;
+	MNSYSTEM_MSG_ENVTEMP : UINT := 5;
+	MNSYSTEM_MSG_WRONGMODULE : UINT := 6;
+	MNSYSTEM_MSG_MOTPROTCOOLING : UINT := 7;
+END_VAR
+(*Variablen*)
+VAR
+	IFmnSystem : IFmnSystem_typ;
+	mnSystemCmd : KG_Cmd_typ;
+	mnSystemStat : Stat_typ;
+	mnSystemStatAd : mnSystemStatAd_typ;
+	mnSystemPar : mnSystemPar_typ;
+END_VAR
+(*IO*)
+VAR
+	MDLIn : ARRAY[1..MNSYSTEM_CNT_MODULELINES,1..MNSYSTEM_CNT_MODULES] OF mnSystem_SignalIn_typ;
+	MDLOut : ARRAY[1..MNSYSTEM_CNT_MODULELINES,1..MNSYSTEM_CNT_MODULES] OF mnSystem_SignalOut_typ;
+END_VAR

@@ -1,0 +1,67 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Package: Pkg_KGStandard
+ * File: kgMachineState.var
+ * Author: hunholz
+ * Created: January 27, 2012
+ ********************************************************************
+ * Variables of package Pkg_KGStandard
+ ********************************************************************)
+VAR CONSTANT
+	KG_MACHINESTATE_OFF : USINT := 16#0; (*Machine is turned off*)
+	KG_MACHINESTATE_EMERGENCYSTOP : USINT := 16#1; (*Emergency stop*)
+	KG_MACHINESTATE_SAFESTOP : USINT := 16#2; (*Safe stop*)
+	KG_MACHINESTATE_FAULT : USINT := 16#3; (*Fault*)
+	KG_MACHINESTATE_FAULT_GONE : USINT := 16#4; (*Fault, wait for acknowledge*)
+	KG_MACHINESTATE_SERVICE : USINT := 16#5; (*Service*)
+	KG_MACHINESTATE_AUTOMATIC_RUN : USINT := 16#6; (*Automatic Run*)
+	KG_MACHINESTATE_STOP : USINT := 16#7; (*Stop*)
+	KG_MACHINESTATE_WAIT_AUTOMATIC : USINT := 16#8; (*Automatic Wait (Standby)*)
+	KG_MACHINESTATE_WAIT_MAN : USINT := 16#9; (*Automatic Wait for manual action*)
+	KG_MACHINESTATE_WARNING : USINT := 16#A; (*Automatic Warning*)
+END_VAR
+(*Special states for dryer*)
+VAR CONSTANT
+	KG_MACHINESTATE_DRY_HEATING : USINT := 16#1E; (*Automatic heating*)
+	KG_MACHINESTATE_DRY_COOLDOWN : USINT := 16#1F; (*Automatic cooldown*)
+	KG_MACHINESTATE_DRY_CLEAN_FILTER : USINT := 16#20; (*Automatic clean filter*)
+	KG_MACHINESTATE_DRY_AFTERRUN : USINT := 16#21; (*Automatic afterrun*)
+	KG_MACHINESTATE_DRY_FAN_CLEAN : USINT := 16#22; (*Automatic running cleaning fan*)
+END_VAR
+(*Special states for conveyor*)
+VAR CONSTANT
+	KG_MACHINESTATE_CONV_FWD : USINT := 16#28; (*Automatic running forward*)
+	KG_MACHINESTATE_CONV_FWD2 : USINT := 16#29; (*Automatic running forward 2nd speed*)
+	KG_MACHINESTATE_CONV_REV : USINT := 16#2A; (*Automatic running reverse*)
+	KG_MACHINESTATE_CONV_REV2 : USINT := 16#2B; (*Automatic running reverse 2nd speed*)
+END_VAR
+(*ENHANCED STATES*)
+VAR CONSTANT
+	KG_MACHINESTATEX_OFF : UINT := 16#100; (*Machine is turned off*)
+	KG_MACHINESTATEX_EMERGENCYSTOP : UINT := 16#101; (*Emergency stop*)
+	KG_MACHINESTATEX_SAFESTOP : UINT := 16#102; (*Safe stop*)
+	KG_MACHINESTATEX_FAULT : UINT := 16#103; (*Fault*)
+	KG_MACHINESTATEX_FAULT_GONE : UINT := 16#104; (*Fault, wait for acknowledge*)
+	KG_MACHINESTATEX_SERVICE : UINT := 16#105; (*Service*)
+	KG_MACHINESTATEX_AUTOMATIC_RUN : UINT := 16#6; (*Automatic Run*)
+	KG_MACHINESTATEX_STOP : UINT := 16#107; (*Stop*)
+	KG_MACHINESTATEX_WAIT_AUTOMATIC : UINT := 16#208; (*Automatic Wait (Standby)*)
+	KG_MACHINESTATEX_WAIT_MAN : UINT := 16#209; (*Automatic Wait for manual action*)
+	KG_MACHINESTATEX_WARNING : UINT := 16#A; (*Automatic Warning*)
+END_VAR
+(*Special states for dryer*)
+VAR CONSTANT
+	KG_MACHINESTATEX_DRY_HEATING : UINT := 16#1E; (*Automatic heating*)
+	KG_MACHINESTATEX_DRY_COOLDOWN : UINT := 16#1F; (*Automatic cooldown*)
+	KG_MACHINESTATEX_DRY_CLEAN_FILTE : UINT := 16#20; (*Automatic clean filter*)
+	KG_MACHINESTATEX_DRY_AFTERRUN : UINT := 16#21; (*Automatic afterrun*)
+	KG_MACHINESTATEX_DRY_FAN_CLEAN : UINT := 16#22; (*Automatic running cleaning fan*)
+END_VAR
+(*Special states for conveyor*)
+VAR CONSTANT
+	KG_MACHINESTATEX_CONV_FWD : UINT := 16#28; (*Automatic running forward*)
+	KG_MACHINESTATEX_CONV_FWD2 : UINT := 16#29; (*Automatic running forward 2nd speed*)
+	KG_MACHINESTATEX_CONV_REV : UINT := 16#2A; (*Automatic running reverse*)
+	KG_MACHINESTATEX_CONV_REV2 : UINT := 16#2B; (*Automatic running reverse 2nd speed*)
+END_VAR

@@ -1,0 +1,40 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Library: mnParamLib
+ * File: mnParamLib.var
+ * Author: Reese_Markus
+ * Created: July 25, 2011
+ ********************************************************************
+ * Constants of library mnParamLib
+ ********************************************************************)
+VAR CONSTANT
+	MNPARAM_MAXIDX_LOGICSTRUCT : UINT := 250;
+	MNPARAM_MAXIDX_CONTAINER : UINT := 20;
+	MNPARAM_MAXIDX_PARAMNUM : UINT := 500;
+	MNPARAM_MAXIDX_PARAMSTRING : UINT := 200;
+	MNPARAM_MAXIDX_CSVNUM : UINT := 10000;
+	MNPARAM_MAXIDX_CSVSTRING : UINT := 500;
+END_VAR
+(*Zeilenkennungen*)
+VAR CONSTANT
+	MNPARAM_CSV_FILEEND : UINT := 255;
+	MNPARAM_CSV_COMMENT : UINT := 254;
+	MNPARAM_CSV_HEADER_VERSION : UINT := 253;
+	MNPARAM_CSV_HEADER_MACHINENO : UINT := 252;
+	MNPARAM_CSV_HEADER_TIMESTAMP : UINT := 251;
+	MNPARAM_CSV_LANGUAGEDEF : UINT := 248;
+	MNPARAM_CSV_LAN_HELPTEXT : UINT := 210;
+	MNPARAM_CSV_LAN_TEXT : UINT := 200;
+	MNPARAM_CSV_DEF_CONTAINER : UINT := 140;
+	MNPARAM_CSV_DEF_LOGSTRUC : UINT := 130;
+	MNPARAM_CSV_DEF_STRING : UINT := 120;
+	MNPARAM_CSV_DEF_REAL : UINT := 111;
+	MNPARAM_CSV_DEF_NUM : UINT := 110;
+	MNPARAM_CSV_IP : UINT := 90;
+	MNPARAM_CSV_CP : UINT := 81;
+	MNPARAM_CSV_TOC : UINT := 80;
+	MNPARAM_CSV_DAT_STRING : UINT := 20;
+	MNPARAM_CSV_DAT_REAL : UINT := 11;
+	MNPARAM_CSV_DAT_NUM : UINT := 10;
+END_VAR

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource FileVersion="7" ArVersion="C4.72">
+  <Aliases>
+    <ACLAliases>
+      <ACL Id="1">
+        <ACE RoleId="1" RoleName="Administrators" Access="0x017F" />
+        <ACE RoleId="2" RoleName="Everyone" Access="0x015F" />
+      </ACL>
+      <ACL Id="2">
+        <ACE RoleId="1" RoleName="Administrators" Access="0x017F" />
+        <ACE RoleId="2" RoleName="Everyone" Access="0x017F" />
+      </ACL>
+    </ACLAliases>
+    <EURangeViolationAliases />
+    <EURangesAliases>
+      <EURanges Id="1">
+        <EURange>
+          <Low ValueProvider="PV">::ABB_MIN_VELOCITY</Low>
+          <High ValueProvider="PV">::ABB_MAX_VELOCITY</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="2">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+        </EURange>
+      </EURanges>
+      <EURanges Id="4">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">44</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="5">
+        <EURange>
+          <Low ValueProvider="Const">900</Low>
+          <High ValueProvider="Const">14400</High>
+        </EURange>
+      </EURanges>
+    </EURangesAliases>
+    <EngineeringUnitAliases>
+      <EngineeringUnit Id="1" UnitId="4403766" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millisecond" Symbol="ms" />
+      <EngineeringUnit Id="2" UnitId="4408652" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="degree Celsius" Symbol="°C" />
+      <EngineeringUnit Id="6" UnitId="4740186" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="hertz" Symbol="Hz" />
+      <EngineeringUnit Id="7" UnitId="4543794" NameSpaceUri="http://www.br-automation.com/units" Name="tenthAmps" Symbol="Unit" />
+      <EngineeringUnit Id="8" UnitId="4543796" NameSpaceUri="http://www.br-automation.com/units" Name="TenthsPercent" Symbol="%" />
+      <EngineeringUnit Id="9" UnitId="4543797" NameSpaceUri="http://www.br-automation.com/units" Name="TenthsVolts" />
+      <EngineeringUnit Id="10" UnitId="4543798" NameSpaceUri="http://www.br-automation.com/units" Name="EB Amps" Symbol="Unit" />
+      <EngineeringUnit Id="11" UnitId="5457219" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="second [unit of time]" Symbol="s" />
+    </EngineeringUnitAliases>
+  </Aliases>
+  <DefaultView AclId="1">
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables>
+        <Variable Name="OpcUa">
+          <Variable Name="VC" EnableArrayElements="True" />
+        </Variable>
+        <Variable Name="MAX_FUSE_BANKS" />
+        <Variable Name="MAX_BUS_COUPLERS" />
+      </GlobalVariables>
+      <Task Name="moduleWatc">
+        <Variable Name="mpAuditTrail">
+          <Variable Name="Error" />
+          <Variable Name="CurrentRecord" />
+          <Variable Name="Active" />
+        </Variable>
+        <Variable AclId="2" AclInherit="2" Name="export" />
+        <Variable AclId="2" AclInherit="2" Name="clearBuffer" />
+        <Variable Name="busCouplerVisu">
+          <Variable Name="StationAtBusEnd" Historizing="True" HistoryBufferSize="1000" HistorySamplingInterval="Timer2" />
+          <Variable Name="StationPastInFrameError" Historizing="True" HistoryBufferSize="1000" HistorySamplingInterval="Timer2" />
+          <Variable Name="StationPastOutFrameError" Historizing="True" HistoryBufferSize="1000" HistorySamplingInterval="Timer2" />
+        </Variable>
+        <Variable Name="index" EURangesId="4" />
+        <Variable Name="timebase" EURangesId="5" EngineeringUnitId="11" />
+      </Task>
+      <Task Name="Camera_Dri">
+        <Variable Name="visu">
+          <Variable Name="cameraID" />
+          <Variable Name="reload" />
+          <Variable Name="cmd">
+            <Variable Name="AutoTune" />
+            <Variable Name="Capture" />
+            <Variable Name="Repeat" />
+            <Variable Name="SaveSettings" />
+          </Variable>
+          <Variable Name="voltageOk" />
+          <Variable Name="ImageAddress" />
+          <Variable Name="buttonEnable">
+            <Variable Name="Tune" />
+            <Variable Name="Repeat" />
+            <Variable Name="Capture" />
+          </Variable>
+          <Variable Name="enableSettings" />
+        </Variable>
+        <Variable Name="visu_camera">
+          <Variable Name="ModuleOk" />
+          <Variable Name="Interface">
+            <Variable Name="Ready" />
+            <Variable Name="Read" />
+            <Variable Name="ReadFail" />
+            <Variable Name="ResultReady" />
+            <Variable Name="Result" />
+            <Variable Name="AutoTune" />
+            <Variable Name="AutoTuneDone" />
+          </Variable>
+          <Variable Name="Info">
+            <Variable Name="Temperature" EngineeringUnitId="2" />
+            <Variable Name="FunctionProcessingTime" />
+            <Variable Name="ImageProcessingTime" />
+          </Variable>
+          <Variable Name="Parameters">
+            <Variable Name="Write">
+              <Variable Name="Timeout" EngineeringUnitId="1" />
+            </Variable>
+            <Variable Name="Read">
+              <Variable Name="Focus" />
+              <Variable Name="Gain" />
+              <Variable Name="Exposure" />
+            </Variable>
+          </Variable>
+          <Variable Name="Internal">
+            <Variable Name="state" />
+          </Variable>
+          <Variable Name="Results" />
+          <Variable Name="Node" />
+        </Variable>
+        <Variable Name="visu_settings">
+          <Variable Name="ReadCount" />
+          <Variable Name="Timeout" EngineeringUnitId="1" />
+          <Variable Name="Name" />
+          <Variable Name="Focus" />
+          <Variable Name="Gain" />
+          <Variable Name="Exposure" />
+        </Variable>
+      </Task>
+      <Task Name="ABB_Driver">
+        <Variable Name="visu_manual" EnableArrayElements="True">
+          <Variable Name="visu_manual[1]">
+            <Variable Name="ActCurrent" EngineeringUnitId="7" />
+            <Variable Name="ActTorque" EngineeringUnitId="8" />
+            <Variable Name="TargetVelocity" EURangesId="1" EngineeringUnitId="6" />
+            <Variable Name="ActVelocity" EngineeringUnitId="6" />
+          </Variable>
+          <Variable Name="visu_manual[2]">
+            <Variable Name="ActCurrent" EngineeringUnitId="7" />
+            <Variable Name="ActTorque" EngineeringUnitId="8" />
+            <Variable Name="TargetVelocity" EURangesId="1" EngineeringUnitId="6" />
+            <Variable Name="ActVelocity" EngineeringUnitId="6" />
+          </Variable>
+          <Variable Name="visu_manual[3]">
+            <Variable Name="ActCurrent" EngineeringUnitId="7" />
+            <Variable Name="ActTorque" EngineeringUnitId="8" />
+            <Variable Name="TargetVelocity" EURangesId="1" EngineeringUnitId="6" />
+            <Variable Name="ActVelocity" EngineeringUnitId="6" />
+          </Variable>
+          <Variable Name="visu_manual[4]">
+            <Variable Name="ActCurrent" EngineeringUnitId="7" />
+            <Variable Name="ActTorque" EngineeringUnitId="8" />
+            <Variable Name="TargetVelocity" EURangesId="1" EngineeringUnitId="6" />
+            <Variable Name="ActVelocity" EngineeringUnitId="6" />
+          </Variable>
+          <Variable Name="visu_manual[5]">
+            <Variable Name="ActCurrent" EngineeringUnitId="7" />
+            <Variable Name="ActTorque" EngineeringUnitId="8" />
+            <Variable Name="TargetVelocity" EURangesId="1" EngineeringUnitId="6" />
+            <Variable Name="ActVelocity" EngineeringUnitId="6" />
+          </Variable>
+          <Variable Name="visu_manual[6]">
+            <Variable Name="ActCurrent" EngineeringUnitId="7" />
+            <Variable Name="ActTorque" EngineeringUnitId="8" />
+            <Variable Name="TargetVelocity" EURangesId="1" EngineeringUnitId="6" />
+            <Variable Name="ActVelocity" EngineeringUnitId="6" />
+          </Variable>
+          <Variable Name="visu_manual[7]">
+            <Variable Name="ActCurrent" EngineeringUnitId="7" />
+            <Variable Name="ActTorque" EngineeringUnitId="8" />
+            <Variable Name="TargetVelocity" EURangesId="1" EngineeringUnitId="6" />
+            <Variable Name="ActVelocity" EngineeringUnitId="6" />
+          </Variable>
+          <Variable Name="visu_manual[8]">
+            <Variable Name="ActCurrent" EngineeringUnitId="7" />
+            <Variable Name="ActTorque" EngineeringUnitId="8" />
+            <Variable Name="TargetVelocity" EURangesId="1" EngineeringUnitId="6" />
+            <Variable Name="ActVelocity" EngineeringUnitId="6" />
+          </Variable>
+          <Variable Name="visu_manual[0]">
+            <Variable Name="TargetVelocity" EURangesId="1" />
+          </Variable>
+        </Variable>
+        <Variable Name="manualSelectDrowDown" />
+      </Task>
+      <Task Name="FuseManage">
+        <Variable Name="visu_index" EURangesId="2" />
+        <Variable Name="visu_fuse">
+          <Variable Name="Info">
+            <Variable Name="CommsOk" />
+            <Variable Name="InputVoltage" HistoryBufferSize="50" HistorySamplingInterval="Timer6" EngineeringUnitId="9" />
+            <Variable Name="Channel" EnableArrayElements="True">
+              <Variable Name="Channel[1]">
+                <Variable Name="ActualCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer6" EngineeringUnitId="7" />
+                <Variable Name="TripCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer7" EngineeringUnitId="10" />
+              </Variable>
+              <Variable Name="Channel[2]">
+                <Variable Name="ActualCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer6" EngineeringUnitId="7" />
+                <Variable Name="TripCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer7" EngineeringUnitId="10" />
+              </Variable>
+              <Variable Name="Channel[3]">
+                <Variable Name="ActualCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer6" EngineeringUnitId="7" />
+                <Variable Name="TripCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer7" EngineeringUnitId="10" />
+              </Variable>
+              <Variable Name="Channel[4]">
+                <Variable Name="ActualCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer6" EngineeringUnitId="7" />
+                <Variable Name="TripCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer7" EngineeringUnitId="10" />
+              </Variable>
+              <Variable Name="Channel[5]">
+                <Variable Name="ActualCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer6" EngineeringUnitId="7" />
+                <Variable Name="TripCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer7" EngineeringUnitId="10" />
+              </Variable>
+              <Variable Name="Channel[6]">
+                <Variable Name="ActualCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer6" EngineeringUnitId="7" />
+                <Variable Name="TripCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer7" EngineeringUnitId="10" />
+              </Variable>
+              <Variable Name="Channel[7]">
+                <Variable Name="ActualCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer6" EngineeringUnitId="7" />
+                <Variable Name="TripCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer7" EngineeringUnitId="10" />
+              </Variable>
+              <Variable Name="Channel[8]">
+                <Variable Name="ActualCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer6" EngineeringUnitId="7" />
+                <Variable Name="TripCurrent" Historizing="True" HistoryBufferSize="50" HistorySamplingInterval="Timer7" EngineeringUnitId="10" />
+              </Variable>
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="visu_settings">
+          <Variable Name="GroupID" />
+          <Variable Name="MinVoltage" EngineeringUnitId="9" />
+          <Variable Name="MaxVoltage" EngineeringUnitId="9" />
+          <Variable Name="Channel" EnableArrayElements="True" />
+        </Variable>
+        <Variable Name="visu_action" EnableArrayElements="True" />
+        <Variable Name="visu_set_current" EnableArrayElements="True" />
+        <Variable Name="fuse">
+          <Variable Name="Info">
+            <Variable Name="InputVoltage" />
+          </Variable>
+        </Variable>
+      </Task>
+      <Task Name="Contactron">
+        <Variable Name="visu_manual" EnableArrayElements="True" />
+        <Variable Name="manualSelectDrowDown" EnableArrayElements="True" />
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

@@ -1,0 +1,45 @@
+VAR
+	drive : REFERENCE TO ABB_EPL_typ; (*ref var to drive structure*)
+	controlWord : UINT; (*control word for drive*)
+	n : USINT; (*used to hold loop state*)
+	testDrive : USINT; (*set this to drive number you want to test*)
+	i : USINT;
+	count : USINT;
+	test : UINT;
+	newNode : UINT;
+	saveNewNode : BOOL;
+	saveVar : UINT;
+	factoryReset : UINT;
+	setNodeNumber : EplSDOWrite;
+	nominalCurrent_9906 : DINT;
+	nominalPower_9910 : DINT;
+	nominalSpeed_9909 : DINT;
+	maxCurrent : DINT;
+	accTime : DINT;
+	decTime : DINT;
+	x : USINT;
+	visu_man : REFERENCE TO abb_visu_manual_typ;
+	visu_manual : ARRAY[0..8] OF abb_visu_manual_typ;
+	index : UINT;
+	xRun : BOOL;
+	config : REFERENCE TO EPL_Config;
+	pvName : STRING[30];
+	getNode : getNodeFromPV;
+	driveNo : STRING[5];
+	settings : REFERENCE TO ABB_Settings_typ;
+	init_state : USINT;
+	sNode : STRING[5];
+	moduleAddress : STRING[75];
+	getModuleName : GetModuleName;
+END_VAR
+VAR CONSTANT
+	DRIVE_MANUAL_DEFAULT : ABB_Manual_typ := (Enable:=0,Run:=0,Velocity:=0,Direction:=ABB_DIRECTION_FWD,ErrorReset:=0);
+END_VAR
+VAR
+	manualSelectDrowDown : ARRAY[0..MAX_DRIVES] OF STRING[125]; (*JSON for the drop downs on manual mode.*)
+	sIndex : STRING[5];
+	updateDropDown : BOOL;
+	selIndex : DINT;
+	max_manualControls : USINT;
+	targetSpeedValid : BOOL;
+END_VAR

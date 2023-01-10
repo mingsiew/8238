@@ -1,0 +1,31 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Program: zzGetTime
+ * File: zzGetTimeCyclic.ab
+ * Author: treamsbottom
+ * Created: June 04, 2014
+ ********************************************************************
+ * Implementation of program zzGetTime
+ ********************************************************************)
+
+PROGRAM _CYCLIC
+
+
+	GetTimeStamp.enable = TRUE	
+	GetTimeStamp FUB DTGetTime()	
+	IF GetTimeStamp.status = ERR_OK THEN	
+		CurrentTimestamp = GetTimeStamp.DT1	
+	ENDIF	
+;	D32[78] = UDINT(CurrentTimestamp);
+;	
+;	//Set the current time.
+;	//DTSetTime(enable, DT1, status)
+;	setTimeStamp.enable := (D32[79] > 0)
+;	setTimeStamp.DT1 := DT(D32[79]); 	CAST D32 TO DT
+;	setTimeStamp FUB DTSetTime()
+;	IF (setTimeStamp.status =  ERR_OK) THEN				  
+;		D32[79] = 0
+;	ENDIF
+	
+END_PROGRAM

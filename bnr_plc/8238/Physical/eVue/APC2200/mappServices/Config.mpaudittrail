@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gAuditTrail" Type="mpaudittrail">
+    <Group ID="Audit">
+      <Group ID="Events">
+        <Property ID="[0]" Value="16" />
+        <Property ID="[1]" />
+        <Property ID="[2]" />
+      </Group>
+      <Selector ID="TextSource">
+        <Property ID="OutputFormat" Value="Value of [%dpid] changed. Old: [%old$12.0], New: [%new$12.0]" />
+      </Selector>
+      <Group ID="Export">
+        <Property ID="Encrypt" Value="FALSE" />
+      </Group>
+    </Group>
+    <Group ID="Monitor">
+      <Group ID="0">
+        <Property ID="pv" Value="BusCouplerDiag[21].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="1">
+        <Property ID="pv" Value="BusCouplerDiag[21].StationAtBusEnd" />
+      </Group>
+      <Group ID="2">
+        <Property ID="pv" Value="BusCouplerDiag[21].StationPastInFrameError" />
+      </Group>
+      <Group ID="3">
+        <Property ID="pv" Value="BusCouplerDiag[21].StationPastOutFrameError" />
+      </Group>
+      <Group ID="4">
+        <Property ID="pv" Value="BusCouplerDiag[22].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="5">
+        <Property ID="pv" Value="BusCouplerDiag[22].StationAtBusEnd" />
+      </Group>
+      <Group ID="6">
+        <Property ID="pv" Value="BusCouplerDiag[22].StationPastInFrameError" />
+      </Group>
+      <Group ID="7">
+        <Property ID="pv" Value="BusCouplerDiag[22].StationPastOutFrameError" />
+      </Group>
+      <Group ID="8">
+        <Property ID="pv" Value="BusCouplerDiag[31].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="9">
+        <Property ID="pv" Value="BusCouplerDiag[31].StationAtBusEnd" />
+      </Group>
+      <Group ID="10">
+        <Property ID="pv" Value="BusCouplerDiag[31].StationPastInFrameError" />
+      </Group>
+      <Group ID="11">
+        <Property ID="pv" Value="BusCouplerDiag[31].StationPastOutFrameError" />
+      </Group>
+      <Group ID="12">
+        <Property ID="pv" Value="BusCouplerDiag[32].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="13">
+        <Property ID="pv" Value="BusCouplerDiag[32].StationAtBusEnd" />
+      </Group>
+      <Group ID="14">
+        <Property ID="pv" Value="BusCouplerDiag[32].StationPastInFrameError" />
+      </Group>
+      <Group ID="15">
+        <Property ID="pv" Value="BusCouplerDiag[32].StationPastOutFrameError" />
+      </Group>
+      <Group ID="16">
+        <Property ID="pv" Value="BusCouplerDiag[33].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="17">
+        <Property ID="pv" Value="BusCouplerDiag[33].StationAtBusEnd" />
+      </Group>
+      <Group ID="18">
+        <Property ID="pv" Value="BusCouplerDiag[33].StationPastInFrameError" />
+      </Group>
+      <Group ID="19">
+        <Property ID="pv" Value="BusCouplerDiag[33].StationPastOutFrameError" />
+      </Group>
+      <Group ID="20">
+        <Property ID="pv" Value="BusCouplerDiag[34].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="21">
+        <Property ID="pv" Value="BusCouplerDiag[34].StationAtBusEnd" />
+      </Group>
+      <Group ID="22">
+        <Property ID="pv" Value="BusCouplerDiag[34].StationPastInFrameError" />
+      </Group>
+      <Group ID="23">
+        <Property ID="pv" Value="BusCouplerDiag[34].StationPastOutFrameError" />
+      </Group>
+      <Group ID="24">
+        <Property ID="pv" Value="BusCouplerDiag[35].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="25">
+        <Property ID="pv" Value="BusCouplerDiag[35].StationAtBusEnd" />
+      </Group>
+      <Group ID="26">
+        <Property ID="pv" Value="BusCouplerDiag[35].StationPastInFrameError" />
+      </Group>
+      <Group ID="27">
+        <Property ID="pv" Value="BusCouplerDiag[35].StationPastOutFrameError" />
+      </Group>
+      <Group ID="28">
+        <Property ID="pv" Value="BusCouplerDiag[41].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="29">
+        <Property ID="pv" Value="BusCouplerDiag[41].StationAtBusEnd" />
+      </Group>
+      <Group ID="30">
+        <Property ID="pv" Value="BusCouplerDiag[41].StationPastInFrameError" />
+      </Group>
+      <Group ID="31">
+        <Property ID="pv" Value="BusCouplerDiag[41].StationPastOutFrameError" />
+      </Group>
+      <Group ID="32">
+        <Property ID="pv" Value="BusCouplerDiag[42].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="33">
+        <Property ID="pv" Value="BusCouplerDiag[42].StationAtBusEnd" />
+      </Group>
+      <Group ID="34">
+        <Property ID="pv" Value="BusCouplerDiag[42].StationPastInFrameError" />
+      </Group>
+      <Group ID="35">
+        <Property ID="pv" Value="BusCouplerDiag[42].StationPastOutFrameError" />
+      </Group>
+      <Group ID="36">
+        <Property ID="pv" Value="BusCouplerDiag[43].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="37">
+        <Property ID="pv" Value="BusCouplerDiag[43].StationAtBusEnd" />
+      </Group>
+      <Group ID="38">
+        <Property ID="pv" Value="BusCouplerDiag[43].StationPastInFrameError" />
+      </Group>
+      <Group ID="39">
+        <Property ID="pv" Value="BusCouplerDiag[43].StationPastOutFrameError" />
+      </Group>
+      <Group ID="40">
+        <Property ID="pv" Value="BusCouplerDiag[44].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="41">
+        <Property ID="pv" Value="BusCouplerDiag[44].StationAtBusEnd" />
+      </Group>
+      <Group ID="42">
+        <Property ID="pv" Value="BusCouplerDiag[44].StationPastInFrameError" />
+      </Group>
+      <Group ID="43">
+        <Property ID="pv" Value="BusCouplerDiag[44].StationPastOutFrameError" />
+      </Group>
+      <Group ID="44">
+        <Property ID="pv" Value="BusCouplerDiag[45].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="45">
+        <Property ID="pv" Value="BusCouplerDiag[45].StationAtBusEnd" />
+      </Group>
+      <Group ID="46">
+        <Property ID="pv" Value="BusCouplerDiag[45].StationPastInFrameError" />
+      </Group>
+      <Group ID="47">
+        <Property ID="pv" Value="BusCouplerDiag[45].StationPastOutFrameError" />
+      </Group>
+      <Group ID="48">
+        <Property ID="pv" Value="BusCouplerDiag[110].ModuleLostWhilstOperational" />
+      </Group>
+      <Group ID="49">
+        <Property ID="pv" Value="BusCouplerDiag[110].StationAtBusEnd" />
+      </Group>
+      <Group ID="50">
+        <Property ID="pv" Value="BusCouplerDiag[110].StationPastInFrameError" />
+      </Group>
+      <Group ID="51">
+        <Property ID="pv" Value="BusCouplerDiag[110].StationPastOutFrameError" />
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

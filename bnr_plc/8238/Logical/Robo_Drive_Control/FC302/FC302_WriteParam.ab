@@ -1,0 +1,28 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: CAN_Open
+ * File: FU302_WriteParam.ab
+ * Author: D.Jefferys
+ * Created: February 10, 2009
+ ********************************************************************
+ * Implementation of program CAN_Open
+ ********************************************************************) 
+
+(*TODO: Add your comment here*)
+FUNCTION_BLOCK FC302_WriteParam
+	
+	CANopenSDOWrite8_0.enable 	= enable
+	CANopenSDOWrite8_0.pDevice 	= pDevice
+	CANopenSDOWrite8_0.node 	= node
+	CANopenSDOWrite8_0.index 	= $2000 + index 
+	CANopenSDOWrite8_0.subindex = subindex
+	memset(ADR(CANopenSDOWrite8_0.data0),0,8)
+	memcpy(ADR(CANopenSDOWrite8_0.data0),ADR(data),4)
+	CANopenSDOWrite8_0.datalen 	= bytelen
+	
+	CANopenSDOWrite8_0 FUB CANopenSDOWrite8()
+		
+	status = CANopenSDOWrite8_0.status 
+			
+END_FUNCTION_BLOCK

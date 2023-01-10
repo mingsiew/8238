@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles id="KannegiesserPickers" xmlns="http://www.br-automation.com/iat2015/styles/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	
+	<Style id="Kannegiesser1" xsi:type="widgets.brease.ListBox" 
+		activeBackColor="rgba(8, 140, 221, 1)"
+		backColor="rgba(255, 255, 255, 1)"
+		bold="true"
+		fontSize="12px"
+		textColor="rgba(0, 0, 0, 1)"
+		activeTextColor="rgba(255, 255, 255, 1)"
+		borderWidth="2px"
+		borderColor="rgba(0, 0, 0, 1)"
+		textAlign="center"
+		cornerRadius="5px"/> 
+</Styles>

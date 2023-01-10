@@ -1,0 +1,341 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Program: Kan_Driver
+ * File: Kan_Driver.ab
+ * Author: treamsbottom
+ * Created: September 07, 2012
+ ********************************************************************
+ * Implementation of program Kan_Driver
+ ********************************************************************)
+;----------------------------------------------------------------------------------------------------------------;
+;-----21-1-2013..TR..Version A6 - First TestedVersion - Note 2 Specials in overview clien to run with Shuttle
+;-----28-1-2013..TR..Version A7 - Remove Specials..Add option to send program and category number & Batch number.
+;-----20-5-2014..TR..Version A12 - Fix ValidCat on DataValid
+;-----09-01-2015..TR..Version A14 - Add Batching control
+;-----02-08-2016 ..TR..Version A17 - Add Syncronous loading to Server Cmd 1000.. Use Comm[x].Transfer to watch for permission to unload.
+;-----03-03-2017..TR.Version A18 - Add "Advanced Connection Mode"
+;-----07-06-2017 ..TR..Version A19 - Fix issues with sending empty bag date-- Remove reference to Comm[].Category -- Read all information from bag for consistency.
+;-----24-07-2018 ..TR -- Versioning Stopped Issues now tracked in GIT.
+;-----27-10-2022 ..MS -- Added back Kanlink.OverviewServer and tested for BIT interface for Santorini Laundry.
+;-----28-10-2022 ..MS -- Commented out comm.Program is no longer part of comm_type 
+;-----04-10-2023 ..MS -- Added CustomerStr and CategoryStr to comm_type to pass the string data read from kannlink
+
+;-----------------------------------------------------------------------------------------------------------------
+PROGRAM _INIT
+	comm ACCESS ADR(Comm[0]);	
+END_PROGRAM
+PROGRAM _CYCLIC
+;Monitor State of supertrack (only send basic states now).
+;IF (Kanlink.Server.Enable OR Kanlink.Client.Enable OR Kanlink.OverviewClient.Enable OR Kanlink.OverviewServer.Enable) THEN	
+;	IF SafetyZone[1].HaltSys THEN
+;		SuperTrackState = KG_MACHINESTATE_EMERGENCYSTOP
+;	ELSE
+;		SuperTrackState = KG_MACHINESTATE_AUTOMATIC_RUN
+;	ENDIF 	
+;ENDIF
+;--------------------------------------------------Kanlink Server Communication-----------------------------------------------------------------
+IF Kanlink.Server.Enable THEN		
+	;Populate Batch Data	
+	LOOP n = 1 TO Kanlink.Server.MaxConns  DO
+		IF (Kanlink.Server.IP[n].Adr > 0) THEN		
+			LOOP Index = 1 TO 1 DO ; Loop through each bag buffer
+				comm ACCESS ADR(Comm[Kanlink.Server.IP[n].CommID]);	
+				IF (comm.Category > 0) THEN
+					GetTimeStamp.enable = 1
+					GetTimeStamp FUB DTGetTime()
+					Batch[n].BatchData[Index].dtTimeStamp = GetTimeStamp.DT1	
+					;Make a string out OF CAT AND CUS
+					length = itoa(comm.Category,ADR(myCategoryString));
+					length = itoa(comm.Customer,ADR(myCustomerString));			
+					;copy Bag Data to KanLink Bag data type
+;					IF Kanlink.GlobalSettings.TransferProgramCode THEN
+;						Batch[n].BatchData[Index].sCategory = myProgramString	
+;						length = memcpy(ADR(Batch[n].BatchData[Index].bCustom),ADR(myCategoryString),12)	
+;					ELSE IF Kanlink.GlobalSettings.TransferProgin_bCustom THEN
+;						Batch[n].BatchData[Index].sCategory = myCategoryString	
+;						length = memcpy(ADR(Batch[n].BatchData[Index].bCustom),ADR(myProgramString),12)	
+;					ELSE		
+						Batch[n].BatchData[Index].sCategory = myCategoryString
+;					ENDIF
+					IF Kanlink.GlobalSettings.UseBatchCode THEN
+						IF Kanlink.GlobalSettings.BatchCodeTyp = BatchTyp_UDINT THEN		
+							;length = itoa(Bag[BagNumber].Mis,ADR(Batch[n].BatchData[Index].bBatchNo)) ; Convert to string
+							length = memcpy(ADR(Batch[n].BatchData[Index].bBatchNo),ADR(comm.BatchID),4) ; Direct UDINT copy unreadble in KANLINK data.	
+						ELSE IF Kanlink.GlobalSettings.BatchCodeTyp = BatchTyp_16Byte THEN
+							;Bag typ does not support this yet..
+						ENDIF
+					ELSE
+						length = strcpy(ADR(Batch[n].BatchData[Index].bBatchNo),"")			
+					ENDIF		
+					Batch[n].BatchData[Index].bCntCustomers = 1
+					Batch[n].BatchData[Index].wTotalWeight = comm.Weight;Summary weight of all Part Customers in the Bag, normally 1
+					;First Customer in the Bag		
+
+					IF (comm.Batch_QtyRemaining <= 1) THEN
+						Batch[n].BatchData[Index].PartBatch[0].sCustomNo = myCustomerString
+						Batch[n].BatchData[Index].PartBatch[0].wCustomWeight =  comm.Batchpart[0].Wgt
+					ELSE
+						Batch[n].BatchData[Index].bCntCustomers = USINT(comm.Batch_QtyRemaining)
+						LOOP t = 0 TO 7 DO
+							length = itoa(comm.Batchpart[t].Customer,ADR(myCustomerString));	
+							Batch[n].BatchData[Index].PartBatch[t].sCustomNo = myCustomerString
+							Batch[n].BatchData[Index].PartBatch[t].wCustomWeight = comm.Batchpart[t].Wgt
+						ENDLOOP		
+					ENDIF		
+				ELSE	
+					strcpy(ADR(myCategoryString),ADR(""));
+					strcpy(ADR(myCustomerString),ADR(""))
+					strcpy(ADR(myProgramString),ADR(""));	
+					Batch[n].BatchData[Index].bCntCustomers = 0
+					Batch[n].BatchData[Index].sCategory = myCategoryString
+					length = strcpy(ADR(Batch[n].BatchData[Index].bCustom),"")
+					length = strcpy(ADR(Batch[n].BatchData[Index].bBatchNo),"")	
+					Batch[n].BatchData[Index].wTotalWeight = 0 ;Summaray weight of all Part Customers in the Bag, normally 1
+					LOOP t = 0 TO 7 DO		
+						Batch[n].BatchData[Index].PartBatch[t].sCustomNo = myCustomerString
+						Batch[n].BatchData[Index].PartBatch[t].wCustomWeight = 0
+					ENDLOOP
+				ENDIF
+				PT100[n].Resp.BatchData = Batch[n].BatchData[1] ; Only send first bag over KANLINK
+			ENDLOOP
+		
+			; Handshake Signal Convert Comm into the KANLINK protocol
+			;ValidCat = 	strcmp(ADR(comm.Category), "")
+			//BagNumber = Kanlink.Server.BagNum[n].BagNums[1];
+			IF (comm.Category > 0) THEN 
+				PT100[n].Resp.xHsDataValid = TRUE;	
+			ELSE
+				PT100[n].Resp.xHsDataValid = FALSE
+				PT100[n].Resp.xHsUnloading = FALSE
+			ENDIF		
+			
+			
+			IF comm.BagReady THEN
+				PT100[n].Resp.xHsReqForUnload = TRUE;
+			ELSE
+				PT100[n].Resp.xHsReqForUnload = FALSE;
+			ENDIF
+
+			comm.DropLoad 		= PT100[n].Req.xHreadyForLoad;
+			comm.LoadDropped  	= PT100[n].Req.xHbatchReceived;
+			PT100[n].Resp.wCntLoads = comm.Batch_QtyRemaining
+		
+			IF comm.DropLoad THEN
+				PT100[n].Resp.xHsUnloading = TRUE
+			ENDIF
+
+			IF comm.HaltSys THEN	
+				PT100[n].Resp.wState = KG_MACHINESTATE_EMERGENCYSTOP		
+			ELSE
+				PT100[n].Resp.wState = KG_MACHINESTATEX_AUTOMATIC_RUN	
+			ENDIF
+			
+			comm.Live = IFhlKanLink.Server[n].out.xConnected	
+			;Syncronous Loading.
+			IF PT100[n].Req.xHreqCtrlTransfer THEN	
+				//Syncronous loading. Only allow unload when bit .x.x.x. is on	
+				PT100[n].Resp.xHsTransferRunning := PT100[n].Req.xHwaitingForTransfer;	
+			ELSE	
+				//Always give permission to unload..	
+				PT100[n].Resp.xHsTransferRunning := 1;
+			ENDIF;	
+			comm.Transfer := PT100[n].Resp.xHsTransferRunning
+		ENDIF	
+	ENDLOOP
+ENDIF//ServerDriver	
+;--------------------------------------------------------Client Driver------------------------------------------------------------------		
+IF Kanlink.Client.Enable THEN	
+	LOOP n = 1 TO Kanlink.Client.MaxConns DO
+		comm  ACCESS ADR(Comm[Kanlink.Client.IP[n].CommID])
+		;Give Machine Ready
+		PTResp[n].Req.xHready = TRUE
+		PTResp[n].Req.bHcmdAutomatic = TRUE
+
+		comm.BagReady = PTResp[n].Resp.xHsReqForUnload		
+		;Give ready to load when Ready	
+		PTResp[n].Req.xHreadyForLoad = comm.ReadyToLoad	
+
+		PTResp[n].Req.xHbatchReceived = comm.LoadRecieved 	
+		;Send supertrack state		
+		IF comm.HaltSys THEN	
+			PTResp[n].Req.wHstate = KG_MACHINESTATE_EMERGENCYSTOP		
+		ELSE
+			PTResp[n].Req.wHstate = KG_MACHINESTATEX_AUTOMATIC_RUN	
+		ENDIF		
+		;Check for Data Valid and unloading start.	then copy data to Comm Variable
+		UnloadingPulse[n].CLK = (PTResp[n].Resp.xHsUnloading AND PTResp[n].Resp.xHsDataValid)
+		UnloadingPulse[n] FUB R_TRIG()		
+		IF UnloadingPulse[n].Q THEN	
+;			IF Kanlink.GlobalSettings.TransferProgramCode THEN
+;				comm.Program = USINT(atoi(ADR(PTResp[n].Resp.BatchData.sCategory)))
+;				comm.Category = atoi(ADR(PTResp[n].Resp.BatchData.bCustom))	
+;			ELSE IF Kanlink.GlobalSettings.TransferProgin_bCustom THEN
+;				comm.Program = USINT(atoi(ADR(PTResp[n].Resp.BatchData.bCustom)))
+;				comm.Category = atoi(ADR(PTResp[n].Resp.BatchData.sCategory))	
+;			ELSE		
+				comm.Category = atoi(ADR(PTResp[n].Resp.BatchData.sCategory))
+				comm.CategoryStr = PTResp[n].Resp.BatchData.sCategory
+;			ENDIF
+				comm.Customer = atoi(ADR(PTResp[n].Resp.BatchData.PartBatch[0].sCustomNo))
+				comm.CustomerStr = PTResp[n].Resp.BatchData.PartBatch[0].sCustomNo
+			comm.Weight = PTResp[n].Resp.BatchData.wTotalWeight
+			IF Kanlink.GlobalSettings.UseBatchCode THEN
+				IF Kanlink.GlobalSettings.BatchCodeTyp = BatchTyp_UDINT THEN	
+					length = memcpy(ADR(comm.BatchID),ADR(PTResp[n].Resp.BatchData.bBatchNo),4)
+				ELSE IF Kanlink.GlobalSettings.BatchCodeTyp = BatchTyp_16Byte THEN		
+						;Bag typ does not support this yet..   KanLink_A19.var	Global variables	Directory="D:\Projects\Germany\SE8245_Wulf_Kiel\8245\bnr_plc\8245\Logical\Standard\Kanlink";Path="D:\Projects\Germany\SE8245_Wulf_Kiel\8245\bnr_plc\8245\Logical\Standard\Kanlink\KanLink_A19.var";Extension=".var";RefPath="";Reference="False"
+
+				ENDIF		
+			ELSE
+				comm.BatchID = 0	
+			ENDIF	
+		ENDIF	
+	
+		comm.Unloading =  PTResp[n].Resp.xHsUnloading	
+		UnloadingFinishPLS[n].CLK = PTResp[n].Resp.xHsUnloading	
+		UnloadingFinishPLS[n] FUB F_TRIG()	
+	
+		comm.UnloadFinished = UnloadingFinishPLS[n].Q 	
+		;Comm Live		
+		comm.Live = IFhlKanLink.Client[n].out.xConnected	
+	ENDLOOP		
+ENDIF	
+;;---------------------------------------------------------------------------------------------Overview Client----------------------------------------
+;IF Kanlink.OverviewClient.Enable THEN ; Collect data
+;;------------------------------------------Build Request---------------------------------------------------		
+;
+;	LOOP n = 1 TO Kanlink.OverviewClient.MaxConns DO 	
+;		
+;		
+;		IF (CANOffset > 0) THEN	
+;			CANOffset = (Kanlink.OverviewClient.CANOffset - 1)
+;			Comm[n+CANOffset].Live = IFhlKanLink.Client[n+Kanlink.OverviewClient.IndexOffset].out.xConnected		
+;			IF NOT Comm[n+CANOffset].Live THEN	
+;				D[Kanlink.OverviewClient.StatusReg[n]] = 0
+;			ENDIF		
+;		ELSE
+;			CANOffset = 0		
+;		ENDIF;
+;			
+;		IF Kanlink.OverviewClient.InfoReq[n].wNoOfPosition[6] = 0 THEN ; do not multiplex data.
+;			STOverReq[n].Req.wCntPositions = Kanlink.OverviewClient.InfoReq[n].wCntPositions;Number of Bags requested	
+;			DataOffset[n] = 0	
+;		ELSE
+;	
+;			DataCount = 0
+;			LOOP x = 0 TO 5 DO
+;				IF (STOverReq[n].Req.wNoOfPosition[x] > 0) THEN
+;					DataCount = DataCount + 1
+;				ENDIF	
+;				IF DataCount > 5 THEN
+;					DataCount = 6
+;				ENDIF		
+;			ENDLOOP	
+;			STOverReq[n].Req.wCntPositions = DataCount;Number of Bags requested	
+;		ENDIF
+;	
+;			
+;		LOOP x = 0 TO 5 DO
+;			;datapositions requested	
+;			EXITIF ((DataOffset[n] + x) > HLKANLINK_MAX_OVERVIEW_DATA) 
+;				
+;			STOverReq[n].Req.wNoOfPosition[x] = Kanlink.OverviewClient.InfoReq[n].wNoOfPosition[x + DataOffset[n]]	
+;				;-----------------------------------------------Read Data----------------------------------
+;			IF (STOverReq[n].Resp.wNoOfPositions[x] > 0) AND ((x <= STOverReq[n].Resp.wCntPositions) OR (STOverReq[n].Resp.wCntPositions = 0 )) THEN
+;				IF (Kanlink.OverviewClient.InfoResp[n].BagNum[x + DataOffset[n]] > 0) THEN 							
+;					IF Kanlink.OverviewClient.InfoReq[n].wNoOfPosition[x+DataOffset[n]] = STOverReq[n].Resp.wNoOfPositions[x] THEN		
+;					//	D[Kanlink.OverviewClient.StatusReg[n]] = STOverReq[n].Resp.wMachineState		
+;						BagIndex = Kanlink.OverviewClient.InfoResp[n].BagNum[x + DataOffset[n]]			
+;						IF Kanlink.GlobalSettings.TransferProgramCode THEN
+;							Bag[BagIndex].Prg = USINT(atoi(ADR(STOverReq[n].Resp.BatchData[x].sCategory)))
+;							Bag[BagIndex].Cat = atoi(ADR(STOverReq[n].Resp.BatchData[x].bCustom))	
+;						ELSE IF Kanlink.GlobalSettings.TransferProgin_bCustom THEN
+;							Bag[BagIndex].Prg = USINT(atoi(ADR(STOverReq[n].Resp.BatchData[x].bCustom)))
+;							Bag[BagIndex].Cat = atoi(ADR(STOverReq[n].Resp.BatchData[x].sCategory))
+;						ELSE		
+;							Bag[BagIndex].Cat = atoi(ADR(STOverReq[n].Resp.BatchData[x].sCategory))
+;						ENDIF
+;						Bag[BagIndex].Cus = atoi(ADR(STOverReq[n].Resp.BatchData[x].PartBatch[0].sCustomNo)) ; Standard line of code..		
+;						Bag[BagIndex].Wgt = STOverReq[n].Resp.BatchData[x].PartBatch[0].wCustomWeight		
+;						IF Kanlink.GlobalSettings.UseBatchCode THEN
+;							IF Kanlink.GlobalSettings.BatchCodeTyp = BatchTyp_UDINT THEN
+;									length = memcpy(ADR(Bag[BagIndex].Mis),ADR(STOverReq[n].Resp.BatchData[x].bBatchNo),4)
+;								ELSE IF	Kanlink.GlobalSettings.BatchCodeTyp = BatchTyp_16Byte THEN	
+;								;Not supported yet....
+;							ENDIF		
+;						ELSE
+;							Bag[BagIndex].Mis = 0	
+;						ENDIF		
+;					ENDIF	
+;				ENDIF				
+;			ENDIF	
+;		ENDLOOP											
+;		IF STOverReq[n].Resp.wNoOfPositions[0] = Kanlink.OverviewClient.InfoReq[n].wNoOfPosition[DataOffset[n]] THEN
+;			DataOffset[n] = DataOffset[n] + 6
+;		ELSE IF Kanlink.OverviewClient.InfoReq[n].wNoOfPosition[DataOffset[n]] = 0 THEN
+;			DataOffset[n] = 0
+;		ENDIF	
+;	ENDLOOP
+;ENDIF			
+;
+;---------------------------------------------------------------------------------------------Overview Server----------------------------------------			
+IF Kanlink.OverviewServer.Enable THEN	
+	LOOP n = 1 TO Kanlink.OverviewServer.MaxConns DO
+		comm ACCESS ADR(Comm[Kanlink.OverviewServer.IP[n].CommID]);	
+		IF (STOverResp[n].Req.wCntPositions <= 6) THEN 
+			IF (STOverResp[n].Req.wCntPositions = 0) OR (STOverResp[n].Req.wCntPositions = 6) THEN
+				NoOfDataRequested = 5
+			ELSE
+				NoOfDataRequested = STOverResp[n].Req.wCntPositions		
+			ENDIF			
+			LOOP x = 0 TO 0 DO			
+				IF x <= NoOfDataRequested THEN
+					BagIndex = STOverResp[n].Req.wNoOfPosition[x]
+				
+					//STOverResp[n].Resp.wMachineState = SuperTrackState							
+					STOverResp[n].Resp.wNoOfPositions[x] = BagIndex
+					STOverResp[n].Resp.wCntPositions = 	STOverResp[n].Req.wCntPositions				
+					//itoa(comm.Program,ADR(sProgram)) //Commented out as comm.Program is no longer part of comm_type
+					itoa(comm.Category,ADR(sCategory))		
+					itoa(comm.Customer,ADR(sCustomer))	
+					itoa(comm.BatchID,ADR(sBatchID))
+					STOverResp[n].Resp.BatchData[x].dtTimeStamp = GetTimeStamp.DT1
+					IF Kanlink.GlobalSettings.TransferProgramCode THEN
+						strcpy(ADR(STOverResp[n].Resp.BatchData[x].sCategory),ADR(sProgram))
+						strcpy(ADR(STOverResp[n].Resp.BatchData[x].bCustom),ADR(sCategory))	
+					ELSE IF Kanlink.GlobalSettings.TransferProgin_bCustom THEN
+						strcpy(ADR(STOverResp[n].Resp.BatchData[x].sCategory),ADR(sCategory))
+						strcpy(ADR(STOverResp[n].Resp.BatchData[x].bCustom),ADR(sProgram))		
+					ELSE		
+						strcpy(ADR(STOverResp[n].Resp.BatchData[x].sCategory),ADR(sCategory))		
+					ENDIF
+					IF Kanlink.GlobalSettings.UseBatchCode THEN
+						IF Kanlink.GlobalSettings.BatchCodeTyp = BatchTyp_UDINT THEN	
+							length = memcpy(ADR(STOverResp[n].Resp.BatchData[x].bBatchNo),ADR(comm.BatchID),4)
+						ELSE IF Kanlink.GlobalSettings.BatchCodeTyp = BatchTyp_UDINT THEN
+							strcpy(ADR(STOverResp[n].Resp.BatchData[x].bBatchNo),ADR(sBatchID)) 			
+						ENDIF
+					ELSE
+						strcpy(ADR(STOverResp[n].Resp.BatchData[x].bBatchNo),"")
+					ENDIF		
+					strcpy(ADR(STOverResp[n].Resp.BatchData[x].PartBatch[0].sCustomNo),ADR(sCustomer))	
+					STOverResp[n].Resp.BatchData[x].wTotalWeight = comm.Weight			//11.11.2019 BIT to show weight			
+					STOverResp[n].Resp.BatchData[x].PartBatch[0].wCustomWeight = comm.Weight			
+				ELSE
+					STOverResp[n].Resp.wNoOfPositions[x] = 0
+					STOverResp[n].Resp.BatchData[x].dtTimeStamp = 0			
+					strcpy(ADR(STOverResp[n].Resp.BatchData[x].sCategory),"")
+					strcpy(ADR(STOverResp[n].Resp.BatchData[x].bCustom),"")
+					strcpy(ADR(STOverResp[n].Resp.BatchData[x].bBatchNo),"") 
+					strcpy(ADR(STOverResp[n].Resp.BatchData[x].PartBatch[0].sCustomNo),"")
+					STOverResp[n].Resp.BatchData[x].wTotalWeight = 0 //11.11.2019 BIT to show weight				
+					STOverResp[n].Resp.BatchData[x].PartBatch[0].wCustomWeight = 0				
+				ENDIF
+			ENDLOOP
+		ENDIF				
+	ENDLOOP					
+ENDIF					
+			
+			
+END_PROGRAM

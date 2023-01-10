@@ -1,0 +1,10 @@
+VAR
+	mpAuditTrail : MpAuditTrail;
+	test : USINT;
+	n : USINT;
+	export : BOOL;
+	clearBuffer : BOOL;
+	busCouplerVisu : REFERENCE TO BusCouplerDiag_typ;
+	index : USINT;
+	timebase : UINT;
+END_VAR

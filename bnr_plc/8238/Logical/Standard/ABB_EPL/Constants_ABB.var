@@ -1,0 +1,9 @@
+(*Insert your comment here.*)
+VAR CONSTANT
+	MAX_PARAMS : USINT := 20; (*Maximum number of params*)
+END_VAR
+(**Controls*)
+VAR
+	ABB_MAX_VELOCITY : {REDUND_UNREPLICABLE} INT := 60; (*Maximum Frequency Allowed in hz*)
+	ABB_MIN_VELOCITY : {REDUND_UNREPLICABLE} INT := 20; (*Minimum allowable speed of the drive*)
+END_VAR

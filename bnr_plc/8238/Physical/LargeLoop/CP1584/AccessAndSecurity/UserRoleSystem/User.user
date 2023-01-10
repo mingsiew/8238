@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="Anonymous" Type="User">
+    <Property ID="UserID" Value="1" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Everyone" />
+      <Property ID="Role[2]" Value="KanIntern" Description="Allow anonymous Login to have access to Controls vars ( Need to change in Hoist Client to secure in the future)" />
+    </Group>
+  </Element>
+  <Element ID="admin" Type="User">
+    <Property ID="UserID" Value="2" />
+    <Property ID="Password" Value="uNb5IZZbvfNLjzVzvcaz8kHC5OXkjaVIf1D475ql6T6jRtv2Pyw=" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Administrators" />
+      <Property ID="Role[2]" Value="Everyone" />
+    </Group>
+  </Element>
+  <Element ID="Supertrack" Type="User">
+    <Property ID="UserID" Value="3" />
+    <Property ID="Password" Value="FoBPN8KR7XnCztU7ANaX6WhY7VxUoxAPn4ddu9GBBUj53yKkbOs=" Description="medoc" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="KanIntern" />
+    </Group>
+  </Element>
+  <Element ID="Supervisor" Type="User">
+    <Property ID="UserID" Value="4" />
+    <Property ID="Password" Value="y/u+dOIGMnRMPWm30rgd4Ss8V+0h1qF5Z37eYfJYxMmbvL+tM1E=" Description="1234" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="KanDiag" />
+    </Group>
+  </Element>
+</Configuration>

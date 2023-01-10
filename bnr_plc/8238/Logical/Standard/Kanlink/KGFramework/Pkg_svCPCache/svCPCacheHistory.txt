@@ -1,0 +1,4 @@
+0.02.0	Start der Historie
+0.03.0	19.06.2012	Kategorie 0 lässt sich nicht anlegen. Bug 689 behoben.
+0.03.1	26.06.2012	Warnung unterdrückt
+0.03.2	17.07.2012	Bugfix - Filehandles wurden nach einem Create nicht freigegeben.

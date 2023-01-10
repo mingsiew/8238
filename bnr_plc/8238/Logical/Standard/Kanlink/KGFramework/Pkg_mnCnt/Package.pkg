@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="0.16.1" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global data types">Pkg_mnCnt.typ</Object>
+    <Object Type="File" Description="Global variables">Pkg_mnCnt.var</Object>
+    <Object Type="Program" Language="IEC" Description="Counter Manager">mnCnt</Object>
+    <Object Type="File">mnCnt-History.txt</Object>
+  </Objects>
+  <Dependencies>
+    <Dependency ObjectName="sys_lib" />
+    <Dependency ObjectName="dataobj" />
+    <Dependency ObjectName="KGstdLib" />
+    <Dependency ObjectName="standard" />
+  </Dependencies>
+</Package>

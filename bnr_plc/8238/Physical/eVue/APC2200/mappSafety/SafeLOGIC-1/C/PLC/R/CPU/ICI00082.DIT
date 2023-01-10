@@ -1,0 +1,52 @@
+(*
+T: FUNCTION_BLOCK Decode
+FW: NO
+CI#: 82
+QSL: 7
+QVE: 7
+QVPC: 7
+QPar: 0
+QFBI: 7
+*)
+@V 1 2 0
+WORD_TO_MASTER_RESET	1	VAR	@FB:88
+		     
+
+;
+
+@V 1 3 0
+DWORD_TO_WORDS_RESET	2	VAR	@FB:89
+		     
+
+;
+
+@V 1 4 0
+WORD_TO_BITS_RESET	3	VAR	@FB:88
+		     
+
+;
+
+@V 1 5 0
+WORD_TO_BITS_RESET_2	4	VAR	@FB:88
+		     
+
+;
+
+@V 1 6 0
+DWORD_TO_WORDS_EDM	5	VAR	@FB:89
+		     
+
+;
+
+@V 1 7 0
+WORD_TO_BITS_EDM	6	VAR	@FB:88
+		     
+
+;
+
+@V 1 8 0
+WORD_TO_BITS_EDM_2	7	VAR	@FB:88
+		     
+
+;
+

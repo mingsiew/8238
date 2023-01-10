@@ -1,0 +1,41 @@
+1.00.0	01.07.2011	Neu
+1.01.0	02.07.2011	Index für kgMsgStatus ist wählbar
+1.02.0	29.07.2011	Setzten des Machinestate.xFault
+1.02.1	23.08.2011	Einzelquittierung Low-und High-Word getauscht
+			Hupen-Ansteuerung Faktor 1000 für Zeitbasis ergänzt
+
+1.03.0	08.09.2011	- Mit der Compilerdirektive "-D Test" können Testmeldungen
+			  erzeugt werden.
+			- Fehler behoben. Es wurde kein Änderungs-Event erzeugt, wenn eine Meldungsklasse > 0 ist
+			- MNMSG_IDX_KGMSGSTATTEST eingeführt, um Testmeldungen erzeugen zu können.
+
+1.04.0	20.09.2011	- Schaut jetzt auf mnParamStatAd.xParamOK, setzt Version 0.5 von mnParam voraus
+1.05.0	20.10.2011  - Umstellung auf AS 3.0.90. Entfernung der InOut-Elemente im Interface
+1.06.0	20.12.2011	- Ringbuffer aus KGstandard verwenden
+1.07.1	22.12.2011	- Fehler im Init-Up (Pointer für Ringbuffer) behoben
+1.07.2	19.01.2012	- Seitenumschaltung für MsgHistList
+1.07.3	25.01.2012	- In MsgList werden Attribute eingefügt
+1.07.4	27.01.2012	- Attribute werden in alle Text-Listen eingefügt, neue bEvent Vergabe in HistList
+1.07.5	17.02.2012	- RB aus KGstdLib für HistList, noch Ungenauigkeiten bei Überlauf
+1.08.1	29.02.2012	- Cleaned-up code, RB can be read properly
+1.09.0	01.03.2012	- Kommandokanal zum PC an den neuen Standard angepasst
+					- Überflüssige Ringbuffer entfernt
+					- Test entfernt
+		02.03.2012	- Schnittstellen gekapselt.
+					- Kommandos an IFmnMsg bereinigt. Auch für die Visu.
+					- Der Test-Teil ist wieder entfallen, da das Framework einen Testadapter erhält.
+1.10.0	03.03.2012	- MNMSG_RUN_VC eingeführt. Damit ist die Aufbereitung der VC-Listen abschaltbar.
+					- Die Meldungsstatistik wird auf die Version der Konfiguration hin überwacht.
+1.11.0	06.03.2012	- Bugfix
+					- Kompatibel mit mnTest
+1.11.1	07.03.2012	- Bugfix Wartungsmeldungen. Wurden nicht eingetragen
+					- Hupe wird als Status ausgegeben
+1.11.3	20.03.2012	- Version von Dirk Kühne
+1.11.4	20.03.2012	- Gemerget
+1.11.5	20.03.2012	- Bugfix Statistik löschen
+					- Abhängigkeiten ergänzt
+1.11.6	20.03.2012	- asBRWStr statt asWStr
+1.11.7	23.03.2012	- Bugfix. Wartungsmeldung hat geflattert.
+1.11.8	23.03.2012	- Zeitstempel für geänderte Meldungslisten feiner aufgelöst.
+1.11.9	05.06.2012	- Trennzeichen zwischen Funktion und Instanz
+1.12.0	16.07.2012 	- Bugfix: Meldungen für DFII wurden nicht korrekt gesendet. _ReadRB wurde falsch aufgerufen.

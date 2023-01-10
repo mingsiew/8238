@@ -1,0 +1,30 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Package: Pkg_mnTest
+ * File: Pkg_mnTest.var
+ * Author: hunholz
+ * Created: March 06, 2012
+ ********************************************************************
+ * Variables of package Pkg_mnTest
+ ********************************************************************)
+VAR
+	IFmnTest : IFmnTest_typ;
+	mnTestCmd : KG_Cmd_typ;
+	mnTestStatAd : mnTestStatAd_typ;
+	mnTestStat : Stat_typ;
+END_VAR
+(*KONSTANTEN*)
+VAR CONSTANT
+	MNTEST_CMD_SETMODE : UINT := 1000; (*Mode steht in lData0*)
+	MNTEST_CMD_RESET : UINT := 1001; (*Warm- oder Kaltstart, siehe lData0*)
+	MNTEST_CMDSTAT_SETMODEFAILED : UINT := 60000;
+	MNTEST_TESTMODE_INTERFACE : UINT := 1; (*Reiner Interfacetest*)
+	MNTEST_TESTMODE_MAX : UINT := 2;
+	MNTEST_RESETMODE_WARMSTART : USINT := 1;
+	MNTEST_RESETMODE_COLDSTART : USINT := 2;
+	MNTEST_STAT_ERRFBSETMODE : UINT := 60000; (*Fehler aus _fbSetMode. Siehe sStatus*)
+	MNTEST_STAT_ERRMSGCFGCNT : UINT := 60001; (*Falsche Anzahl Meldungen*)
+	MNTEST_STAT_ERRMSGCFG : UINT := 60002; (*Fehler DatObjInfo*)
+	MNTEST_STAT_FBRUNTEST : UINT := 60003; (*Fehler aus _fbRunTest. Siehe sStatus*)
+END_VAR

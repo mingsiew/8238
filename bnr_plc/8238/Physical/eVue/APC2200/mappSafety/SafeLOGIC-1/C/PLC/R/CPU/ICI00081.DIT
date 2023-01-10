@@ -1,0 +1,178 @@
+(*
+T: FUNCTION_BLOCK Zone
+FW: NO
+CI#: 81
+QSL: 28
+QVE: 28
+QVPC: 28
+QPar: 16
+QFBI: 6
+*)
+@V 1 4 0
+RequestAccess	1	VAR_INPUT	@TYP:1
+		     
+
+;
+
+@V 1 5 0
+Zone_Reset	2	VAR_INPUT	@TYP:1
+		     
+
+;
+
+@V 1 6 0
+SafeSystemOk	3	VAR_INPUT	@TYP:43
+		     
+
+;
+
+@V 1 11 0
+Zone_Dependancys	4	VAR_INPUT	@TYP:43
+		     
+
+;
+
+@V 1 16 0
+Zone_EDM_Input	5	VAR_INPUT	@TYP:1
+		     
+
+;
+
+@V 1 17 0
+Zone_EDM_Disbale	6	VAR_INPUT	@TYP:43
+		     
+
+;
+
+@V 1 18 0
+Zone_Input	7	VAR_INPUT	@TYP:43
+		     
+
+;
+
+@V 1 19 0
+Auto_Reset	8	VAR_INPUT	@TYP:43
+		     
+
+;
+
+@V 1 7 0
+Zone_Release	9	VAR_OUTPUT	@TYP:43
+		     
+
+;
+
+@V 1 8 0
+Zone_Ready	10	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+@V 1 9 0
+Zone_Error	11	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+@V 1 10 0
+Zone_Diag_Code	12	VAR_OUTPUT	@TYP:18
+		     
+
+;
+
+@V 1 13 0
+EDM_Ready	13	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+@V 1 14 0
+EDM_Error	14	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+@V 1 15 0
+EDM_Diag_Code	15	VAR_OUTPUT	@TYP:18
+		     
+
+;
+
+@V 1 23 0
+Zone_Status	16	VAR_OUTPUT	@TYP:18
+		     
+
+;
+
+@V 1 2 0
+SF_EmergencyStop_V1_00_1	17	VAR	@FB:87
+		     
+
+;
+
+@V 1 3 0
+F_TRIG_1	18	VAR	@FB:8
+		     
+
+;
+
+@V 1 12 0
+SF_EDM_V1_00_1	19	VAR	@FB:85
+		     
+
+;
+
+@V 1 20 0
+R_TRIG_S_1	20	VAR	@FB:39
+		     
+
+;
+
+@V 1 21 0
+ENCODE_STATUS	21	VAR	@FB:86
+		     
+
+;
+
+@V 1 22 0
+Access_Request	22	VAR	@TYP:1
+		     
+
+;
+
+@V 1 24 0
+zone_dep	23	VAR	@TYP:43
+		     
+
+;
+
+@V 1 25 0
+F_TRIG_S_1	24	VAR	@FB:31
+		     
+
+;
+
+@V 2 183 0
+__Zone@0	25	VAR	@TYP:1
+		     
+
+;
+
+@V 2 227 0
+__Zone@1	26	VAR	@TYP:1
+		     
+
+;
+
+@V 2 235 0
+__Zone@2	27	VAR	@TYP:1
+		     
+
+;
+
+@V 2 162 0
+__Zone@3	28	VAR	@TYP:43
+		     
+
+;
+

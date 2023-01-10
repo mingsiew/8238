@@ -1,0 +1,49 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Library: FC302
+ * File: ReadParamTbl.ab
+ * Author: D.Jefferys
+ * Created: February 13, 2009
+ ********************************************************************
+ * Implementation of library FC302
+ ********************************************************************) 
+
+(*Read from a parameter table*)
+FUNCTION_BLOCK FC302_ReadParamTbl
+	
+	IF Enable THEN
+		
+		Status 		= $FFFF ;Set to busy
+		ParamCount 	= 0
+		
+		DatObjInfo_0.enable = TRUE
+		DatObjInfo_0.pName = adrTableName
+		DatObjInfo_0 FUB DatObjInfo()
+				
+		IF (DatObjInfo_0.status = 0) THEN
+			
+			ParamCount 	= UINT(DatObjInfo_0.len / 8)
+			
+			IF (ParamCount <= ParamLimit) THEN
+					
+				DatObjRead_0.enable 		= TRUE
+				DatObjRead_0.ident 			= DatObjInfo_0.ident
+				DatObjRead_0.Offset 		= 0
+				DatObjRead_0.pDestination 	= adrDestTable
+				DatObjRead_0.len 			= DatObjInfo_0.len
+				DatObjRead_0 FUB DatObjRead()
+							
+				IF DatObjRead_0.status = 0 THEN
+					Status = 0 ;Set status to finished
+				ENDIF
+			
+			ELSE
+				Status = 1 ;Too may parameters
+			ENDIF
+			
+		ENDIF
+		
+	ENDIF
+	
+END_FUNCTION_BLOCK

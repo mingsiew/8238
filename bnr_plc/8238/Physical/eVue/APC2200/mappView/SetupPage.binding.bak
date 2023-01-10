@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="SetupPageBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Param.PositionNo" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericOutputActPosNumber" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.MachineStatus" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TextOutputActState" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Axis.MpAxisBasic.Position" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericOutputActPosition" attribute="node" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.NegSWLimit" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputNegEndSwitchPos" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.PosSWLimit" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputPosEndSwitchPos" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.HomePosition" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputHomePosition" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.Position1" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputPosition1" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.Position3" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputPosition3" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.Position2" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputPosition2" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.Position5" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputPosition5" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.Position4" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputPosition4" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.Position7" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputPosition7" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.Position6" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputPosition6" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.Position8" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputPosition8" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.Position9" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputPosition9" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:VCPositionImage" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ImageListHoist" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Position[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Position[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Position[3]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos3" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Position[4]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Position[5]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Position[6]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos6" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Position[7]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos7" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Position[8]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos8" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Position[9]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos9" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.JogPos" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonJogUp" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.JogNeg" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonJogDown" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Axis.MpAxisBasicPar.Jog.Velocity" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputSetJogSpeed" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Param.AutoTeachSpeed" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputSetAutoTeachSpeed" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Axis.MpAxisBasic.PowerOn" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="RectanglePowerOn" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Home" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TogglePushButtonHome" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Axis.MpAxisBasic.IsHomed" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="RectangleHomeOn" attribute="visible" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::ManualCtrl:SavePosition1" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonSavePos1" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::ManualCtrl:SavePosition2" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonSavePos2" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::ManualCtrl:SavePosition3" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonSavePos3" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::ManualCtrl:SavePosition4" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonSavePos4" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::ManualCtrl:SavePosition5" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonSavePos5" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::ManualCtrl:SavePosition6" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonSavePos6" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::ManualCtrl:SavePosition7" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonSavePos7" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::ManualCtrl:SavePosition8" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonSavePos8" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::ManualCtrl:SavePosition9" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonSavePos9" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Recipe.MpRecipeCsv_FUB.Save" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonSavePos" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.ImageCtrl.ShowWarningMan_RemCtrl" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ImageLocCtrlWarning" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.Stop" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="PushButtonStop" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos1" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos2" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos3" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos4" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos5" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos6" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos7" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos8" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="ToggleButtonPos9" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonJogUp" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowManMotionButtons" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="MomentPushButtonJogDown" attribute="visible" />
+</Binding>
+
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::VisCtrl:SetupAddPosition" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAddPosDialog" widgetRefId="ToggleButtonConfirmAddPosition" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::VisCtrl:ShiftPositionValue" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAddPosDialog" widgetRefId="DropDownBoxAddPosition" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Manual.Cmd.AutoTeach" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAutoTeachDialog" widgetRefId="ToggleButtonContinueAutoTeach" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.TextSetupPosition1" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TextInputPosition1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.TextSetupPosition2" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TextInputPosition2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.TextSetupPosition3" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TextInputPosition3" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.TextSetupPosition4" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TextInputPosition4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.TextSetupPosition5" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TextInputPosition5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.TextSetupPosition6" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TextInputPosition6" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.TextSetupPosition7" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TextInputPosition7" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.TextSetupPosition8" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TextInputPosition8" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.TextSetupPosition9" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="TextInputPosition9" attribute="value" />
+</Binding>
+<Binding mode="oneWayToSource">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.DeleteFile" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentDeleteFileDialog" widgetRefId="ToggleButtonDeleteFile" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Conf.Structure.MoveToPosSpeed" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="NumericInputSetMoveToPosSpeed" attribute="value" />
+</Binding>
+
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Visu.HideCtrl.ShowAutoTeach" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentSetup" widgetRefId="PushButtonAutoTeach" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Param.TeachPostions" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAutoTeachDialog" widgetRefId="LabelLoseSettingsWarning" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gHoist.Param.TeachPostions" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAutoTeachDialog" widgetRefId="chk_OnlyteachLimits" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

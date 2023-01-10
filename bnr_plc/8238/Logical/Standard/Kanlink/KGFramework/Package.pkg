@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="2.21.1" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Package" Description="Kannegiesser Standards">Pkg_KGStandard</Object>
+    <Object Type="Package" Description="Systemtask für Versionierung">Pkg_mnSystem</Object>
+    <Object Type="Package" Description="Ethernet Manager">Pkg_mnEth</Object>
+    <Object Type="Package" Description="Management-Ebene für Zähler">Pkg_mnCnt</Object>
+    <Object Type="Package" Description="Meldungs-Manager">Pkg_mnMsg</Object>
+    <Object Type="Package" Description="Parameter-Manager">Pkg_mnParam</Object>
+    <Object Type="Package" Description="Text-Manager">Pkg_mnTxt</Object>
+    <Object Type="Package" Description="DATAFOCUS II">Pkg_hlDFII</Object>
+    <Object Type="Package" Description="Testadapter für automatische Tests">Pkg_mnTest</Object>
+    <Object Type="Package" Description="Category-Program-Verwaltung">Pkg_svCPCache</Object>
+    <Object Type="Package">Pkg_hlKanLink</Object>
+    <Object Type="File">history.txt</Object>
+  </Objects>
+  <Dependencies>
+    <Dependency ObjectName="asbrstr" />
+    <Dependency ObjectName="asbrwstr" />
+  </Dependencies>
+</Package>

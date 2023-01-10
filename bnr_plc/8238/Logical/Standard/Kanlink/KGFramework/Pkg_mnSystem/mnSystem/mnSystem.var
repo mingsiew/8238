@@ -1,0 +1,47 @@
+(********************************************************************
+ * COPYRIGHT -- Kannegiesser GmbH
+ ********************************************************************
+ * Program: mnSystem
+ * File: _mnSystem.var
+ * Author: horn
+ * Created: January 10, 2012
+ ********************************************************************
+ * Local variables of program mnSystem
+ ********************************************************************)
+VAR
+	_sPkgName : STRING[11];
+	_VerStruc : MoVerStruc_typ;
+	_GetTime : DTGetTime;
+	_xFanOk : BOOL;
+	_wMdlId : UINT;
+	_TONtemp : TON;
+	_wUSBstate : UINT;
+	_TONsearchForUSB : TON;
+	_lUSBlist : ARRAY[1..3] OF UDINT;
+	_UsbNodeListGet : UsbNodeListGet;
+	_sInterfaceUSB : STRING[31];
+	_xUSBStickReady : BOOL;
+	_usbNode : usbNode_typ;
+	_UsbNodeGet : UsbNodeGet;
+	_xFirstScan : BOOL := TRUE;
+	_wCycleFound : UINT;
+	_wCycleNotFound : UINT;
+	_wCycleReady : UINT;
+	_xModuleFault : BOOL;
+	_wModuleFaultLineNumber : UINT;
+	_wModuleFaultModuleNumber : UINT;
+	_ii : UINT;
+	_jj : UINT;
+	_iC : UINT;
+	_xCInitDone : ARRAY[1..2] OF BOOL;
+	_BindMotProtCooling : ARRAY[1..2] OF _mnSystemMdlBind_typ;
+	_BindingOutCooling : ARRAY[1..2] OF _mnSystemMdlBind_typ;
+	_BindingWarnEnvTemp : ARRAY[1..2] OF _mnSystemMdlBind_typ;
+	_xFaultMotProtCooling : ARRAY[1..2] OF BOOL;
+	_xWarnEnvTemp : ARRAY[1..2] OF BOOL;
+	_TONtempC : TON;
+	_diDifSystime : DINT;
+	_diOldSysTime : DINT;
+	_l1sCount : UDINT;
+	_l500msCount : UDINT;
+END_VAR

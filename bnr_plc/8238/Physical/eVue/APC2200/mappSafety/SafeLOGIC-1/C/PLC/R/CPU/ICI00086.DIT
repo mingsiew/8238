@@ -1,0 +1,208 @@
+(*
+T: FUNCTION_BLOCK BITS_TO_WORD
+FW: YES	NO_VARIANT BITS_TO_WORD SKIP_NOTHING	
+CI#: 86
+QSL: 0
+QVE: 33
+QVPC: 33
+QPar: 17
+QFBI: 0
+*)
+
+IN_0	1	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_1	2	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_2	3	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_3	4	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_4	5	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_5	6	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_6	7	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_7	8	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_8	9	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_9	10	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_10	11	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_11	12	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_12	13	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_13	14	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_14	15	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+IN_15	16	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+OUT	17	VAR_OUTPUT	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit0	18	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit1	19	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit2	20	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit3	21	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit4	22	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit5	23	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit6	24	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit7	25	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit8	26	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit9	27	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit10	28	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit11	29	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit12	30	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit13	31	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit14	32	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_Bit15	33	VAR	@TYP:18
+		     
+
+;
+

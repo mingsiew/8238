@@ -1,0 +1,13 @@
+(*Constants to Set*)
+(***Global Vars*)
+VAR
+	Camera : ARRAY[0..MAX_CAMERAS] OF Camera_typ;
+END_VAR
+(*Constants*)
+VAR CONSTANT
+	CAMERA_LED_AUTO : USINT := 0;
+	CAMERA_LED_DISABLED : USINT := 1;
+	CAMERA_LED_GREEN : USINT := 2;
+	CAMERA_LED_RED : USINT := 3;
+	CAMERA_LED_BLUE : USINT := 4;
+END_VAR

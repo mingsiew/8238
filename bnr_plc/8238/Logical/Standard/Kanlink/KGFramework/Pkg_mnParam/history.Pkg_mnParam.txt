@@ -1,0 +1,89 @@
+0.2.0	18.8.2011	- Import-Verzeichnis wird im Hochlauf gelöscht
+			- Es werden auch REAL-Parameter unterstützt. (not tested)
+0.3.0	24.8.2011	- IP-CSV-Rowtype ergänzt. (90)
+0.4.0	01.09.2011	- Info_typ geändert. Es wird jetzt auch ausgegeben, welcher Container geändert wurde
+0.5.0	20.09.2011	- mnParamStat und mnParamStatAd ergänzt.
+			  Kapselung von Stati. z.B. xParamOK, dtExportContent
+0.6.0	07.10.2011	- Maschinennummer wird aus _mnr.csv gelesen und in die _Info_-Struktur geschrieben
+0.6.1	18.11.2011	- Liefert jetzt eine Fehlermeldung, wenn die zu importierende Datei keine Maschinennummer enthält
+0.6.2	28.11.2011	- mnParamLib : mnParam_WritePVNum. UDINT wurde als UINT behandelt.
+0.7.0	20.10.2011	- Umstellung auf AS 3.0.90
+					- Berücksichtigung von WSTRING
+					- utfMachineNumber und xParamOK in das IFmnParam.Out
+0.8.0	20.12.2011	- Logging in das Logbuch der AR verlegt.
+					- EXIT hinzugefügt.
+					- Fehler im Init-Up behoben.
+0.8.1	22.12.2011	- Severity für Log angepasst
+0.8.2	02.01.2012	- Initialisierung der Text-Zeilen in GetCsvDat
+					- Sprachdefinition ist 248, nicht 247
+0.9.0	03.01.2012	- Packetversion in mnParamStatAd
+0.9.1	10.01.2012	- Kommentar der Package-Version im Export wird dynamisch gelesen
+0.10.0	18.01.2012	- Textzeilen werden jetzt mit bis zu 63 Zeichen ausgelesen
+0.11.0	13.02.2012	- Speicherloch in der Initialisierung beseitigt. Beim Importieren vorhandener Datencontainer wurde Speicher nicht mehr frei gegeben.
+0.11.1	15.02.2012	- Weiterentwicklung: Speicheroptimierung. Automatische Berechnung der Größe der Speicherpartition.
+		16.02.2012	- Einführung von Funktionsbausteinen für Standardfunktionen. 
+					- Schreiben eines Inhaltsverzeichnisses von CSV-Datencontainerdateien im Exportverzeichnis
+		17.02.2012	- Unit ist UINT
+0.11.2	22.02.2012	- Helptext wurde auf 63 Zeichen begrenzt
+					- Kompatibel zu hlKanLink 0.94.0
+0.12.0	06.03.2012	- Kompatibel zu mnTest
+0.12.1	08.03.2012	- Bugfix Editliste füllen
+0.13.0	15.03.2012	- Editliste wird mit umgerechneten Werten gefüllt.
+0.13.1	15.03.2012	- Ergänzt um die Anzahl der Nachkommastellen
+					- Datenmodell erweitert um RefVisible und RefText
+0.13.2	20.03.2012	- Abhängigkeiten ergänzt
+0.13.9	20.03.2012	- Zwischenstand - Weiterentwicklung mnParam
+0.14.0	21.03.2012	- Save-Editor und Delete indirect container implementiert. Bugfix im Delete Algorithmus auch für mnParamCmd
+0.15.0	22.03.2012	- Zwischenversion. Es wird jetzt für das Edit-Feld nach Parameterindex, und nicht nach Container-Index gesucht.
+					- Letzter Parameter eines Containers wurde nicht ausgelesen
+					- Massenimport implementiert
+					- Restore ist möglich
+0.15.1	23.03.2012	- Maschinennummer des Datencontainers wird jetzt auch im Init-Up überprüft.
+					- Die Überprüfung der Maschinennummer im zyklischen Teil kann applikativ deaktiviert werden.
+					- Logger implementiert
+					- Backup und Restore implementiert
+0.16.0	23.03.2012	- Release
+0.16.1	27.03.2012	- Bugfix: Container wurden im Init-Up nicht eingelesen
+0.16.2	27.03.2012	- Weiterentwicklung
+0.17.0	28.03.2012	- Namensliste für Instanzen kann gefüllt werden
+					- Instanz NEU und KOPIEREN ist implementiert
+0.17.1	29.03.2012	- Bugfix. Save Editor. Letzter Eintrag wurde nicht gesichert
+0.18.0	29.03.2012	- Kategorie-Programm-Zuordnung ergänzt
+0.18.1	30.03.2012	- Kategorie-Programm-Zuordnung um Kategorienamen erweitert
+0.18.2	02.04.2012	- Kategoriedaten erweitert
+0.19.0	03.04.2012	- Warnungen bei Importfehler
+		04.04.2012	- _Info_ wird nicht mehr unterstützt
+					- Bugfix: TOC wurde beim Import vom PC nicht aktualisiert
+0.20.0	05.04.2012	- Die Quelle zum Füllen der Namensliste wird nur initial von den Konstanten übernommen.
+					  Per Befehl kann die Quelle geändert werden.
+0.20.1	10.04.2012	- Wenn die Dateien im Exportverzeichnis gelöscht wurden, hat der Parametermanager diese nicht
+					  neu angelegt.
+0.20.2	11.04.2012	- Maschinennummer mit Länge 0 wird als Fehler abgefangen
+0.20.3	11.04.2012	- Ungültige Maschinennummer "dummy" als Konstante MNPARAM_INVALID_MACHINENO eingeführt
+0.20.4	13.04.2012	- Warnung wird angezeigt, wenn der Parametermanager nicht bereit ist.
+0.20.5	16.04.2012	- Beim Füllen des Editors, wurden die Parameter für die Namensliste zurückgesetzt
+0.20.6	17.04.2012	- Es konnten keine Instanzen aus dem Editor gesichert werden. Der Pointer auf die StrucRoot wurde nicht ermittelt.
+0.20.7	18.04.2012  - Instanz-Datenobjekte werden im Init teilweise wieder gelöscht.
+					- In der Instanznamensliste werden noch die Instanznummern vorangestellt
+0.21.0	23.04.2012	- Wir create instance oder copy instance eine negative Instanznummer übergeben, wird die nächste freie Instanz angelegt
+					- Bei Fill Namelist wird automatisch die Category-Program-Cache-Liste aktualisiert
+0.21.1	23.04.2012	- Copy hat nicht funktioniert
+0.22.0	11.05.2012	- Restore lädt auch den cpcache
+0.23.0	04.06.2012	- Im InitUp werden beim Importieren der Container auf jeden Falle vorher alle Daten auf Default gesetzt.
+					- Wird nach dem Hochlauf ein USB-Stick mit dem Unterverzeichnis SetupKG erkannt, dann wird das Userverzeichnis entsprechend
+					  überschrieben
+					- Die Struktur "Machinestate" wird nicht mehr unterstützt
+0.24.0 12.06.2012	- Beim Import von Parametern werden numerische Parameter auf ihre min- und max-Werte begrenzt.
+					- Hilfstexte für Parameter auf 255 Zeichen erweitert.
+					- Im Parametereditor kann nun gesteuert werden, ob Funktions- und Instanztexte in den Parametertext eingefügt werden.
+					  Zusätzlich wird der Funktionstext und Instanztext zum Parameter separat ausgegeben. Parameter können nach Funktionen
+					  gefiltert werden
+0.24.1	26.06.2012	- Warnung unterdrückt
+0.24.2	17.07.2012	- Filehandles wurden nach FileCreate nicht freigegeben.
+0.24.3	03.09.2012	- Bugfix: Bug 835 - Kopierte Datencontainer sind schreibgeschützt. Behoben
+0.25.0	06.09.2012	- Erweiterung Bug 821: Neue Konstante: MNPARAM_REQMISSINGMNO vom Typ USINT
+					  0 : Wenn die Datei _mnr.csv fehlt, wird die Maschinennummer "dummy" gesetzt.
+					  1 : Wenn die Datei _mnr.csv fehlt, erwartet der Parametermanager über das Interface IFmnParam
+					  	  das Setzen der Maschinennummer in IFmnParam.In.utfSetMachineNumber. Danach muss die Strukturvariable
+						  IFmnParam.In.xSetMachnineNumber auf TRUE gesetzt werden. Die _mnr.csv wird erzeugt und die Steuerung wird
+						  neu gestartet.

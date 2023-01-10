@@ -1,0 +1,14 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Package: Supertrack_Constants
+ * File: Supertrack_Constants.var
+ * Author: treamsbottom
+ * Created: January 28, 2013
+ ********************************************************************
+ * Variables of package Supertrack_Constants
+ ********************************************************************)
+VAR CONSTANT
+	BatchTyp_UDINT : USINT := 0;
+	BatchTyp_16Byte : USINT := 1;
+END_VAR

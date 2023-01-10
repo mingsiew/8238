@@ -1,0 +1,9 @@
+VAR
+	f : REFERENCE TO OPCuaClient_Functions_typ;
+	client : REFERENCE TO OPCuaClient_typ;
+	i : UINT;
+	getErrorText : OPCuaGetErrorMessage;
+	x : UINT;
+	iw : REFERENCE TO Inwatec_typ;
+	str_index : STRING[5];
+END_VAR

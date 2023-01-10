@@ -1,0 +1,220 @@
+(*
+T: FUNCTION_BLOCK DWORD_TO_WORDS
+FW: YES	NO_VARIANT DWORD_TO_WORDS SKIP_NOTHING	
+CI#: 89
+QSL: 0
+QVE: 35
+QVPC: 35
+QPar: 3
+QFBI: 0
+*)
+
+IN	1	VAR_INPUT	@TYP:19
+		     
+
+;
+
+
+OUT_0	2	VAR_OUTPUT	@TYP:18
+		     
+
+;
+
+
+OUT_1	3	VAR_OUTPUT	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_0	4	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_1	5	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_2	6	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_3	7	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_4	8	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_5	9	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_6	10	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_7	11	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_8	12	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_9	13	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_10	14	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_11	15	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_12	16	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_13	17	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_14	18	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_0_Bit_15	19	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_16	20	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_17	21	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_18	22	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_19	23	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_20	24	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_21	25	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_22	26	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_23	27	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_24	28	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_25	29	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_26	30	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_27	31	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_28	32	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_29	33	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_30	34	VAR	@TYP:18
+		     
+
+;
+
+
+InternalWORD_1_Bit_31	35	VAR	@TYP:18
+		     
+
+;
+

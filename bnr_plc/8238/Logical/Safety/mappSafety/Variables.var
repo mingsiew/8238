@@ -1,0 +1,19 @@
+VAR
+	sfDomain : UDINT;
+	sfDomainInfo : SfDomainInfo;
+	sfDomainTransfer : SfDomainTransfer;
+	sfDomainCompletion : SfDomainCompletion;
+	sfDomainControl : SfDomainControl;
+	sfDomainExchange : SfDomainExchange;
+	sfDomainConnect : SfDomainConnect;
+	safetyInfo : SfDomainInfoType;
+	refreshTime : TIME;
+	ton_refresh : TON;
+	state : REFERENCE TO USINT;
+	sState : STRING[5];
+	sSafeOsState : STRING[5];
+	sSafeNodeState : STRING[5];
+	sSystemState : STRING[5];
+	sOperationalModeState : STRING[5];
+	safeInfoValid : BOOL;
+END_VAR

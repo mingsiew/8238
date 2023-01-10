@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExternalHardware>
+  <Modules>
+    <Module ModuleID="FBE.ACS380_v2.04.0.3_FEPL-02_1.0_filerev1.0" Version="FFEPS10" OrderNumber="FEPL-02 and ACS380">
+      <SourceFile OriginalFile="ACS380_v2.04.0.3_FEPL-02_1.0_filerev1.0.xdd" TranslationFile="3XCLXZT3.ext" />
+    </Module>
+    <Module ModuleID="FBC.0x0200008D.0x00000064.CO302A_4" Version="0x04.0x2A" OrderNumber="MCA105 CANopen">
+      <SourceFile OriginalFile="CanOpen081008redhu.eds" TranslationFile="K7HGBFKY.ext" />
+    </Module>
+  </Modules>
+</ExternalHardware>

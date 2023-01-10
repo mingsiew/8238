@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="Drives_Binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Bindings>
+	<!--Manual Control Group 1-->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].Name" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="txt_DriveName_1" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].Node" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="no_Node_1" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].ModuleOk" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="eModOK_1" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].ErrorCode" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noError_1" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].ErrorReset" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_1" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].ErrorActive" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_1" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].RunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_1" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].RunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_1" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="GroupBox1" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].ActCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActCurrent_1" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].ActVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActVel_1" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].TargetVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ni_SetVelocity_1" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].ActTorque" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActTorque_1" attribute="node" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].State" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="textState_1" attribute="value" />
+	</Binding>
+	<!--End Manual Control Group 1-->
+	<!--Manual Control Group 2-->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].Name" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="txt_DriveName_2" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].Node" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="no_Node_2" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].ModuleOk" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="eModOK_2" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].ErrorCode" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noError_2" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].ErrorReset" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_2" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].ErrorActive" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_2" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].RunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_2" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].RunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_2" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="GroupBox2" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].ActCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActCurrent_2" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].ActVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActVel_2" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].TargetVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ni_SetVelocity_2" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].ActTorque" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActTorque_2" attribute="node" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].State" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="textState_2" attribute="value" />
+	</Binding>
+	<!--End Manual Control Group 2-->	
+	<!--Manual Control Group 3-->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].Name" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="txt_DriveName_3" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].Node" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="no_Node_3" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].ModuleOk" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="eModOK_3" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].ErrorCode" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noError_3" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].ErrorReset" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_3" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].ErrorActive" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_3" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].RunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_3" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].RunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_3" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="GroupBox3" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].ActCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActCurrent_3" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].ActVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActVel_3" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].TargetVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ni_SetVelocity_3" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].ActTorque" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActTorque_3" attribute="node" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].State" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="textState_3" attribute="value" />
+	</Binding>
+	<!--End Manual Control Group 3-->
+	<!--Manual Control Group 4-->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].Name" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="txt_DriveName_4" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].Node" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="no_Node_4" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].ModuleOk" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="eModOK_4" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].ErrorCode" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noError_4" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].ErrorReset" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_4" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].ErrorActive" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_4" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].RunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_4" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].RunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_4" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="GroupBox4" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].ActCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActCurrent_4" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].ActVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActVel_4" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].TargetVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ni_SetVelocity_4" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].ActTorque" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActTorque_4" attribute="node" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].State" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="textState_4" attribute="value" />
+	</Binding>
+	<!--End Manual Control Group 4-->
+	<!--Manual Control Group 5-->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].Name" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="txt_DriveName_5" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].Node" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="no_Node_5" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].ModuleOk" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="eModOK_5" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].ErrorCode" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noError_5" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].ErrorReset" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_5" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].ErrorActive" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_5" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].RunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_5" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].RunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_5" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="GroupBox5" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].ActCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActCurrent_5" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].ActVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActVel_5" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].TargetVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ni_SetVelocity_5" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].ActTorque" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActTorque_5" attribute="node" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].State" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="textState_5" attribute="value" />
+	</Binding>
+	<!--End Manual Control Group 5-->
+	<!--Manual Control Group 6-->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].Name" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="txt_DriveName_6" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].Node" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="no_Node_6" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].ModuleOk" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="eModOK_6" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].ErrorCode" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noError_6" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].ErrorReset" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_6" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].ErrorActive" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_6" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].RunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_6" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].RunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_6" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="GroupBox6" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].ActCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActCurrent_6" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].ActVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActVel_6" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].TargetVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ni_SetVelocity_6" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].ActTorque" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActTorque_6" attribute="node" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].State" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="textState_6" attribute="value" />
+	</Binding>
+	<!--End Manual Control Group 6-->	
+	<!--Manual Control Group 7-->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].Name" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="txt_DriveName_7" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].Node" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="no_Node_7" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].ModuleOk" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="eModOK_7" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].ErrorCode" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noError_7" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].ErrorReset" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_7" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].ErrorActive" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_7" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].RunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_7" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].RunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_7" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="GroupBox7" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].ActCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActCurrent_7" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].ActVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActVel_7" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].TargetVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ni_SetVelocity_7" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].ActTorque" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActTorque_7" attribute="node" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].State" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="textState_7" attribute="value" />
+	</Binding>
+	<!--End Manual Control Group 7-->
+	<!--Manual Control Group 8-->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].Name" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="txt_DriveName_8" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].Node" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="no_Node_8" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].ModuleOk" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="eModOK_8" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].ErrorCode" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noError_8" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].ErrorReset" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_8" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].ErrorActive" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_ErrReset_8" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].RunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_8" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].RunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_8" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="GroupBox8" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].ActCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActCurrent_8" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].ActVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActVel_8" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].TargetVelocity" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ni_SetVelocity_8" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].ActTorque" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="noActTorque_8" attribute="node" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].State" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="textState_8" attribute="value" />
+	</Binding>
+	<!--End Manual Control Group 8-->
+	<!--List Boxes-->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:manualSelectDrowDown" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox1" attribute="dataProvider" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].selectedValue" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox1" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:manualSelectDrowDown" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox2" attribute="dataProvider" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].selectedValue" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox2" attribute="selectedValue" />
+	</Binding>
+	
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].selectedValue" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox3" attribute="selectedValue" />
+	</Binding><Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:manualSelectDrowDown" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox4" attribute="dataProvider" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].selectedValue" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox4" attribute="selectedValue" />
+	</Binding>	
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:manualSelectDrowDown" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox5" attribute="dataProvider" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].selectedValue" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox5" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:manualSelectDrowDown" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox6" attribute="dataProvider" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].selectedValue" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox6" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:manualSelectDrowDown" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox7" attribute="dataProvider" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].selectedValue" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox7" attribute="selectedValue" />
+	</Binding><Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:manualSelectDrowDown" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox8" attribute="dataProvider" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].selectedValue" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox8" attribute="selectedValue" />
+	</Binding>	
+	<!--End List Boxes		-->
+	
+	
+	<!--Selector Group Boxes	-->
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].ListBoxVisible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="gb_Selector_1" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].ListBoxVisible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="gb_Selector_2" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].ListBoxVisible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="gb_Selector_3" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].ListBoxVisible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="gb_Selector_4" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].ListBoxVisible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="gb_Selector_5" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].ListBoxVisible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="gb_Selector_6" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].ListBoxVisible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="gb_Selector_7" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].ListBoxVisible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="gb_Selector_8" attribute="visible" />
+	</Binding>		
+	<!--END Selector Group Boxes-->
+	
+	
+	
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].EnableRunReverse" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[1].EnableRunForwards" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_1" attribute="enable" />
+</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].EnableRunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_2" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[2].EnableRunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_2" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].EnableRunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_3" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[3].EnableRunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_3" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].EnableRunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_4" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[4].EnableRunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_4" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].EnableRunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_5" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[5].EnableRunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_5" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].EnableRunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_6" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[6].EnableRunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_6" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].EnableRunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_7" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[7].EnableRunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_7" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].EnableRunReverse" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunRev_8" attribute="enable" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::ABB_Driver:visu_manual[8].EnableRunForwards" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="btn_RunFwd_8" attribute="enable" />
+	</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::ABB_Driver:manualSelectDrowDown" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Drives" widgetRefId="ListBox3" attribute="dataProvider" />
+</Binding>
+</Bindings>
+</BindingsSet>

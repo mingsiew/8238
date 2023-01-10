@@ -1,0 +1,13 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Program: zzRoboPosnNamesTest
+ * File: zzRoboPosnNamesTest.var
+ * Author: Dave
+ * Created: January 28, 2013
+ ********************************************************************
+ * Local variables of program zzRoboPosnNamesTest
+ ********************************************************************)
+VAR
+	myVC : UINT;
+END_VAR

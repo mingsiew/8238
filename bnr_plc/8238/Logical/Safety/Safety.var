@@ -1,0 +1,6 @@
+VAR
+	SM : ARRAY[0..3999] OF SM_type;
+	SafetyZone : ARRAY[0..MAX_SAFE_ZONES] OF SafeZoneType;
+	Hoist_Safety : ARRAY[0..MAX_HOIST] OF Safety_Hoist_type;
+	Safety : Safety_typ;
+END_VAR

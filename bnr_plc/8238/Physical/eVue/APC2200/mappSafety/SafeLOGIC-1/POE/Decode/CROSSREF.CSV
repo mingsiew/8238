@@ -1,0 +1,7 @@
+DWORD_TO_WORDS_EDM,POE\Decode\Decode.GB,4,,184,49,,,,,,VAR,FB,,
+DWORD_TO_WORDS_RESET,POE\Decode\Decode.GB,0,,181,46,,,,,,VAR,FB,,
+WORD_TO_BITS_EDM,POE\Decode\Decode.GB,4,,185,98,,,,,,VAR,FB,,
+WORD_TO_BITS_EDM_2,POE\Decode\Decode.GB,6,,186,98,,,,,,VAR,FB,,
+WORD_TO_BITS_RESET,POE\Decode\Decode.GB,0,,182,95,,,,,,VAR,FB,,
+WORD_TO_BITS_RESET_2,POE\Decode\Decode.GB,2,,183,97,,,,,,VAR,FB,,
+WORD_TO_MASTER_RESET,POE\Decode\Decode.GB,0,,180,47,,,,,,VAR,FB,,

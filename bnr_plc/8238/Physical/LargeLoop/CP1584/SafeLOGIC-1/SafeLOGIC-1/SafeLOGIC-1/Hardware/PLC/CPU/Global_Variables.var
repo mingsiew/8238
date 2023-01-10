@@ -1,0 +1,26 @@
+﻿{GroupDefinition(0,'NewGroup')}
+
+VAR_GLOBAL {Group(0)}
+    {LINE(1)}
+    SM2_SafeDigitalInput01 AT %IX56.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalInput01')};
+    {LINE(2)}
+    SM2_SafeDigitalInput02 AT %IX56.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalInput02')};
+    {LINE(3)}
+    BOOL001 AT %QX0.0 : BOOL {Custom('SL1.SM1.BOOL001')};
+    {LINE(4)}
+    Reset_Zone_0 AT %IX0.0 : BOOL {Custom('SL1.SM1.BOOL101')};
+    {LINE(5)}
+    SM2_SafeTwoChannelInput0102 AT %IX58.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeTwoChannelInput0102')};
+    {LINE(6)}
+    SM2_SafeTwoChannelInput0304 AT %IX58.5 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeTwoChannelInput0304')};
+    {LINE(7)}
+    BOOL002 AT %QX0.1 : BOOL {Custom('SL1.SM1.BOOL002')};
+    {LINE(8)}
+    Reset_Zone_1 AT %IX0.1 : BOOL {Custom('SL1.SM1.BOOL102')};
+    {LINE(9)}
+    SM3_SafeDigitalOutput01 AT %QX13.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM3.SafeDigitalOutput01')};
+    {LINE(10)}
+    SM3_SafeDigitalOutput02 AT %QX13.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM3.SafeDigitalOutput02')};
+    {LINE(11)}
+    SM3_ReleaseOutput01 AT %QX132.0 : BOOL {Custom('SL1.SM3.ReleaseOutput01')};
+END_VAR

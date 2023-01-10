@@ -1,0 +1,10 @@
+(*SUCCESS*)
+VAR CONSTANT
+	TCP_PASS_EVUE : STRING[20] := 'OK'; (**eVue -- Messgae successfully recieved*)
+END_VAR
+(*FAIL*)
+VAR CONSTANT
+  TCP_SUCCESS : UINT := 200; (*Successful message*)
+	TCP_FAIL_DECODE : STRING[20] := 'DECODE FAIL'; (*'Failure message if we can't decode the packet*)
+	TCP_FAIL_EVUE : STRING[40] := 'EVUE - INVALID LENGTH'; (*eVue - Data length will exceed memory area in PLC*)
+END_VAR

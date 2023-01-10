@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="1.25.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Package variables">Stat.var</Object>
+    <Object Type="File" Description="Package data types">utfNames.typ</Object>
+    <Object Type="File" Description="Package variables">kgbom.var</Object>
+    <Object Type="Library" Language="IEC" Description="Kannegiesser Hilfsfunktionen">KGstdLib</Object>
+    <Object Type="File">KGStandard-History.txt</Object>
+  </Objects>
+</Package>

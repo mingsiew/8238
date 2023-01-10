@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Package variables">Pkg_hlKanLinkUser.var</Object>
+    <Object Type="Library" Language="IEC" Description="Kanlink User Library">KL_UserLib</Object>
+  </Objects>
+</Package>

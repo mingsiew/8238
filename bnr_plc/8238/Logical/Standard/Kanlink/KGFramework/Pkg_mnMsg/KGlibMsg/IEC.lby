@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="IEC" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported data types">KGlibMsg.typ</File>
+    <File Description="Exported constants">KGlibMsg.var</File>
+    <File Description="Exported functions and function blocks">KGlibMsg.fun</File>
+    <File Description="Index der Meldung in der Meldungskonfiguration suchen">msgBinSearchCfgList.st</File>
+    <File Description="Ein- oder Ausfügen von Meldungen">msgInsertMsgLine.st</File>
+    <File>msgBinSearchTxtLine.st</File>
+    <File>msgBinSearchHelpTxtLine.st</File>
+    <File>msgReplSubStr.st</File>
+    <File>msgNextChrPos.st</File>
+  </Files>
+</Library>

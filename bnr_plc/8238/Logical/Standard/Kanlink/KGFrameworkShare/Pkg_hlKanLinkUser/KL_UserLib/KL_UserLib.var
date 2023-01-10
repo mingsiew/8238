@@ -1,0 +1,16 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Library: WL_UserLib
+ * File: WL_UserLib.var
+ * Author: stahlhut
+ * Created: January 10, 2012
+ ********************************************************************
+ * Constants of library WL_UserLib
+ ********************************************************************)
+VAR CONSTANT
+	HLKANLINK_MAX_CLIENTCONNS : UINT := 30; (*Anzahl der Clienten *)
+	HLKANLINK_MAX_SERVERCONNS : UINT := 30; (*Anzahl der Server *)
+	HLKANLINK_MAX_OVERVIEW_DATA : UINT := 31; (*Maximum data transfer on 1 overview connections*)
+	HLKANLINK_MAX_MU_CLIENTCONNS : UINT := 100; (*Maximum data transfer on 1 overview connections*)
+END_VAR

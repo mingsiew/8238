@@ -1,0 +1,1830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<osdd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ethernet-powerlink.org/osdd osdd.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" Version="1.6" xmlns="http://www.ethernet-powerlink.org/osdd">
+  <Topology SafetyDomain="1">
+    <GeneratorDescription Name="AutomationStudio" Version="4.10.2.37" LanguageID="1">
+      <Info Name="ARVersion" Value="49104" />
+      <Info Name="SafetyRelease" Value="5.15.0" />
+      <Info Name="Communication" Value="/IF=tcpip /LOPO=11159 /SA=1 /COMT=2500 /RT=1000 /AM=* /SDT=5 /DAIP=10.8.12.31 /REPO=11159 /ANSL=1 /PT=11169 /PORT=50000" />
+      <Info Name="mappSafetyPath" Value="C:\BrAutomation\AS410\AS\TechnologyPackages\mappSafety\5.15.0" />
+    </GeneratorDescription>
+    <SafetyConfigurationManager TransportSAddr="1">
+      <DeviceDescription Module="X20SL81XX_110.SCM" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SL8100\2.3.0.1\OSDD\X20SL81XX_SCM_2_3_0_1.xosdd]]></DeviceDescription>
+      <NodeDescription />
+    </SafetyConfigurationManager>
+    <SafetyNode SAddr="1">
+      <DeviceDescription Module="X20SL8100_110.MainSN" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SL8100\2.3.0.1\OSDD\\X20SL8100_2_3_0_1.xosdd]]></DeviceDescription>
+      <DesignConfiguration>
+        <ModuleSettings>
+          <SettingsGroup id="DataFromAs">
+            <Setting id="SafeDesigner" Value="" />
+          </SettingsGroup>
+        </ModuleSettings>
+      </DesignConfiguration>
+      <NodeDescription>
+        <Classification Type="PLC" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST239" />
+        <Info Name="HWC_Revision" Value="2.3.0.1" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:48" />
+        <Info Name="AS_Name" Value="X20SL8100" />
+        <Info Name="FirstPublishedSafetyRelease" Value="1.0" />
+        <Info Name="ProjectSL" Value="1" />
+        <Info Name="ExtendedSourceSL" Value="1" />
+        <Info Name="Description-de" Value="X20 SafeLOGIC, POWERLINK V2, 24V, univ." />
+        <Info Name="Description-en" Value="X20 SafeLOGIC, POWERLINK V2, 24V, univ." />
+        <Info Name="AsVariable" Value="INT0005,SafetyZone[5].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0006,SafetyZone[6].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0026,SafetyZone[26].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="UDID_low,Safety.UDID_low" />
+        <Info Name="AsVariable" Value="INT0022,SafetyZone[22].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0014,SafetyZone[14].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0019,SafetyZone[19].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0010,SafetyZone[10].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0015,SafetyZone[15].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="ModuleOk,Safety.ModuleOk" />
+        <Info Name="AsVariable" Value="INT0008,SafetyZone[8].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0017,SafetyZone[17].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0004,SafetyZone[4].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0003,SafetyZone[3].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0029,SafetyZone[29].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0020,SafetyZone[20].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="UDID_high,Safety.UDID_high" />
+        <Info Name="AsVariable" Value="INT0018,SafetyZone[18].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="DINT1002,Safety.Reset_Comm" />
+        <Info Name="AsVariable" Value="INT0021,SafetyZone[21].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="ModuleID,Safety.ModuleID" />
+        <Info Name="AsVariable" Value="BOOL00001,Safety.ModuleFault" />
+        <Info Name="AsVariable" Value="INT0013,SafetyZone[13].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="FirmwareVersion,Safety.FW_Version" />
+        <Info Name="AsVariable" Value="INT0030,SafetyZone[30].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0001,SafetyZone[1].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="DINT1001,Safety.EDM_Comm" />
+        <Info Name="AsVariable" Value="INT0002,SafetyZone[2].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0028,SafetyZone[28].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0007,SafetyZone[7].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0027,SafetyZone[27].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0023,SafetyZone[23].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0025,SafetyZone[25].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT1001,Safety.MasterReset_Comm" />
+        <Info Name="AsVariable" Value="SafeFirmwareVersion,Safety.SFW_Version" />
+        <Info Name="AsVariable" Value="INT0011,SafetyZone[11].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0016,SafetyZone[16].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0012,SafetyZone[12].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0024,SafetyZone[24].DataFromSafePLC" />
+        <Info Name="AsVariable" Value="INT0009,SafetyZone[9].DataFromSafePLC" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="DataExFromCpu" Direction="Input" OctetSize="516" IsSafe="false" />
+          <GenericTransport Name="DataExToCpu" Direction="Output" OctetSize="516" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="ToCPU_BOOL">
+          <Channel id="BOOL0">
+            <DataValue Type="Boolean">
+              <Transport Name="DataExToCpu" Index="0x00" />
+              <SODPosition Index="0x0" SubIndex="0x00" />
+            </DataValue>
+            <Repetition RangeMax="8" NrOfDigits="4" />
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="ToCPU_INT">
+          <Channel id="INT0">
+            <DataValue Type="Int16">
+              <Transport Name="DataExToCpu" Index="0x00" />
+              <SODPosition Index="0x0" SubIndex="0x00" />
+            </DataValue>
+            <Repetition RangeMax="30" NrOfDigits="3" />
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="FromCPU_INT">
+          <Channel id="INT1">
+            <DataValue Type="Int16">
+              <Transport Name="DataExFromCpu" Index="0x00" />
+              <SODPosition Index="0x0" SubIndex="0x00" />
+            </DataValue>
+            <Repetition RangeMax="1" NrOfDigits="3" />
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="FromCPU_DINT">
+          <Channel id="DINT1">
+            <DataValue Type="Int32">
+              <Transport Name="DataExFromCpu" Index="0x00" />
+              <SODPosition Index="0x0" SubIndex="0x00" />
+            </DataValue>
+            <Repetition RangeMax="2" NrOfDigits="3" />
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="2">
+      <DeviceDescription Module="X20SI8110_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SI8110\2.3.1.0\OSDD\\X20SI8110_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST21.IF1.ST9" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:48" />
+        <Info Name="AS_Name" Value="X20SI8110_MC01_K109" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X20 Safe Digital In, 8xI, 24V" />
+      </NodeDescription>
+      <ChannelConfiguration />
+    </SafetyNode>
+    <SafetyNode SAddr="3">
+      <DeviceDescription Module="X20SO4120_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SO4120\2.2.1.0\OSDD\\X20SO4120_2_2_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Output" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST21.IF1.ST10" />
+        <Info Name="HWC_Revision" Value="2.2.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X20SO4120_MC01_K110" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital Out, 4xA, 24 V, 2A" />
+        <Info Name="Description-en" Value="X20 Safe Digital Out, 4xO, 24 V, 2A" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="1" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="1" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Output 01-04">
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="4">
+      <DeviceDescription Module="X20SI8110_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SI8110\2.3.1.0\OSDD\\X20SI8110_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST22.IF1.ST9" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:48" />
+        <Info Name="AS_Name" Value="X20SI8110_MC02_K108" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X20 Safe Digital In, 8xI, 24V" />
+      </NodeDescription>
+      <ChannelConfiguration />
+    </SafetyNode>
+    <SafetyNode SAddr="5">
+      <DeviceDescription Module="X20SO4120_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SO4120\2.2.1.0\OSDD\\X20SO4120_2_2_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Output" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST22.IF1.ST10" />
+        <Info Name="HWC_Revision" Value="2.2.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X20SO4120_MC02_K109" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital Out, 4xA, 24 V, 2A" />
+        <Info Name="Description-en" Value="X20 Safe Digital Out, 4xO, 24 V, 2A" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="1" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="1" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Output 01-04">
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="6">
+      <DeviceDescription Module="X20SO4120_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SO4120\2.2.1.0\OSDD\\X20SO4120_2_2_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Output" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST22.IF1.ST11" />
+        <Info Name="HWC_Revision" Value="2.2.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X20SO4120_MC02_K110" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital Out, 4xA, 24 V, 2A" />
+        <Info Name="Description-en" Value="X20 Safe Digital Out, 4xO, 24 V, 2A" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="1" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="1" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Output 01-04">
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="7">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST44.IF1.ST12" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1408" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1408].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1408].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1408].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1408].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1408].ModuleOk" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1408].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1408].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1408].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1408].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1408].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1408].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1408].FirmwareVersion" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1408].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1408].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1408].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1408].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1408].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1408].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1408].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1408].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1408].SafeTwoChannelInput0506" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="8">
+      <DeviceDescription Module="X20SO4120_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SO4120\2.2.1.0\OSDD\\X20SO4120_2_2_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Output" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST22.IF1.ST12" />
+        <Info Name="HWC_Revision" Value="2.2.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X20SO4120_MC02_K111" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital Out, 4xA, 24 V, 2A" />
+        <Info Name="Description-en" Value="X20 Safe Digital Out, 4xO, 24 V, 2A" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="1" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="1" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Output 01-04">
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="31">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST44.IF1.ST4" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1401" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1401].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1401].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1401].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0304,SM[1401].SafeTwoChannelOk0304" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1401].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1401].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1401].ModuleOk" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1401].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0102,SM[1401].SafeTwoChannelOk0102" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1401].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0708,SM[1401].SafeTwoChannelOk0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1401].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1401].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0506,SM[1401].SafeTwoChannelOk0506" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1401].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1401].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1401].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1401].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1401].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1401].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1401].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1401].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1401].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1401].SafeTwoChannelInput0506" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1401].FirmwareVersion" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="32">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST44.IF1.ST2" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1402" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1402].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1402].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1402].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0304,SM[1402].SafeTwoChannelOk0304" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1402].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1402].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1402].ModuleOk" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1402].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0102,SM[1402].SafeTwoChannelOk0102" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1402].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0708,SM[1402].SafeTwoChannelOk0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1402].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1402].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0506,SM[1402].SafeTwoChannelOk0506" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1402].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1402].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1402].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1402].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1402].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1402].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1402].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1402].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1402].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1402].SafeTwoChannelInput0506" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1402].FirmwareVersion" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="33">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST44.IF1.ST6" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1403" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1403].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1403].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1403].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0304,SM[1403].SafeTwoChannelOk0304" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1403].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1403].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1403].ModuleOk" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1403].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0102,SM[1403].SafeTwoChannelOk0102" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1403].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0708,SM[1403].SafeTwoChannelOk0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1403].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1403].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0506,SM[1403].SafeTwoChannelOk0506" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1403].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1403].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1403].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1403].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1403].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1403].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1403].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1403].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1403].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1403].SafeTwoChannelInput0506" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1403].FirmwareVersion" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="34">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST43.IF1.ST6" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1404" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1404].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1404].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1404].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0304,SM[1404].SafeTwoChannelOk0304" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1404].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1404].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1404].ModuleOk" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1404].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0102,SM[1404].SafeTwoChannelOk0102" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1404].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0708,SM[1404].SafeTwoChannelOk0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1404].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1404].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0506,SM[1404].SafeTwoChannelOk0506" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1404].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1404].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1404].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1404].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1404].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1404].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1404].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1404].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1404].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1404].SafeTwoChannelInput0506" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1404].FirmwareVersion" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="36">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST43.IF1.ST8" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1406" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1406].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1406].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1406].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0304,SM[1406].SafeTwoChannelOk0304" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1406].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1406].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1406].ModuleOk" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1406].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0102,SM[1406].SafeTwoChannelOk0102" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1406].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0708,SM[1406].SafeTwoChannelOk0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1406].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1406].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0506,SM[1406].SafeTwoChannelOk0506" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1406].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1406].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1406].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1406].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1406].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1406].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1406].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1406].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1406].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1406].SafeTwoChannelInput0506" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1406].FirmwareVersion" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="39">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST44.IF1.ST9" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1409" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1409].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1409].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1409].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1409].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1409].ModuleOk" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1409].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1409].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1409].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1409].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1409].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1409].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1409].FirmwareVersion" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1409].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1409].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1409].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1409].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1409].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1409].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1409].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1409].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1409].SafeTwoChannelInput0506" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="40">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST44.IF1.ST14" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1410" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1410].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1410].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1410].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0304,SM[1410].SafeTwoChannelOk0304" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1410].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1410].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1410].ModuleOk" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1410].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0102,SM[1410].SafeTwoChannelOk0102" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1410].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0708,SM[1410].SafeTwoChannelOk0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1410].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1410].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0506,SM[1410].SafeTwoChannelOk0506" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1410].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1410].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1410].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1410].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1410].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1410].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1410].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1410].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1410].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1410].SafeTwoChannelInput0506" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1410].FirmwareVersion" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="41">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST44.IF1.ST7" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1411" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1411].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1411].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1411].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0304,SM[1411].SafeTwoChannelOk0304" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1411].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1411].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1411].ModuleOk" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1411].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0102,SM[1411].SafeTwoChannelOk0102" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1411].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0708,SM[1411].SafeTwoChannelOk0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1411].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1411].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0506,SM[1411].SafeTwoChannelOk0506" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1411].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1411].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1411].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1411].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1411].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1411].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1411].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1411].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1411].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1411].SafeTwoChannelInput0506" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1411].FirmwareVersion" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="44">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST43.IF1.ST2" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1414" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1414].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1414].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1414].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1414].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1414].ModuleOk" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1414].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1414].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1414].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1414].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1414].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1414].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1414].FirmwareVersion" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1414].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1414].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1414].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1414].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1414].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1414].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1414].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1414].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1414].SafeTwoChannelInput0506" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="45">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST43.IF1.ST4" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1415" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1415].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1415].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1415].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1415].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1415].ModuleOk" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1415].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1415].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1415].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1415].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1415].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1415].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1415].FirmwareVersion" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1415].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1415].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1415].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1415].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1415].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1415].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1415].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1415].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1415].SafeTwoChannelInput0506" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="46">
+      <DeviceDescription Module="X67SI8103_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X67SI8103\2.3.1.0\OSDD\\X67SI8103_2_3_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Input" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST44.IF1.ST11" />
+        <Info Name="HWC_Revision" Value="2.3.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X67SI8103_1416" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X67 Safe Digital In, 8xE, 24V" />
+        <Info Name="Description-en" Value="X67 Safe Digital In, 8xI, 24V" />
+        <Info Name="AsVariable" Value="ModuleID,SM[1416].ModuleID" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,SM[1416].SafeDigitialInput02" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,SM[1416].SafeDigitialInput05" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0304,SM[1416].SafeTwoChannelOk0304" />
+        <Info Name="AsVariable" Value="SafeModuleOK,SM[1416].SafeModuleOK" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,SM[1416].SafeDigitialInput01" />
+        <Info Name="AsVariable" Value="ModuleOk,SM[1416].ModuleOk" />
+        <Info Name="AsVariable" Value="DigitalInput02,SM[1416].DigitalInput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0102,SM[1416].SafeTwoChannelOk0102" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0304,SM[1416].SafeTwoChannelInput0304" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0708,SM[1416].SafeTwoChannelOk0708" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,SM[1416].SafeDigitialInput08" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,SM[1416].SafeDigitialInput04" />
+        <Info Name="AsVariable" Value="SafeTwoChannelOK0506,SM[1416].SafeTwoChannelOk0506" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,SM[1416].SafeDigitialInput06" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0102,SM[1416].SafeTwoChannelInput0102" />
+        <Info Name="AsVariable" Value="HardwareVariant,SM[1416].HardwareVariant" />
+        <Info Name="AsVariable" Value="DigitalOutput01,SM[1416].DigitalOutput01" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,SM[1416].SafeDigitialInput03" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,SM[1416].SafeDigitialInput07" />
+        <Info Name="AsVariable" Value="DigitalOutput02,SM[1416].DigitalOutput02" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0708,SM[1416].SafeTwoChannelInput0708" />
+        <Info Name="AsVariable" Value="DigitalInput01,SM[1416].DigitalInput01" />
+        <Info Name="AsVariable" Value="SafeTwoChannelInput0506,SM[1416].SafeTwoChannelInput0506" />
+        <Info Name="AsVariable" Value="FirmwareVersion,SM[1416].FirmwareVersion" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="2" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="2" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Input 01-04">
+          <Channel id="DigitalInput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalInput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+        <ChannelGroup id="Output 01-02">
+          <Channel id="DigitalOutputOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutputOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="DigitalOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+          <Channel id="DigitalOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOo" Index="0x00" />
+            </DataValue>
+            <VendorInfo>Enabled="false"</VendorInfo>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="51">
+      <DeviceDescription Module="X20SO4120_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SO4120\2.2.1.0\OSDD\\X20SO4120_2_2_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Output" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST110.IF1.ST2" />
+        <Info Name="HWC_Revision" Value="2.2.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X20SO4120_400_SC01" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital Out, 4xA, 24 V, 2A" />
+        <Info Name="Description-en" Value="X20 Safe Digital Out, 4xO, 24 V, 2A" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="1" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="1" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Output 01-04">
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="52">
+      <DeviceDescription Module="X20SO4120_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SO4120\2.2.1.0\OSDD\\X20SO4120_2_2_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Output" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST120.IF1.ST2" />
+        <Info Name="HWC_Revision" Value="2.2.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X20SO4120_400_SC02" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital Out, 4xA, 24 V, 2A" />
+        <Info Name="Description-en" Value="X20 Safe Digital Out, 4xO, 24 V, 2A" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="1" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="1" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Output 01-04">
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="53">
+      <DeviceDescription Module="X20SO4120_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SO4120\2.2.1.0\OSDD\\X20SO4120_2_2_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Output" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST130.IF1.ST2" />
+        <Info Name="HWC_Revision" Value="2.2.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X20SO4120_400_SC03" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital Out, 4xA, 24 V, 2A" />
+        <Info Name="Description-en" Value="X20 Safe Digital Out, 4xO, 24 V, 2A" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="1" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="1" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Output 01-04">
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="54">
+      <DeviceDescription Module="X20SO4120_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SO4120\2.2.1.0\OSDD\\X20SO4120_2_2_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Output" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST140.IF1.ST2" />
+        <Info Name="HWC_Revision" Value="2.2.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X20SO4120_400_SC04" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital Out, 4xA, 24 V, 2A" />
+        <Info Name="Description-en" Value="X20 Safe Digital Out, 4xO, 24 V, 2A" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="1" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="1" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Output 01-04">
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+    <SafetyNode SAddr="55">
+      <DeviceDescription Module="X20SO4120_110" minOpenSafetyRelease="1.5"><![CDATA[C:\BrAutomation\AS410\AS\Hardware\Modules\X20SO4120\2.2.1.0\OSDD\\X20SO4120_2_2_1_0.xosdd]]></DeviceDescription>
+      <NodeDescription>
+        <Classification Type="Digital" />
+        <Classification Type="Output" />
+        <Classification Type="VendorSpecific">Safe</Classification>
+        <Classification Type="VendorSpecific">IO</Classification>
+        <Info Name="Interface" Value="SL1.IF1.ST150.IF1.ST2" />
+        <Info Name="HWC_Revision" Value="2.2.1.0" />
+        <Info Name="HWC_LastEdit" Value="11/03/2021 12:18:50" />
+        <Info Name="AS_Name" Value="X20SO4120_400_SC05" />
+        <Info Name="FirstPublishedSafetyRelease" Value="5.4" />
+        <Info Name="Description-de" Value="X20 Safe Digital Out, 4xA, 24 V, 2A" />
+        <Info Name="Description-en" Value="X20 Safe Digital Out, 4xO, 24 V, 2A" />
+      </NodeDescription>
+      <ChannelConfiguration>
+        <DataTransport>
+          <GenericTransport Name="PDOo" Direction="Output" OctetSize="1" IsSafe="false" />
+          <GenericTransport Name="PDOi" Direction="Input" OctetSize="1" IsSafe="false" />
+        </DataTransport>
+        <ChannelGroup id="Output 01-04">
+          <Channel id="PhysicalStateOutput01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="PhysicalStateOutput04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK01">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK02">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK03">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+          <Channel id="CurrentOK04">
+            <DataValue Type="Boolean">
+              <Transport Name="PDOi" Index="0x00" />
+            </DataValue>
+          </Channel>
+        </ChannelGroup>
+      </ChannelConfiguration>
+    </SafetyNode>
+  </Topology>
+</osdd>

@@ -1,0 +1,4 @@
+Output_Enable,POE\Output\Output.GB,2,OUT,13,78,Write,,SAFEBOOL,,,VAR_OUTPUT,LOCAL,,Physical output
+Output_Release,POE\Output\Output.GB,2,OUT,11,77,Write,,BOOL,,,VAR_OUTPUT,LOCAL,,Output release
+TON_S_1,POE\Output\Output.GB,0,,4,57,,,,,,VAR,FB,,TON FB
+Zone_Dependancy,POE\Output\Output.GB,1,IN,12,12,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,Zone that enables output

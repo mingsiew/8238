@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="Fuse_Binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Bindings>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.CommsOk" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="eModOK_1" attribute="visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.GroupID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="TextOutput5" attribute="value" />
+	</Binding>
+
+			
+	<!--Channel Bind -->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[1].Status" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_1" attribute="selectedIndex" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[1].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_1" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[1].Text" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_1" attribute="text" />
+	</Binding>
+
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_set_current[1]" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_current_drop_1" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[1].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_name_1" attribute="value" />
+	</Binding>
+
+	<!--Channel Bind -->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[2].Status" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_2" attribute="selectedIndex" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[2].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_2" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[2].Text" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_2" attribute="text" />
+	</Binding>
+
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_set_current[2]" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_current_drop_2" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[2].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_name_2" attribute="value" />
+	</Binding>
+
+	<!--Channel Bind -->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[3].Status" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_3" attribute="selectedIndex" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[3].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_3" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[3].Text" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_3" attribute="text" />
+	</Binding>
+
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_set_current[3]" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_current_drop_3" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[3].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_name_3" attribute="value" />
+	</Binding>
+
+	<!--Channel Bind -->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[4].Status" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_4" attribute="selectedIndex" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[4].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_4" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[4].Text" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_4" attribute="text" />
+	</Binding>
+
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_set_current[4]" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_current_drop_4" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[4].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_name_4" attribute="value" />
+	</Binding>
+	
+	<!--Channel Bind -->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[5].Status" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_5" attribute="selectedIndex" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[5].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_5" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[5].Text" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_5" attribute="text" />
+	</Binding>
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[5].ActualCurrent" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Actual_Current_5" attribute="value" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_set_current[5]" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_current_drop_5" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[5].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_name_5" attribute="value" />
+	</Binding>								
+
+	<!--Channel Bind -->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[6].Status" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_6" attribute="selectedIndex" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[6].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_6" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[6].Text" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_6" attribute="text" />
+	</Binding>
+
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_set_current[6]" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_current_drop_6" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[6].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_name_6" attribute="value" />
+	</Binding>						
+
+	<!--Channel Bind -->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[7].Status" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_7" attribute="selectedIndex" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[7].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_7" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[7].Text" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_7" attribute="text" />
+	</Binding>
+
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_set_current[7]" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_current_drop_7" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[7].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_name_7" attribute="value" />
+	</Binding>			
+
+	<!--Channel Bind -->
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[8].Status" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_8" attribute="selectedIndex" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[8].Visible" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_8" attribute="visible" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_action[8].Text" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_8" attribute="text" />
+	</Binding>
+
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_set_current[8]" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_current_drop_8" attribute="selectedValue" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[8].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Set_name_8" attribute="value" />
+	</Binding>		
+	
+	<!--Graph Buttons Bind -->										
+
+	<Binding mode="oneWay">
+		<Source xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_1" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_1].visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[2].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_2].node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_2" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_2].visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[3].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_3].node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_3" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_3].visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[4].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_4].node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_4" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_4].visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[5].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_5].node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_5" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_5].visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[6].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_6].node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_6" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_6].visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[7].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_7].node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_7" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_7].visible" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[8].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_8].node" />
+	</Binding>	
+	<Binding mode="twoWay">
+		<Source xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_8" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_8].visible" />
+	</Binding>
+	
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[7].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_7" attribute="text" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[6].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_6" attribute="text" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[5].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_5" attribute="text" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[4].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_4" attribute="text" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[3].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_3" attribute="text" />
+	</Binding>
+	
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[8].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_8" attribute="text" />
+	</Binding>
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_index" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_Bank_Index" attribute="value" />
+	</Binding>
+	
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[2].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_2" attribute="text" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.InputVoltage" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Input_Voltage" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[1].TripCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Trip_Current_1" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[2].TripCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Trip_Current_2" attribute="node" />
+	</Binding>
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[1].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" attribute="graph[Historical_Current_1].node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[4].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Actual_Current_4" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[4].TripCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Trip_Current_4" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[3].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Actual_Current_3" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[3].TripCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Trip_Current_3" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[2].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Actual_Current_2" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[1].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Actual_Current_1" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[5].TripCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Trip_Current_5" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[6].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Actual_Current_6" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[7].TripCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Trip_Current_7" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[7].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Actual_Current_7" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[8].TripCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Trip_Current_8" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[8].ActualCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Actual_Current_8" attribute="node" />
+	</Binding>
+
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_fuse.Info.Channel[6].TripCurrent" attribute="node" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Trip_Current_6" attribute="node" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[1].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_1" attribute="text" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[2].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_2" attribute="mouseDownText" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[3].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_3" attribute="mouseDownText" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[4].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_4" attribute="mouseDownText" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[5].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_5" attribute="mouseDownText" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[8].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_8" attribute="mouseDownText" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[7].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_7" attribute="mouseDownText" />
+	</Binding>
+	<Binding mode="twoWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[6].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_6" attribute="mouseDownText" />
+	</Binding>
+
+	<Binding mode="oneWay">
+		<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.Channel[1].FuseID" attribute="value" />
+		<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Toggle_history_1" attribute="mouseDownText" />
+	</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.MaxVoltage" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="NumericInput2" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::FuseManage:visu_settings.MinVoltage" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="NumericInput1" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::FuseManage:visu_action[2].visu_style" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_2" attribute="style" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::FuseManage:visu_action[1].visu_style" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_1" attribute="style" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::FuseManage:visu_action[3].visu_style" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_3" attribute="style" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::FuseManage:visu_action[4].visu_style" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_4" attribute="style" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::FuseManage:visu_action[5].visu_style" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_5" attribute="style" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::FuseManage:visu_action[6].visu_style" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_6" attribute="style" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::FuseManage:visu_action[7].visu_style" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_7" attribute="style" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::FuseManage:visu_action[8].visu_style" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Fuses" widgetRefId="Fuse_status_8" attribute="style" />
+</Binding>
+</Bindings>
+</BindingsSet>

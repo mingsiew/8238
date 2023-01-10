@@ -1,0 +1,106 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Program: mnTxt
+ * File: mnTxt.var
+ * Author: hunholz
+ * Created: November 25, 2011
+ ********************************************************************
+ * Local variables of program mnTxt
+ ********************************************************************)
+(*Hilfsvariablen*)
+VAR
+	_ii : UINT;
+	_utfNo : WSTRING[5];
+	_TxtLine : mnTxt_TxtLine_Typ;
+	_TxtHelpLine : mnTxt_HelpTxtLine_Typ;
+END_VAR
+(*Function-Txt Datenobjekt prüfen, anlegen, füllen*)
+VAR
+	_dowFuncTxt : DatObjWrite;
+	_debFunctionTxtList : REFERENCE TO ARRAY[0..MNTXT_MAX_IDX_TXT_FUNCTION] OF mnTxt_TxtLine_Typ;
+	_lLenFuncTxt : UDINT;
+END_VAR
+(*Instance-Txt Datenobjekt prüfen, anlegen, füllen*)
+VAR
+	_dowInstTxt : DatObjWrite;
+	_debInstanceTxtList : REFERENCE TO ARRAY[0..MNTXT_MAX_IDX_TXT_INSTANCE] OF mnTxt_TxtLine_Typ;
+	_lLenInstTxt : UDINT;
+END_VAR
+(*Parameter-Txt Datenobjekt prüfen, anlegen, füllen*)
+VAR
+	_dowParTxt : DatObjWrite;
+	_debParameterTxtList : REFERENCE TO ARRAY[0..MNTXT_MAX_IDX_TXT_PARAMETER] OF mnTxt_TxtLine_Typ;
+	_lLenParTxt : UDINT;
+END_VAR
+(*Parameter-HlpTxt Datenobjekt prüfen, anlegen, füllen*)
+VAR
+	_dowParHlpTxt : DatObjWrite;
+	_debParameterHlpTxtList : REFERENCE TO ARRAY[0..MNTXT_MAX_IDX_TXT_PARAMETER] OF mnTxt_HelpTxtLine_Typ;
+	_lLenParHlpTxt : UDINT;
+END_VAR
+(*Meldungs-Txt Datenobjekt prüfen, anlegen, füllen*)
+VAR
+	_dowMsgTxt : DatObjWrite;
+	_debMessageTxtList : REFERENCE TO ARRAY[0..65535] OF mnTxt_TxtLine_Typ;
+	_lLenMsgTxt : UDINT;
+END_VAR
+(*Meldungs-HlpTxt Datenobjekt prüfen, anlegen, füllen*)
+VAR
+	_dowMsgHlpTxt : DatObjWrite;
+	_debMessageHlpTxtList : REFERENCE TO ARRAY[0..65535] OF mnTxt_HelpTxtLine_Typ;
+	_lLenMsgHlpTxt : UDINT;
+	_doiMsgCfg : DatObjInfo;
+	_lLenMsg : UDINT;
+	_MsgCfgList : REFERENCE TO ARRAY[0..65535] OF MsgCfgLine_Typ;
+	_LoadState : _mntxt_loadstate_enum;
+END_VAR
+VAR CONSTANT
+	_MemPartCreate : AsMemPartCreate := (0);
+END_VAR
+VAR
+	_MemPartAlloc : AsMemPartAlloc;
+	_plLineAdress : REFERENCE TO ARRAY[1..MNTXT_MAXPARSELINES] OF UDINT;
+	_pwLineLen : REFERENCE TO ARRAY[1..MNTXT_MAXPARSELINES] OF UINT;
+	_fiFileInfo : fiFILE_INFO;
+	_FileInfo : FileInfo;
+	_FileOpen : FileOpen;
+	_lAdrFile : UDINT;
+	_FileRead : FileRead;
+	_FileClose : FileClose;
+	_CountLines : mnParam_CountLines;
+	_lAdrLineAdress : UDINT;
+	_lAdrLineLen : UDINT;
+	_wStartLine : UINT;
+	_wIdxLCID : UINT;
+	_GetCsvDat : mnParam_GetCsvDat;
+	_MemPartFree : AsMemPartFree;
+END_VAR
+VAR RETAIN
+	_wActLCID : UINT;
+END_VAR
+VAR
+	_xGermanExist : BOOL;
+	_lCycleCounter : UDINT;
+	_wIdxFunctionTxt : UINT;
+	_wIdxInstanceTxt : UINT;
+	_wIdxMessageTxt : UINT;
+	_wIdxMessageHelpTxt : UINT;
+	_wIdxParamTxt : UINT;
+	_wIdxParamHelpTxt : UINT;
+	_sPkgName : STRING[11];
+	_VerStruc : MoVerStruc_typ;
+	_lLineMem : UDINT;
+	_xInitOK : BOOL;
+	_initState : _mntxt_initstate_enum;
+	_CheckDoFunc : kgCheckDo;
+	_CheckDoInst : kgCheckDo;
+	_xInitDone : BOOL;
+	_CheckDoPar : kgCheckDo;
+	_CheckDoParHlp : kgCheckDo;
+	_CheckDoMsg : kgCheckDo;
+	_CheckDoMsgHlp : kgCheckDo;
+	_utfRC : _utfReplaceCtrl;
+	_sLCID : STRING[7];
+	_sPath : STRING[256];
+END_VAR

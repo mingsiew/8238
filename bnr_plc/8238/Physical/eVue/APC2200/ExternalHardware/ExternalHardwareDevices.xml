@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExternalHardware>
+  <Modules>
+    <Module ModuleID="FBE.ACS380_v2.04.0.3_FEPL-02_1.0_filerev1.0" Version="FFEPS10" OrderNumber="FEPL-02 and ACS380">
+      <SourceFile OriginalFile="ACS380_v2.04.0.3_FEPL-02_1.0_filerev1.0.xdd" TranslationFile="9D3XX5W7.ext" />
+    </Module>
+  </Modules>
+</ExternalHardware>

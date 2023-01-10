@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.2.98?>
+<Package SubType="ThemesPackage" PackageType="ThemesPackage" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Package">BuRTheme1</Object>
+    <Object Type="Package">Kannegiesser</Object>
+    <Object Type="Package">AsSafetySolution</Object>
+  </Objects>
+</Package>

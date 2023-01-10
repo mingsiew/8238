@@ -1,0 +1,32 @@
+(*Comm Config*)
+VAR CONSTANT
+  UDP_COMM_PORT : UINT := 4004;
+  TCP_COMM_PORT : UINT := 12005;
+END_VAR
+(*Data sizes*)
+VAR CONSTANT
+  EVUE_COMM_BUFFER_SIZE : UINT := 20000; (*Size of data array for the memory map*)
+  TCP_SEND_BUFFER_SIZE : UINT := 1000; (**Size of the send buffer for responses*)
+  TCP_RECV_BUFFER_SIZE : UINT := 20000; (**Size of the recieve buffer*)
+  UDP_SEND_PACKET_SIZE : UINT := 4000; (**Size of the packet to send*)
+END_VAR
+(***********UDP Comm Config************)
+VAR CONSTANT
+  LIVE_DATA_MAX_CONNECTIONS : USINT := 5; (**Maximum number of UDP Connections*)
+  LIVE_DATA_MAX_POOL_SIZE : USINT := 10; (**Maximum number of data transmissions on 1 connection*)
+END_VAR
+(**)
+(*DATA TYPE DEFINITIONS*)
+VAR CONSTANT
+  LIVE_DATA_TYPE_EVUE_UDP_COMM_1 : UINT := 1;
+  LIVE_DATA_TYPE_EVUE_UDP_COMM_2 : UINT := 2;
+  LIVE_DATA_TYPE_EVUE_UDP_COMM_3 : UINT := 3;
+  LIVE_DATA_TYPE_EVUE_UDP_COMM_4 : UINT := 4;
+  LIVE_DATA_TYPE_EVUE_UDP_COMM_5 : UINT := 5;
+  LIVE_DATA_TYPE_RAIL_MESSAGES : UINT := 1001;
+  LIVE_DATA_TYPE_SLING_INPUT_STATE : UINT := 3001;
+END_VAR
+(*DATA TYPE DEFINITIONS*)
+VAR
+        CommArray : ARRAY[0..EVUE_COMM_BUFFER_SIZE] OF UDINT; (**Global Array of pointers of comm vars*)
+END_VAR

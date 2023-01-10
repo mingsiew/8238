@@ -1,0 +1,4 @@
+VAR
+	CSP : ARRAY[0..1] OF csp_typ;
+	CurrentTimestamp : DATE_AND_TIME;
+END_VAR

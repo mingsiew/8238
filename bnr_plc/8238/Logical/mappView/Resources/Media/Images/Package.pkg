@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.2.98?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">Refresh_Push.png</Object>
+    <Object Type="File">Refresh.png</Object>
+    <Object Type="File">Warning.png</Object>
+    <Object Type="File">branding.png</Object>
+    <Object Type="File">Warning1.png</Object>
+    <Object Type="File">danger.png</Object>
+    <Object Type="File">Benutzer.png</Object>
+    <Object Type="File">Kannegiesser Techniker.png</Object>
+    <Object Type="File">Techniker.png</Object>
+    <Object Type="File">LoginFail.png</Object>
+    <Object Type="File">right.png</Object>
+    <Object Type="File">left.png</Object>
+  </Objects>
+</Package>

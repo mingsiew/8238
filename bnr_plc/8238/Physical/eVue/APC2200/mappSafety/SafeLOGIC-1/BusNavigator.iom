@@ -1,0 +1,164 @@
+<!--xml version= "1.0" encoding="utf-8"-->
+<!--IOMapping Version="4.0"-->
+<IOOffsets SIBytes="6144" SOBytes="2048" NSIBytes="1024" NSOBytes="1024" ConnectionsValidOffset="4" >
+		<Module Name="SL1.SM1" Hardware="X20SL8100" SafeLogicID="1" SafeModuleID="1" SISize="1" SOSize="1" NSISize="516" NSOSize="516" SIOffset="7" SOOffset="0" NSIOffset="0" NSOOffset="0" ExtendedSourceSL="1" HWTypeCode="5" >
+			<Channel Name="BOOL00001" Mapping="NSQX0.0" Variable="Safety_ModuleFault" Address="Safety.ModuleFault" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="INT0001" Mapping="NSQW2" Variable="SafetyZone_1_DataFromSafePLC" Address="SafetyZone[1].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="INT0002" Mapping="NSQW4" Variable="SafetyZone_2_DataFromSafePLC" Address="SafetyZone[2].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x3" />
+			<Channel Name="INT0003" Mapping="NSQW6" Variable="SafetyZone_3_DataFromSafePLC" Address="SafetyZone[3].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x4" />
+			<Channel Name="INT0004" Mapping="NSQW8" Variable="SafetyZone_4_DataFromSafePLC" Address="SafetyZone[4].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x5" />
+			<Channel Name="INT0005" Mapping="NSQW10" Variable="SafetyZone_5_DataFromSafePLC" Address="SafetyZone[5].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x6" />
+			<Channel Name="INT0006" Mapping="NSQW12" Variable="SafetyZone_6_DataFromSafePLC" Address="SafetyZone[6].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x7" />
+			<Channel Name="INT0007" Mapping="NSQW14" Variable="SafetyZone_7_DataFromSafePLC" Address="SafetyZone[7].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x8" />
+			<Channel Name="INT0008" Mapping="NSQW16" Variable="SafetyZone_8_DataFromSafePLC" Address="SafetyZone[8].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x9" />
+			<Channel Name="INT0009" Mapping="NSQW18" Variable="SafetyZone_9_DataFromSafePLC" Address="SafetyZone[9].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0xA" />
+			<Channel Name="INT0010" Mapping="NSQW20" Variable="SafetyZone_10_DataFromSafePLC" Address="SafetyZone[10].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0xB" />
+			<Channel Name="INT0011" Mapping="NSQW22" Variable="SafetyZone_11_DataFromSafePLC" Address="SafetyZone[11].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0xC" />
+			<Channel Name="INT0012" Mapping="NSQW24" Variable="SafetyZone_12_DataFromSafePLC" Address="SafetyZone[12].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0xD" />
+			<Channel Name="INT0013" Mapping="NSQW26" Variable="SafetyZone_13_DataFromSafePLC" Address="SafetyZone[13].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0xE" />
+			<Channel Name="INT0014" Mapping="NSQW28" Variable="SafetyZone_14_DataFromSafePLC" Address="SafetyZone[14].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0xF" />
+			<Channel Name="INT0015" Mapping="NSQW30" Variable="SafetyZone_15_DataFromSafePLC" Address="SafetyZone[15].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x10" />
+			<Channel Name="INT0016" Mapping="NSQW32" Variable="SafetyZone_16_DataFromSafePLC" Address="SafetyZone[16].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x11" />
+			<Channel Name="INT0017" Mapping="NSQW34" Variable="SafetyZone_17_DataFromSafePLC" Address="SafetyZone[17].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x12" />
+			<Channel Name="INT0018" Mapping="NSQW36" Variable="SafetyZone_18_DataFromSafePLC" Address="SafetyZone[18].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x13" />
+			<Channel Name="INT0019" Mapping="NSQW38" Variable="SafetyZone_19_DataFromSafePLC" Address="SafetyZone[19].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x14" />
+			<Channel Name="INT0020" Mapping="NSQW40" Variable="SafetyZone_20_DataFromSafePLC" Address="SafetyZone[20].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x15" />
+			<Channel Name="INT0021" Mapping="NSQW42" Variable="SafetyZone_21_DataFromSafePLC" Address="SafetyZone[21].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x16" />
+			<Channel Name="INT0022" Mapping="NSQW44" Variable="SafetyZone_22_DataFromSafePLC" Address="SafetyZone[22].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x17" />
+			<Channel Name="INT0023" Mapping="NSQW46" Variable="SafetyZone_23_DataFromSafePLC" Address="SafetyZone[23].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x18" />
+			<Channel Name="INT0024" Mapping="NSQW48" Variable="SafetyZone_24_DataFromSafePLC" Address="SafetyZone[24].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x19" />
+			<Channel Name="INT0025" Mapping="NSQW50" Variable="SafetyZone_25_DataFromSafePLC" Address="SafetyZone[25].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x1A" />
+			<Channel Name="INT0026" Mapping="NSQW52" Variable="SafetyZone_26_DataFromSafePLC" Address="SafetyZone[26].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x1B" />
+			<Channel Name="INT0027" Mapping="NSQW54" Variable="SafetyZone_27_DataFromSafePLC" Address="SafetyZone[27].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x1C" />
+			<Channel Name="INT0028" Mapping="NSQW56" Variable="SafetyZone_28_DataFromSafePLC" Address="SafetyZone[28].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x1D" />
+			<Channel Name="INT0029" Mapping="NSQW58" Variable="SafetyZone_29_DataFromSafePLC" Address="SafetyZone[29].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x1E" />
+			<Channel Name="INT0030" Mapping="NSQW60" Variable="SafetyZone_30_DataFromSafePLC" Address="SafetyZone[30].DataFromSafePLC" SODIndex="0x2580" SODSubIndex="0x1F" />
+			<Channel Name="INT1001" Mapping="NSIW0" Variable="Safety_MasterReset_Comm" Address="Safety.MasterReset_Comm" SODIndex="0x2500" SODSubIndex="0x1" />
+			<Channel Name="DINT1001" Mapping="NSID4" Variable="Safety_EDM_Comm" Address="Safety.EDM_Comm" SODIndex="0x2500" SODSubIndex="0x2" />
+			<Channel Name="DINT1002" Mapping="NSID8" Variable="Safety_Reset_Comm" Address="Safety.Reset_Comm" SODIndex="0x2500" SODSubIndex="0x3" />
+		</Module>
+		<Module Name="SL1.SM2" Hardware="X20SI8110" SafeLogicID="1" SafeModuleID="2" SISize="3" SOSize="0" NSISize="0" NSOSize="0" SIOffset="8" ConnectionValidBitNumber="0" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.0" Variable="SM_MC01_K109_SafeModuleOK" />
+		</Module>
+		<Module Name="SL1.SM3" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="3" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="11" SOOffset="1" NSIOffset="516" NSOOffset="516" ConnectionValidBitNumber="1" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.1" Variable="SM_MC01_K110_SafeModuleOK" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX516.0" Variable="SM_MC01_K110_ReleaseOutput" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+		<Module Name="SL1.SM4" Hardware="X20SI8110" SafeLogicID="1" SafeModuleID="4" SISize="3" SOSize="0" NSISize="0" NSOSize="0" SIOffset="12" ConnectionValidBitNumber="2" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.2" Variable="SM_MC02_K108_SafeModuleOK" />
+		</Module>
+		<Module Name="SL1.SM5" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="5" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="15" SOOffset="2" NSIOffset="517" NSOOffset="517" ConnectionValidBitNumber="3" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.3" Variable="SM_MC02_K109_SafeModuleOK" />
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX2.0" Variable="SM5_SafeDigitalOutput01" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput02" Mapping="SQX2.1" Variable="SM5_SafeDigitalOutput02" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput03" Mapping="SQX2.2" Variable="SM5_SafeDigitalOutput03" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput04" Mapping="SQX2.3" Variable="SM5_SafeDigitalOutput04" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX517.0" Variable="SM_MC02_K109_ReleaseOutput" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+		<Module Name="SL1.SM6" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="6" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="16" SOOffset="3" NSIOffset="518" NSOOffset="518" ConnectionValidBitNumber="4" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.4" Variable="SM_MC02_K110_SafeModuleOK" />
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX3.0" Variable="SM6_SafeDigitalOutput01" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput02" Mapping="SQX3.1" Variable="SM6_SafeDigitalOutput02" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput03" Mapping="SQX3.2" Variable="SM6_SafeDigitalOutput03" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput04" Mapping="SQX3.3" Variable="SM6_SafeDigitalOutput04" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX518.0" Variable="SM_MC02_K110_ReleaseOutput" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+		<Module Name="SL1.SM7" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="7" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="20" NSIOffset="520" NSOOffset="520" ConnectionValidBitNumber="5" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.5" Variable="SM_1408_SafeModuleOK" Address="SM[1408].SafeModuleOK" />
+			<Channel Name="SafeDigitalInput03" Mapping="SIX20.2" Variable="CSL01_BELT_SI03" Address="SM[1408].SafeDigitialInput03" SODIndex="0x6000" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalInput05" Mapping="SIX20.4" Variable="CSL02_BELT_SI05" Address="SM[1408].SafeDigitialInput05" SODIndex="0x6000" SODSubIndex="0x1" />
+		</Module>
+		<Module Name="SL1.SM8" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="8" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="17" SOOffset="4" NSIOffset="519" NSOOffset="519" ConnectionValidBitNumber="6" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.6" Variable="SM_MC02_K111_SafeModuleOK" />
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX4.0" Variable="SM8_SafeDigitalOutput01" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput02" Mapping="SQX4.1" Variable="SM8_SafeDigitalOutput02" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput03" Mapping="SQX4.2" Variable="SM8_SafeDigitalOutput03" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput04" Mapping="SQX4.3" Variable="SM8_SafeDigitalOutput04" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX519.0" Variable="SM_MC02_K111_ReleaseOutput" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+		<Module Name="SL1.SM31" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="31" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="24" NSIOffset="522" NSOOffset="522" ConnectionValidBitNumber="7" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.7" Variable="SM_1401_SafeModuleOK" Address="SM[1401].SafeModuleOK" />
+			<Channel Name="SafeTwoChannelInput0102" Mapping="SIX25.0" Variable="GS_1401_1" Address="SM[1401].SafeTwoChannelInput0102" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="SafeTwoChannelInput0506" Mapping="SIX25.2" Variable="ESTOP_1401_3" Address="SM[1401].SafeTwoChannelInput0506" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="DigitalInput01" Mapping="NSIX522.0" Variable="GS_1401_DI1" Address="SM[1401].DigitalInput01" SODIndex="0x2500" SODSubIndex="0x9" />
+		</Module>
+		<Module Name="SL1.SM32" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="32" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="28" NSIOffset="524" NSOOffset="524" ConnectionValidBitNumber="8" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX5.0" Variable="SM_1402_SafeModuleOK" Address="SM[1402].SafeModuleOK" />
+			<Channel Name="SafeTwoChannelInput0102" Mapping="SIX29.0" Variable="GS_1402_1" Address="SM[1402].SafeTwoChannelInput0102" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="DigitalInput01" Mapping="NSIX524.0" Variable="GS_1402_DI1" Address="SM[1402].DigitalInput01" SODIndex="0x2500" SODSubIndex="0xA" />
+		</Module>
+		<Module Name="SL1.SM33" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="33" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="32" NSIOffset="526" NSOOffset="526" ConnectionValidBitNumber="9" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX5.1" Variable="SM_1403_SafeModuleOK" Address="SM[1403].SafeModuleOK" />
+		</Module>
+		<Module Name="SL1.SM34" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="34" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="36" NSIOffset="528" NSOOffset="528" ConnectionValidBitNumber="10" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX5.2" Variable="SM_1404_SafeModuleOK" Address="SM[1404].SafeModuleOK" />
+			<Channel Name="SafeTwoChannelInput0102" Mapping="SIX37.0" Variable="GS_1404_1" Address="SM[1404].SafeTwoChannelInput0102" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="SafeTwoChannelInput0304" Mapping="SIX37.1" Variable="GS_1404_2" Address="SM[1404].SafeTwoChannelInput0304" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="DigitalInput01" Mapping="NSIX528.0" Variable="GS_1404_DI1" Address="SM[1404].DigitalInput01" SODIndex="0x2500" SODSubIndex="0xC" />
+		</Module>
+		<Module Name="SL1.SM36" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="36" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="40" NSIOffset="530" NSOOffset="530" ConnectionValidBitNumber="11" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX5.3" Variable="SM_1406_SafeModuleOK" Address="SM[1406].SafeModuleOK" />
+			<Channel Name="SafeTwoChannelInput0102" Mapping="SIX41.0" Variable="GS_1406_1" Address="SM[1406].SafeTwoChannelInput0102" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="SafeTwoChannelInput0304" Mapping="SIX41.1" Variable="GS_1406_2" Address="SM[1406].SafeTwoChannelInput0304" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="DigitalInput01" Mapping="NSIX530.0" Variable="GS_1406_DI1" Address="SM[1406].DigitalInput01" SODIndex="0x2500" SODSubIndex="0xD" />
+		</Module>
+		<Module Name="SL1.SM39" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="39" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="44" NSIOffset="532" NSOOffset="532" ConnectionValidBitNumber="12" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX5.4" Variable="SM_1409_SafeModuleOK" Address="SM[1409].SafeModuleOK" />
+		</Module>
+		<Module Name="SL1.SM40" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="40" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="48" NSIOffset="534" NSOOffset="534" ConnectionValidBitNumber="13" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX5.5" Variable="SM_1410_SafeModuleOK" Address="SM[1410].SafeModuleOK" />
+		</Module>
+		<Module Name="SL1.SM41" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="41" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="52" NSIOffset="536" NSOOffset="536" ConnectionValidBitNumber="14" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX5.6" Variable="SM_1411_SafeModuleOK" Address="SM[1411].SafeModuleOK" />
+			<Channel Name="SafeTwoChannelInput0506" Mapping="SIX53.2" Variable="ESTOP_1411_3" Address="SM[1411].SafeTwoChannelInput0506" SODIndex="0x6000" SODSubIndex="0x2" />
+		</Module>
+		<Module Name="SL1.SM44" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="44" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="56" NSIOffset="538" NSOOffset="538" ConnectionValidBitNumber="15" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX5.7" Variable="SM_1414_SafeModuleOK" Address="SM[1414].SafeModuleOK" />
+			<Channel Name="SafeTwoChannelInput0506" Mapping="SIX57.2" Variable="Pullcord_1414_3" Address="SM[1414].SafeTwoChannelInput0506" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="SafeTwoChannelInput0708" Mapping="SIX57.3" Variable="Pullcord_1414_4" Address="SM[1414].SafeTwoChannelInput0708" SODIndex="0x6000" SODSubIndex="0x2" />
+		</Module>
+		<Module Name="SL1.SM45" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="45" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="60" NSIOffset="540" NSOOffset="540" ConnectionValidBitNumber="16" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX6.0" Variable="SM_1415_SafeModuleOK" Address="SM[1415].SafeModuleOK" />
+			<Channel Name="SafeTwoChannelInput0506" Mapping="SIX61.2" Variable="Pullcord_1415_3" Address="SM[1415].SafeTwoChannelInput0506" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="SafeTwoChannelInput0708" Mapping="SIX61.3" Variable="Pullcord_1415_4" Address="SM[1415].SafeTwoChannelInput0708" SODIndex="0x6000" SODSubIndex="0x2" />
+		</Module>
+		<Module Name="SL1.SM46" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="46" SISize="4" SOSize="0" NSISize="2" NSOSize="2" SIOffset="64" NSIOffset="542" NSOOffset="542" ConnectionValidBitNumber="17" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX6.1" Variable="SM_1416_SafeModuleOK" Address="SM[1416].SafeModuleOK" />
+			<Channel Name="SafeTwoChannelInput0506" Mapping="SIX65.2" Variable="ESTOP_1416_3" Address="SM[1416].SafeTwoChannelInput0506" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="SafeTwoChannelInput0708" Mapping="SIX65.3" Variable="ESTOP_1416_4" Address="SM[1416].SafeTwoChannelInput0708" SODIndex="0x6000" SODSubIndex="0x2" />
+		</Module>
+		<Module Name="SL1.SM51" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="51" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="18" SOOffset="5" NSIOffset="544" NSOOffset="544" ConnectionValidBitNumber="18" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX6.2" Variable="SM_SC01_SafeModuleOK" />
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX5.0" Variable="SC01_Output_1" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput02" Mapping="SQX5.1" Variable="SC01_Output_2" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput03" Mapping="SQX5.2" Variable="SC01_Output_3" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput04" Mapping="SQX5.3" Variable="SC01_Output_4" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX544.0" Variable="SC01_SO_ReleaseOutput" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+		<Module Name="SL1.SM52" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="52" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="19" SOOffset="6" NSIOffset="545" NSOOffset="545" ConnectionValidBitNumber="19" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX6.3" Variable="SM_SC02_SafeModuleOK" />
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX6.0" Variable="SC02_Output_1" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput02" Mapping="SQX6.1" Variable="SC02_Output_2" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput03" Mapping="SQX6.2" Variable="SC02_Output_3" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput04" Mapping="SQX6.3" Variable="SC02_Output_4" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX545.0" Variable="SC02_SO_ReleaseOutput" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+		<Module Name="SL1.SM53" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="53" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="68" SOOffset="7" NSIOffset="546" NSOOffset="546" ConnectionValidBitNumber="20" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX6.4" Variable="SM_SC03_SafeModuleOK" />
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX7.0" Variable="SC03_Output_1" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput02" Mapping="SQX7.1" Variable="SC03_Output_2" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput03" Mapping="SQX7.2" Variable="SC03_Output_3" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput04" Mapping="SQX7.3" Variable="SC03_Output_4" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX546.0" Variable="SC03_SO_ReleaseOutput" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+		<Module Name="SL1.SM54" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="54" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="69" SOOffset="8" NSIOffset="547" NSOOffset="547" ConnectionValidBitNumber="21" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX6.5" Variable="SM_SC04_SafeModuleOK" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX547.0" Variable="SC04_SO_ReleaseOutput" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+		<Module Name="SL1.SM55" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="55" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="70" SOOffset="9" NSIOffset="548" NSOOffset="548" ConnectionValidBitNumber="22" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX6.6" Variable="SM_SC05_SafeModuleOK" />
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX9.0" Variable="SC05_Output_1" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput02" Mapping="SQX9.1" Variable="SC05_Output_2" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX548.0" Variable="SC05_SO_ReleaseOutput" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+</IOOffsets>

@@ -1,0 +1,55 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Package: Pkg_mnMsg
+ * File: Pkg_mnMsg.var
+ * Author: hunholz, Subramaniam
+ * Created: January 05, 2011
+ * Changed: June 15, 2011
+ ********************************************************************
+ * Variables of package Pkg_mnMsg
+ ********************************************************************)
+(*Konstanten für Kommandos*)
+VAR CONSTANT
+	MNMSG_CMD_HORN_OFF : UINT := 1; (*Kommando, Horn aus*)
+	MNMSG_CMD_ACK_FAULT : UINT := 2; (*Quittiere alle Störungen*)
+	MNMSG_CMD_ACK_MAINT : UINT := 3; (*Quittiere alle Wartungen*)
+	MNMSG_CMD_ACK : UINT := 4; (*Quittiere Einzelmeldung*)
+	MNMSG_CMD_DEL_STAT : UINT := 5; (*Statistik löschen*)
+	MNMSG_CMD_DEL_HIST : UINT := 6; (*Historie löschen*)
+END_VAR
+(*Kommandostati*)
+VAR CONSTANT
+	MNMSG_CMDSTAT_STATNOTREADY : UINT := 60000; (*Statistik ist nicht verfügbar*)
+	MNMSG_CMDSTAT_HISTNOTREADY : UINT := 60001; (*Historie ist nicht verfügbar*)
+	MNMSG_CMDSTAT_DELSTATFAILED : UINT := 60002; (*Statistik wurde nicht korrekt gelöscht*)
+	MNMSG_CMDSTAT_DELHISTFAILED : UINT := 60003; (*Historie wurde nicht korrekt gelöscht*)
+END_VAR
+(*Modus der Hupe*)
+VAR CONSTANT
+	MNMSG_HORNMODE_OFF : UINT := 0;
+	MNMSG_HORNMODE_ON : UINT := 1;
+	MNMSG_HORNMODE_INTERV : UINT := 2;
+END_VAR
+(*Definition von Fehlern  *)
+VAR CONSTANT
+	MNMSG_MSG_NO_STATISTIC : UINT := 1000; (*Statistik ist fehlerhaft. Siehe Logbuch SPS.*)
+	MNMSG_MSG_NO_HISTORY : UINT := 1003; (*Historie (Ringbuffer) ist fehlerhaft. Siehe Logbuch SPS.*)
+	MNMSG_MSG_SYSTEMFAULT : UINT := 9999; (*Systemfehler Meldungsmanager*)
+END_VAR
+(*Sortiermodi für Meldungsstatistik*)
+VAR CONSTANT
+	MNMSG_STATMODE_CNT : UINT := 0; (*Die Meldungsstatistik soll nach Häufigkeit sortiert werden*)
+	MNMSG_STATMODE_TIME : UINT := 1; (*Die Meldungsstatistik soll nach Dauer sortiert werden*)
+END_VAR
+(*Kommandschnittstelle Visualisierung *)
+VAR
+	mnMsgCmd : KG_Cmd_typ := (0);
+	IFmnMsg : IFmnMsg_Typ := (0);
+	mnMsgPar : mnMsgPar_Typ := (0);
+	mnMsgStatAd : mnMsgStatAd_Typ;
+END_VAR
+(*Meldungsschnittstelle*)
+VAR
+	kgMsgStatus : ARRAY[0..MNMSG_MAX_IDX_KGMSGSTATUS] OF kgMsg_Status_Typ;
+END_VAR

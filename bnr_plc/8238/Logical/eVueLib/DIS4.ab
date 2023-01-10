@@ -1,0 +1,24 @@
+FUNCTION_BLOCK DIS4
+		(* Implementation of DIS_BCD *)
+	
+		Out1s = 0
+		Out10s = 0
+		Out100s = 0
+		Out1000s = 0
+	
+	IF Enable = TRUE THEN
+		
+		d = RegisterIN / 1000
+		remain = RegisterIN - (d * 1000)
+		c = remain / 100
+		remain = remain - (c * 100)
+		b = remain / 10
+		a = remain - (b * 10) 
+			
+		Out1s = a
+		Out10s = b
+		Out100s = c
+		Out1000s = d
+	
+	ENDIF
+END_FUNCTION_BLOCK

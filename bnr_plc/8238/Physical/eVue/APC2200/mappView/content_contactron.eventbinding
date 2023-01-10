@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="content_Contactron_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<EventBinding id="content_MotorStarters.close_1.Click">
+			<Source contentRefId="content_MotorStarters" widgetRefId="close_1" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Contactron:visu_manual[1].selectedIndex" >
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="content_MotorStarters.close_2.Click">
+			<Source contentRefId="content_MotorStarters" widgetRefId="close_2" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Contactron:visu_manual[2].selectedIndex" >
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="content_MotorStarters.close_3.Click">
+			<Source contentRefId="content_MotorStarters" widgetRefId="close_3" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Contactron:visu_manual[3].selectedIndex" >
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="content_MotorStarters.close_4.Click">
+			<Source contentRefId="content_MotorStarters" widgetRefId="close_4" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Contactron:visu_manual[4].selectedIndex" >
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="content_MotorStarters.close_5.Click">
+			<Source contentRefId="content_MotorStarters" widgetRefId="close_5" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Contactron:visu_manual[5].selectedIndex" >
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="content_MotorStarters.close_6.Click">
+			<Source contentRefId="content_MotorStarters" widgetRefId="close_6" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Contactron:visu_manual[6].selectedIndex" >
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="content_MotorStarters.close_7.Click">
+			<Source contentRefId="content_MotorStarters" widgetRefId="close_7" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Contactron:visu_manual[7].selectedIndex" >
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="content_MotorStarters.close_8.Click">
+			<Source contentRefId="content_MotorStarters" widgetRefId="close_8" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Contactron:visu_manual[8].selectedIndex" >
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+	</Bindings>
+</EventBindingSet>

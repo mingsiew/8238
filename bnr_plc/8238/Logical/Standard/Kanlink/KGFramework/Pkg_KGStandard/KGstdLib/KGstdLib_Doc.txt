@@ -1,0 +1,193 @@
+KGstdLib-Dokumentation
+======================
+
+----------------------
+Abgeleitete Datentypen
+----------------------
+
+	MAC_type	USINT[0..5]
+	GUID_type	USINT[0..15]
+
+
+---------------
+Konvertierungen
+---------------
+
+kgitoa_udint
+------------
+
+	Beschreibung:
+	------------
+	Wandelt eine UDINT-Variable in einen String
+	
+	Rückgabewert
+	------------
+	
+				UDINT		0	-	OK
+	
+	VAR_INPUT
+	---------
+	
+		num		UDINT		Zu wandelnder Zahlenwert
+		
+	VAR_IN_OUT
+	----------
+	
+		str		STRING[11]	Ergebnis
+	
+
+kgatoi_udint
+------------
+
+	Beschreibung:
+	------------
+	Wandelt einen STRING in einen UDINT-Wert
+	
+	Rückgabewert
+	------------
+	
+				UDINT		0	-	OK
+							1	-	zu viele Ziffern
+							2	-	ungültiges Zeichen
+							3	-	Außerhalb des Wertebereichs
+							
+	VAR_INPUT
+	---------
+	
+		str		STRING[11]	Zu wandelnder String
+		
+	VAR_IN_OUT
+	----------
+	
+		num		UDINT		Ergebnis
+		
+
+kgatoi_uint
+------------
+
+	Beschreibung:
+	------------
+	Wandelt einen STRING in einen UINT-Wert
+	
+	Rückgabewert
+	------------
+	
+				UINT		0	-	OK
+							1	-	zu viele Ziffern
+							2	-	ungültiges Zeichen
+							3	-	Außerhalb des Wertebereichs
+							
+	VAR_INPUT
+	---------
+	
+		str		STRING[5	Zu wandelnder String
+		
+	VAR_IN_OUT
+	----------
+	
+		num		UINT		Ergebnis
+		
+
+---------------
+Postennummern
+---------------
+		
+kgNextBatchNoLong
+-----------------
+
+	Beschreibung:
+	-------------
+	Erzeugt eine eindeutige Postennummer im Format UDINT
+	Es sollte immer sichergestellt sein, dass die Uhr der SPS gestellt ist.	
+	
+	Verwendete Libraries:
+	---------------------
+	
+		astime
+
+	VAR_INPUT
+	---------
+	
+		Enable	BOOL	Eine neue Postennummer wird immer mit der positiven Flanke von Enable erzeugt.
+						D.h. der FB muss zwischenzeitlich mit Enable := FALSE aufgerufen werden.
+						
+		Group	USINT	Bis zu 8 Maschinen in einem Systemverbund können Postennummern erzeugen. Dazu
+						benötigt die Maschine eine eindeutige Gruppennummer von 0 .. 7.
+						
+	VAR_IN_OUT
+	----------
+	
+		BatchNo	UDINT	Die Postennummer baut immer auf die vorhergehende Nummer auf. Darum wird dem
+						FB die alte Nummer übergeben und die neue Nummer zurückgeliefert.
+						
+	VAR_OUTPUT
+	----------
+	
+		Status	UINT	0 		- OK
+						1		- Am Tag sind nur 4096 Postennummern je Gruppe möglich. Diese Maximalgrenze wurde überschritten.
+						65534	- Enable = FALSE
+						
+
+kgGetBatchNoUnique
+------------------
+
+	Beschreibung:
+	-------------
+	Erzeugt eine eindeutige, 16 Byte lange Postennummer im Format GUID
+	Es sollte immer sichergestellt sein, dass die Uhr der SPS gestellt ist.	
+	
+	Verwendete Libraries:
+	---------------------
+	
+		astime
+
+
+	VAR_INPUT
+	---------
+	
+		Enable	BOOL		Eine neue Postennummer wird immer mit der positiven Flanke von Enable erzeugt.
+							D.h. der FB muss zwischenzeitlich mit Enable := FALSE aufgerufen werden.
+						
+		Mac		MAC_type	In eine GUID wird immer die MAC-Adresse der Steuerung kodiert. Die MAC-Adresse
+							muss im Init_Up mit kgGetMacAdress ausgelesen werden.
+							
+	VAR_OUTPUT
+	----------
+	
+		BatchNo	GUID_type	GUID
+		
+		Status	UINT		0 		- OK
+							65534 	- Enable = FALSE
+		
+				
+		
+---------------
+Sonstiges
+---------------
+				
+kgGetMacAdress
+--------------
+
+	Beschreibung:
+	------------
+	Ermittelt die MAC-Adresse der onboard Ethernetschnittstelle
+	
+	Verwendete Libraries:
+	---------------------
+	
+		AsBrStr, Netlink, Ethernet
+		
+	VAR_INPUT
+	---------
+	
+		Enable	BOOL	keine Funktion
+		
+	VAR_OUTPUT
+	----------
+	
+		Mac		MAC_type	MAC-Adresse
+		
+		Status	UINT		0 - OK
+							Stati von ETHxinfo und GetEthPort	
+							
+	

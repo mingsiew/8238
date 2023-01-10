@@ -1,0 +1,25 @@
+VAR
+	n : UINT;
+END_VAR
+VAR CONSTANT
+	max_manualControls : USINT := 8;
+END_VAR
+VAR
+	visu_man : REFERENCE TO contactron_visu_manual_typ;
+	visu_manual : ARRAY[0..max_manualControls] OF contactron_visu_manual_typ;
+	selIndex : DINT;
+	updateDropDown : BOOL;
+	index : UINT;
+	manualSelectDrowDown : ARRAY[0..MAX_CONTACTRON] OF STRING[125];
+	sIndex : STRING[10];
+	run : BOOL;
+	contactron : REFERENCE TO Contactron_Type;
+	RunMotor : BOOL;
+	name : STRING[30];
+END_VAR
+VAR CONSTANT
+	CONTACTRON_MANUAL_DEFAULT : contactron_manual_typ := (RunReverse:=0,RunForwards:=0,Enable:=0,ErrorReset:=0);
+END_VAR
+VAR
+	errorString : STRING[400];
+END_VAR

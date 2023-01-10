@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gSafeDomain" Type="sfdomain">
+    <Group ID="DefaultSettings">
+      <Property ID="SafeDomain" Value="1" />
+      <Property ID="SafeLOGICName" Value="X20SL8100" />
+      <Property ID="SafeLOGICProductId" Value="X20SL8100" />
+      <Property ID="SafeLOGICModulePath" Value="SL1.IF1.ST239" />
+      <Property ID="Password" Value="a9b54abbd28f97071c4fe7dd5e011604" Description="Hash for the SafeKEY password **safeplc**" />
+      <Property ID="SafeProject" Value="SafeLOGIC-1" />
+    </Group>
+    <Group ID="DefaultFiles">
+      <Property ID="TargetApplication" Value="SafeLOGIC-1.sfapp" />
+    </Group>
+  </Element>
+</Configuration>

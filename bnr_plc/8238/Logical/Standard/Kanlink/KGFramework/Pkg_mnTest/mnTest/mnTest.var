@@ -1,0 +1,47 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Program: mnTest
+ * File: mnTest.var
+ * Author: hunholz
+ * Created: March 03, 2012
+ ********************************************************************
+ * Local variables of program mnTest
+ ********************************************************************)
+(*Packageversion auslesen*)
+VAR
+	_sPkgName : STRING[10];
+	_VerStruc : MoVerStruc_typ;
+END_VAR
+(*Aktueller Testmodus*)
+VAR
+	_wTestMode : UINT := 0;
+END_VAR
+(*Kommandointerpreter*)
+VAR
+	_CommandoState : _CommandoState_enum;
+	_TestState : _TestState_enum;
+	_fbSetMode : TestUser_SetMode;
+	_fbRunTest : TestUser_RunTest;
+	_doInfoCfg : DatObjInfo;
+	_wMsgCnt : UINT;
+	_MsgCfgList : REFERENCE TO ARRAY[1..MNMSG_MAX_CFGMESSAGES] OF MsgCfgLine_Typ;
+	_ii : UINT;
+END_VAR
+VAR CONSTANT
+	_MNTEST_MAX_MSGGROUPS : UINT := 30;
+END_VAR
+VAR
+	_TONmsgclk2 : TON;
+	_TONmsgclk1 : TON;
+	_wMsgTick : UINT;
+	_wStateMsgTest : ARRAY[1.._MNTEST_MAX_MSGGROUPS] OF UINT;
+	_xReason : ARRAY[1.._MNTEST_MAX_MSGGROUPS] OF BOOL;
+	_wMsgIdxOffset : ARRAY[1.._MNTEST_MAX_MSGGROUPS] OF UINT;
+	_wMsgClass : ARRAY[0..4] OF UINT := [0,1,10,11,20];
+	_TONMsg : ARRAY[1.._MNTEST_MAX_MSGGROUPS] OF TON;
+	_TONMsgPause : ARRAY[1.._MNTEST_MAX_MSGGROUPS] OF TON;
+	_sMachineNo : STRING[15];
+	_tMsgGap : TIME := T#10s;
+	_lGap : UDINT;
+END_VAR

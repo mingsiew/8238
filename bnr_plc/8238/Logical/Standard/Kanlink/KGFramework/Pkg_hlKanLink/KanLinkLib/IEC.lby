@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.3.7.46 SP?>
+<Library Version="0.94.5" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Commando Batch Transfer">CmdBTxfer.typ</File>
+    <File Description="BatchInformation / 1002">CmdBI.typ</File>
+    <File Description="BatchInformation / 1002">CmdSI.typ</File>
+    <File Description="Exported data types">CmdSilo.typ</File>
+    <File Description="Interfacetypen Kanlink">KLInterface.typ</File>
+    <File Description="Exported data types">KanLinkLib.typ</File>
+    <File Description="Exported constants">KanLinkLib.var</File>
+    <File Description="Exported functions and function blocks">KanLinkLib.fun</File>
+    <File Description="Configuriert einen Kanlink Client">KLLib_CfgClient.st</File>
+    <File Description="Configuriert einen Kanlink Server">KLLib_CfgServer.st</File>
+    <File Description="core-Funktion">KanLink_FB.st</File>
+    <File>KLLib_ClientTimer.st</File>
+    <File>KLLib_GetPVAdr.st</File>
+    <File>KLLib_SendData.st</File>
+    <File>KLLib_ReadServerPara.st</File>
+    <File>KLLib_InitCltPV.st</File>
+    <File>KLLib_ReadClientPara.st</File>
+    <File Description="Berechnen des Connection Key">KL_BuildKey.st</File>
+    <File>KLLib_Init.st</File>
+    <File Description="Erzeuge eine Strukturdefinition zu einer Variablen">KLLib_CreateStrucDef.st</File>
+    <File Description="Übertrage einen String als Zeile in den Speicher">KLLib_WriteStrucDefLine.st</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="AsUDP" />
+    <Dependency ObjectName="asstring" />
+    <Dependency ObjectName="AsARCfg" />
+    <Dependency ObjectName="brsystem" />
+    <Dependency ObjectName="sys_lib" />
+    <Dependency ObjectName="AsArLog" />
+    <Dependency ObjectName="AsIODiag" />
+    <Dependency ObjectName="AsETH" />
+    <Dependency ObjectName="DataObj" />
+    <Dependency ObjectName="KL_UserLib" />
+    <Dependency ObjectName="KGstdLib" />
+  </Dependencies>
+</Library>

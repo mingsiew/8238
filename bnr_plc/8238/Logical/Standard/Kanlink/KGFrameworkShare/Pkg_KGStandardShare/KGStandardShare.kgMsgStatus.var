@@ -1,0 +1,13 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Package: Pkg_KGStandardShare
+ * File: KGStandardShare.kgMsgStatus.var
+ * Author: hunholz
+ * Created: August 25, 2011
+ ********************************************************************
+ * Variables of package Pkg_KGStandardShare
+ ********************************************************************)
+VAR CONSTANT
+	MNMSG_MAX_IDX_KGMSGSTATUS : UDINT := 800; (*Anzahl der Meldequellen*)
+END_VAR

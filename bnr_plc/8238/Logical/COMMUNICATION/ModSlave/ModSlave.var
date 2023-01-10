@@ -1,0 +1,16 @@
+(*Modbus slave function block and configuration*)
+VAR
+  ModbusTcpSlave : MBslave := (0);
+  SlaveConfig : modbus_slave_cfg_typ := (0);
+  reset_error : BOOL := FALSE;
+END_VAR
+(*IO sample arrays*)
+VAR
+  EVUE_MODBUS : ARRAY[0..20000] OF UINT := [20001(0)];
+END_VAR
+(*MISC variables*)
+VAR
+  idx : UINT := 0;
+  logger : ARRAY[0..19] OF STRING[50] := [20(' ')];
+  StartStop : BOOL := FALSE;
+END_VAR   

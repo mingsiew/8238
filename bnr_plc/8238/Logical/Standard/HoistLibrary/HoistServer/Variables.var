@@ -1,0 +1,10 @@
+(****************************************************)
+VAR
+	MTBasicsPWM_0 : MTBasicsPWM;
+	i : USINT;
+	pHmiOpcUa : REFERENCE TO OpcUa_VC_type;
+	selectedVC : UINT;
+	pulse : MTBasicsPWM;
+	hoist : REFERENCE TO OpcUa_VC_type;
+	ton_simulateRecv : ARRAY[230..255] OF TON;
+END_VAR

@@ -1,0 +1,127 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: mnEth
+ * File: mnEth.var
+ * Author: tamme
+ * Created: March 17, 2011
+ * Changed: September 20, 2011
+ ********************************************************************
+ * Local variables of program mnEth
+ ********************************************************************)
+VAR
+	_xmnEthOk : BOOL;
+_CfgGetBroadcastAdr : CfgGetBroadcastAddr;
+END_VAR
+(*Ermittlung des Ethernetinterface*)
+VAR
+	_GetEthPort : kgGetEthPort;
+	_sEthDevice : STRING[15];
+END_VAR
+(*Maschinennummer*)
+VAR
+	_sMnr : STRING[15];
+END_VAR
+(*Hostname*)
+VAR
+	_CfgSetHostName : CfgSetHostName;
+	_sHostname : STRING[15];
+END_VAR
+(*Defaultwerte setzen*)
+VAR
+	_xSetDefault : BOOL;
+END_VAR
+(*Werte vom USB*)
+VAR
+	_FileOpenCsv : FileOpen;
+END_VAR
+(*Parsen allgemein*)
+VAR
+	_sPathCsv : STRING[127];
+	_MemPartCreate : AsMemPartCreate;
+	_MemPartAlloc : AsMemPartAlloc;
+	_pParseMem : UDINT;
+	_FileReadCsv : FileRead;
+	_FileCloseCsv : FileClose;
+	_GetCsvDat : mnParam_GetCsvDat;
+	_lFileSize : UDINT;
+END_VAR
+(*Hilfsvariablen*)
+VAR
+	_ParSet : _EthPar_typ;
+	_lIPAdr : UDINT;
+	_pOctet : REFERENCE TO ARRAY[0..3] OF USINT;
+	_lGatewayAdr : UDINT;
+	_DirInfo : DirInfo;
+	_DirCreate : DirCreate;
+	_lBroadcastAdr : UDINT;
+	_sBroadcastAdr : STRING[15];
+	_xChanged : BOOL;
+END_VAR
+(*Werte von CF*)
+VAR
+	_ParSetCF : _EthPar_typ;
+	_xSetIPFromCF : BOOL;
+END_VAR
+(*Funktionen*)
+VAR
+	_CfgSetSubnetMask : CfgSetSubnetMask;
+	_CfgSetIPAddr : CfgSetIPAddr;
+	_CfgSetDefaultGateway : CfgSetDefaultGateway;
+	_CfgSetBroadcastAdr : CfgSetBroadcastAddr;
+	_CfgGetGateway : CfgGetDefaultGateway;
+	_CfgGetIPAddress : CfgGetIPAddr;
+END_VAR
+(*Werte schreiben*)
+VAR
+	_WriteBOM : mnParam_WriteBOM_Mem;
+	_WriteCsv90 : mnParam_WriteCSV90_Mem;
+	_IPRow : mnParam_CsvIPRow_typ;
+	_FileDeleteCsv : FileDelete;
+	_FileCreateCsv : FileCreate;
+	_FileWriteCsv : FileWrite;
+END_VAR
+(*Zyklisch*)
+VAR
+	_ParGet : _EthPar_typ;
+	_ParAktuell : _EthPar_typ;
+	enEState : enumEthernetState;
+	_TONidle : TON;
+	_TONwarning : TON;
+	_bWaitCounter : USINT;
+END_VAR
+(*Konstanten*)
+VAR CONSTANT
+	_MNETH_MSG_IFDEVICE : UINT := 20000;
+	_MNETH_MSG_MEM : UINT := 20001;
+	_MNETH_MSG_SETDEF : UINT := 20100;
+	_MNETH_MSG_WRITECSV : UINT := 20101;
+	_MNETH_MSG_CHANGE : UINT := 20102;
+	_MNETH_MSG_SETUSB : UINT := 20103;
+END_VAR
+VAR
+	_lPosLF : UDINT;
+	_lPosCR : UDINT;
+	_kgMachineTypeW3 : kgMachinetypeW3_typ;
+	_lNetId : UDINT;
+	_cfgLease : cfgLease_typ;
+	_CfgSetDhcpsData : CfgSetDhcpsData;
+	_xDHCPstarted : BOOL;
+	_CfgSetDhcpServer : CfgSetDhcpServer;
+	_xSNTPSrvStarted : BOOL;
+	_xSNTPCltStarted : BOOL;
+	_CfgSetSntpClient : CfgSetSntpClient;
+	_CfgSetSntpServer : CfgSetSntpServer;
+	_sSubnetMask : STRING[15] := '255.255.240.000';
+	_xSetHostname : BOOL := TRUE;
+	_CfgGetHostName : CfgGetHostName;
+	_sActHostname : STRING[15];
+	_sActBroadcastAdr : STRING[15];
+	_sActIPAdr : STRING[15];
+	_sActGateway : STRING[15];
+	_sPkgName : STRING[11];
+	_VerStruc : MoVerStruc_typ;
+	_kgMsgStatus : kgMsg_Status_Typ;
+	_xCheckedUSB : BOOL := FALSE;
+	_sDevice : STRING[31];
+END_VAR

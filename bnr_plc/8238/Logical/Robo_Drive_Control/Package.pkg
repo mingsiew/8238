@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.2.98?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global data types">Robo_Drive.typ</Object>
+    <Object Type="File" Description="Global variables">Robo_Drive.var</Object>
+    <Object Type="Library" Language="IEC" Description="FC302 Functions Library">FC302</Object>
+    <Object Type="DataObject" Language="Simple" Description="Parameters 3kW Star from Expo">Param_3kw</Object>
+    <Object Type="DataObject" Language="Simple" Description="Parameters 2.2kW Star">Param_2_2kwStar</Object>
+    <Object Type="DataObject" Language="Simple" Description="Parameters 1.5kW Star Disable Drive feedback">ParamD15</Object>
+    <Object Type="DataObject" Language="Simple" Description="Parameters 1.5kW Star">Param_1_5kwStar_expo</Object>
+    <Object Type="DataObject" Language="Simple" Description="Parameters 0.25kW Star">Param_0_25kwStar1</Object>
+    <Object Type="DataObject" Language="Simple" Description="Parameters 0.25kW Test No Feed Back">ParaTest</Object>
+    <Object Type="Program" Language="IEC" Description="Robo Position Names - Transfer TrackView">zzRoboPosnNames</Object>
+    <Object Type="Program" Language="IEC" Description="Robo Position Names Test">zzRoboPosnNamesTest</Object>
+    <Object Type="DataObject" Language="Simple" Description="Parameters 1.5kW Star">Param_1_5kwStar</Object>
+    <Object Type="Program" Language="IEC" Description="*1ms Task to monitor and auto reference VC Works with liftv7">Lift_PosMonitor</Object>
+    <Object Type="Program" Language="IEC">31_vc1</Object>
+    <Object Type="Program" Language="IEC">Lift_v8_1</Object>
+    <Object Type="Library" Language="Binary" Description="The AsCANopen library provides functions for integrating CANopen services.">AsCANopen</Object>
+  </Objects>
+</Package>

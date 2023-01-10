@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="2.10.1" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global data types">Pkg_mnEth.typ</Object>
+    <Object Type="File" Description="Global variables">Pkg_mnEth.var</Object>
+    <Object Type="Program" Language="IEC" Description="Ethernetmanager">mnEth</Object>
+    <Object Type="File">Pkg_mnEth_History.txt</Object>
+    <Object Type="File">CfgMsgStat.mnEth.txt</Object>
+  </Objects>
+  <Dependencies>
+    <Dependency ObjectName="KGstdLib" />
+    <Dependency ObjectName="asarcfg" />
+    <Dependency ObjectName="asusb" />
+    <Dependency ObjectName="fileio" />
+    <Dependency ObjectName="asmem" />
+    <Dependency ObjectName="standard" />
+    <Dependency ObjectName="sys_lib" />
+    <Dependency ObjectName="ethernet" />
+  </Dependencies>
+</Package>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="IEC" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported data types">mnParamLib.typ</File>
+    <File Description="Exported constants">mnParamLib.var</File>
+    <File Description="Exported functions and function blocks">mnParamLib.fun</File>
+    <File>mnParamLib-History.txt</File>
+    <File>mnParam_BinarySearchInNumeric.st</File>
+    <File Description="Binärsuche von CSV-String-Container-Zeilen">mnParam_BinarySearchInString.st</File>
+    <File Description="Zählt die gültigen Zeilen der Datei und gibt eine Zeilenstruktur zurück">mnParam_CountLines.st</File>
+    <File Description="Parsen einer CSV-Zeile">mnParam_GetCsvDat.st</File>
+    <File Description="String mit ISO-Zeitformat in DATE_AND_TIME wandeln">mnParam_atodatetime.st</File>
+    <File>mnParam_GetNextSubstring.st</File>
+    <File Description="ContainerID ermitteln und Array-Grenzen">mnParam_GetContainerOfParamNum.st</File>
+    <File Description="Container für String-Parameter bestimmen">mnParam_GetContainerOfParamStrin.st</File>
+    <File Description="Liefert PV-Adresse mit Indizes">GetArrayPV.st</File>
+    <File Description="DINT auf beliebige, numerische Variable schreiben">mnParam_WritePVNum.st</File>
+    <File Description="REAL auf beliebige, numerische Variable schreiben">mnParam_WritePVrNum.st</File>
+    <File Description="Schreibe String-Variable">mnParam_WritePVString.st</File>
+    <File Description="Byte Order Mark">mnParam_WriteBOM_Mem.st</File>
+    <File Description="Leerzeile">mnParam_WriteNewline_Mem.st</File>
+    <File Description="Datenzeile numerisch schreiben">mnParam_WriteCSV10_Mem.st</File>
+    <File Description="Datenzeile numerisch schreiben">mnParam_WriteCSV11_Mem.st</File>
+    <File Description="String Daten schreiben">mnParam_WriteCSV20_Mem.st</File>
+    <File Description="String Daten schreiben">mnParam_WriteCSV81_Mem.st</File>
+    <File Description="String Daten schreiben">mnParam_WriteCSV80_Mem.st</File>
+    <File Description="String Daten schreiben">mnParam_WriteCSV90_Mem.st</File>
+    <File Description="Dateizeitstempel schreiben">mnParam_WriteCSV251_Mem.st</File>
+    <File Description="Zeile mit Maschinennummer">mnParam_WriteCSV252_Mem.st</File>
+    <File Description="Versions Kopfzeile">mnParam_WriteCSV253_Mem.st</File>
+    <File Description="Kommentarzeile schreiben">mnParam_WriteCSV254_Mem.st</File>
+    <File Description="File-Ende schreiben">mnParam_WriteCSV255_Mem.st</File>
+    <File Description="Wandelt Datum Zeit in ISO String">mnParam_datetimetoa.st</File>
+    <File Description="Wandelt Datum Zeit in ISO String">mnParam_datetoa.st</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="astime" />
+  </Dependencies>
+</Library>

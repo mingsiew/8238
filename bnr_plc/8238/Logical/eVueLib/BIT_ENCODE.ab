@@ -1,0 +1,54 @@
+FUNCTION_BLOCK BIT_ENCODE
+	(* Implementation of LineFull *)
+	
+	Output = 0
+	
+	IF Input[0] THEN
+		Output = Output + 1
+	ENDIF
+	IF Input[1] THEN
+		Output = Output + 2
+	ENDIF
+	IF Input[2] THEN
+		Output = Output + 4
+	ENDIF
+	IF Input[3] THEN
+		Output = Output + 8
+	ENDIF
+	IF Input[4] THEN
+		Output = Output + 16
+	ENDIF
+	IF Input[5] THEN
+		Output = Output + 32
+	ENDIF
+	IF Input[6] THEN
+		Output = Output + 64
+	ENDIF
+	IF Input[7] THEN
+		Output = Output + 128
+	ENDIF
+	IF Input[8] THEN
+		Output = Output + 256
+	ENDIF
+	IF Input[9] THEN
+		Output = Output + 512
+	ENDIF
+	IF Input[10] THEN
+		Output = Output + 1024
+	ENDIF
+	IF Input[11] THEN
+		Output = Output + 2048
+	ENDIF
+	IF Input[12] THEN
+		Output = Output + 4096
+	ENDIF
+	IF Input[13] THEN
+		Output = Output + 8192
+	ENDIF
+	IF Input[14] THEN
+		Output = Output + 16384
+	ENDIF
+	IF Input[15] THEN
+		Output = Output + 32768
+	ENDIF
+END_FUNCTION_BLOCK

@@ -1,0 +1,14 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Program: mnTestUser
+ * File: mnTestUser.var
+ * Author: hunholz
+ * Created: March 07, 2012
+ ********************************************************************
+ * Local variables of program mnTestUser
+ ********************************************************************)
+VAR
+	_CmdTest : TestUser_CmdTest_typ;
+	_i : UINT;
+END_VAR

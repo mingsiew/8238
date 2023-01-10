@@ -1,0 +1,33 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: CAN_Open
+ * File: FC302_ReadSTW.ab
+ * Author: D.Jefferys
+ * Created: February 11, 2009
+ ********************************************************************
+ * Implementation of program CAN_Open
+ ********************************************************************) 
+
+(*FC302 Read Status Word*)
+FUNCTION_BLOCK FC302_ReadSTW
+	
+	STW.ControlReady   		= BIT_TST(StatusWord,0)
+	STW.DriveReady			= BIT_TST(StatusWord,1)
+	STW.CoastingStop		= BIT_TST(StatusWord,2)
+	STW.Trip				= BIT_TST(StatusWord,3)
+	STW.Error				= BIT_TST(StatusWord,4)
+	STW.NotUsed				= BIT_TST(StatusWord,5)
+	STW.TripLock			= BIT_TST(StatusWord,6)
+	STW.Warning				= BIT_TST(StatusWord,7)
+	STW.SpeedReference		= BIT_TST(StatusWord,8)
+	STW.BusOperation		= BIT_TST(StatusWord,9)
+	STW.FreqLimitOk			= BIT_TST(StatusWord,10)
+	STW.InOperation			= BIT_TST(StatusWord,11)
+	STW.DriveOverTemp		= BIT_TST(StatusWord,12)
+	STW.DriveVoltageFault	= BIT_TST(StatusWord,13)
+	STW.DriveTorqueLimit	= BIT_TST(StatusWord,14)
+	STW.ThermalTimerLimit	= BIT_TST(StatusWord,15)
+	
+
+END_FUNCTION_BLOCK

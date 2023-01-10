@@ -1,0 +1,24 @@
+FUNCTION_BLOCK stUNI5
+	(* Implementation of stUNI5 *)
+	
+	
+	;Add 5 single digits USINT together
+	
+	DataOUT = 0
+	
+	IF Enable THEN
+		Data = DataIN[4] * 10000
+		Data = Data + (DataIN[3] * 1000)
+		Data = Data + (DataIN[2] * 100)
+		Data = Data + (DataIN[1] * 10)
+		Data = Data + DataIN[0]
+		
+		;Ensure output is within INT
+		IF Data < 32767 THEN
+			DataOUT = UINT(Data)
+		ELSE
+			DataOUT = 32767
+		ENDIF
+	ENDIF
+	
+END_FUNCTION_BLOCK

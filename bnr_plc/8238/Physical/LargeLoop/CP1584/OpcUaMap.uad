@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource FileVersion="3">
+  <DefaultView>
+    <ACL>
+      <ACE Role="Administrators" Write="True" />
+      <ACE Role="KanIntern" Write="True" />
+      <ACE Role="KanDiag" />
+    </ACL>
+    <Module>
+      <GlobalVariables Name="Global PV">
+        <Variable Name="OpcUa" Enable="True">
+          <Variable Name="VC" Enable="True" EnableArrayElements="True" />
+        </Variable>
+      </GlobalVariables>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

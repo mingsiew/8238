@@ -1,0 +1,86 @@
+VAR
+	httpServer : httpService;
+	sendResponse : BOOL;
+	abortResponse : BOOL;
+	URI : STRING[500];
+	requestHeader : httpRequestHeader_t;
+	requestData : STRING[10000];
+	responseHeader : httpResponseHeader_t;
+	responseData : STRING[10000];
+	Statistics : httpStatistics_t;
+	serviceName : STRING[50];
+	getParameterName : httpGetParameter;
+END_VAR
+VAR CONSTANT
+	STRING_DOLLAR : STRING[1] := '&';
+END_VAR
+VAR
+	activeFunction : UINT;
+	mis : UDINT;
+	bagIndex : UDINT;
+	dst : USINT;
+	error : INT;
+	api : UINT;
+	errorResponse : BOOL;
+	overRideData : overRide_typ;
+	ton_httpTimeOut : TON_10ms;
+	recv : R_TRIG;
+	wait : F_TRIG;
+	cat : UDINT;
+	cus : UDINT;
+	prg : USINT;
+	found : USINT;
+	recieved : BOOL;
+END_VAR
+VAR CONSTANT
+	BLANK_RESPONSE_HEADER : httpResponseHeader_t := (0);
+END_VAR
+VAR
+	requestArriveTime : DATE_AND_TIME;
+	debugCount : UDINT;
+	index : UDINT;
+	belt : USINT;
+	velocity : INT;
+	direction : USINT;
+	command : USINT;
+	sp1 : UINT;
+	sp2 : UINT;
+	sp3 : UINT;
+	tourID : UDINT;
+	varName : STRING[100];
+	setValue : USINT;
+	status : UINT;
+	pv_adr : UDINT;
+	pv_len : UDINT;
+	value : STRING[100];
+	pv_type : UDINT;
+	pv_length : UDINT;
+	pv_dimension : UINT;
+	isString : BOOL;
+	stringCheck : BOOL;
+	num_Val : DINT;
+	float_val : REAL;
+	clearFifo : fifoClear;
+	createFifo : fifoCreate;
+	deleteFifo : fifoDelete;
+	scanCount : USINT;
+	searchOffset : UINT;
+END_VAR
+VAR CONSTANT
+	SEARCH_STRING_VAR_NAME : STRING[20] := 'varName":"';
+	SEARCH_STRING_VAR_VALUE : STRING[20] := 'value":';
+END_VAR
+VAR
+	writeFifo : fifoWrite;
+	arrayEnd : UINT;
+	data : ARRAY[0..1] OF UDINT;
+	fi_status : UDINT;
+	pData : UDINT;
+	pos1 : UINT;
+	pos2 : UINT;
+	readFifo : fifoRead;
+	string_Val : STRING[100];
+	length : UDINT;
+	responseDataBinary : ARRAY[0..1999] OF USINT;
+	sendBinaryData : BOOL;
+END_VAR

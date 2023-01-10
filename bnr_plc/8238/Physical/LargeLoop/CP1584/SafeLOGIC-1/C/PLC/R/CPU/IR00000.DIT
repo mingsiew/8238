@@ -1,0 +1,76 @@
+(*
+T: RESOURCE CPU
+FW: NO
+CI#: 0
+QSL: 11
+QVE: 11
+QVPC: 11
+QPar: 0
+QFBI: 0
+*)
+@V 1 2 0
+SM2_SafeDigitalInput01	1	VAR_GLOBAL	@TYP:43
+%SIX 56.0		     
+
+;
+
+@V 1 3 0
+SM2_SafeDigitalInput02	2	VAR_GLOBAL	@TYP:43
+%SIX 56.1		     
+
+;
+
+@V 1 4 0
+BOOL001	3	VAR_GLOBAL	@TYP:1
+%NSQX 0.0		     
+
+;
+
+@V 1 5 0
+Reset_Zone_0	4	VAR_GLOBAL	@TYP:1
+%NSIX 0.0		     
+
+;
+
+@V 1 6 0
+SM2_SafeTwoChannelInput0102	5	VAR_GLOBAL	@TYP:43
+%SIX 58.4		     
+
+;
+
+@V 1 7 0
+SM2_SafeTwoChannelInput0304	6	VAR_GLOBAL	@TYP:43
+%SIX 58.5		     
+
+;
+
+@V 1 8 0
+BOOL002	7	VAR_GLOBAL	@TYP:1
+%NSQX 0.1		     
+
+;
+
+@V 1 9 0
+Reset_Zone_1	8	VAR_GLOBAL	@TYP:1
+%NSIX 0.1		     
+
+;
+
+@V 1 10 0
+SM3_SafeDigitalOutput01	9	VAR_GLOBAL	@TYP:43
+%SQX 13.0		     
+
+;
+
+@V 1 11 0
+SM3_SafeDigitalOutput02	10	VAR_GLOBAL	@TYP:43
+%SQX 13.1		     
+
+;
+
+@V 1 12 0
+SM3_ReleaseOutput01	11	VAR_GLOBAL	@TYP:1
+%NSQX 132.0		     
+
+;
+

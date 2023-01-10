@@ -1,0 +1,23 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Library: WetLinkLib
+ * File: WetLinkLib.var
+ * Author: stahlhut
+ * Created: January 06, 2012
+ ********************************************************************
+ * Constants of library WetLinkLib
+ ********************************************************************)
+VAR CONSTANT
+	KLLIB_REQ : USINT := 1;
+	KLLIB_MAX_MUL : USINT := 15; (*Maximale Anzahl an Clients die zusammengefasst werden dürfen*)
+	KLLIB_RESP : USINT := 2;
+	MagicNr : UDINT := 16#B16B00B5;
+	PreHeaderSize : UDINT := 8;
+	HeaderSize : UDINT := 16;
+	KL_optReqManually : UINT := 16#8000;
+	KL_optOnReqCall : UINT := 16#4000;
+	KLLIB_MSG_NULL_POINTER : UINT := 60000;
+	KLLIB_MSG_NOT_ENOUGH_MEM : UINT := 60001;
+	KLLIB_MSG_VAR_ERROR : UINT := 60002;
+END_VAR

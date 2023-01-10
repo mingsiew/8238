@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="ContentLoginDialog" height="185" width="500" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.LoginButton" id="LoginButton1" top="146" left="200" zIndex="1" text="$IAT/Login.Prompt.Login" style="Kannegiesser_Login" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle1" top="137" left="0" width="500" height="48" zIndex="0" borderStyle="none" cornerRadius="0px 0px 8px 8px" lineColor="rgba(128, 128, 128, 1)" backColor="rgba(7, 124, 197, 1)" backGroundGradient="linear-gradient(to top, #c5deea 0%,#8abbd7 31%,#67a6e4 100%)" />
+    <Widget xsi:type="widgets.brease.Password" id="Password1" top="94" left="200" width="219" zIndex="2" />
+    <Widget xsi:type="widgets.brease.TextInput" id="TextInput1" top="59" left="200" width="219" zIndex="3" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="59" left="47" width="151" zIndex="4" text="$IAT/Login.Prompt.UserName" textAlign="right" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label2" top="94" left="47" width="151" zIndex="6" text="$IAT/Login.Prompt.Password" textAlign="right" bold="true" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="59" left="431" width="54" height="65" zIndex="5" image="Media/Images/LoginFail.png" />
+    <Widget xsi:type="widgets.brease.Label" id="Label3" top="105" left="408" width="99" height="36" zIndex="7" multiLine="true" text="$IAT/Login.Prompt.SetUserFailed" textAlign="center" fontSize="10px" />
+    <Widget xsi:type="widgets.brease.Button" id="btn_Supervisor" top="5" left="50" height="46" zIndex="8" image="Media/Images/Benutzer.png" imageAlign="top" text="$IAT/Login.User.Supervisor" imageHeight="22" imageWidth="25" style="User_Selected" />
+    <Widget xsi:type="widgets.brease.Button" id="btn_Engineer" top="5" left="200" height="46" zIndex="9" image="Media/Images/Techniker.png" imageAlign="top" text="$IAT/Login.User.Engineer" imageHeight="22" imageWidth="25" style="User_Off" />
+    <Widget xsi:type="widgets.brease.Button" id="btn_Programmer" top="5" left="350" height="46" zIndex="10" image="Media/Images/Kannegiesser%20Techniker.png" imageAlign="top" text="$IAT/Login.User.Programmer" imageHeight="22" imageWidth="25" style="User_Selected" />
+  </Widgets>
+</Content>

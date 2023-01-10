@@ -1,0 +1,39 @@
+VAR
+	CC_EStop_Safety : BOOL;
+	customTest : BOOL;
+	EStop : ARRAY[1..4] OF BOOL;
+	Fuse_Lamp_1 : BOOL;
+	Fuse_Lamp_2 : BOOL;
+	Fuse_Lamp_3 : BOOL;
+	Fuse_Reset_1 : BOOL;
+	Fuse_Reset_2 : BOOL;
+	Fuse_Reset_3 : BOOL;
+END_VAR
+VAR RETAIN
+	gEmptyLine : {REDUND_UNREPLICABLE} BOOL;
+END_VAR
+VAR
+	MasterReset_1 : BOOL;
+	MasterReset_2 : BOOL;
+	MasterReset_3 : BOOL;
+	MasterReset_MC01 : BOOL;
+	Fuse_Reset_MC01 : BOOL;
+	MasterReset_MC02 : BOOL;
+	Fuse_Reset_MC02 : BOOL;
+	sb1_endPX : BOOL;
+	sb1_lamp : BOOL;
+	sb1_start : BOOL;
+	sb1_stop : BOOL;
+	sb2_endPX : BOOL;
+	sb3_endPX : BOOL;
+	sb2_start : BOOL;
+	sb2_stop : BOOL;
+	sb2_lamp : BOOL;
+	pressure_sensor1 : BOOL;
+	pressure_sensor2 : BOOL;
+	tripCurrent : USINT;
+	SSL2_LowerGuard : BOOL;
+	SSL2_RaiseGuard : BOOL;
+	ssr1_prs : BOOL;
+	ssr1_close : BOOL;
+END_VAR

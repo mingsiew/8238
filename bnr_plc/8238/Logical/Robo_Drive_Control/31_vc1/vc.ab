@@ -1,0 +1,646 @@
+;----------------------------------------------------
+;Sequence 1 - SVC1 Vertical conveyor 1 D[900 + mySeq]
+;----------------------------------------------------
+
+PROGRAM _INIT
+myHttp = 6
+END_PROGRAM
+
+PROGRAM _CYCLIC
+
+;Inputs
+myVC					    = 1 	;Vertical conveyor number 
+mySeq					    = 31		;Sequence number
+myBag						= 319
+myBufferBag					= 360
+myIO						= 31	
+myZone						= 1
+myFullLine					= 48
+myFullBuffBag				= Line[myFullLine].FirstBag	
+myFullRelLine				= 0
+myFullRelBag				= 0//Line[myFullRelLine].LastBag
+myEmptyRelLine				= 0
+myEmptyRelBag				= 0
+myWeighBag					= 482
+	
+//Calculate weight
+raw = DINT(AI1223[1])
+raw = (raw * 2000)
+Bag[myWeighBag].Cat = 1  	
+IF (raw > 0) THEN
+	Bag[myWeighBag].Wgt = UINT(raw/32767)
+ELSE
+	Bag[myWeighBag].Wgt = 0
+ENDIF
+
+IF (Bag[myWeighBag].Bid = 0) AND (BidStn > 0) THEN
+	Bag[myWeighBag].Bid =  BidStn				
+	BidStn = 0	
+ENDIF	
+	
+RB_PosnName[myVC].Name[1]	= posnNameHighLevelBagOut
+RB_PosnName[myVC].Extra[1]	= posnExtraNone
+RB_PosnName[myVC].Name[2]	= posnNameHighLevelBagIn
+RB_PosnName[myVC].Extra[2]	= posnExtraNone
+RB_PosnName[myVC].Name[3]	= posnNameLowLevelBagOut
+RB_PosnName[myVC].Extra[3]	= posnExtraNone
+RB_PosnName[myVC].Name[4]	= posnNameLowLevelBagIn
+RB_PosnName[myVC].Extra[4]	= posnExtraNone
+
+	
+stopZone 		= Std.HaltSysZone[myZone] ;OR ;ZoneControl[myZone].requestAccess
+;;ZoneControl[myZone].sequenceRunning[mySeq] = FALSE
+	
+I_BagAtOutbuffer			= FALSE	
+I_OutbufferOpen				= FALSE
+	
+;Set rail alignment direction
+RailAlignPosn[1] 			= AlignRelease 	;Empty In
+RailAlignPosn[2] 			= AlignReceive 	;Full Out
+RailAlignPosn[3] 			= AlignRelease 	;Empty Out
+RailAlignPosn[4] 			= AlignReceive 	;Full In
+RailAlignPosn[5] 			= AlignNone
+RailAlignPosn[6] 			= AlignNone 	
+
+;Sequence Inputs
+I_BagOnCarr					= X[myIO].X05
+I_BagArriveCarr				= X[myIO].X04
+I_PowerSave					= FALSE
+I_BagAtFullBuffer			= Line[myFullLine].BufferProximity
+I_BagReleased				= X[myIO + 1].X02// Released at high level
+;BulkMode = NOT I_AutoMode
+
+
+
+O_OpenBuffer					= FALSE
+O_OpenCarrStop					= FALSE
+O_Lamp                      	= FALSE
+O_OpenFullBagBuffer				= FALSE
+	
+
+Request.VC[myVC]				= FALSE	
+Request.VC_HighLevel[myVC]  	= FALSE
+Request.VC_LowLevel[myVC]	    = FALSE	
+RequestRel.VC_HighLevel[myVC]	= FALSE
+RequestRel.VC_LowLevel[myVC]	= FALSE
+
+EnableRel.PN[31]				= FALSE	
+	
+;Lifting
+strcpy(ADR(LiftIn.sDevice),ADR("SS1.IF1"))
+strcpy(ADR(LiftIn.sParTblName),ADR("Param_1_5k"))
+LiftIn.Node					= (10 + myVC)
+
+LiftIn.DisableDrive			= FALSE
+LiftIn.DoRef 				= FALSE
+LiftIn.JogForwards 			= FALSE
+LiftIn.JogReverse 			= FALSE
+LiftIn.EStop				= Std.HaltSysZone[myZone] 
+LiftIn.PosnReq				= 0
+LiftIn.MaxSpeed				= RB_Posn[myVC].Lift.MaxSpeed
+LiftIn.PowerSave 			= FALSE
+LiftIn.I_ForwardLimitOk		= X[myIO + 1].X01 	;Top limit   	- Do NOT Change to N.O.
+LiftIn.I_ReverseLimitOk		= X[myIO + 1].X03	;Bottom limit	- Do NOT Change to N.O.
+LiftIn.I_RefPosn			= X[myIO + 1].X04
+LiftIn.I_RailOkRelease		= X[myIO].X07
+LiftIn.I_RailOkReceive		= X[myIO].X06
+
+LiftOut						= RB[myVC].Lift.SeqOut ;Copy drive outputs to local
+
+;Shared Lift & Rotate
+DisableDrive				= FALSE
+RunMotor 					= FALSE
+RunPosition					= 0
+
+;Clear Interlock Signals
+LOOP Posn = 1 TO 5 DO
+	VCiLock[myVC].Posn[Posn].EnabSend 	= FALSE
+ENDLOOP
+
+Alarm[mySeq].Name 			= 0
+Alarm[mySeq].Bag			= myBag
+Alarm[mySeq].Beacon			= TRUE
+Alarm[mySeq].Extra			= 0
+Alarm[mySeq].Time			= 6000
+
+;Setup Sequence
+STEP = D[900 + mySeq]
+;Setup Pulse contact
+PLS = (STEP <> LASTSTEP)
+LASTSTEP = STEP
+	
+	
+;Sequence
+IF (STEP = 0) THEN
+	;Disabled
+	DisableDrive 	= TRUE
+ENDIF
+
+;Combine Lift and Rotate into a single variable
+DrivesReady		= LiftOut.RefComplete
+DriveDisabled 	= (NOT PLS AND LiftOut.DriveDisabled) OR DebugMode
+PosnOk	 		= (NOT PLS AND LiftOut.PosnOk)
+RailOkReceive	= LiftIn.I_RailOkReceive
+RailOkRelease	= LiftIn.I_RailOkRelease
+
+;Power Save mode
+IF I_PowerSave THEN
+	LiftIn.PowerSave 	= TRUE
+	LiftIn.MaxSpeed		= 300
+ENDIF
+
+;Carriage Empty Decide what to do next.
+IF (STEP = 1) THEN
+	;Cycle Count
+    ;ZoneControl[myZone].sequenceRunning[mySeq] = TRUE	
+	IF PLS THEN
+		CycleCount 						= CycleCount + 1
+		RB_Perm[myVC].Lift.CycleCount 	= RB_Perm[myVC].Lift.CycleCount + 1
+	ENDIF
+	IF NOT Std.HaltSysZone[myZone]  THEN
+		IF (CycleCount >= 500) THEN
+			;If Referencing required then set 'Do Reference'
+			;Put the sequence to a position step to enable the carriage
+			;to retuen to the correct place after referencing
+			LiftIn.DoRef 	= TRUE	
+			CycleCount 		= 0
+		ELSE
+			INC Count[mySeq]
+			D[900 + mySeq] = 2	
+		ENDIF
+	ENDIF
+ENDIF
+
+	
+;Step 2. Move to empty bag in high level.....
+IF (STEP = 2) THEN
+	RunPosition	= POS_EMPTY_BAG_IN
+	;ZoneControl[myZone].sequenceRunning[mySeq] = TRUE
+	RunMotor	= (NOT Std.HaltSysZone[myZone] AND DrivesReady)
+	IF PosnOk THEN
+		D[900 + mySeq] = 3
+	ENDIF
+	IF (NOT Std.HaltSysZone[myZone] AND DrivesReady) THEN
+		Alarm[mySeq].Name = almCarriageMoveFault
+	ENDIF
+ENDIF
+	
+	
+GetFullBag	 = (Bag[myFullBuffBag].Cat > 0)
+GetEmpty	 = RequestRel.PN[31] //And check lower loop space.
+	
+;Decide what to do
+TON_10ms((NOT I_BagArriveCarr AND NOT I_BagOnCarr),300,CarriageClear,CarriageClearET)
+IF (STEP = 3) THEN
+	DisableDrive = TRUE
+	IF CarriageClear AND (Bag[myBag].Cat = 0) AND NOT stopZone  THEN
+	 	Request.VC[myVC] = TRUE // Tell CP31 that vc is in position..
+		IF GetEmpty THEN		
+			D[900 + mySeq] = 4	
+		ELSE IF GetFullBag THEN
+			D[900 + mySeq] = 9	
+		ENDIF
+	ENDIF
+  IF NOT CarriageClear THEN
+		Alarm[mySeq].Name = almSwitchFault	
+	ELSE IF (Bag[myBag].Cat > 0) THEN
+		Alarm[mySeq].Name = almBagDataError		
+	ENDIF	
+ENDIF
+	
+;Enable CP31 to release a bag	
+IF (STEP = 4) THEN	
+	DisableDrive = TRUE
+    ;ZoneControl[myZone].sequenceRunning[mySeq] = TRUE
+	EnableRel.PN[31] = (Bag[myBag].Cat = 0)
+	IF (I_BagOnCarr OR I_BagArriveCarr) THEN	
+		D[900 + mySeq] = 5
+	ENDIF		
+	IF NOT RailOkReceive THEN
+		Alarm[mySeq].Name = almRailNotAligned
+		Alarm[mySeq].Time = 100		
+	ENDIF		
+ENDIF
+
+;Bag settles on carriage	
+TON_10ms(I_BagOnCarr,300,SettledCarriage,SettledCarriageET)	
+IF (STEP = 5) THEN	
+	DisableDrive = TRUE
+	IF SettledCarriage AND (Bag[myBag].Cat > 0) AND NOT stopZone AND NOT EnableRel.VC_LowLevel[myVC] THEN	
+		D[900 + mySeq] = 6
+	ELSE IF NOT SettledCarriage	THEN	
+		Alarm[mySeq].Name = almBagNotSettled
+		Alarm[mySeq].Time = 9000	
+	ELSE IF (Bag[myBag].Cat = 0) THEN
+		Alarm[mySeq].Name = ALM_BAG_DATA_ERROR
+		Alarm[mySeq].Time = 0	
+	ENDIF	
+ENDIF	
+
+;Move carriage to empty bag out.	
+IF (STEP = 6) THEN 	
+	RunPosition	= POS_EMPTY_BAG_OUT
+    ;ZoneControl[myZone].sequenceRunning[mySeq] = TRUE
+	RunMotor	= (NOT Std.HaltSysZone[myZone] AND DrivesReady)
+	IF PosnOk THEN
+		D[900 + mySeq] = 7
+	ENDIF
+	IF (NOT Std.HaltSysZone[myZone] AND DrivesReady) THEN
+		Alarm[mySeq].Name = almCarriageMoveFault
+	ENDIF	
+ENDIF	
+	
+
+;Request Release
+releaseValid = (Bag[myBag].Cat > 0)AND RailOkRelease 
+IF (STEP = 7) THEN	
+	DisableDrive = TRUE	
+	RequestRel.VC_LowLevel[myVC] = releaseValid 
+	IF EnableRel.VC_LowLevel[myVC] AND releaseValid THEN
+		D[900 + mySeq] = 8
+	ELSE IF NOT RailOkRelease THEN		
+		Alarm[mySeq].Name = almRailNotAligned
+		Alarm[mySeq].Time = 100				
+	ELSE IF (Bag[myBag].Cat = 0) THEN
+		Alarm[mySeq].Name = ALM_BAG_DATA_ERROR
+		Alarm[mySeq].Time = 0	
+	ENDIF		
+ENDIF			
+
+;STEP 8 release empty bag	
+IF (STEP = 8) THEN	
+	DisableDrive = TRUE
+	O_OpenCarrStop = releaseValid
+	IF (Bag[myBag].Cat = 0) AND NOT EnableRel.VC_LowLevel[myVC] THEN 
+		IF GetFullBag OR (D[901] > 6) THEN//CHeck if there is a full bag, or the loading unit is releasing before moving back to the top,,
+			D[900 + mySeq] = 9			
+		ELSE
+			D[900 + mySeq] = 1
+		ENDIF		
+	ELSE IF releaseValid THEN
+		Alarm[mySeq].Name = ALM_BAG_NOT_RELEASED	
+	ELSE IF NOT RailOkRelease THEN		
+		Alarm[mySeq].Name = almRailNotAligned
+		Alarm[mySeq].Time = 100			
+	ELSE IF (Bag[myBag].Cat = 0) THEN
+		Alarm[mySeq].Name = ALM_BAG_DATA_ERROR
+		Alarm[mySeq].Time = 0	
+	ENDIF				
+ENDIF	
+
+;Step 9. Move to full bag in.....
+IF (STEP = 9) THEN
+	RunPosition	= POS_FULL_BAG_IN
+    ;ZoneControl[myZone].sequenceRunning[mySeq] = TRUE
+	RunMotor	= (NOT Std.HaltSysZone[myZone] AND DrivesReady)
+	IF PosnOk THEN
+		D[900 + mySeq] = 10
+	ENDIF
+	IF (NOT Std.HaltSysZone[myZone] AND DrivesReady) THEN
+		Alarm[mySeq].Name = almCarriageMoveFault
+	ENDIF
+ENDIF
+
+//Wait for bag at full buffer 	
+TON_10ms(I_BagAtFullBuffer,300,SettledFullBuffer,SettledFullBufferET)
+IF (STEP = 10) THEN	
+	IF SettledFullBuffer AND (Bag[myBag].Cat = 0) AND (Bag[myFullBuffBag].Cat > 0) AND RailOkReceive THEN
+		D[900 + mySeq] = 11
+	ELSE IF NOT RailOkReceive THEN
+		Alarm[mySeq].Name = ALM_RAIL_NOT_ALIGNED
+		Alarm[mySeq].Time = 0	
+	ELSE IF (Bag[myBag].Cat > 0) THEN		
+		Alarm[mySeq].Name = ALM_BAG_DATA_ERROR	
+		Alarm[mySeq].Time = 0
+	ELSE IF SettledFullBuffer AND (Bag[myFullBuffBag].Cat = 0) THEN
+		Alarm[mySeq].Name = ALM_BAG_DATA_ERROR
+		Alarm[mySeq].Bag = myFullBuffBag	 
+	ELSE IF NOT SettledFullBuffer AND (Bag[myFullBuffBag].Cat > 0)THEN	
+		Alarm[mySeq].Name = ALM_BAG_NOT_SETTLED
+		Alarm[mySeq].Time = 500	
+	ENDIF		
+ENDIF		
+	
+;Open Full buffer stop
+IF (STEP = 11) THEN	
+	DisableDrive = TRUE
+    O_OpenFullBagBuffer = (Bag[myBag].Cat = 0) AND (Bag[myFullBuffBag].Cat > 0);
+	IF I_BagOnCarr OR I_BagArriveCarr THEN
+		Bag[myBag] = Bag[myFullBuffBag]
+		Bag[myFullBuffBag] = Bag[0]	
+		D[900 + mySeq] = 12
+	ENDIF		
+	IF (Bag[myBag].Cat > 0) THEN
+		Alarm[mySeq].Name = ALM_BAG_DATA_ERROR	
+		Alarm[mySeq].Time = 0	
+	ELSE IF NOT RailOkReceive THEN
+		Alarm[mySeq].Name = almRailNotAligned
+		Alarm[mySeq].Time = 100		
+	ENDIF		
+ENDIF
+
+;Bag settles on carriage	
+TON_10ms((STEP = 12) AND I_BagOnCarr AND NOT I_BagArriveCarr,300,SettledCarriage12,SettledCarriage12ET)
+TON_10ms(((STEP = 12) AND (Bag[myWeighBag].Wgt < 1250)),600,weightOk,weightOkET)	
+IF (STEP = 12) THEN	
+	DisableDrive = TRUE
+	IF SettledCarriage12 AND weightOk AND (Bag[myBag].Cat > 0) AND NOT stopZone  THEN	
+		Bag[myBag].Wgt := Bag[myWeighBag].Wgt;
+		D[900 + mySeq] = 13
+	ELSE IF NOT weightOk THEN
+		Alarm[mySeq].Name = almBagOverWeight		
+	ELSE IF (Bag[myBag].Cat = 0) THEN
+	//	Alarm[mySeq].Name = almBagDataError
+	ELSE IF NOT stopZone THEN		
+		Alarm[mySeq].Name = almBagNotSettled
+		Alarm[mySeq].Time = 9000	
+	ENDIF	
+ENDIF	
+
+;Move carriage to full bag out.	
+IF (STEP = 13) THEN 	
+	RunPosition	= POS_FULL_BAG_OUT
+    ;ZoneControl[myZone].sequenceRunning[mySeq] = TRUE
+	RunMotor	= (NOT Std.HaltSysZone[myZone] AND DrivesReady)
+	IF PosnOk THEN
+		D[900 + mySeq] = 14
+	ENDIF
+	IF (NOT Std.HaltSysZone[myZone] AND DrivesReady) THEN
+		Alarm[mySeq].Name = almCarriageMoveFault
+	ENDIF	
+ENDIF	
+
+//Weighing step  Send to Data base. Add to batch...
+IF (STEP = 14) THEN	
+	IF (Bag[myBag].Mis > 0) THEN
+		_httpRequest
+		IF httpComplete AND NOT EnableRel.VC_HighLevel[myVC] THEN	
+			myReportStn = 1
+			IF (ReportLoading[myReportStn].Cat = 0) THEN
+				ReportLoading[myReportStn].Prg := Bag[myBag].Prg;
+				ReportLoading[myReportStn].Cat := Bag[myBag].Cat;
+				ReportLoading[myReportStn].Cus := Bag[myBag].Cus;
+				ReportLoading[myReportStn].Wgt := Bag[myBag].Wgt;
+				ReportLoading[myReportStn].Cnt := 0;			
+				ReportLoading[myReportStn].Stn := myReportStn;     				
+				ReportLoading[myReportStn].Mcn := 0;					
+				ReportLoading[myReportStn].Bid := Bag[myBag].Bid;
+				ReportLoading[myReportStn].Mis := Bag[myBag].Mis;
+				ReportLoading[myReportStn].TimeStamp := Bag[myBag].Timestamp;
+				D[900 + mySeq] = 15
+			ENDIF;		
+		ELSE
+			Alarm[mySeq].Name = ALM_GENERAL_SEQUENCE
+		ENDIF	
+	ELSE
+		Alarm[mySeq].Name = ALM_BAG_DATA_ERROR
+	ENDIF		
+ELSE		
+	httpComplete = 0		
+	HTTP_Comm[myHttp].Status = HTTP_COMM_STATUS_DISABLED
+ENDIF;		
+
+DataValid = (Bag[myBag].Cat > 0)// AND (Bag[myFullRelBag].Cat = 0))
+;check data valid
+IF (STEP = 15) THEN	
+	DisableDrive = TRUE	
+	RequestRel.VC_HighLevel[myVC] = DataValid AND RailOkRelease AND NOT stopZone 
+	IF  EnableRel.VC_HighLevel[myVC] THEN	
+		D[900 + mySeq] = 16
+	ELSE IF (Bag[myBag].Cat = 0) THEN		
+	//	Alarm[mySeq].Name = almBagDataError	
+	ELSE IF NOT RailOkRelease THEN		
+		Alarm[mySeq].Name = almRailNotAligned
+		Alarm[mySeq].Time = 100		
+	ENDIF		
+ENDIF			
+
+;STEP 15 Open Stops release full bag	
+IF (STEP = 16) THEN	
+	DisableDrive = TRUE
+    ;ZoneControl[myZone].sequenceRunning[mySeq] = TRUE
+	O_OpenCarrStop = EnableRel.VC_HighLevel[myVC] AND RailOkRelease	 
+	IF (NOT EnableRel.VC_HighLevel[myVC] OR I_BagReleased) AND (Bag[myBag].Cat = 0) THEN
+		D[900 + mySeq] = 1
+	ENDIF	
+	IF NOT stopZone THEN
+		IF NOT EnableRel.VC_HighLevel[myVC]  AND (Bag[myBag].Cat > 0) THEN
+			Alarm[mySeq].Name = ALM_BAG_DATA_ERROR		
+		ELSE IF NOT RailOkRelease THEN
+			Alarm[mySeq].Name = almRailNotAligned
+			Alarm[mySeq].Time = 100		
+		ENDIF			
+	ENDIF		
+ENDIF
+
+
+;-----------------------------------------------------------
+;No Changes required below here except PLC outputs at bottom
+;-----------------------------------------------------------
+
+;Positions Required
+IF (RunPosition > 0) THEN
+	LiftIn.PosnReq		= RB_Posn[myVC].Lift.Posn[RunPosition]
+	LiftIn.RailAlign 	= RailAlignPosn[RunPosition]
+
+	RotateIn.PosnReq	= RB_Posn[myVC].Rotate.Posn[RunPosition]
+	RotateIn.RailAlign 	= RailAlignPosn[RunPosition]
+ELSE
+	LiftIn.PosnReq		= 0
+	LiftIn.RailAlign	= 0
+
+	RotateIn.PosnReq	= 0
+	RotateIn.RailAlign 	= 0
+ENDIF
+
+;Bag detected on carriage at wrong time during operation
+IF ((RunPosition > 0) AND RunMotor) THEN
+	IF I_BagArriveCarr THEN
+		LiftIn.EStop	= TRUE ;Force Quickstop
+		RunPosition		= 0
+		RunMotor		= FALSE
+		D[900 + mySeq] 	= 97
+	ELSE IF (I_BagOnCarr AND (RailAlignPosn[RunPosition] = AlignReceive)) THEN
+		LiftIn.EStop	= TRUE ;Force Quickstop
+		RunPosition		= 0
+		RunMotor		= FALSE
+		D[900 + mySeq] 	= 98
+	ENDIF
+ENDIF
+IF (STEP = 97) THEN
+	DisableDrive = TRUE
+	Alarm[mySeq].Name 	= almDisableSequence
+	Alarm[mySeq].Time			= 100
+ENDIF
+IF (STEP = 98) THEN
+	DisableDrive = TRUE
+	Alarm[mySeq].Name 	= almDisableSequence
+	Alarm[mySeq].Time			= 100
+ENDIF
+
+;Position Setup
+TON_10ms(VCHeartBeat = D[84],100,VCActionDisabled,VCActionDisabledET)
+IF (STEP = 99) THEN
+
+	RB_Posn[myVC].Lift.OperationMode 	= 1 ;Manual Position Setup
+	RB_Posn[myVC].Rotate.OperationMode 	= 1 ;Manual Position Setup
+
+	;Read values sent from TrackView
+	VCIndex 	= D[81]
+	VCMode 		= D[82]
+	VCAction 	= D[83] 
+	VCHeartBeat = D[84]
+
+	IF ((VCIndex = myVC) AND NOT VCActionDisabled) THEN
+	
+		IF (VCMode = ModeReference) THEN
+			LiftIn.DoRef 			= TRUE
+			RotateIn.DoRef 			= TRUE		
+		ELSE IF (VCMode = ModeManualMove) THEN
+			LiftIn.JogForwards 		= (VCAction = ActionMoveUp)
+			LiftIn.JogReverse 		= (VCAction = ActionMoveDown)
+			RotateIn.JogReverse		= (VCAction = ActionMoveLeft)
+			RotateIn.JogForwards	= (VCAction = ActionMoveRight)
+		ELSE IF (VCMode = ModePosnTune) THEN
+			AutoTuneSequence		= 1
+			AutoTunePosition		= VCAction
+		ELSE IF (VCMode = ModeMovePosn) THEN
+			RunMotor				= (NOT Std.HaltSysZone[myZone] AND DrivesReady); AND ;PositionSetup)
+			LiftIn.MaxSpeed 		= 200
+			RotateIn.MaxSpeed 		= 200
+			IF (VCAction = 100) THEN
+				LiftIn.PosnReq 		= RB_Posn[myVC].Lift.RefOffset
+				RotateIn.PosnReq 	= RB_Posn[myVC].Rotate.RefOffset
+			ELSE
+				LiftIn.PosnReq		= RB_Posn[myVC].Lift.Posn[VCAction]
+				RotateIn.PosnReq	= RB_Posn[myVC].Rotate.Posn[VCAction]	
+			ENDIF
+		ENDIF
+
+	ENDIF
+
+	;Auto Position Tune Sequnece
+	;---------------------------
+	IF (AutoTuneSequence = 1) THEN
+		;Wait for release of Autotune Button / Command
+		IF (VCMode <> ModePosnTune) THEN 
+			AutoTuneSequence = 2	
+		ENDIF
+	ELSE IF (AutoTuneSequence = 2) THEN
+		;Check if rail Aligned
+		Aligned = (((RailAlignPosn[AutoTunePosition] = AlignReceive) AND LiftIn.I_RailOkReceive) OR ((RailAlignPosn[AutoTunePosition] = AlignRelease) AND LiftIn.I_RailOkRelease))
+		;Begin Lift Tune
+		IF Aligned THEN
+			LiftIn.AutoTunePosn		= AutoTunePosition
+			LiftIn.AutoTuneReceive 	= (RailAlignPosn[AutoTunePosition] = AlignReceive)
+			IF (LiftOut.AutoTunePosn = AutoTunePosition) THEN
+				AutoTuneSequence = 3
+			ENDIF
+		ELSE
+			AutoTuneSequence = 0 ;Cancel Auto Tune
+		ENDIF
+	ELSE IF (AutoTuneSequence = 3) THEN
+		;Wait for Lift to complete Tune
+		IF (LiftOut.AutoTunePosn = 0) THEN
+			AutoTuneSequence = 4 
+		ENDIF
+	ELSE IF (AutoTuneSequence = 4) THEN
+		;Move to new position
+		LiftIn.AutoTunePosn		= 0 ;Cancel Tune
+		RunMotor				= (NOT Std.HaltSysZone[myZone] AND DrivesReady); AND ;PositionSetup)
+		LiftIn.MaxSpeed 		= 200
+		RotateIn.MaxSpeed		= 0  ;Don't allow rotate to move
+		LiftIn.PosnReq			= RB_Posn[myVC].Lift.Posn[AutoTunePosition]
+		RotateIn.PosnReq		= 0
+		IF LiftOut.PosnOk THEN
+			AutoTuneSequence = 5 
+		ENDIF
+	ELSE IF (AutoTuneSequence = 5) THEN
+		;Begin Rotate Tune
+		RotateIn.AutoTunePosn 		= AutoTunePosition
+		RotateIn.AutoTuneReceive 	= (RailAlignPosn[AutoTunePosition] = AlignReceive)
+		IF (RotateOut.AutoTunePosn = AutoTunePosition) THEN
+			AutoTuneSequence = 6
+		ENDIF
+	ELSE IF (AutoTuneSequence = 6) THEN
+		;Wait for Rotate to complete Tune
+		IF (RotateOut.AutoTunePosn = 0) THEN
+			AutoTuneSequence = 7
+		ENDIF
+	ELSE IF (AutoTuneSequence = 7) THEN
+		;Move to new position
+		RotateIn.AutoTunePosn	= 0 ;Cancel Tune
+		RunMotor				= (NOT Std.HaltSysZone[myZone] AND DrivesReady); AND ;PositionSetup)
+		LiftIn.MaxSpeed 		= 0
+		RotateIn.MaxSpeed		= 200  
+		LiftIn.PosnReq			= 0
+		RotateIn.PosnReq		= RB_Posn[myVC].Rotate.Posn[AutoTunePosition]
+		IF RotateOut.PosnOk THEN
+			AutoTuneSequence = 0 
+		ENDIF
+	ENDIF
+
+ELSE
+	;Set Operation mode to Normal
+	RB_Posn[myVC].Lift.OperationMode 	= 0
+	RB_Posn[myVC].Rotate.OperationMode 	= 0
+	;Cancel Auto Tune
+	AutoTuneSequence 					= 0
+	LiftIn.AutoTunePosn 				= 0
+	RotateIn.AutoTunePosn 				= 0
+ENDIF
+
+;Lift Drive Alarms
+IF (LiftOut.Status = FC302_SEQ_RefNotFound) THEN
+	Alarm[mySeq].Name = almLiftRefNotFound	
+	Alarm[mySeq].Time = 10
+ELSE IF (LiftOut.Status = FC302_SEQ_ParameterError) THEN
+	Alarm[mySeq].Name = almLiftParameterError	
+	Alarm[mySeq].Time = 10
+ELSE IF (LiftOut.Status = FC302_SEQ_RefSwitchFault) THEN
+	Alarm[mySeq].Name = almLiftRefSwitchFault	
+	Alarm[mySeq].Time = 10
+ELSE IF (LiftOut.Status = FC302_SEQ_ReleaseSwitchFault) THEN
+	Alarm[mySeq].Name = almReleaseSwitchFault	
+	Alarm[mySeq].Time = 10
+ELSE IF (LiftOut.Status = FC302_SEQ_ReceiveSwitchFault) THEN
+	Alarm[mySeq].Name = almReceiveSwitchFault	
+	Alarm[mySeq].Time = 10
+ELSE IF (LiftOut.Status = FC302_SEQ_RailNotAligned) THEN
+	Alarm[mySeq].Name = almReleaseSwitchFault	
+	Alarm[mySeq].Time = 10
+ENDIF
+
+
+
+;Inputs to drive control sequence
+LiftIn.Run			     	= RunMotor 
+LiftIn.DisableDrive 	= DisableDrive
+RB[myVC].Lift.SeqIn 	= LiftIn 	;Copy local to drive inputs
+
+TON_10ms(NOT Std.HaltSysZone[myZone],100,HaltSysZoneClear,HaltSysZoneClearET)	; Safe zone 
+OpenStopEnabled = (HaltSysZoneClear AND LiftOut.DriveDisabled)
+
+;-----------------------------------
+;PLC Outputs - adjust to suit system
+;-----------------------------------
+Y[22].Y05 = (RailOkReceive AND ((STEP = 11) OR (STEP = 12)) AND DriveDisabled)  ; Safety Stop Low level
+Y[myIO + 1].Y05 = (RailOkReceive AND ((STEP = 3) OR (STEP = 4) OR (STEP = 5)) AND DriveDisabled) ; Safety Stop High level
+Y[4].Y06 		= (O_OpenCarrStop AND RailOkRelease AND OpenStopEnabled AND DriveDisabled)
+
+Line[myFullLine].BufferStop := O_OpenFullBagBuffer	
+	
+;Don't allow forcing of carriage movement and carriage stop
+YForceDisable[myIO].Y07 	= TRUE
+YForceDisable[myIO].Y08 	= TRUE
+;YForceDisable[6].Y04 	= TRUE
+
+;Alarms
+TimerAlarm.IN 		= NOT PLS AND (Alarm[mySeq].Name > 0)
+TimerAlarm.PT 		= Alarm[mySeq].Time
+TimerAlarm FUB TON_10ms()
+Alarm[mySeq].On 	= TimerAlarm.Q
+Alarm[mySeq].ET 	= TimerAlarm.ET
+
+END_PROGRAM
+

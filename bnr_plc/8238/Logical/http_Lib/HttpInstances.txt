@@ -1,0 +1,23 @@
+
+List Of HTTP_Comm indexes
+
+01: zzReportsHttp
+02: SLX_Inteface
+03: Configuration
+04: OPCuA_Connect
+05: Bag Maintenance
+06:
+07:
+08:
+09:
+10:
+11:
+12:
+13:
+14:
+15:
+16:
+17:
+18:
+19:
+20: 

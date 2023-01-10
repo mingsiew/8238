@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.2.98?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">db_en_elr_h5_ies_pt_500ac_x_iol_107542_en_01 (1).pdf</Object>
+    <Object Type="File">Fix IO Link Hardware file.docx</Object>
+    <Object Type="Package">X20DS438A_HWX</Object>
+    <Object Type="File">Block-Transformatoren-EB-IO-LINK-20170405-IODD1.1.xml</Object>
+    <Object Type="File">ELR_H5_IES_PT_500AC_3_IOL-IODD1.1.zip</Object>
+  </Objects>
+</Package>

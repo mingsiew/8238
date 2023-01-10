@@ -1,0 +1,13 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Package: Pkg_KGStandard
+ * File: kgbom.var
+ * Author: hunholz
+ * Created: December 20, 2011
+ ********************************************************************
+ * Variables of package Pkg_KGStandard
+ ********************************************************************)
+VAR
+	KGBOM : ARRAY[0..1] OF USINT := [16#FF,16#FE];
+END_VAR

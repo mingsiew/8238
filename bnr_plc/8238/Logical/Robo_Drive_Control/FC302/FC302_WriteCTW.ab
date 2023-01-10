@@ -1,0 +1,68 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Library: FC302
+ * File: FC302_WriteCTW.ab
+ * Author: D.Jefferys
+ * Created: February 12, 2009
+ ********************************************************************
+ * Implementation of library FC302
+ ********************************************************************) 
+
+(*Control Word build*)
+FUNCTION_BLOCK FC302_WriteCTW
+	
+	LocalControlWord = 0
+	
+	IF CTW.ExtRefSelectionLSB THEN
+		LocalControlWord = LocalControlWord + 1
+	ENDIF
+	IF CTW.ExtRefSelectionMSB THEN
+		LocalControlWord = LocalControlWord + 2
+	ENDIF
+	IF CTW.DC_Brake THEN
+		LocalControlWord = LocalControlWord + 4
+	ENDIF
+	IF CTW.Coasting THEN
+		LocalControlWord = LocalControlWord + 8
+	ENDIF
+	IF CTW.QuickStop THEN
+		LocalControlWord = LocalControlWord + 16
+	ENDIF
+	IF CTW.HoldOutputFreq THEN
+		LocalControlWord = LocalControlWord + 32
+	ENDIF
+	IF CTW.RampStopStart THEN
+		LocalControlWord = LocalControlWord + 64
+	ENDIF
+	IF CTW.ResetTrip THEN
+		LocalControlWord = LocalControlWord + 128
+	ENDIF
+	IF CTW.Jog THEN
+		LocalControlWord = LocalControlWord + 256
+	ENDIF
+	IF CTW.RampSelection THEN
+		LocalControlWord = LocalControlWord + 512
+	ENDIF
+	IF CTW.DataValid THEN
+		LocalControlWord = LocalControlWord + 1024
+	ENDIF
+	IF CTW.Relay01Active THEN
+		LocalControlWord = LocalControlWord + 2048
+	ENDIF
+	IF CTW.Relay02Active THEN
+		LocalControlWord = LocalControlWord + 4096
+	ENDIF
+	IF CTW.ParaSetUpLSB THEN
+		LocalControlWord = LocalControlWord + 8192
+	ENDIF
+	IF CTW.ParaSetUpMSB THEN
+		LocalControlWord = LocalControlWord + 16384
+	ENDIF
+	IF CTW.Reverse THEN
+		LocalControlWord = LocalControlWord + 32768
+	ENDIF
+	
+	ControlWord = LocalControlWord
+	
+END_FUNCTION_BLOCK

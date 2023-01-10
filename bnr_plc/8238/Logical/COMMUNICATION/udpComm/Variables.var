@@ -1,0 +1,30 @@
+VAR CONSTANT
+  CLEAR_REQUEST_POOL : LiveData_RequestPool_typ := (AddToPool:=0,RemoveFromPool:=0,PoolListSize:=0,Pointer:=0);
+END_VAR
+VAR
+  n : UINT;
+  pointer : UDINT;
+  connection : REFERENCE TO LiveDataConnection_typ;
+  LiveDataConnection : ARRAY[1..LIVE_DATA_MAX_CONNECTIONS] OF LiveDataConnection_typ;
+  udpComm : ARRAY[0..UDP_SEND_PACKET_SIZE] OF UINT;
+  open : REFERENCE TO UdpOpen;
+  ioctl : REFERENCE TO UdpIoctl;
+  connect : REFERENCE TO UdpConnect;
+  send : REFERENCE TO UdpSend;
+  pData : UDINT;
+  length : UDINT;
+  disconnect : REFERENCE TO UdpDisconnect;
+  close : REFERENCE TO UdpClose;
+  errorCount : UDINT;
+  validConnection : BOOL;
+  i : USINT;
+  identInfo : identInfo_typ;
+  getIdentInfo : BOOL;
+  udpIdent_Error : BOOL;
+  udpIoctl_Error : UdpIoctl;
+  udpCloseAllIdent : USINT;
+  udpClose_Error : UdpClose;
+  data : ARRAY[0..65534] OF SINT; (**Max data frame that can be sent by UDP*)
+  messages : ARRAY[0..RAIL_COUNT] OF UINT;
+  values: ARRAY[0..1000] OF UINT; (** General use registers for extracting data*)
+END_VAR

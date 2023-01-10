@@ -1,0 +1,43 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Package: Pkg_svCPCache
+ * File: Pkg_svCPCache.var
+ * Author: hunholz
+ * Created: March 29, 2012
+ ********************************************************************
+ * Variables of package Pkg_svCPCache
+ ********************************************************************)
+(*KONSTANTEN*)
+VAR CONSTANT
+	SVCPCACHE_DBREQ_LOCAL : UINT := 0;
+	SVCPCACHE_DBREQ_DFII : UINT := 1;
+END_VAR
+(*Kommandos*)
+VAR CONSTANT
+	SVCPCACHE_CMD_GETPROG : UINT := 1;
+	SVCPCACHE_CMD_INSERTCATEGORY : UINT := 2;
+	SVCPCACHE_CMD_UPDATECATEGORY : UINT := 3;
+	SVCPCACHE_CMD_DELETECATEGORY : UINT := 4;
+	SVCPCACHE_CMD_SETOFFSET : UINT := 5;
+	SVCPCACHE_CMD_RESTORE : UINT := 6;
+END_VAR
+(*Status*)
+VAR CONSTANT
+	SVCPCACHE_STAT_MEMALLOC : UINT := 60000;
+	SVCPCACHE_STAT_CREATEFILE : UINT := 60001;
+	SVCPCACHE_STAT_WRITEFILE : UINT := 60002;
+	SVCPCACHE_STAT_OPENFILE : UINT := 60003;
+	SVCPCACHE_STAT_NOSPACE : UINT := 60004;
+	SVCPCACHE_STAT_INVALIDCATEGORY : UINT := 60005;
+	SVCPCACHE_STAT_CATEGORYEXIST : UINT := 60006;
+	SVCPCACHE_STAT_CATEGORYNOTEXIST : UINT := 60007;
+	SVCPCACHE_STAT_CATEGORYLISTEMPTY : UINT := 60008;
+	SVCPCACHE_STAT_DBNOTREADY : UINT := 60009;
+	SVCPCACHE_STAT_FILENOTFOUND : UINT := 60010;
+END_VAR
+(*Schnittstellen*)
+VAR
+	IFsvCPCache : IFsvCPCache_Typ;
+	svCPCacheStatAd : svCPCacheStatAd_Typ;
+END_VAR

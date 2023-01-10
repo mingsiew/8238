@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles id="KannegiesserTabs" xmlns="http://www.br-automation.com/iat2015/styles/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<!-- TabControl -->
+	<Style id="default" xsi:type="widgets.brease.TabControl" borderStyle="solid" borderWidth="2px" borderColor="#044e7b" backColor="#e9f2fb"/>
+
+	<!-- Tabitem -->
+	<Style id="default" xsi:type="widgets.brease.TabItem" textColor="#000000" fontSize="12px" cornerRadius="8px 8px 0px 0px" activeCornerRadius="8px 8px 0px 0px" backColor="#b5e1fc" activeBackColor="#099bf6" borderWidth="0px 1px 1px 0px" activeBorderWidth="0px 1px 1px 0px" borderColor="#044e7b" activeBorderColor="#066dac #066dac #066dac #066dac" activeTextColor="#FFFFFF" />
+	
+</Styles>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="1.17.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global data types">Pkg_hlDFII.typ</Object>
+    <Object Type="File" Description="Global variables">Pkg_hlDFII.var</Object>
+    <Object Type="Program" Language="IEC" Description="Statemachine zur Abfrage einer SQL-Datenbank">hlDFII</Object>
+    <Object Type="File">hlDFII_History.txt</Object>
+  </Objects>
+  <Dependencies>
+    <Dependency ObjectName="asdb" />
+    <Dependency ObjectName="astime" />
+    <Dependency ObjectName="KGstdLib" />
+    <Dependency ObjectName="asudp" />
+    <Dependency ObjectName="sys_lib" />
+    <Dependency ObjectName="standard" />
+    <Dependency ObjectName="mnParamLib" />
+    <Dependency ObjectName="asarlog" />
+  </Dependencies>
+</Package>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="Administrators" Type="Role">
+    <Property ID="RoleID" Value="1" />
+  </Element>
+  <Element ID="Everyone" Type="Role">
+    <Property ID="RoleID" Value="2" />
+  </Element>
+  <Element ID="KanIntern" Type="Role">
+    <Property ID="RoleID" Value="3" />
+    <Property ID="Description" Value="Role for Internal communication" />
+  </Element>
+  <Element ID="KanDiag" Type="Role">
+    <Property ID="RoleID" Value="4" />
+    <Property ID="Description" Value="Role for diags  Read only" />
+  </Element>
+</Configuration>

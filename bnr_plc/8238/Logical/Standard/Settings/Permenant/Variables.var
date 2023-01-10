@@ -1,0 +1,12 @@
+VAR
+	beltSpeed : ARRAY[0..MAX_DRIVES] OF INT;
+	n : UINT;
+	var_name : STRING[50];
+	var_value : UDINT;
+	index_string : STRING[10];
+	init : BOOL;
+	pSettings : Pointer_typ;
+	p : Pointer_typ;
+	sVar : UDINT;
+	pVar : UDINT;
+END_VAR

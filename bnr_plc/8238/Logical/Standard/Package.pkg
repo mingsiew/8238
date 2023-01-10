@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="*SYSTEM Constants">SystemConstants.var</Object>
+    <Object Type="Program" Language="IEC" Description="* PLAY AREA">Program</Object>
+    <Object Type="Package">ABB_EPL</Object>
+    <Object Type="Package">Barcode_BnR</Object>
+    <Object Type="Package">Standard</Object>
+    <Object Type="Package">HoistLibrary</Object>
+    <Object Type="Package">IOLink</Object>
+    <Object Type="Package">ModuleLogger</Object>
+    <Object Type="Package" Description="Looks after all PLC settings for drivers.">Settings</Object>
+    <Object Type="Package">ToDO</Object>
+    <Object Type="Library" Language="IEC">FileMgr</Object>
+    <Object Type="Package">Kanlink</Object>
+  </Objects>
+</Package>

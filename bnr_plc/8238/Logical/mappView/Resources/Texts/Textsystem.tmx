@@ -1,0 +1,1894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">IAT</prop>
+  </header>
+  <body>
+    <tu tuid="Camera.Actual.Header">
+      <tuv xml:lang="en">
+        <seg>Camera Actual Values</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Commands.AutoTune">
+      <tuv xml:lang="en">
+        <seg>Auto Tune</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Commands.Capture">
+      <tuv xml:lang="en">
+        <seg>Capture</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Commands.Header">
+      <tuv xml:lang="en">
+        <seg>Manual Operations</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Commands.Repeat">
+      <tuv xml:lang="en">
+        <seg>Repeat Capture</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Exposure">
+      <tuv xml:lang="en">
+        <seg>Exposure</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Focus">
+      <tuv xml:lang="en">
+        <seg>Focus</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Gain">
+      <tuv xml:lang="en">
+        <seg>Gain</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Interface.AutoTune">
+      <tuv xml:lang="en">
+        <seg>Autotune</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Interface.AutoTuneDone">
+      <tuv xml:lang="en">
+        <seg>Autotune Done</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Interface.Fail">
+      <tuv xml:lang="en">
+        <seg>Read Fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Interface.Header">
+      <tuv xml:lang="en">
+        <seg>Camera Interface</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Interface.Read">
+      <tuv xml:lang="en">
+        <seg>Read</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Interface.Ready">
+      <tuv xml:lang="en">
+        <seg>Ready</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Interface.Result">
+      <tuv xml:lang="en">
+        <seg>Result</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Interface.ResultsReady">
+      <tuv xml:lang="en">
+        <seg>Result Ready</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.LoadingWebPage">
+      <tuv xml:lang="en">
+        <seg>Loading</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.ModuleOk">
+      <tuv xml:lang="en">
+        <seg>Module Ok</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Node">
+      <tuv xml:lang="en">
+        <seg>Node Number</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Parameters.CameraID">
+      <tuv xml:lang="en">
+        <seg>Camera Name</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Parameters.Header">
+      <tuv xml:lang="en">
+        <seg>Camera Parameters</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Parameters.ReadCount">
+      <tuv xml:lang="en">
+        <seg>Retry Count</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Save">
+      <tuv xml:lang="en">
+        <seg>Save</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.State">
+      <tuv xml:lang="en">
+        <seg>State</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.State.AutoTeach">
+      <tuv xml:lang="en">
+        <seg>Auto Teach</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.State.AutoTeachDone">
+      <tuv xml:lang="en">
+        <seg>Auto Teach Done</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.State.Error">
+      <tuv xml:lang="en">
+        <seg>Error</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.State.GetImage">
+      <tuv xml:lang="en">
+        <seg>Get Image</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.State.Load">
+      <tuv xml:lang="en">
+        <seg>Load Settings</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.State.NotPresent">
+      <tuv xml:lang="en">
+        <seg>Not Present</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.State.NotReady">
+      <tuv xml:lang="en">
+        <seg>Not Ready</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.State.Ready">
+      <tuv xml:lang="en">
+        <seg>Ready</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.State.ResultAquired">
+      <tuv xml:lang="en">
+        <seg>Result Acquired</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.Temperature">
+      <tuv xml:lang="en">
+        <seg>Temperature</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.TimeOut">
+      <tuv xml:lang="en">
+        <seg>Time Out</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Camera.VoltageOk">
+      <tuv xml:lang="en">
+        <seg>Voltage Ok</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Conatctron.Title.Manual">
+      <tuv xml:lang="en">
+        <seg>Contactron Manual Control</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.STO">
+      <tuv xml:lang="en">
+        <seg>STO Active</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.ActualCurrent">
+      <tuv xml:lang="en">
+        <seg>Actual Current</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.Overload">
+      <tuv xml:lang="en">
+        <seg>Overload Warning</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.MainsFailure">
+      <tuv xml:lang="en">
+        <seg>Mains Failure</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.PhaseLoss">
+      <tuv xml:lang="en">
+        <seg>Phase Loss</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.Error">
+      <tuv xml:lang="en">
+        <seg>Error</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.Manual.RunForward">
+      <tuv xml:lang="en">
+        <seg>Run Forward</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.Manual.RunReverse">
+      <tuv xml:lang="en">
+        <seg>Run Reverse</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.Manual.SelectContactron">
+      <tuv xml:lang="en">
+        <seg>Select Contactron</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.ModuleOK">
+      <tuv xml:lang="en">
+        <seg>Module Ok</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.SetCurrent">
+      <tuv xml:lang="en">
+        <seg>Set Current</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Contactron.State">
+      <tuv xml:lang="en">
+        <seg>State</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drive.DecTime">
+      <tuv xml:lang="en">
+        <seg>Deceleration Time</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drive.Title.Diagnostics">
+      <tuv xml:lang="en">
+        <seg>Drives Diagnostic View</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.AccTime">
+      <tuv xml:lang="en">
+        <seg>Acceleration Time</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.ActualCurrent">
+      <tuv xml:lang="en">
+        <seg>Actual Current</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.ActualTorque">
+      <tuv xml:lang="en">
+        <seg>Actual Torque %</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.ActualVelocity">
+      <tuv xml:lang="en">
+        <seg>Actual Velocity</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.BrakeFitted">
+      <tuv xml:lang="en">
+        <seg>Brake Fitted</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.Errorcode">
+      <tuv xml:lang="en">
+        <seg>Error Code</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.Manaul.RunForward">
+      <tuv xml:lang="en">
+        <seg>Run Forward</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.Manual.RunReverse">
+      <tuv xml:lang="en">
+        <seg>Run Reverse</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.Manual.SelectDrive">
+      <tuv xml:lang="en">
+        <seg>Select Drive</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.Manual.Velocity">
+      <tuv xml:lang="en">
+        <seg>Set Velocity</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.ModuleOK">
+      <tuv xml:lang="en">
+        <seg>Module Ok</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.Nav.Diagnositics">
+      <tuv xml:lang="en">
+        <seg>Diagnostic Page</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.Nav.Manual">
+      <tuv xml:lang="en">
+        <seg>Manual Control</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.Node">
+      <tuv xml:lang="en">
+        <seg>Node</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State">
+      <tuv xml:lang="en">
+        <seg>State</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.Config">
+      <tuv xml:lang="en">
+        <seg>Configuration</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.Disconnected">
+      <tuv xml:lang="en">
+        <seg>Disconnected</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.Init">
+      <tuv xml:lang="en">
+        <seg>Initializing</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.NotReady">
+      <tuv xml:lang="en">
+        <seg>Not Ready</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.OffRemote">
+      <tuv xml:lang="en">
+        <seg>Off Remote</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.QuickStop">
+      <tuv xml:lang="en">
+        <seg>Quick Stop</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.RampDown">
+      <tuv xml:lang="en">
+        <seg>Ramp Down</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.ReadyToRun">
+      <tuv xml:lang="en">
+        <seg>Ready</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.ReadyToSwitchOn">
+      <tuv xml:lang="en">
+        <seg>Ready to Switch On</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.Running">
+      <tuv xml:lang="en">
+        <seg>Running</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.STO">
+      <tuv xml:lang="en">
+        <seg>Safety Off</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.SwitchOnInhibit">
+      <tuv xml:lang="en">
+        <seg>Swich On Inhibited</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.State.Tripped">
+      <tuv xml:lang="en">
+        <seg>Tripped</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.TargetVelocity">
+      <tuv xml:lang="en">
+        <seg>Target Velocity</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Drives.Title.Manual">
+      <tuv xml:lang="en">
+        <seg>Drives Manual Control</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.Action">
+      <tuv xml:lang="en">
+        <seg>Action</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.Action.Reset">
+      <tuv xml:lang="en">
+        <seg>Reset</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.Action.TurnOff">
+      <tuv xml:lang="en">
+        <seg>Turn Off</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.Action.TurnOn">
+      <tuv xml:lang="en">
+        <seg>Turn On</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.ActualCurrent">
+      <tuv xml:lang="en">
+        <seg>Actual Current</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.FuseManagement">
+      <tuv xml:lang="en">
+        <seg>Fuse Management</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.InputVoltage">
+      <tuv xml:lang="en">
+        <seg>Input Voltage</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.MaximumVoltage">
+      <tuv xml:lang="en">
+        <seg>Maximum Voltage</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.MinimumVoltage">
+      <tuv xml:lang="en">
+        <seg>Minimum Voltage</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.ModuleOK">
+      <tuv xml:lang="en">
+        <seg>Module Ok</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.SetCurrent">
+      <tuv xml:lang="en">
+        <seg>Set Current</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.SetName">
+      <tuv xml:lang="en">
+        <seg>Set Name</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.State">
+      <tuv xml:lang="en">
+        <seg>State</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.State.Hardware">
+      <tuv xml:lang="en">
+        <seg>Hardware Error</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.State.NC">
+      <tuv xml:lang="en">
+        <seg>Not Connected</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.State.Off">
+      <tuv xml:lang="en">
+        <seg>Turned Off</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.State.On">
+      <tuv xml:lang="en">
+        <seg>Turned On</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.State.Over100">
+      <tuv xml:lang="en">
+        <seg>Current &gt; 100%</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.State.Over90">
+      <tuv xml:lang="en">
+        <seg>Current &gt; 90%</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.State.SWOff">
+      <tuv xml:lang="en">
+        <seg>Manual Override</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.State.Thermal">
+      <tuv xml:lang="en">
+        <seg>Thermal Trip</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.State.Trip">
+      <tuv xml:lang="en">
+        <seg>Tripped</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fuses.TripCurrent">
+      <tuv xml:lang="en">
+        <seg>Trip Current</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.Prompt.AuthorisationFail">
+      <tuv xml:lang="fr">
+        <seg>Échec d,autorisation</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Genehmigung ist fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Authorisation Failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.Prompt.Login">
+      <tuv xml:lang="fr">
+        <seg>Connexion</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Login</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Login</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.Prompt.LoginSuccess">
+      <tuv xml:lang="fr">
+        <seg>Connexion réussie</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Login erfolgreich</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Login Successful</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.Prompt.Logout">
+      <tuv xml:lang="fr">
+        <seg>Déconnexion</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Logout</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Logout</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.Prompt.Password">
+      <tuv xml:lang="fr">
+        <seg>Mot de passe</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Passwort</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Password</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.Prompt.SetUserFailed">
+      <tuv xml:lang="fr">
+        <seg>Échec de connexion</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Login fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Login Failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.Prompt.UserChangedTo">
+      <tuv xml:lang="fr">
+        <seg>Changement de l,utilisateur à :</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>User geändert auf:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User changed to:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.Prompt.UserName">
+      <tuv xml:lang="fr">
+        <seg>Nom de l,utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Username</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User Name</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.User.Engineer">
+      <tuv xml:lang="en">
+        <seg>Engineer</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.User.Programmer">
+      <tuv xml:lang="en">
+        <seg>Programmer</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Login.User.Supervisor">
+      <tuv xml:lang="en">
+        <seg>Supervisor</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Modules.Active">
+      <tuv xml:lang="en">
+        <seg>Active</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Modules.Clear">
+      <tuv xml:lang="en">
+        <seg>Clear</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Modules.Error">
+      <tuv xml:lang="en">
+        <seg>Error</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Modules.Export">
+      <tuv xml:lang="en">
+        <seg>Export</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Modules.ID">
+      <tuv xml:lang="en">
+        <seg>ID</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Modules.Message">
+      <tuv xml:lang="en">
+        <seg>Message</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Modules.Next">
+      <tuv xml:lang="en">
+        <seg>Next</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Modules.Previous">
+      <tuv xml:lang="en">
+        <seg>Previous</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Modules.RecordCount">
+      <tuv xml:lang="en">
+        <seg>Record Count</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Modules.TimeStamp">
+      <tuv xml:lang="en">
+        <seg>Timestamp</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Page.Camera">
+      <tuv xml:lang="en">
+        <seg>Cameras</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Page.Fuses">
+      <tuv xml:lang="en">
+        <seg>Fuses</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Page.Home">
+      <tuv xml:lang="en">
+        <seg>Home</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Page.Modules">
+      <tuv xml:lang="en">
+        <seg>Module Logger</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Page.Safety">
+      <tuv xml:lang="en">
+        <seg>Safety</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Pages.Drives">
+      <tuv xml:lang="en">
+        <seg>Drives</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Pages.IOLink">
+      <tuv xml:lang="en">
+        <seg>Motor Starters</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.AckFirmware">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment acquitter un nouveau microprogramme ? SafeLOGIC redémarrera ensuite.</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie wirklich eine neue Firmware bestätigen? SafeLOGIC wird danach neu booten. SafeLOGIC wird danach neu booten.</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to acknowledge a new firmware? SafeLOGIC will reboot afterwards.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.AckNewModule_1">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment acquitter le remplacement de 1 module ?</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie wirklich bestätigen, dass 1 Modul ausgetauscht wurde?</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to acknowledge that 1 module was exchanged?</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.AckNewModule_2">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment acquitter le remplacement de 2 modules ?</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie wirklich bestätigen, dass 2 Module ausgetauscht wurden?</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to acknowledge that 2 modules were exchanged?</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.AckNewModule_3">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment acquitter le remplacement de 3 modules ?</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie wirklich bestätigen, dass 3 Module ausgetauscht wurden?</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to acknowledge that 3 modules were exchanged?</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.AckNewModule_4">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment acquitter le remplacement de 4 modules ?</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie wirklich bestätigen, dass 4 Module ausgetauscht wurden?</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to acknowledge that 4 modules were exchanged?</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.AckNewModule_n">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment acquitter le remplacement de n modules ?</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie wirklich bestätigen, dass n Module ausgetauscht wurden?</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to acknowledge that n modules were exchanged?</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.AckNewSafeKey">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment acquitter un nouveau SafeKEY ? SafeLOGIC redémarrera ensuite.</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie wirklich einen neuen SafeKEY bestätigen? SafeLOGIC wird danach neu booten.</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to acknowledge a new SafeKEY? SafeLOGIC will reboot afterwards.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.ClearAdditionalDownloadData">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment effacer toutes les données téléchargées supplémentaires ?</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie wirklich bestätigen alle zusätzlichen heruntergeladenen Daten löschen?</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to clear all additional downloaded data?</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.FormatSafeKey">
+      <tuv xml:lang="fr">
+        <seg>  Voulez-vous vraiment formater le SafeKEY ?</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie den SafeKEY wirklich formatieren?</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>  Do you really want to format the SafeKEY?</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.No">
+      <tuv xml:lang="fr">
+        <seg>Non</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Nein</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>No</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.RestartPrompt">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment redémarrer le SafeLOGIC ?</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie die SafeLOGIC wirklich neu starten?</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to restart the SafeLOGIC?</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.UnlockDataPrompt">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment déverrouiller les données ? Si vous annulez le processus, le fichier de données actuel sur le SafeLOGIC est détruit et vous devez télécharger un fichier de données – le SafeLOGIC redémarrera ensuite.</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg> Möchten die Daten wirklich entsichern? Wenn Sie den Prozess abbrechen, dann wird die aktuelle Datendatei auf der SafeLOGIC zerstört und Sie müssen eine Datendatei herunterladen - die SafeLOGIC wird danach neu booten.</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to unlock the data?If you cancel the process the current data file on the SafeLOGIC is destroyed and you have to download a data file - the SafeLOGIC will reboot afterwards.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.UnlockPrompt">
+      <tuv xml:lang="fr">
+        <seg> Voulez-vous vraiment déverrouiller l,application avec CRC {#::SafetyUI:visuApplicationCRC} ?</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Möchten Sie wirklich die Applikation mit CRC {#::SafetyUI:visuApplicationCRC} entsichern?</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Do you really want to unlock the application with CRC {#::SafetyUI:visuApplicationCRC}?</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyDialog.Yes">
+      <tuv xml:lang="fr">
+        <seg>Oui</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Ja</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Yes</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Cancel">
+      <tuv xml:lang="fr">
+        <seg>Annuler</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Abbrechen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Cancel</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ClearData">
+      <tuv xml:lang="fr">
+        <seg>EFFACER DONNÉES</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>DATEN LÖSCHEN</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>CLEAR DATA</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.CurrentCRC">
+      <tuv xml:lang="fr">
+        <seg>CRC actuel</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Aktuelle CRC</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Current CRC</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Download">
+      <tuv xml:lang="fr">
+        <seg>Télécharger l,application</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Applikation herunterladen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Download Application</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrBufferToSmall">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Tampon de réponses trop petit</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Antwortpuffer zu klein</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Response buffer to small</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrBusy">
+      <tuv xml:lang="fr">
+        <seg>Occupé</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>in Betrieb</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Busy</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrChecksum">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Somme de contrôle </seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Prüfsumme</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Checksum </seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUi.ErrCommandServer">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Serveur de commandes</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Befehlsserver</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Command Server</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUi.ErrCommandServerInit">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Le serveur n,était pas initialisé durant le démarrage</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Server wurde während Startup nicht eröffnet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Server was not initializied during the startup</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrConnectionEndByTarget">
+      <tuv xml:lang="fr">
+        <seg>Erreur : La cible a mis fin à la connexion</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Der Anschluss wurde vom Ziel beendet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: The connection has been ended by the target</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrConnectionFail">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Échec de connexion à la cible</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Anschluss zum Ziel ist fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Connection to the target has failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrDataCompFail">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Échec de comparaison de données</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Datenvergleich fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Data compare failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrDataForDownload">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Données pour le téléchargement</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler Daten für Download</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error Data for download</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrDataTypeDownload">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Type de données pour le téléchargement</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Dateityp für Download</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Data type for download</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrDeviceDriverOpen">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Ouverture du pilote du dispositif</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Gerätetreiber wird geöffnet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Opening the device driver</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrDeviceDriverRead">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Lecture du pilote du dispositif</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Lesen vom Gerätetreiber</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Reading from the device driver</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrDeviceDriverWrite">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Écriture sur le pilote du dispositif</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Schreiben zum Gerätetreiber</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Writing to the device driver</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrEndConnection">
+      <tuv xml:lang="fr">
+        <seg>Le client a mis fin à la connexion</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Der Anschluss wurde vom Kunden beendet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>The connection has been ended by the client</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrFileInfo">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Informations sur le fichier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Dateiinfo</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: File info</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrFileInvalid">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Fichier non valide</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Datei ungültig</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: File Invalid</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrFileOpen">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Fichier ouvert</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler:  Datei offen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error:File open</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrFileSize">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Fichier trop important</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Datei zu groß</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: File too big</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrFileSizeWrong">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Taille incorrecte du fichier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Falsche Dateigröße</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Wrong file size</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrFindingApp">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Impossible de trouver le module d,application sur l,API</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Kann Applikationsmodul auf SPS nicht finden</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Cannot find application module on PLC</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrIncorrectPasword">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Mot de passe incorrect</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Passwort inkorrekt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Password incorrect</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrInternal">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Erreur interne</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Interner Fehler</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Internal error</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrMemory">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Affectation de la mémore</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Speicherzuteilung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Memory allocation</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrModuleInUse">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Le module est utilisé par un autre client</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Das Modul wird von einem anderen Kunden verwendet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: The module is in use by another client</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrModuleNS">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Le module n,est pas pris en charge ou n,existe pas</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Das Modul wird nicht unterstützt oder ist zu klein</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: The module is not supported or does not exist</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrNewConnectionAcc">
+      <tuv xml:lang="fr">
+        <seg>Nouvelle connexion acceptée</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Neuer Anschluss akzeptiert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>New connection accepted</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrNoCPU">
+      <tuv xml:lang="fr">
+        <seg>Erreur : SafePLC n,est pas présent</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: SafeSPS nicht vorhanden</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: SafePLC is not present</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrNoNewPassword">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Aucun nouveau mot de passe spécifié</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Neues Passwort bereitgestellt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: No new password supplied</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrNoPassword">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Aucun mot de passe spécifié</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Kein Passwort gegeben</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: No password supplied</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrNoPasswordDownload">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Aucun mot de passe spécifié pour le téléchargement</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Kein Passwort für Download gegeben</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: No password supplied for download</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrNoUDID">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Aucun UDID</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Keine UDID</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: No UDID</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrPassedParameters">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Paramètres incorrects spécifiés</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Inkorrekte Parameter bereitgestellt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Incorrect parameters supplied</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrPasswordlength">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Longueur non valide du mot de passe</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Ungültige Passwortlänge</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Invalid password length</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrProtocolDownload">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Version du protocole pour le téléchargement</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Protokollversion für Download</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Protocol version for download</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrQueue">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Trop de requêtes sans réponse dans la file d,attente</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Zu viele unbeantwortete Anfragen in der Warteschlange</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Too many unresponded requests in the queue</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrRequestBuffer">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Tampon de réponses trop petit</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Anfragepuffer zu klein</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Request buffer too small</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrResourcesNotAllocated">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Les ressources n,ont pu être allouées</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Ressourcen konnten nicht zugeteilt werden</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Resources could not be allocated</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrStaticUnlock">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Déverrouillage statique</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Static entsichern</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Static unlock</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrStream">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Flux de données</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Stream</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Stream</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrTimeOut">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Délai d,attente de la connexion, il se peut que SafePLC redémarre après l,exécution de la commande</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Anschluss-Auszeit, vielleicht startet SafeSPS nach Befehlsausführung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Connection timeout, maybe SafePLC is restarting after command execution</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrUDIDNoMatch">
+      <tuv xml:lang="fr">
+        <seg>Erreur : UDID Ne concorde pas</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: UDID entspricht nicht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: UDID Does not match</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrUnlockRead">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Déverrouiller la lecture</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Lesen entsichern</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Unlock read</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrUnlockWrite">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Déverrouiller l,écriture</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Schreiben entsichern</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Unlock write</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrWrite">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Écriture sur un fichier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Dateischreibung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: File write</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrWrongCommand">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Commande incorrecte</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Falscher Befehl</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Wrong command</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrWrongDataForEnter">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Données incorrectes pour la commande ENTER</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Falsche Daten vom EINGABE-Befehl</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Wrong data for ENTER command</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrWrongDataForStatus">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Données incorrectes pour la commande STATUS</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Falsche Daten für STATUS-Befehl</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Wrong data for STATUS command</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrWrongLengthForStatus">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Longueur incorrecte pour les données STATUS</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Inkorrekte Länge für STATUS-Daten</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Incorrect length for STATUS data</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ErrWrongVersion">
+      <tuv xml:lang="fr">
+        <seg>Erreur : Version incorrecte de la structure de commande</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fehler: Falsche Version von Befehlsstruktur</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error: Wrong version for command structure</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Exchage">
+      <tuv xml:lang="fr">
+        <seg>SK-REMPL</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>SK-ÄNDRG.</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>SK-XCHG</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.FailSafe">
+      <tuv xml:lang="fr">
+        <seg>Sécurité intrinsèque</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Fail-Safe</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Fail Safe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Format">
+      <tuv xml:lang="fr">
+        <seg>SK-FORMAT</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>SK-FORMAT</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>SK-FORMAT</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.FW_Ack">
+      <tuv xml:lang="fr">
+        <seg>PROG-ACQU</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>FW-BESTÄT.</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>FW-ACKN</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.FW_SK_OK">
+      <tuv xml:lang="fr">
+        <seg>FW/SafeKEY OK</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>FW/SafeKEY OK</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>FW/SafeKEY OK</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.FW_Update">
+      <tuv xml:lang="fr">
+        <seg>Mise à jour FW</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>FW-Aktualisierung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>FW Update</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.HaltDebug">
+      <tuv xml:lang="fr">
+        <seg>Immobiliser – Déboguer</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Halt - Debug</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Halt - Debug</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Invalid">
+      <tuv xml:lang="fr">
+        <seg>Non valide</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Ungültig</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Invalid</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.LEDTest">
+      <tuv xml:lang="fr">
+        <seg>Test LED Actif</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>LED-Test aktiv</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>LED Test Active</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Loading">
+      <tuv xml:lang="fr">
+        <seg>Chargement</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>wird geladen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Loading</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ModuleExchange_1">
+      <tuv xml:lang="fr">
+        <seg>1 module remplacé</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>1 Modul ausgetauscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>1 module exchange</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ModuleExchange_2">
+      <tuv xml:lang="fr">
+        <seg>2 modules remplacés</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>2 Module ausgetauscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>2 modules exchanged</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ModuleExchange_3">
+      <tuv xml:lang="fr">
+        <seg>3 modules remplacés</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>3 Module ausgetauscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>3 modules exchanged</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ModuleExchange_4">
+      <tuv xml:lang="fr">
+        <seg>4 modules remplacés</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>4 Module ausgetauscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>4 modules exchanged</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ModuleExchange_n">
+      <tuv xml:lang="fr">
+        <seg>n modules remplacés</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>n Module ausgetauscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>n modules exchanged</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ModuleMissing">
+      <tuv xml:lang="fr">
+        <seg>Module manquant</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Modul fehlt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Module Missing</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ModulesOK">
+      <tuv xml:lang="fr">
+        <seg>Modules Ok</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Module OK</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Modules Ok</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.NoApp">
+      <tuv xml:lang="fr">
+        <seg>Aucune application</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Keine Applikation</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>No Application</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.NoExecution">
+      <tuv xml:lang="fr">
+        <seg>Aucune exécution</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Keine Ausführung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>No Execution</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.NoMessage">
+      <tuv xml:lang="fr">
+        <seg>Aucun message : Prêt</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Keine Nachricht: Bereit</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>No Message: Ready</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Offline">
+      <tuv xml:lang="fr">
+        <seg>Hors connexion</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Offline</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Offline</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Operational">
+      <tuv xml:lang="fr">
+        <seg>Opérationnel</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>betriebsbereit</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Operational</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.PreOp">
+      <tuv xml:lang="fr">
+        <seg>Préopérationnel</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>vorbetrieblich</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Preoperational</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.ReadStatus">
+      <tuv xml:lang="fr">
+        <seg>Lire l,état</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Status lesen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Read Status</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Reset">
+      <tuv xml:lang="fr">
+        <seg>REDÉMARRER SafeLOGIC</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>SafeLOGIC NEUSTARTEN</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>RESET SafeLOGIC</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.RunDebug">
+      <tuv xml:lang="fr">
+        <seg>Faire fonctionner – Déboguer</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Betrieb - Debug</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Run - Debug</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.RunSafe">
+      <tuv xml:lang="fr">
+        <seg>Faire fonctionner – Sûr</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Betrieb - Sicher</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Run - Safe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.SafeKeyExchange">
+      <tuv xml:lang="fr">
+        <seg>Échange SafeKEY</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>SafeKEY-Austausch</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>SafeKEY Exchange</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.SafeLogicID">
+      <tuv xml:lang="fr">
+        <seg>ID SafeLOGIC</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>SafeLOGIC ID</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>SafeLOGIC ID</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Safety">
+      <tuv xml:lang="fr">
+        <seg>Sécurité</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Sicherheit</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Safety</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Scan">
+      <tuv xml:lang="fr">
+        <seg>RECHERCHE</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>SCAN</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>SCAN</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Scanning">
+      <tuv xml:lang="fr">
+        <seg>Recherche</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Scan läuft</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Scanning</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.SetPassword">
+      <tuv xml:lang="fr">
+        <seg>Définir le mot de passe</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Passwort einstellen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Set Password</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.StatusSetPassword">
+      <tuv xml:lang="fr">
+        <seg>Tentative de définition du mot de passe</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Passworteinstellung wird versucht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Attemping to set password</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.StopDebug">
+      <tuv xml:lang="fr">
+        <seg>Arrêter – Déboguer</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Stopp - Debug</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stop - Debug</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.StopSafe">
+      <tuv xml:lang="fr">
+        <seg>Arrêter – Sûr</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Stopp - Sicher</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stop - Safe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Test">
+      <tuv xml:lang="fr">
+        <seg>TEST</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>TEST</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>TEST</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.UDID_High">
+      <tuv xml:lang="fr">
+        <seg>UDID Haut</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>UDID hoch</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>UDID High</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.UDID_Low">
+      <tuv xml:lang="fr">
+        <seg>UDID Bas</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>UDID niedrig</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>UDID Low</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SafetyUI.Unlock">
+      <tuv xml:lang="fr">
+        <seg>Déverrouiller l,application</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Applikation entsichern</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Unlock Application</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

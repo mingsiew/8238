@@ -1,0 +1,338 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Program: zz_KanlinkConfig
+ * File: zz_KanlinkConfig.ab
+ * Author: treamsbottom
+ * Created: September 07, 2012
+ ********************************************************************
+ * Implementation of program zz_KanlinkConfig
+ ********************************************************************)
+;Requirements
+;From KGFramework 
+;	Libaries:
+;		KgStdLib
+;		KanLinkLib
+;		mnParamLib
+;	10ms Tasks:
+;		hlKanLink
+;	100ms Tasks:
+;		svCPCache
+;		mnEth
+; When setting max connections for anything greater than 10
+;the array decs will need changing. these are set by the constants HLKANLINK_MAX_CLIENTCONNS and HLKANLINK_MAX_SERVERCONNS in the frameworkshare
+;Pkg_hlKanLink, KL_UserLib.Var 
+;----------------------------------------------------------------------------------------------------------------;
+;-----21-1-2013..TR..Version A6 - First TestedVersion - Note Specials to run with Shuttle
+;-----28-1-2013..TR..Version A7 - Remove Specials..Add option to send program and category number & Batch number.#
+;-----03-03-2017..TR.Version A18 - Add "Advanced Connection Mode"
+;-----07-06-2017 ..TR..Version A19 - Fix issues with sending empty bag date-- Remove reference to CAN[].Category -- Read all information from bag for consistency.
+;-----------------------------------------------------------------------------------------------------------------
+PROGRAM _INIT
+	init := 0;
+END_PROGRAM	
+PROGRAM _CYCLIC
+;HLKANLINK_MAX_SERVERCONNS	;Declaration of max Server conns for KG Framework
+;HLKANLINK_MAX_CLIENTCONNS	;Declaration of max Client conns for KG Framework	
+IF NOT init THEN
+;Parameter Setup
+;Global setting - Apply to all Kanlink Comms(Server,Client,OverView)
+	Kanlink.GlobalSettings.TransferProgramCode 	= FALSE ; This transfers/Read the cat code to/from the bCustom area. Prg to/from sCategory	
+	Kanlink.GlobalSettings.TransferProgin_bCustom = FALSE ;This transfers/Read the Program code to/from the bCustom area. Category to/from sCategory 
+	Kanlink.GlobalSettings.UseBatchCode 		= TRUE	; Pass batch/SQL id	
+	Kanlink.GlobalSettings.BatchCodeTyp			= BatchTyp_UDINT  ;0 = UDINT, 1 = 16 byte unique (UDINT By default, extra code required for 16 byte )	
+		
+;---------------------------------------------------------Batch Transfer Server---------------------------------------------------------------		
+;Server (Used to send data)		--------------------------- Variable = PT100
+	Kanlink.Server.Enable = TRUE ; used to enable Server Comms	
+	Kanlink.Server.MaxConns	= 1 ; Number of Server connections 
+	 ; Start address of CAN variable 
+	;Address
+	Kanlink.Server.IP[1].CommID = 1; //SDC1 R43
+	Kanlink.Server.IP[1].Area 	= 3 
+	Kanlink.Server.IP[1].Adr 	= 11
+;	Kanlink.Server.IP[1].AdvMode = FALSE // Use Advance mode- Pass in whole IP address as a string.
+;	strcpy(ADR(Kanlink.Server.IP[1].AdrAdvMode),ADR("10.8.3.13"));	
+	Kanlink.Server.IP[1].CmdOpt = 0;
+		
+;	Kanlink.Server.IP[2].CommID = 2; //SDC2 R45
+;	Kanlink.Server.IP[2].Area 	= 3 
+;	Kanlink.Server.IP[2].Adr 	= 12
+;	Kanlink.Server.IP[2].CmdOpt = 0;	
+;	
+;	Kanlink.Server.IP[3].CommID = 3; //SDC3 R47
+;	Kanlink.Server.IP[3].Area 	= 3 
+;	Kanlink.Server.IP[3].Adr 	= 13
+;	Kanlink.Server.IP[3].CmdOpt = 0;
+;
+;	Kanlink.Server.IP[4].CommID = 4; //CDC8 R110
+;	Kanlink.Server.IP[4].Area 	= 1 
+;	Kanlink.Server.IP[4].Adr 	= 12
+;	Kanlink.Server.IP[4].CmdOpt = 0;	
+;
+;	Kanlink.Server.IP[5].CommID = 5; //CDC9 R113
+;	Kanlink.Server.IP[5].Area 	= 1 
+;	Kanlink.Server.IP[5].Adr 	= 2
+;	Kanlink.Server.IP[5].CmdOpt = 0;
+;	
+;	Kanlink.Server.IP[6].CommID = 6; //CDC6 R68
+;	Kanlink.Server.IP[6].Area 	= 5 
+;	Kanlink.Server.IP[6].Adr 	= 15
+;	Kanlink.Server.IP[6].CmdOpt = 0;	
+;
+;	Kanlink.Server.IP[7].CommID = 7; //CDC7 R70
+;	Kanlink.Server.IP[7].Area 	= 5 
+;	Kanlink.Server.IP[7].Adr 	= 16
+;	Kanlink.Server.IP[7].CmdOpt = 0;
+	;---------------------------------------------------------Batch transfer Client---------------------------------------------------------------	
+	;Client used to recieve data --------------------------- Variable = PTResp
+	Kanlink.Client.Enable = TRUE ; used to enable Client Comms	
+	Kanlink.Client.MaxConns	= 2 ; Number of Client connections
+	;Address
+	
+	//CSL1 r41
+	Kanlink.Client.IP[1].CommID = 14	;//CSL1 
+	Kanlink.Client.IP[1].Area 	= 3
+	Kanlink.Client.IP[1].Adr 	= 64
+;	Kanlink.Client.IP[1].AdvMode = FALSE // Use Advance mode- Pass in whole IP address as a string.
+;	strcpy(ADR(Kanlink.Client.IP[1].AdrAdvMode),ADR("10.8.4.20"));		
+	Kanlink.Client.IP[1].CmdOpt = 0
+		
+	//CSL2 r43
+	Kanlink.Client.IP[2].CommID = 15	;//CSL2 
+	Kanlink.Client.IP[2].Area 	= 3
+	Kanlink.Client.IP[2].Adr 	= 64
+	Kanlink.Client.IP[2].CmdOpt = 1
+;	
+;	//CSL1 r49
+;	Kanlink.Client.IP[3].CommID = 11	;//CSL3
+;	Kanlink.Client.IP[3].Area 	= 3
+;	Kanlink.Client.IP[3].Adr 	= 62
+;	Kanlink.Client.IP[3].CmdOpt = 0
+	
+;	//Sorting Rail
+;	Kanlink.Client.IP[2].CommID = 4
+;	Kanlink.Client.IP[2].Area 	= 3 ;Aero at sorting
+;	Kanlink.Client.IP[2].Adr 	= 64
+	;	Kanlink.Client.IP[1].AdvMode = FALSE // Use Advance mode- Pass in whole IP address as a string.
+	;	strcpy(ADR(Kanlink.Client.IP[1].AdrAdvMode),ADR("10.8.4.20"));		
+;	Kanlink.Client.IP[2].CmdOpt = 1
+;		
+		
+		
+		
+;;---------------------------------------------------------Overview Server---------------------------------------------------------------		
+;	;------------------------------------------------Variable = STOverResp
+;	;Use Overview Server.. SendData Data to Overview PLC - Only IP necessary - Client will request bag numbers. 		
+	Kanlink.OverviewServer.Enable = FALSE		
+;	Kanlink.OverviewServer.MaxConns = 1
+;	
+;	Kanlink.OverviewServer.IP[1].Area = 4	
+;	Kanlink.OverviewServer.IP[1].Adr = 21				
+;	Kanlink.OverviewServer.IP[1].AdvMode = FALSE
+;	strcpy(ADR(Kanlink.OverviewServer.IP[1].AdrAdvMode),ADR("10.8.2.21"));	
+;		
+;	Kanlink.OverviewServer.IP[1].CmdOpt = 0	
+;;---------------------------------------------------------Overview Client---------------------------------------------------------------	
+;;------------------------------------------------Variable = STOverReq
+;;Use Overview Client.. Recieve Data		
+	Kanlink.OverviewClient.Enable = FALSE
+;	Kanlink.OverviewClient.MaxConns = 5
+;	Kanlink.OverviewClient.CANOffset = 21
+;;-----------PLC 1 - AERO SYSTEM		
+;	Kanlink.OverviewClient.StatusReg[1] = 951 ; D reg to map machine status for Tview. 
+;	
+;		
+;	Kanlink.OverviewClient.IP[1].Area = 3	
+;	Kanlink.OverviewClient.IP[1].Adr = 1	; To multiplex Edit KL_Overview
+;	Kanlink.OverviewClient.IP[1].AdvMode = FALSE
+;	strcpy(ADR(Kanlink.OverviewClient.IP[1].AdrAdvMode),ADR("10.8.3.1"));	
+;		
+;	Kanlink.OverviewClient.IP[1].CmdOpt = 0	
+;	//Batch data requested from Server	
+;	Kanlink.OverviewClient.InfoReq[1].wCntPositions = 6  ;Number of positions requested max 6 per request. If more than 6 set to 0 to multiplex...
+;	Kanlink.OverviewClient.InfoReq[1].wNoOfPosition[0] = 1  ; Unqiue ID of data requested put all requests here if more than 6 the driver will multiplex the signals.	
+;	Kanlink.OverviewClient.InfoReq[1].wNoOfPosition[1] = 2	; There must be no gaps in the request numbers.	If not multiplexing, ensure index[6] = 0
+;	Kanlink.OverviewClient.InfoReq[1].wNoOfPosition[2] = 3
+;	Kanlink.OverviewClient.InfoReq[1].wNoOfPosition[3] = 4
+;	Kanlink.OverviewClient.InfoReq[1].wNoOfPosition[4] = 5	
+;	Kanlink.OverviewClient.InfoReq[1].wNoOfPosition[5] = 6	
+;
+;	//Bag number to map recieved data to.				
+;	Kanlink.OverviewClient.InfoResp[1].BagNum[0] = 501	
+;	Kanlink.OverviewClient.InfoResp[1].BagNum[1] = 502	
+;	Kanlink.OverviewClient.InfoResp[1].BagNum[2] = 503	
+;	Kanlink.OverviewClient.InfoResp[1].BagNum[3] = 504	
+;	Kanlink.OverviewClient.InfoResp[1].BagNum[4] = 505	
+;	Kanlink.OverviewClient.InfoResp[1].BagNum[5] = 506	
+
+
+	
+	
+	
+;--------------------------------------------------------------END OF Configuration Code--------------------------------------------			
+		
+;Check size of server and Client		
+	IF NOT Kanlink.Server.Enable THEN
+		Kanlink.Server.MaxConns = 0
+	ENDIF		
+	IF NOT Kanlink.Client.Enable THEN
+		Kanlink.Client.MaxConns = 0	
+	ENDIF		
+	IF NOT Kanlink.OverviewServer.Enable THEN
+		Kanlink.OverviewServer.MaxConns = 0	
+	ENDIF	
+	IF NOT Kanlink.OverviewClient.Enable THEN
+		Kanlink.OverviewClient.MaxConns = 0
+	ENDIF		
+	IF ((Kanlink.Server.MaxConns + Kanlink.OverviewServer.MaxConns) <= HLKANLINK_MAX_SERVERCONNS) THEN		
+		ServerDecOK = TRUE	
+	ELSE
+		strcpy(ADR(Kanlink.ErrorString),"Declaration of HLKANLINK_MAX_SERVERCONNS not large enough")
+		ServerDecOK = FALSE
+	ENDIF			
+	IF ((Kanlink.Client.MaxConns + Kanlink.OverviewClient.MaxConns) <= HLKANLINK_MAX_CLIENTCONNS) THEN			
+		ClientDecOK = TRUE
+	ELSE			
+		ClientDecOK = FALSE 		
+		strcpy(ADR(Kanlink.ErrorString),"Declaration of HLKANLINK_MAX_CLIENTCONNS not large enough")
+	ENDIF		
+			
+	IF 	ServerDecOK AND ClientDecOK THEN
+
+		;Server init
+		IF Kanlink.Server.Enable THEN
+			LOOP n = 1 TO Kanlink.Server.MaxConns DO
+				;Build strings to pass to variable names, only required in a loop as index number changes.				
+				itoa(n,ADR(sn))	; put n into string
+				strcpy(ADR(sReq),"PT100[");build string for variable name (request)
+				strcat(ADR(sReq),ADR(sn))	
+				strcat(ADR(sReq),"].Req")	
+				strcpy(ADR(sResp),"PT100[");;build string for variable name (response)
+				strcat(ADR(sResp),ADR(sn))	
+				strcat(ADR(sResp),"].Resp")		
+				IF Kanlink.Server.IP[n].AdvMode THEN
+					IFhlKanLink.Parameter.Server[n].Adr = 0;		
+					IFhlKanLink.Parameter.Server[n].Area = 0
+					IFhlKanLink.Parameter.Server[n].AdvMode := TRUE;	
+					strcpy(ADR(IFhlKanLink.Parameter.Server[n].AdrAdvMode),ADR(Kanlink.Server.IP[n].AdrAdvMode));	
+				ELSE		
+					IFhlKanLink.Parameter.Server[n].Adr = Kanlink.Server.IP[n].Adr ; Populate these arrays .		
+					IFhlKanLink.Parameter.Server[n].Area = Kanlink.Server.IP[n].Area
+				ENDIF
+				IFhlKanLink.Parameter.Server[n].Cmd = 1000 ; cmd from the server are always even
+				IFhlKanLink.Parameter.Server[n].CmdOpt = Kanlink.Server.IP[n].CmdOpt		
+				IFhlKanLink.Parameter.Server[n].TimeOut = 1000 ;ms	
+				strcpy(ADR(IFhlKanLink.Parameter.Server[n].Name),"PT100") ; Diags Only
+				strcpy(ADR(IFhlKanLink.Parameter.Server[n].sReq),ADR(sReq));"zzKanLink:PT100[0].Req")
+				strcpy(ADR(IFhlKanLink.Parameter.Server[n].sResp),ADR(sResp));"zzKanLink:PT100[0].Resp")
+			ENDLOOP
+		ENDIF			
+		;Client Init
+		IF Kanlink.Client.Enable THEN	
+			LOOP n = 1 TO Kanlink.Client.MaxConns DO				
+				itoa(n,ADR(sn))	; put n into string
+				strcpy(ADR(sReq),"PTResp[");build string for variable name (request)
+				strcat(ADR(sReq),ADR(sn))	
+				strcat(ADR(sReq),"].Req")	
+				strcpy(ADR(sResp),"PTResp[");;build string for variable name (response)
+				strcat(ADR(sResp),ADR(sn))	
+				strcat(ADR(sResp),"].Resp")	
+	
+				IF Kanlink.Client.IP[n].AdvMode THEN
+					IFhlKanLink.Parameter.Client[n].Adr = 0;		
+					IFhlKanLink.Parameter.Client[n].Area = 0
+					IFhlKanLink.Parameter.Client[n].AdvMode := TRUE;	
+					strcpy(ADR(IFhlKanLink.Parameter.Client[n].AdrAdvMode),ADR(Kanlink.Client.IP[n].AdrAdvMode));	
+				ELSE		
+					IFhlKanLink.Parameter.Client[n].Adr = Kanlink.Client.IP[n].Adr ; Populate these arrays .		
+					IFhlKanLink.Parameter.Client[n].Area = Kanlink.Client.IP[n].Area
+				ENDIF
+				IFhlKanLink.Parameter.Client[n].Cmd = 1000
+				IFhlKanLink.Parameter.Client[n].CmdOpt = Kanlink.Client.IP[n].CmdOpt
+				IFhlKanLink.Parameter.Client[n].CycleTime = 1000;ms
+				strcpy(ADR(IFhlKanLink.Parameter.Client[n].Name),"PTResp")	
+				strcpy(ADR(IFhlKanLink.Parameter.Client[n].sReq),ADR(sReq))
+				strcpy(ADR(IFhlKanLink.Parameter.Client[n].sResp),ADR(sResp))	
+			ENDLOOP
+		ENDIF	
+		;Overview Server init
+		;STOverResp[0] //Server sends batch data...
+		IF Kanlink.OverviewServer.Enable THEN
+			LOOP n = 1 TO Kanlink.OverviewServer.MaxConns DO
+				;Build strings to pass to variable names, only required in a loop as index number changes.				
+				itoa(n,ADR(sn))	; put n into string
+				strcpy(ADR(sReq),"STOverResp[");build string for variable name (request)
+				strcat(ADR(sReq),ADR(sn))	
+				strcat(ADR(sReq),"].Req")	
+				strcpy(ADR(sResp),"STOverResp[");;build string for variable name (response)
+				strcat(ADR(sResp),ADR(sn))	
+				strcat(ADR(sResp),"].Resp")	
+									
+				Index = n + Kanlink.Server.MaxConns	
+				Kanlink.OverviewServer.IndexOffset = Kanlink.Server.MaxConns	
+				IF Kanlink.OverviewServer.IP[n].AdvMode THEN
+					IFhlKanLink.Parameter.Server[Index].Adr = 0;		
+					IFhlKanLink.Parameter.Server[Index].Area = 0
+					IFhlKanLink.Parameter.Server[Index].AdvMode := TRUE;	
+					strcpy(ADR(IFhlKanLink.Parameter.Server[Index].AdrAdvMode),ADR(Kanlink.OverviewServer.IP[n].AdrAdvMode));	
+				ELSE		
+					IFhlKanLink.Parameter.Server[Index].Adr = Kanlink.OverviewServer.IP[n].Adr ; Populate these arrays .		
+					IFhlKanLink.Parameter.Server[Index].Area = Kanlink.OverviewServer.IP[n].Area
+				ENDIF
+					
+				IFhlKanLink.Parameter.Server[Index].Cmd = 1002 ;Batch Info Command
+				IFhlKanLink.Parameter.Server[Index].CmdOpt = Kanlink.OverviewServer.IP[n].CmdOpt		
+				IFhlKanLink.Parameter.Server[Index].TimeOut = 1000 ;ms	
+				strcpy(ADR(IFhlKanLink.Parameter.Server[Index].Name),"STOverResp") ; Diags Only
+				strcpy(ADR(IFhlKanLink.Parameter.Server[Index].sReq),ADR(sReq));"zzKanLink:STOverReq[0].Req")
+				strcpy(ADR(IFhlKanLink.Parameter.Server[Index].sResp),ADR(sResp));"zzKanLink:STOverReq[0].Resp")
+
+			ENDLOOP
+		ENDIF	
+		
+		;Kanlink OverView Client	
+		;STOverReq[0]// Client recieves batch data
+		IF Kanlink.OverviewClient.Enable THEN
+			LOOP n = 1 TO Kanlink.OverviewClient.MaxConns DO
+				;Build strings to pass to variable names, only required in a loop as index number changes.				
+				itoa(n,ADR(sn))	; put n into string
+				strcpy(ADR(sReq),"STOverReq[");build string for variable name (request)
+				strcat(ADR(sReq),ADR(sn))	
+				strcat(ADR(sReq),"].Req")	
+				strcpy(ADR(sResp),"STOverReq[");;build string for variable name (response)
+				strcat(ADR(sResp),ADR(sn))	
+				strcat(ADR(sResp),"].Resp")		
+				Index = n + Kanlink.Client.MaxConns
+				Kanlink.OverviewClient.IndexOffset = Kanlink.Client.MaxConns
+
+				IF Kanlink.OverviewClient.IP[n].AdvMode THEN
+					IFhlKanLink.Parameter.Client[Index].Adr = 0;		
+					IFhlKanLink.Parameter.Client[Index].Area = 0
+					IFhlKanLink.Parameter.Client[Index].AdvMode := TRUE;	
+					strcpy(ADR(IFhlKanLink.Parameter.Server[Index].AdrAdvMode),ADR(Kanlink.OverviewClient.IP[n].AdrAdvMode));	
+				ELSE		
+					IFhlKanLink.Parameter.Client[Index].Adr = Kanlink.OverviewClient.IP[n].Adr ; Populate these arrays .		
+					IFhlKanLink.Parameter.Client[Index].Area = Kanlink.OverviewClient.IP[n].Area
+				ENDIF
+					
+				IFhlKanLink.Parameter.Client[Index].Cmd = 1002 ;Batch Info Command
+				IFhlKanLink.Parameter.Client[Index].CmdOpt = Kanlink.OverviewClient.IP[n].CmdOpt		
+				IFhlKanLink.Parameter.Client[Index].CycleTime = 1000 ;ms	
+				strcpy(ADR(IFhlKanLink.Parameter.Client[Index].Name),"STOverReq") ; Diags Only
+				strcpy(ADR(IFhlKanLink.Parameter.Client[Index].sReq),ADR(sReq));"zzKanLink:STOverResp[0].Req")
+				strcpy(ADR(IFhlKanLink.Parameter.Client[Index].sResp),ADR(sResp));"zzKanLink:STOverResp[0].Resp")
+			ENDLOOP
+		ENDIF		
+			
+		IFhlKanLink.in.xRestart = TRUE	
+		IFmnParam.Out.xParamOK = TRUE		
+		init = TRUE		
+		PT100 ; Variable that writes to the PT+ (Server)
+		PTResp ; Variable that reads from PT+ (Client)	
+		STOverReq ;Variable used for the overview client
+		STOverResp;Variable used for the overview server 	
+	ENDIF//Server,client size OK		
+ENDIF//INIT		
+
+END_PROGRAM

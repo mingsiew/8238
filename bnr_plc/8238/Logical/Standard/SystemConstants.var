@@ -1,0 +1,11 @@
+VAR CONSTANT
+	MAX_CAMERAS : USINT := 1; (** Number of B&R Barcode scanners*)
+	MAX_SPEED_REDUCERS : USINT := 1; (*Set to number of speed reducers*)
+	MAX_CONTACTRON : USINT := 4;
+	MAX_DRIVES : USINT := 16; (*Set to number of drives*)
+	MAX_FUSE_BANKS : USINT := 11;
+	MAX_DUAL_CHANNELS : USINT := 10; (** Number of Estops*)
+	MAX_HOIST : USINT := 4;
+	MAX_SAFE_ZONES : USINT := 30;
+	MAX_RAILS : UINT := 136; (**DO NOT USE -> USE RAIL_COUNT INSTEAD*)
+END_VAR

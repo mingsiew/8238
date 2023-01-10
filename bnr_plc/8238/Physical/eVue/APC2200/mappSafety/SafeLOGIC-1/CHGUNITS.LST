@@ -1,0 +1,10 @@
+(*
+NPOU: 7
+*)
+PG	Main
+FB	Zone
+FB	Output
+FB	SafeModuleOk
+FB	Decode
+FB	ReleaseOutput
+FB	Output_Card

@@ -1,0 +1,5 @@
+VAR
+	slant_timeout : BOOL;
+	test_bit_a : BOOL;
+	test_bit_b : BOOL;
+END_VAR

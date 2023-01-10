@@ -1,0 +1,177 @@
+(********************************************************************
+ * COPYRIGHT --
+ ********************************************************************
+ * File: IoMap.iom
+ * Author: Dave
+ * Created: November 19, 2010
+ ********************************************************************
+ * IO mapping file
+ ********************************************************************)
+VAR_CONFIG
+	OK[1] AT %IX."X20DM9324x".ModuleOk;
+	OK[3] AT %IX."X20DO8332x".ModuleOk;
+	X[1].X01 AT %IX."X20DM9324x".DigitalInput01; (*Emergency stops Ok*)
+	X[1].X02 AT %IX."X20DM9324x".DigitalInput02; (*Motor overloads*)
+	X[1].X03 AT %IX."X20DM9324x".DigitalInput03; (*SR1 Ok*)
+	X[1].X04 AT %IX."X20DM9324x".DigitalInput04; (*Spare*)
+	X[1].X05 AT %IX."X20DM9324x".DigitalInput05; (*STB1 - PX*)
+	X[1].X06 AT %IX."X20DM9324x".DigitalInput06; (*STB2 -PX*)
+	X[1].X07 AT %IX."X20DM9324x".DigitalInput07; (*ES2 - Emergency stop*)
+	X[1].X08 AT %IX."X20DM9324x".DigitalInput08; (*ES3 - Emergency stop*)
+	Y[1].Y01 AT %QX."X20DM9324x".DigitalOutput01; (*Alarm beacon*)
+	Y[1].Y02 AT %QX."X20DM9324x".DigitalOutput02; (*Spare*)
+	Y[1].Y03 AT %QX."X20DM9324x".DigitalOutput03; (*Spare*)
+	Y[1].Y04 AT %QX."X20DM9324x".DigitalOutput04; (*Spare*)
+	Y[3].Y01 AT %QX."X20DO8332x".DigitalOutput01; (*STB1 - Run*)
+	Y[3].Y02 AT %QX."X20DO8332x".DigitalOutput02; (*STB2 - Run*)
+	Y[3].Y03 AT %QX."X20DO8332x".DigitalOutput03; (*Spare*)
+	Y[3].Y04 AT %QX."X20DO8332x".DigitalOutput04; (*Spare*)
+	Y[3].Y05 AT %QX."X20DO8332x".DigitalOutput05; (*Spare*)
+	Y[3].Y06 AT %QX."X20DO8332x".DigitalOutput06; (*SVC1 - Carriage stop*)
+	Y[3].Y07 AT %QX."X20DO8332x".DigitalOutput07; (*Spare*)
+	Y[3].Y08 AT %QX."X20DO8332x".DigitalOutput08; (*Spare*)
+	X[32].X01 AT %IX."X67BC8321-32".IF1.ST1.DigitalInput01; (*SVC1 - Over travel top*)
+	X[32].X02 AT %IX."X67BC8321-32".IF1.ST1.DigitalInput02; (*Spare*)
+	X[32].X03 AT %IX."X67BC8321-32".IF1.ST1.DigitalInput03; (*SVC1 - Over travel bottom*)
+	Cyclic#1.X[32].X04 AT %IX."X67BC8321-32".IF1.ST1.DigitalInput04; (*SVC1 - Reference switch*)
+	Y[32].Y05 AT %QX."X67BC8321-32".IF1.ST1.DigitalOutput05; (*SVC1 - Rail end stop (Empty bag in)*)
+	Y[32].Y07 AT %QX."X67BC8321-32".IF1.ST1.DigitalOutput07; (*Spare*)
+	Y[32].Y08 AT %QX."X67BC8321-32".IF1.ST1.DigitalOutput08; (*SVC1 - Open buffer stop*)
+	OK[31] AT %IX."X67DM1321_31".ModuleOk;
+	X[31].X01 AT %IX."X67DM1321_31".DigitalInput01; (*Spare*)
+	X[31].X02 AT %IX."X67DM1321_31".DigitalInput02; (*Spare*)
+	X[31].X03 AT %IX."X67DM1321_31".DigitalInput03; (*Spare*)
+	X[31].X04 AT %IX."X67DM1321_31".DigitalInput04; (*SVC1 Bag arrive on carriage*)
+	X[31].X05 AT %IX."X67DM1321_31".DigitalInput05; (*SVC1 Bag on carriage*)
+	X[31].X06 AT %IX."X67DM1321_31".DigitalInput06; (*SVC1 Rail align receive*)
+	X[31].X07 AT %IX."X67DM1321_31".DigitalInput07; (*SVC1 Rail align release*)
+	Y[31].Y08 AT %QX."X67DM1321_31".DigitalOutput08; (*Spare*)
+	X[32].X06 AT %IX."X67BC8321-32".IF1.ST1.DigitalInput06; (*SVC1 - Bag at buffer*)
+	X[88].X01 AT %IX."X67DM1321_88".DigitalInput01; (*Spare*)
+	X[88].X02 AT %IX."X67DM1321_88".DigitalInput02; (*STRF1 - Bag at buffer*)
+	X[88].X03 AT %IX."X67DM1321_88".DigitalInput03; (*STRF1 - Bag arrive*)
+	X[88].X04 AT %IX."X67DM1321_88".DigitalInput04; (*STRF1 - Bag past point*)
+	Y[88].Y06 AT %QX."X67DM1321_88".DigitalOutput06; (*STRF1 - Open buffer*)
+	Y[88].Y07 AT %QX."X67DM1321_88".DigitalOutput07; (*STRF1 - Select line B*)
+	Y[88].Y08 AT %QX."X67DM1321_88".DigitalOutput08; (*STRF1 - Select line A*)
+	OK[88] AT %IX."X67DM1321_88".ModuleOk;
+	X[151].X01 AT %IX."X67DM1321.L08_151".DigitalInput01; (*SDC1 - Bag at buffer*)
+	X[151].X02 AT %IX."X67DM1321.L08_151".DigitalInput02; (*SDC1 - Bag at Discharger*)
+	X[151].X03 AT %IX."X67DM1321.L08_151".DigitalInput03; (*SDC1 - Bag released*)
+	X[151].X04 AT %IX."X67DM1321.L08_151".DigitalInput04; (*SDC1 - Bag empty*)
+	X[151].X05 AT %IX."X67DM1321.L08_151".DigitalInput05; (*Spare*)
+	X[151].X06 AT %IX."X67DM1321.L08_151".DigitalInput06; (*SDC1 - Drop load pushbutton*)
+	X[151].X07 AT %IX."X67DM1321.L08_151".DigitalInput07; (*Spare*)
+	X[151].X08 AT %IX."X67DM1321.L08_151".DigitalInput08; (*Spare*)
+	Y[151].Y01 AT %QX."X67DM1321.L08_151".DigitalOutput09; (*SDC1 - Open buffer stop*)
+	Y[151].Y02 AT %QX."X67DM1321.L08_151".DigitalOutput10; (*SDC1 - Bag steady*)
+	Y[151].Y03 AT %QX."X67DM1321.L08_151".DigitalOutput11; (*SDC1 - Open bag*)
+	Y[151].Y04 AT %QX."X67DM1321.L08_151".DigitalOutput12; (*SDC1 - Open stop*)
+	Y[151].Y05 AT %QX."X67DM1321.L08_151".DigitalOutput13; (*SDC1 - Bag closer*)
+	Y[151].Y06 AT %QX."X67DM1321.L08_151".DigitalOutput14; (*SSB1 Bag catch*)
+	Y[151].Y07 AT %QX."X67DM1321.L08_151".DigitalOutput15; (*SSB1 Close bag*)
+	Y[151].Y08 AT %QX."X67DM1321.L08_151".DigitalOutput16; (*SDC1 - Pushbutton lamp*)
+	OK[151] AT %IX."X67DM1321.L08_151".ModuleOk;
+	X[88].X05 AT %IX."X67DM1321_88".DigitalInput05; (*STRF1 - Bag released*)
+	X[51].X01 AT %IX."X67DM1321_51".DigitalInput01; (*SPN1 - Bag arrive line 1*)
+	X[51].X02 AT %IX."X67DM1321_51".DigitalInput02; (*SPN1 - Bag arrive line 2*)
+	X[51].X03 AT %IX."X67DM1321_51".DigitalInput03; (*SPN1 - Bag arrive line 3*)
+	X[51].X04 AT %IX."X67DM1321_51".DigitalInput04; (*Spare*)
+	Y[51].Y05 AT %QX."X67DM1321_51".DigitalOutput05; (*SPN1 - Select line 3*)
+	Y[51].Y06 AT %QX."X67DM1321_51".DigitalOutput06; (*SPN1 - Select line 2*)
+	Y[51].Y07 AT %QX."X67DM1321_51".DigitalOutput07; (*SPN1 - Reset line 3*)
+	Y[51].Y08 AT %QX."X67DM1321_51".DigitalOutput08; (*SPN1 - Reset line 2*)
+	OK[51] AT %IX."X67DM1321_51".ModuleOk;
+	X[152].X01 AT %IX."X67DM1321.L08_152".DigitalInput01; (*SDC2 - Bag at buffer*)
+	X[152].X02 AT %IX."X67DM1321.L08_152".DigitalInput02; (*SDC2 - Bag at Discharger*)
+	X[152].X03 AT %IX."X67DM1321.L08_152".DigitalInput03; (*SDC2 - Bag released*)
+	X[152].X04 AT %IX."X67DM1321.L08_152".DigitalInput04; (*SDC2 - Bag empty*)
+	X[152].X05 AT %IX."X67DM1321.L08_152".DigitalInput05; (*Spare*)
+	X[152].X06 AT %IX."X67DM1321.L08_152".DigitalInput06; (*SDC2 - Drop load pushbutton*)
+	X[152].X07 AT %IX."X67DM1321.L08_152".DigitalInput07; (*Spare*)
+	X[152].X08 AT %IX."X67DM1321.L08_152".DigitalInput08; (*Spare*)
+	Y[152].Y01 AT %QX."X67DM1321.L08_152".DigitalOutput09; (*SDC2 - Open buffer stop*)
+	Y[152].Y02 AT %QX."X67DM1321.L08_152".DigitalOutput10; (*SDC2 - Bag steady*)
+	Y[152].Y03 AT %QX."X67DM1321.L08_152".DigitalOutput11; (*SDC2 - Open bag*)
+	Y[152].Y04 AT %QX."X67DM1321.L08_152".DigitalOutput12; (*SDC2 - Open stop*)
+	Y[152].Y05 AT %QX."X67DM1321.L08_152".DigitalOutput13; (*SDC2 - Bag closer*)
+	Y[152].Y06 AT %QX."X67DM1321.L08_152".DigitalOutput14; (*SSB2 Bag catch*)
+	Y[152].Y07 AT %QX."X67DM1321.L08_152".DigitalOutput15; (*SSB2 Close bag*)
+	Y[152].Y08 AT %QX."X67DM1321.L08_152".DigitalOutput16; (*SDC2 - Pushbutton lamp*)
+	OK[152] AT %IX."X67DM1321.L08_152".ModuleOk;
+	X[71].X01 AT %IX."X67DM1321_71".DigitalInput01; (*SPF1 - Bag at line 1*)
+	X[71].X02 AT %IX."X67DM1321_71".DigitalInput02; (*SPF1 - Bag at line 2*)
+	Y[71].Y03 AT %QX."X67DM1321_71".DigitalOutput03; (*SPF1 - Open stop  line 1*)
+	Y[71].Y04 AT %QX."X67DM1321_71".DigitalOutput04; (*SPF1 - Open stop  line 2*)
+	Y[71].Y05 AT %QX."X67DM1321_71".DigitalOutput05; (*Spare*)
+	Y[71].Y06 AT %QX."X67DM1321_71".DigitalOutput06; (*SPF1 - Select line 2*)
+	Y[71].Y07 AT %QX."X67DM1321_71".DigitalOutput07; (*Spare*)
+	Y[71].Y08 AT %QX."X67DM1321_71".DigitalOutput08; (*SPF1 - Reset line 2*)
+	OK[71] AT %IX."X67DM1321_71".ModuleOk; (*Module status (3 = module present)*)
+	X[72].X01 AT %IX."X67DM1321_72".DigitalInput01; (*SPF1 - Bag at line 3*)
+	X[72].X02 AT %IX."X67DM1321_72".DigitalInput02; (*SPF1 - Bag released*)
+	Y[72].Y03 AT %QX."X67DM1321_72".DigitalOutput03; (*SPF1 - Open stop  line 3*)
+	Y[72].Y04 AT %QX."X67DM1321_72".DigitalOutput04; (*Spare*)
+	Y[72].Y05 AT %QX."X67DM1321_72".DigitalOutput05; (*SPF1 - Select line 3*)
+	Y[72].Y06 AT %QX."X67DM1321_72".DigitalOutput06; (*Spare*)
+	Y[72].Y07 AT %QX."X67DM1321_72".DigitalOutput07; (*SPF1 - Reset line 3*)
+	Y[72].Y08 AT %QX."X67DM1321_72".DigitalOutput08; (*Spare*)
+	OK[72] AT %IX."X67DM1321_72".ModuleOk; (*Module status (3 = module present)*)
+	X[67].X01 AT %IX."X67DM1321_67".DigitalInput01; (*SVC2 - Bag at buffer line B*)
+	X[67].X02 AT %IX."X67DM1321_67".DigitalInput02; (*SVC2 - Bag at buffer line A*)
+	X[67].X03 AT %IX."X67DM1321_67".DigitalInput03; (*STRN1 - Bag past point*)
+	Y[67].Y05 AT %QX."X67DM1321_67".DigitalOutput05; (*SVC2 - Open buffer line B*)
+	Y[67].Y06 AT %QX."X67DM1321_67".DigitalOutput06; (*SVC2 - Open buffer line A*)
+	Y[67].Y07 AT %QX."X67DM1321_67".DigitalOutput07; (*STRN1 - Select line B*)
+	Y[67].Y08 AT %QX."X67DM1321_67".DigitalOutput08; (*STRN1 - Select line A*)
+	OK[67] AT %IX."X67DM1321_67".ModuleOk;
+	Y[67].Y04 AT %QX."X67DM1321_67".DigitalOutput04; (*SVC2 - Safety stops*)
+	X[303].X03 AT %IX."X67DM1321_ES3".DigitalInput03; (*ES3 - Pushbutton*)
+	X[303].X04 AT %IX."X67DM1321_ES3".DigitalInput04; (*Spare*)
+	Y[303].Y01 AT %QX."X67DM1321_ES3".DigitalOutput01; (*ES3 - Lamp*)
+	Y[303].Y02 AT %QX."X67DM1321_ES3".DigitalOutput02; (*ES3 - Open door*)
+	Y[303].Y05 AT %QX."X67DM1321_ES3".DigitalOutput05; (*Spare*)
+	Y[303].Y06 AT %QX."X67DM1321_ES3".DigitalOutput06; (*Spare*)
+	Y[303].Y07 AT %QX."X67DM1321_ES3".DigitalOutput07; (*Spare*)
+	Y[303].Y08 AT %QX."X67DM1321_ES3".DigitalOutput08; (*Spare*)
+	OK[303] AT %IX."X67DM1321_ES3".ModuleOk;
+	X[302].X03 AT %IX."X67DM1321_ES2".DigitalInput03; (*ES2 - Pushbutton*)
+	X[302].X04 AT %IX."X67DM1321_ES2".DigitalInput04; (*Spare*)
+	Y[302].Y01 AT %QX."X67DM1321_ES2".DigitalOutput01; (*ES2 - Lamp*)
+	Y[302].Y02 AT %QX."X67DM1321_ES2".DigitalOutput02; (*ES2 - Open door*)
+	Y[302].Y05 AT %QX."X67DM1321_ES2".DigitalOutput05; (*Spare*)
+	Y[302].Y06 AT %QX."X67DM1321_ES2".DigitalOutput06; (*Spare*)
+	Y[302].Y07 AT %QX."X67DM1321_ES2".DigitalOutput07; (*Spare*)
+	Y[302].Y08 AT %QX."X67DM1321_ES2".DigitalOutput08; (*Spare*)
+	OK[302] AT %IX."X67DM1321_ES2".ModuleOk;
+	X[301].X03 AT %IX."X67DM1321_ES1".DigitalInput03; (*ES1 - Pushbutton*)
+	X[301].X04 AT %IX."X67DM1321_ES1".DigitalInput04; (*Spare*)
+	Y[301].Y01 AT %QX."X67DM1321_ES1".DigitalOutput01; (*ES1 - Lamp*)
+	Y[301].Y02 AT %QX."X67DM1321_ES1".DigitalOutput02; (*ES1 - Open door*)
+	Y[301].Y05 AT %QX."X67DM1321_ES1".DigitalOutput05; (*Spare*)
+	Y[301].Y06 AT %QX."X67DM1321_ES1".DigitalOutput06; (*Spare*)
+	Y[301].Y07 AT %QX."X67DM1321_ES1".DigitalOutput07; (*Spare*)
+	Y[301].Y08 AT %QX."X67DM1321_ES1".DigitalOutput08; (*Spare*)
+	OK[301] AT %IX."X67DM1321_ES1".ModuleOk;
+	RB[1].Lift.CAN.ModuleOk AT %IX."SVC_Lift1".ModuleOk;
+	RB[1].Lift.CAN.NodeStatus AT %IW."SVC_Lift1".NodeStatus;
+	RB[1].Lift.CAN.ControlWord AT %QW."SVC_Lift1".CTW_6040_Out;
+	RB[1].Lift.CAN.StatusWord AT %IW."SVC_Lift1".STW_6041;
+	RB[1].Lift.CAN.TargetVelocity AT %QW."SVC_Lift1".TargetVelocity_6042_Out;
+	RB[1].Lift.CAN.ControlEffort AT %IW."SVC_Lift1".ControlEffort_MAV_6044;
+	RB[1].Lift.ModuleOK AT %IX."X20DC1196_SVC1".ModuleOk;
+	RB[1].Lift.Encoder AT %ID."X20DC1196_SVC1".Encoder01;
+  Cyclic#1.ABB_EPL[1].Comm.ModuleOk AT %IX."FEPL-02_and_ACS380_STB1".ModuleOk;
+	Cyclic#1.ABB_EPL[1].Parameters.Write.Motor_NominalCurrent_9906 AT %QD."FEPL-02_and_ACS380_STB1"._9906_Motor_nominal_current_I4063_S06Out;
+	Cyclic#1.ABB_EPL[1].Parameters.Write.Motor_NominalPower_9910 AT %QD."FEPL-02_and_ACS380_STB1"._9910_Motor_nominal_power_I4063_S0AOut;
+	Cyclic#1.ABB_EPL[1].Parameters.Write.Motor_NominalSpeed_9909 AT %QD."FEPL-02_and_ACS380_STB1"._9909_Motor_nominal_speed_I4063_S09Out;
+	Cyclic#1.ABB_EPL[1].Comm.ControlWord AT %QW."FEPL-02_and_ACS380_STB1".ControlWord_I6040Out;
+	Cyclic#1.ABB_EPL[1].Comm.StatusWord AT %IW."FEPL-02_and_ACS380_STB1".StatusWord_I6041;
+	Cyclic#1.ABB_EPL[1].Comm.ActVelocity AT %IW."FEPL-02_and_ACS380_STB1".VlVelocityActualValue_I6044;
+	Cyclic#1.ABB_EPL[1].Comm.ActCurrent AT %ID."FEPL-02_and_ACS380_STB1"._0107_Motor_current_I4001_S07;
+	Cyclic#1.ABB_EPL[1].Comm.ActTorque AT %ID."FEPL-02_and_ACS380_STB1"._0110_Motor_torque_I4001_S0A;
+	Cyclic#1.ABB_EPL[1].Comm.ErrorCode AT %IW."FEPL-02_and_ACS380_STB1".VendorSpecificAlarmCodes_I2203;
+	Cyclic#1.ABB_EPL[1].Parameters.Write.Ramp_AccTime1_2872 AT %QD."FEPL-02_and_ACS380_STB1"._2872_Freq_acceleration_time_1_I401C_S48Out;
+	Cyclic#1.ABB_EPL[1].Parameters.Write.Ramp_DecTime1_2873 AT %QD."FEPL-02_and_ACS380_STB1"._2873_Freq_deceleration_time_1_I401C_S49Out;
+	Cyclic#1.ABB_EPL[1].Comm.TargetVelocity AT %QW."FEPL-02_and_ACS380_STB1".VlTargetVelocity_I6042Out;
+END_VAR

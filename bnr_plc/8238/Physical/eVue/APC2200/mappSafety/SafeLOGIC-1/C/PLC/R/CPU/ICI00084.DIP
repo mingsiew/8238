@@ -1,0 +1,13 @@
+(*
+T: FUNCTION_BLOCK ReleaseOutput
+FW: NO
+CI#: 84
+QSL: 4
+QVE: 4
+QVPC: 4
+QPar: 3
+QFBI: 1
+*)
+ModuleOk	@IV 1	@TYP:43	VAR_INPUT
+Release_Output	@IV 2	@TYP:1	VAR_OUTPUT
+Zone_Released	@IV 3	@TYP:43	VAR_OUTPUT

@@ -1,0 +1,302 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Program: mnMsg
+ * File: mnMsg.var
+ * Author: subramaniam/hunholz
+ * Created: January 28, 2011
+ * Changed: June 15, 2011
+ ********************************************************************
+ * Local variables of program mnMsg
+ ********************************************************************)
+(*Plausibilitaetspruefung Meldungsmanager *)
+VAR
+	_Plausibility : Plausib_Typ := (dCfgMem:=0,dCfgLen:=0,wCfgCnt:=0,wCfgVersion:=0,xOK:=FALSE);
+	_xTrigRefreshHistList : BOOL;
+	_lErrCnt : UDINT;
+	_TONrepeatDFII : TON;
+END_VAR
+(*Meldungsabbild *)
+VAR
+	_MsgImage : ARRAY[1..MNMSG_MAX_CFGMESSAGES] OF ImageMsg_Typ;
+	_MsgImageState : ARRAY[1..MNMSG_MAX_CFGMESSAGES] OF ImageMsgState_Typ;
+	_MsgImageHelp : ImageMsgHelp_Typ;
+END_VAR
+VAR RETAIN
+	_MsgImageTime : ARRAY[1..MNMSG_MAX_CFGMESSAGES] OF ImageMsgTime_Typ;
+END_VAR
+(* Bild der Konfigurationsdatei *)
+VAR
+	_doInfoCfg : DatObjInfo;
+	_MsgCfgList : REFERENCE TO ARRAY[1..MNMSG_MAX_CFGMESSAGES] OF MsgCfgLine_Typ;
+END_VAR
+(*Bild der Textdatei*)
+(* In diesem Fall, wird die Länge des Arrays nicht von mnTxt bestimmt *)
+VAR
+	_MsgTxtLine : REFERENCE TO ARRAY[1..MNMSG_MAX_CFGMESSAGES] OF MsgTxtLine_Typ;
+	_MsgHelpTxtLine : REFERENCE TO ARRAY[1..MNMSG_MAX_CFGMESSAGES] OF MsgHelpTxtLine_Typ;
+END_VAR
+(* Bild der Statistikdatei*)
+VAR
+	_MsgStatList : REFERENCE TO MsgStat_Typ;
+END_VAR
+(*Bild der Text-Meldungshistorie*)
+VAR
+	_MsgHistListRB : ARRAY[0..MNMSG_MAX_IDX_VCMSGHISTLIST] OF IFmnMsgOutMsgHistList_Typ;
+END_VAR
+(*Interne Meldung*)
+VAR
+	_mnMsgStat : kgMsg_Status_Typ := (0);
+END_VAR
+(*Kommandbefehle *)
+(*  Zeiger auf Zusatzattribute *)
+VAR
+	_iCmdData0 : REFERENCE TO ARRAY[0..1] OF UINT;
+	_iCmdData1 : REFERENCE TO ARRAY[0..1] OF UINT;
+END_VAR
+(*Schnittstelle Visualisierung für Ringbuffer und Statistik *)
+VAR
+	_xAck : BOOL;
+	_wCntFaultNotAck : UINT;
+	_xCmdAckAll : BOOL;
+	_xCmdAck : BOOL;
+	_xCmdAckAllMaint : BOOL;
+END_VAR
+(*Letzte Ausführungszeit bestimmen*)
+VAR
+	_LastExecute : DTGetTime;
+END_VAR
+VAR RETAIN
+	_dtLastExecute : DATE_AND_TIME := 0;
+END_VAR
+(*Aktueller Zeitstempel*)
+VAR
+	_dtTimeStamp : DTGetTime;
+END_VAR
+(* Binäre Suche *)
+VAR
+	_BinSearchCfg : msgBinSearchCfgList;
+	_BinSearchTxt : msgBinSearchTxtLine;
+	_BinSearchHelpTxt : msgBinSearchHelpTxtLine;
+END_VAR
+(*Suche*)
+VAR
+	_GetNextChrPos : msgNextChrPos;
+END_VAR
+(* Ringbuffer *)
+VAR
+	_InsertRB : kgRBinsert;
+	_ReadRB : kgRBread;
+	_LocRB : kgRBloc;
+	_wStepRdRb : UINT;
+	_xRBReady : BOOL := FALSE;
+	_xMnTxtReady : BOOL := FALSE;
+END_VAR
+VAR RETAIN
+	_wPtrRBwrite : UINT;
+	_wPtrRBread : UINT;
+	_wPtrRBloc : UINT;
+	_wPtrRBstart : UINT;
+END_VAR
+(* Statistik*)
+VAR
+	_StatLine : MsgStatList_Typ;
+	_StatHeader : MsgStatHeader_Typ;
+	_doWriteStat : DatObjWrite;
+	_doDeleteStat : DatObjDelete;
+	_xStatReady : BOOL := FALSE;
+END_VAR
+(* Meldungslisten *)
+VAR
+	_InsertMsgLine : msgInsertMsgLine;
+END_VAR
+(* Hupensteuerung *)
+VAR
+	_xHornFaultOn : BOOL;
+	_xHornWarnOn : BOOL;
+	_tpFault : TP;
+	_tonFault1 : TON;
+	_tonFault2 : TON;
+	_xHornFaultOnh : BOOL;
+	_xHornWarnOnh : BOOL;
+	_tpWarn : TP;
+	_tonWarn2 : TON;
+	_tonWarn1 : TON;
+	_wFaultMode : UINT;
+	_wWarnMode : UINT;
+END_VAR
+(*MsgStatistic*)
+VAR
+	_msgStatisticNumIdx : ARRAY[0..MNMSG_MAX_IDX_VCMSGSTATLIST] OF mnMsgStatisticIdx_Type;
+	_msgStatisticTimeIdx : ARRAY[0..MNMSG_MAX_IDX_VCMSGSTATLIST] OF mnMsgStatisticIdx_Type;
+	_msgStatisticNumShowIdx : ARRAY[0..MNMSG_MAX_IDX_VCMSGSTATLIST] OF mnMsgStatisticIdx_Type;
+	_msgStatisticTimeShowIdx : ARRAY[0..MNMSG_MAX_IDX_VCMSGSTATLIST] OF mnMsgStatisticIdx_Type;
+END_VAR
+(* Hilfsvariablen *)
+VAR
+	_wSrcIdx : UDINT;
+	_wMsgIdx : UINT;
+	_wTxtIdx : UINT;
+	_wImageIdx : UINT;
+	_lTime : UDINT;
+	_ii : UINT;
+	_dtHelp : DTGetTime;
+	_xMnParOk : BOOL := FALSE;
+	_xMsgClassChanged : BOOL := FALSE;
+	_xAckLevelChanged : BOOL;
+	_xAckLevelRosen : BOOL := FALSE;
+	_xAckLevelFallen : BOOL := FALSE;
+	_EventStatisticDelStep : EventStatisticDel_enum;
+	_EventHistDelStep : EventHistDel_enum;
+	_tonCrit1 : TON;
+	_tonCrit2 : TON;
+END_VAR
+VAR CONSTANT
+	MSW : UINT := 1; (*Most Significant Word*)
+	LSW : UINT := 0; (*Leas Significant Word*)
+END_VAR
+VAR
+	_enIFCmdState : CmdState_enum := enCS_Idle;
+	_enExtCmdState : CmdState_enum := enCS_Idle;
+	_xIFcmdHornOff : BOOL := FALSE;
+	_wMsgListCnt : UINT;
+	_wIFMsgListCnt : UINT;
+	_wIFMsgStatisticCntTime : UINT;
+	_wIFMsgStatisticCntNum : UINT;
+	_wIFMsgStatisticCntTimeShow : UINT;
+	_wIFMsgStatisticCntNumShow : UINT;
+	_xMsgStatisticNumFirstEntry : BOOL;
+	_xMsgStatisticWriteNum : BOOL;
+	_xMsgStatisticTimeFirstEntry : BOOL;
+	_xMsgStatisticWriteTime : BOOL;
+	_wPosMinTime : UINT;
+	_wPosMinNum : UINT;
+	_wPosMaxTime : UINT;
+	_wPosMaxNum : UINT;
+	_wPosEndTime : UINT;
+	_wPosEndNum : UINT;
+	_wPosSearchTime : UINT;
+	_wPosSearchNum : UINT;
+	_diMemMoveTimeIdx : DINT := 0;
+	_diMemMoveNumIdx : DINT := 0;
+	_xPosFoundTime : BOOL;
+	_xPosFoundNum : BOOL;
+	_xFirstElementToInsertTime : BOOL;
+	_xFirstElementToInsertNum : BOOL;
+	_lValueNumMin : UDINT;
+	_lValueTimeMin : UDINT;
+	_lValueTime : UDINT;
+	_lValueNum : UDINT;
+	_wPrevMsgStatisticSelect : UINT := 0;
+	_xMsgStatisticSelectChanged : BOOL := FALSE;
+	_utfMsgTextTempFirst : WSTRING[67];
+	_utfMsgTextTempSecond : WSTRING[255];
+	_utfMsgTextTempThird : WSTRING[255];
+	_utfMsgTextTempFourth : WSTRING[255];
+	_fbMsgReplSubStr : msgReplSubStr;
+	_lHElseTime1 : UDINT := 0;
+	_lHElseTime2 : UDINT := 0;
+	_lHElseTime3 : UDINT := 0;
+	_lHElseTime3EndPos : UDINT := 0;
+	_wHElseTime3PosSearch : UINT := 0;
+	_lHElseTime3lValuePosP0 : UDINT := 0;
+	_lHElseTime3lValuePosP1 : UDINT := 0;
+	_lHElseTime3lValueTime : UDINT := 0;
+	_lHElseNum1 : UDINT := 0;
+	_lHElseNum2 : UDINT := 0;
+	_lHElseNum3 : UDINT := 0;
+	_TempHistline : MsgHistList_Typ;
+	_kgArLogWrite : kgArLogWrite;
+	_AsArLogCreate : AsArLogCreate;
+	_AsArLogGetInfo : AsArLogGetInfo;
+	_xLogNoCfg : BOOL;
+	_xLogCfgMoved : BOOL;
+END_VAR
+VAR CONSTANT
+	MNMSG_MSG_NO_MESSAGE : UINT := 0;
+END_VAR
+VAR
+	_xStatFault : BOOL;
+	_xLogDeleteStat : BOOL;
+	_xLogCreateStat : BOOL;
+	_xLogInfoStat : BOOL;
+	_xLogWriteStat : BOOL;
+	_wPrevLCID : UINT := 0;
+	_xUpdateMsgList : BOOL := FALSE;
+	_xUpdateMsgHistListRB : BOOL := FALSE;
+	_wMsgHistListCntUpdate : UINT := 0;
+	_utfMsgTxtLCIDfirst : WSTRING[67];
+	_utfMsgTxtLCIDsecond : WSTRING[67];
+	_utfRbsDateTime : WSTRING[67];
+	_utfLCIDFunctionId : WSTRING[67];
+	_utfLCIDMsgNumber : WSTRING[67];
+	_utfLCIDInstance : WSTRING[67];
+	_wLCIDFunctionId : UINT;
+	_wLCIDMsgNumber : UINT;
+	_wLCIDInstance : UINT;
+	_lPosPointFirst : UDINT;
+	_lPosPointSecond : UDINT;
+	_lPosSpaceFirst : UDINT;
+	_lPosSpaceSecond : UDINT;
+	_lAdrPointFirst : UDINT;
+	_lAdrPointSecond : UDINT;
+	_lAdrSpaceFirst : UDINT;
+	_lAdrSpaceSecond : UDINT;
+	_wCntSafety : UINT := 0;
+	_sPkgName : STRING[10];
+	_VerStruc : MoVerStruc_typ;
+	_wPrevMsgHistListOffsetRB : UINT;
+	_wMsgHistListOffsetRB : UINT;
+	_xRefreshHistListRB : BOOL;
+	_xMsgHistListOffsetChRB : BOOL;
+	_wPrevMsgHistListEventSelRB : UINT;
+	_wMsgHistListEventSelRB : UINT;
+	_xMsgHistListEventSelChRB : BOOL;
+	_wPrevMsgHistListClassSelRB : UINT;
+	_wMsgHistListClassSelRB : UINT;
+	_xMsgHistListClassSelChRB : BOOL;
+	_xMsgHistListPointToMinRB : BOOL;
+	_wPtrRBlocTemp : UINT;
+	_wPtrRBlocTempTwo : UINT;
+	_wPtrRBlocTempThree : UINT;
+	_wPtrRBlocTempFour : UINT;
+	_xPtrRBlocAgain : BOOL;
+	_wPtrRBlocLastFound : UINT;
+	_wMsgHistListMaxOffsetRB : UINT;
+	_xTrigPrevMsgHistListPageRB : BOOL;
+	_xTrigNextMsgHistListPageRB : BOOL;
+	_xRBoneTurn : BOOL;
+	_wMsgHistListCntRB : UINT;
+	_wActFunctionID : UINT;
+	_wActMsgNumber : UINT;
+	_diActAttr1 : DINT;
+	_diActAttr2 : DINT;
+	_sActAttrTxt : STRING[13];
+	_wActInstance : UINT;
+	_wActEvent : UINT;
+	_lActTime : UDINT;
+	_bActMsgLClass : USINT;
+	_xSelOk : BOOL;
+	_xTurnaround : BOOL;
+	_xExtCmdAckAll : BOOL;
+	_xExtCmdAck : BOOL;
+	_xExtCmdAckAllMaint : BOOL;
+	_wExtCmdFunctionID : UINT;
+	_wExtCmdMsgNo : UINT;
+	_wExtCmdInstance : UINT;
+	_wExtCmdAckLevel : UINT;
+	_xExtcmdHornOff : BOOL;
+	_xDeleteMsgStat : BOOL;
+	_wMsgCntMaint : UINT;
+	_wIdxMsgListMaint : UINT;
+	_xUpdateMsgListLan : BOOL;
+	_xRefreshStatistic : BOOL;
+	_xRefreshHistList : BOOL;
+	_wLCID : UINT;
+	_kgCheckStat : kgCheckDo;
+	_kgCheckHist : kgCheckDo;
+	_wVersion : REFERENCE TO UINT;
+	_wLogStep : UINT;
+	_xNotOkFirstScan : BOOL;
+	_DebugHistory : REFERENCE TO ARRAY[0..MNMSG_MAX_MESSAGEHISTORY] OF MsgHistList_Typ;
+END_VAR

@@ -1,0 +1,104 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Data object: Param_1_5kwStar
+ * File: Param_1_5kwStar.dat
+ * Author:  D.Jefferys
+ * Created: October 2, 2009
+ ********************************************************************
+ * Data object file: Param_1_5kwStar.dat
+ ********************************************************************)
+
+;Version 2.00 18/10/2010 D.J. Added 14-26 Trip Delay - Disabled, Changed 14-10 from 3 (Coasting) to 5 (Kenetic Backup + Trip)
+;Version 3.00 03/11/2010 D.J. Added CAN Switch Settings
+;Version 4.00 02/11/2011 D.J. Added Parameter 40 - Hand on Key on LCP now Disabled
+
+;CAN Module Switch Settings
+;--------------------------
+
+;Baudrate
+;8 on  7 on  Par 10-01
+;8 on  7 off 500kbps
+;8 off 7 on  250kbps
+;8 off 7 off 125kbps
+
+;Node Number Binary
+;1 = 1s
+;2 = 2s
+;3 = 4s
+;4 = 8s
+;5 = 16s
+;6 = 32s
+
+;	
+;	!!! DO NOT CHANGE THE SEQUENCE OF THE PARAMETERS
+;	
+; FU parameter to the Ubertragung (only parameter, which deviates from the default values)
+;
+; 1.5 kW Star 
+;
+; Index, Subindex, Datatype (Bytes), Setting (DINT) ; Comments
+0002,00,01,00000001	; [000] 00-02, Motor Speed 0 - RPM, 1 - Hz
+0001,00,01,00000000	; [001] 00-01, Language 0 - English, 1 - German
+0011,00,01,00000001	; [002] 00-11, Edit Setup 1
+0190,00,01,00000000	; [003] 01-90, Motor Thermal Protection, 2 - Thermistor
+0040,00,01,00000000 ; [---] 00-40, Hand On Key on LCP 0 - Disabled No Function
+0381,00,04,00000050 ; [000] 03-81, QuickStop ramp time 100 - 1s
+0458,00,01,00000001	; [004] 04-58, Missing motor phase function, 1 - Trip 100ms
+0854,00,01,00000001	; [005] 08-54, Reversing select 1 - Bus only 3 - Bus and Terminal
+0211,00,02,00000310	; [006] 02-11, Brake resistor 120 Ohm
+0212,00,04,00001200	; [007] 02-12, Brake power limit 1200 Watt
+0213,00,01,00000002	; [008] 02-13, Brake check 2 - Alarm
+1426,00,01,00000000 ; [---] 14-26, Trip delay at inverter fault 0 = Disabled
+0803,00,04,00000002 ; [000] 08-03, Control Word Timeout Time 10 = 1Sec
+0804,00,01,00000002	; [009] 08-04, Control Word Timeout Function 2 - Stop with auto restart
+0801,00,01,00000002	; [010] 08-01, Control Site, 2 - Controlword only
+0223,00,01,00000005	; [011] 02-23, Active brake delay 0,3 s
+1761,00,01,00000002	; [012] 17-61, Encoder Signal Monitoring (Encoder faulty), 2 - Trip Changed for testing.
+1710,00,01,00000001	; [013] 17-10, Encoder Signal Type 1 - TTL
+1711,00,02,00001024	; [014] 17-11, Encoder Resolution 1024 Pulse
+0430,00,01,00000001 ; [015] 04-30, Motor Feedback Loss Function, 1 - Warning, 2* - Trip
+0431,00,02,00000300 ; [016] 04-31, Motor Feedback Speed Error RPM, 0-600, 300*
+0226,00,02,00005000	; [015] 02-26, Torque Ref, 50,00%
+0228,00,02,00000200	; [016] 02-28, Gain Boost Factor, 2,00% 0-4% ***************************
+0519,00,01,00000003	; [017] 05-19, Terminal 37 Safe Stop, 3 - Safe Stop Warning
+0120,00,04,00000150	; [018] 01-20, Motor Power 1.5kW
+0101,00,01,00000003	; [019] 01-01, Motor Control Principle, 3 - Flux with motor feedback
+0122,00,02,00000400	; [020] 01-22, Motor voltage 400 V
+0123,00,02,00000050	; [021] 01-23, Motor frequency 50 Hz
+0162,00,02,00000100	; [022] 01-62, Slip compenstation 100%
+0410,00,01,00000002	; [023] 04-10, Motor speed direction, 2 - both directions
+0540,00,01,00000032	; [024] 05-40, [0] Relay 1 Function, 32 - Mech brake ctrl
+0540,01,01,00000032	; [025] 05-40, [1] Relay 2 Function, 32 - Mech brake ctrl
+0802,00,01,00000003 ; [---] 08-02, Control Site 3 - Option A CAN Bus
+0102,00,01,00000002	; [026] 01-02, Flux Motor Feeback Source 2 - MCB102
+0125,00,02,00001400	; [027] 01-25, Motor nominal speed 1440 rpm
+0702,00,02,00000070	; [028] 07-02, Speed PID proportionl gain 0,070
+0700,00,01,00000002	; [029] 07-00, Speed PID Feedback Source 2 - MCB102
+0172,00,01,00000006	; [030] 01-72, Start function, 6 - Hoist Mech. Brake Rel
+0210,00,01,00000001	; [031] 02-10, Brake Function, 1 - Resistor brake
+1410,00,01,00000005	; [032] 14-10, Mains failure, 3 - Coasting 5 - Kenetic backup , trip
+0193,00,01,00000006	; [033] 01-93, Thermistor source, 6 - Digital Input 33
+0100,00,01,00000001	; [034] 01-00, Configuration mode, 1 - Closed loop with encoder
+0139,00,01,00000004	; [035] 01-39, Motor poles, 4
+0511,00,01,00000000	; [036] 05-11, Terminal 19, 0 - No Operation
+0512,00,01,00000000	; [037] 05-12, Terminal 27, 0 - No Operation
+0513,00,01,00000000	; [038] 05-13, Terminal 29, 0 - No Operation
+0510,00,01,00000000	; [039] 05-10, Terminal 18, 0 - No Operation
+0175,00,02,00000015	; [040] 01-75, Start Speed, 1,5 Hz
+0222,00,02,00000005	; [041] 02-22, Activate Brake Speed ?en bei 0,5 Hz
+0124,00,04,00000360	; [042] 01-24, Motor current 5,2 A
+0341,00,04,00000100	; [043] 03-41, Ramp 1 ramp up time (1 Sec to 50 Hz)
+0342,00,04,00000100	; [044] 03-42, Ramp 1 ramp down time (1 Sec to  0 Hz)
+0414,00,02,00001000	; [045] 04-14, Motor Speed High Limit 100,0 Hz
+0220,00,04,00000180	; [046] 02-20, Release brake current 1,8 A - About Half of motor A?
+;0130,00,04,00029763	; [047] 01-30, Stator resistance (Rs) 2,9763 Ohm
+;0131,00,04,00022212	; [048] 01-31, Rotor resistance (Rr) 2,2212 Ohm
+;0134,00,04,00031036	; [049] 01-34, Rotor leakage reactance (X2) 3,1036 Ohm
+;0136,00,04,01803904	; [050] 01-36, Iron loss resistance (Rfe) 1803,904 Ohm
+;0135,00,04,00653996	; [051] 01-35, Main reactance (Xh) 65,3996 Ohm
+0416,00,02,00002500	; [052] 04-16, Torque limit motor mode, 160,0 - % NOW 250%
+0417,00,02,00001600	; [053] 04-17, Torque limit generator mode, 160,0 %
+;0133,00,04,00031036	; [054] 01-33, Stator leakage reactance (X1), 3,1036 Ohm
+0303,00,04,00100000	; [055] 03-03, Maximum Reference, 100,000
+0418,00,04,00001720	; [056] 04-18, Current Limit 172,0 % - NOW 250%

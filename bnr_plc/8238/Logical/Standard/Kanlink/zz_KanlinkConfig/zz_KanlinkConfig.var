@@ -1,0 +1,22 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Program: zz_KanlinkConfig
+ * File: zz_KanlinkConfig.var
+ * Author: treamsbottom
+ * Created: September 07, 2012
+ ********************************************************************
+ * Local variables of program zz_KanlinkConfig
+ ********************************************************************)
+VAR
+	UseServer : BOOL;
+	UseClient : BOOL;
+	init : BOOL;
+	n : UINT;
+	sn : STRING[5];
+	sReq : STRING[20];
+	sResp : STRING[20];
+	ServerDecOK : BOOL;
+	ClientDecOK : BOOL;
+	Index : UINT;
+END_VAR

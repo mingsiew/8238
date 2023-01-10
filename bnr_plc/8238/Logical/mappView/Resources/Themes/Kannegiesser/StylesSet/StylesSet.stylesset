@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StylesSet id="KannegiesserStyleSet" xmlns="http://www.br-automation.com/iat2015/stylesset/engineering/v1">
+ 	<Styles refId="KannegiesserButtons" />
+	<Styles refId="KannegiesserText" />
+	<Styles refId="KannegiesserNumeric" />
+	<Styles refId="KannegiesserTabs" />
+	<Styles refId="KannegiesserMessageBox" />
+	<Styles refId="KannegiesserLoginDialog" />
+	<Styles refId="KannegiesserPickers" />
+</StylesSet>

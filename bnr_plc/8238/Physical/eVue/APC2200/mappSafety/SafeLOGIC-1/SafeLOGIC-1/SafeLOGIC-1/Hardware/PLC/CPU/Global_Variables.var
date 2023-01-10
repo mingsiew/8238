@@ -1,0 +1,484 @@
+﻿{GroupDefinition(0,'SafeModuleOK')}
+{GroupDefinition(24,'Emergency Stops')}
+{GroupDefinition(33,'Gate Switches')}
+{GroupDefinition(44,'Safe Outputs')}
+{GroupDefinition(82,'External Inputs')}
+{GroupDefinition(85,'Internal')}
+{GroupDefinition(91,'Safety Output Release')}
+{GroupDefinition(101,'Zone Healthy')}
+{GroupDefinition(126,'Master Resets')}
+{GroupDefinition(132,'EDM')}
+{GroupDefinition(164,'Zone Resets')}
+{GroupDefinition(196,'Module Fault')}
+{GroupDefinition(198,'PLC Comm')}
+
+VAR_GLOBAL {Group(0)}
+    {LINE(1)}
+    SM_SC01_SafeModuleOK AT %IX6.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM51.SafeModuleOK')};
+    {LINE(2)}
+    SM_MC01_K109_SafeModuleOK AT %IX4.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeModuleOK')};
+    {LINE(3)}
+    SM_MC01_K110_SafeModuleOK AT %IX4.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM3.SafeModuleOK')};
+    {LINE(4)}
+    SM_1408_SafeModuleOK AT %IX4.5 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM7.SafeModuleOK')};
+    {LINE(5)}
+    SM_1401_SafeModuleOK AT %IX4.7 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM31.SafeModuleOK')};
+    {LINE(6)}
+    SM_1402_SafeModuleOK AT %IX5.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM32.SafeModuleOK')};
+    {LINE(7)}
+    SM_1403_SafeModuleOK AT %IX5.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM33.SafeModuleOK')};
+    {LINE(8)}
+    SM_1404_SafeModuleOK AT %IX5.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM34.SafeModuleOK')};
+    {LINE(9)}
+    SM_1406_SafeModuleOK AT %IX5.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM36.SafeModuleOK')};
+    {LINE(10)}
+    SM_1409_SafeModuleOK AT %IX5.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM39.SafeModuleOK')};
+    {LINE(11)}
+    SM_1410_SafeModuleOK AT %IX5.5 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM40.SafeModuleOK')};
+    {LINE(12)}
+    SM_1411_SafeModuleOK AT %IX5.6 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM41.SafeModuleOK')};
+    {LINE(13)}
+    SM_1414_SafeModuleOK AT %IX5.7 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM44.SafeModuleOK')};
+    {LINE(14)}
+    SM_1415_SafeModuleOK AT %IX6.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM45.SafeModuleOK')};
+    {LINE(15)}
+    SM_1416_SafeModuleOK AT %IX6.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM46.SafeModuleOK')};
+    {LINE(16)}
+    SM_SC03_SafeModuleOK AT %IX6.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM53.SafeModuleOK')};
+    {LINE(17)}
+    SM_SC02_SafeModuleOK AT %IX6.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM52.SafeModuleOK')};
+    {LINE(18)}
+    SM_SC04_SafeModuleOK AT %IX6.5 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM54.SafeModuleOK')};
+    {LINE(19)}
+    SM_SC05_SafeModuleOK AT %IX6.6 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM55.SafeModuleOK')};
+    {LINE(20)}
+    SM_MC02_K108_SafeModuleOK AT %IX4.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM4.SafeModuleOK')};
+    {LINE(21)}
+    SM_MC02_K109_SafeModuleOK AT %IX4.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM5.SafeModuleOK')};
+    {LINE(22)}
+    SM_MC02_K110_SafeModuleOK AT %IX4.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM6.SafeModuleOK')};
+    {LINE(23)}
+    SM_MC02_K111_SafeModuleOK AT %IX4.6 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM8.SafeModuleOK')};
+END_VAR
+
+VAR_GLOBAL {Group(24)}
+    {LINE(25)}
+    ESTOP_1411_3 AT %IX53.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM41.SafeTwoChannelInput0506')};
+    {LINE(26)}
+    ESTOP_1416_3 AT %IX65.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM46.SafeTwoChannelInput0506')};
+    {LINE(27)}
+    ESTOP_1416_4 AT %IX65.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM46.SafeTwoChannelInput0708')};
+    {LINE(28)}
+    ESTOP_1401_3 AT %IX25.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM31.SafeTwoChannelInput0506')};
+    {LINE(29)}
+    Pullcord_1414_3 AT %IX57.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM44.SafeTwoChannelInput0506')};
+    {LINE(30)}
+    Pullcord_1414_4 AT %IX57.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM44.SafeTwoChannelInput0708')};
+    {LINE(31)}
+    Pullcord_1415_3 AT %IX61.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM45.SafeTwoChannelInput0506')};
+    {LINE(32)}
+    Pullcord_1415_4 AT %IX61.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM45.SafeTwoChannelInput0708')};
+END_VAR
+
+VAR_GLOBAL {Group(33)}
+    {LINE(34)}
+    GS_1401_1 AT %IX25.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM31.SafeTwoChannelInput0102')};
+    {LINE(35)}
+    GS_1401_DI1 AT %IX522.0 : BOOL {Custom('SL1.SM31.DigitalInput01')};
+    {LINE(36)}
+    GS_1404_1 AT %IX37.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM34.SafeTwoChannelInput0102')};
+    {LINE(37)}
+    GS_1404_DI1 AT %IX528.0 : BOOL {Custom('SL1.SM34.DigitalInput01')};
+    {LINE(38)}
+    GS_1402_1 AT %IX29.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM32.SafeTwoChannelInput0102')};
+    {LINE(39)}
+    GS_1402_DI1 AT %IX524.0 : BOOL {Custom('SL1.SM32.DigitalInput01')};
+    {LINE(40)}
+    GS_1406_1 AT %IX41.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM36.SafeTwoChannelInput0102')};
+    {LINE(41)}
+    GS_1406_DI1 AT %IX530.0 : BOOL {Custom('SL1.SM36.DigitalInput01')};
+    {LINE(42)}
+    GS_1404_2 AT %IX37.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM34.SafeTwoChannelInput0304')};
+    {LINE(43)}
+    GS_1406_2 AT %IX41.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM36.SafeTwoChannelInput0304')};
+END_VAR
+
+VAR_GLOBAL {Group(44)}
+    {LINE(45)}
+    SM5_SafeDigitalOutput01 AT %QX2.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM5.SafeDigitalOutput01')};
+    {LINE(46)}
+    SM5_SafeDigitalOutput02 AT %QX2.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM5.SafeDigitalOutput02')};
+    {LINE(47)}
+    SM5_SafeDigitalOutput03 AT %QX2.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM5.SafeDigitalOutput03')};
+    {LINE(48)}
+    SM5_SafeDigitalOutput04 AT %QX2.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM5.SafeDigitalOutput04')};
+    {LINE(49)}
+    MC02_K109_Output_1 : SAFEBOOL;
+    {LINE(50)}
+    MC02_K109_Output_2 : SAFEBOOL;
+    {LINE(51)}
+    MC02_K109_Output_3 : SAFEBOOL;
+    {LINE(52)}
+    SM6_SafeDigitalOutput01 AT %QX3.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM6.SafeDigitalOutput01')};
+    {LINE(53)}
+    SM6_SafeDigitalOutput02 AT %QX3.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM6.SafeDigitalOutput02')};
+    {LINE(54)}
+    SM6_SafeDigitalOutput03 AT %QX3.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM6.SafeDigitalOutput03')};
+    {LINE(55)}
+    SM6_SafeDigitalOutput04 AT %QX3.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM6.SafeDigitalOutput04')};
+    {LINE(56)}
+    MC02_K110_Output_1 : SAFEBOOL;
+    {LINE(57)}
+    MC02_K110_Output_2 : SAFEBOOL;
+    {LINE(58)}
+    MC02_K110_Output_3 : SAFEBOOL;
+    {LINE(59)}
+    MC02_K110_Output_4 : SAFEBOOL;
+    {LINE(60)}
+    SM8_SafeDigitalOutput01 AT %QX4.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM8.SafeDigitalOutput01')};
+    {LINE(61)}
+    SM8_SafeDigitalOutput02 AT %QX4.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM8.SafeDigitalOutput02')};
+    {LINE(62)}
+    SM8_SafeDigitalOutput03 AT %QX4.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM8.SafeDigitalOutput03')};
+    {LINE(63)}
+    SM8_SafeDigitalOutput04 AT %QX4.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM8.SafeDigitalOutput04')};
+    {LINE(64)}
+    MC02_K111_Output_1 : SAFEBOOL;
+    {LINE(65)}
+    MC02_K111_Output_2 : SAFEBOOL;
+    {LINE(66)}
+    MC02_K111_Output_3 : SAFEBOOL;
+    {LINE(67)}
+    MC02_K111_Output_4 : SAFEBOOL;
+    {LINE(68)}
+    SC01_Output_1 AT %QX5.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM51.SafeDigitalOutput01')};
+    {LINE(69)}
+    SC01_Output_2 AT %QX5.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM51.SafeDigitalOutput02')};
+    {LINE(70)}
+    SC05_Output_1 AT %QX9.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM55.SafeDigitalOutput01')};
+    {LINE(71)}
+    SC02_Output_1 AT %QX6.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM52.SafeDigitalOutput01')};
+    {LINE(72)}
+    SC02_Output_2 AT %QX6.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM52.SafeDigitalOutput02')};
+    {LINE(73)}
+    SC05_Output_2 AT %QX9.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM55.SafeDigitalOutput02')};
+    {LINE(74)}
+    SC01_Output_3 AT %QX5.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM51.SafeDigitalOutput03')};
+    {LINE(75)}
+    SC01_Output_4 AT %QX5.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM51.SafeDigitalOutput04')};
+    {LINE(76)}
+    SC02_Output_3 AT %QX6.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM52.SafeDigitalOutput03')};
+    {LINE(77)}
+    SC02_Output_4 AT %QX6.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM52.SafeDigitalOutput04')};
+    {LINE(78)}
+    SC03_Output_1 AT %QX7.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM53.SafeDigitalOutput01')};
+    {LINE(79)}
+    SC03_Output_2 AT %QX7.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM53.SafeDigitalOutput02')};
+    {LINE(80)}
+    SC03_Output_3 AT %QX7.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM53.SafeDigitalOutput03')};
+    {LINE(81)}
+    SC03_Output_4 AT %QX7.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM53.SafeDigitalOutput04')};
+END_VAR
+
+VAR_GLOBAL {Group(82)}
+    {LINE(83)}
+    CSL01_BELT_SI03 AT %IX20.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM7.SafeDigitalInput03')};
+    {LINE(84)}
+    CSL02_BELT_SI05 AT %IX20.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM7.SafeDigitalInput05')};
+END_VAR
+
+VAR_GLOBAL {Group(85)}
+    {LINE(86)}
+    SC01_Released : SAFEBOOL;
+    {LINE(87)}
+    SC02_Released : SAFEBOOL;
+    {LINE(88)}
+    SC03_Released : SAFEBOOL;
+    {LINE(89)}
+    SC04_Released : SAFEBOOL;
+    {LINE(90)}
+    SC05_Released : SAFEBOOL;
+END_VAR
+
+VAR_GLOBAL {Group(91)}
+    {LINE(92)}
+    SM_MC01_K110_ReleaseOutput AT %QX516.0 : BOOL {Custom('SL1.SM3.ReleaseOutput')};
+    {LINE(93)}
+    SC01_SO_ReleaseOutput AT %QX544.0 : BOOL {Custom('SL1.SM51.ReleaseOutput')};
+    {LINE(94)}
+    SC02_SO_ReleaseOutput AT %QX545.0 : BOOL {Custom('SL1.SM52.ReleaseOutput')};
+    {LINE(95)}
+    SC03_SO_ReleaseOutput AT %QX546.0 : BOOL {Custom('SL1.SM53.ReleaseOutput')};
+    {LINE(96)}
+    SC04_SO_ReleaseOutput AT %QX547.0 : BOOL {Custom('SL1.SM54.ReleaseOutput')};
+    {LINE(97)}
+    SC05_SO_ReleaseOutput AT %QX548.0 : BOOL {Custom('SL1.SM55.ReleaseOutput')};
+    {LINE(98)}
+    SM_MC02_K109_ReleaseOutput AT %QX517.0 : BOOL {Custom('SL1.SM5.ReleaseOutput')};
+    {LINE(99)}
+    SM_MC02_K110_ReleaseOutput AT %QX518.0 : BOOL {Custom('SL1.SM6.ReleaseOutput')};
+    {LINE(100)}
+    SM_MC02_K111_ReleaseOutput AT %QX519.0 : BOOL {Custom('SL1.SM8.ReleaseOutput')};
+END_VAR
+
+VAR_GLOBAL {Group(101)}
+    {LINE(102)}
+    Zone_1_Healthy : SAFEBOOL;
+    {LINE(103)}
+    Zone_2_Healthy : SAFEBOOL;
+    {LINE(104)}
+    Zone_3_Healthy : SAFEBOOL;
+    {LINE(105)}
+    Zone_4_Healthy : SAFEBOOL;
+    {LINE(106)}
+    Zone_5_Healthy : SAFEBOOL;
+    {LINE(107)}
+    Zone_6_Healthy : SAFEBOOL;
+    {LINE(108)}
+    Zone_7_Healthy : SAFEBOOL;
+    {LINE(109)}
+    Zone_8_Healthy : SAFEBOOL;
+    {LINE(110)}
+    Zone_9_Healthy : SAFEBOOL;
+    {LINE(111)}
+    Zone_10_Healthy : SAFEBOOL;
+    {LINE(112)}
+    Zone_11_Healthy : SAFEBOOL;
+    {LINE(113)}
+    Zone_12_Healthy : SAFEBOOL;
+    {LINE(114)}
+    Zone_13_Healthy : SAFEBOOL;
+    {LINE(115)}
+    Zone_14_Healthy : SAFEBOOL;
+    {LINE(116)}
+    Zone_15_Healthy : SAFEBOOL;
+    {LINE(117)}
+    Zone_16_Healthy : SAFEBOOL;
+    {LINE(118)}
+    Zone_17_Healthy : SAFEBOOL;
+    {LINE(119)}
+    Zone_18_Healthy : SAFEBOOL;
+    {LINE(120)}
+    Zone_19_Healthy : SAFEBOOL;
+    {LINE(121)}
+    Zone_20_Healthy : SAFEBOOL;
+    {LINE(122)}
+    Zone_28_Healthy : SAFEBOOL;
+    {LINE(123)}
+    Zone_27_Healthy : SAFEBOOL;
+    {LINE(124)}
+    Zone_29_Healthy : SAFEBOOL;
+    {LINE(125)}
+    Zone_30_Healthy : SAFEBOOL;
+END_VAR
+
+VAR_GLOBAL {Group(126)}
+    {LINE(127)}
+    MasterReset_1 : BOOL;
+    {LINE(128)}
+    MasterReset_2 : BOOL;
+    {LINE(129)}
+    MasterReset_3 : BOOL;
+    {LINE(130)}
+    MasterReset_4 : BOOL;
+    {LINE(131)}
+    Safety_MasterReset_Comm AT %IW0 : WORD {Custom('SL1.SM1.INT1001')};
+END_VAR
+
+VAR_GLOBAL {Group(132)}
+    {LINE(133)}
+    EDM_Zone_1 : BOOL;
+    {LINE(134)}
+    EDM_Zone_2 : BOOL;
+    {LINE(135)}
+    EDM_Zone_3 : BOOL;
+    {LINE(136)}
+    EDM_Zone_4 : BOOL;
+    {LINE(137)}
+    EDM_Zone_5 : BOOL;
+    {LINE(138)}
+    EDM_Zone_6 : BOOL;
+    {LINE(139)}
+    EDM_Zone_7 : BOOL;
+    {LINE(140)}
+    EDM_Zone_8 : BOOL;
+    {LINE(141)}
+    EDM_Zone_9 : BOOL;
+    {LINE(142)}
+    EDM_Zone_10 : BOOL;
+    {LINE(143)}
+    EDM_Zone_11 : BOOL;
+    {LINE(144)}
+    EDM_Zone_12 : BOOL;
+    {LINE(145)}
+    EDM_Zone_13 : BOOL;
+    {LINE(146)}
+    EDM_Zone_14 : BOOL;
+    {LINE(147)}
+    EDM_Zone_15 : BOOL;
+    {LINE(148)}
+    EDM_Zone_16 : BOOL;
+    {LINE(149)}
+    EDM_Zone_17 : BOOL;
+    {LINE(150)}
+    EDM_Zone_18 : BOOL;
+    {LINE(151)}
+    EDM_Zone_19 : BOOL;
+    {LINE(152)}
+    EDM_Zone_20 : BOOL;
+    {LINE(153)}
+    EDM_Zone_21 : BOOL;
+    {LINE(154)}
+    EDM_Zone_22 : BOOL;
+    {LINE(155)}
+    EDM_Zone_23 : BOOL;
+    {LINE(156)}
+    EDM_Zone_24 : BOOL;
+    {LINE(157)}
+    EDM_Zone_25 : BOOL;
+    {LINE(158)}
+    EDM_Zone_26 : BOOL;
+    {LINE(159)}
+    EDM_Zone_27 : BOOL;
+    {LINE(160)}
+    EDM_Zone_28 : BOOL;
+    {LINE(161)}
+    EDM_Zone_29 : BOOL;
+    {LINE(162)}
+    EDM_Zone_30 : BOOL;
+    {LINE(163)}
+    Safety_EDM_Comm AT %ID4 : DWORD {Custom('SL1.SM1.DINT1001')};
+END_VAR
+
+VAR_GLOBAL {Group(164)}
+    {LINE(165)}
+    Reset_Zone_1 : BOOL;
+    {LINE(166)}
+    Reset_Zone_2 : BOOL;
+    {LINE(167)}
+    Reset_Zone_3 : BOOL;
+    {LINE(168)}
+    Reset_Zone_4 : BOOL;
+    {LINE(169)}
+    Reset_Zone_5 : BOOL;
+    {LINE(170)}
+    Reset_Zone_6 : BOOL;
+    {LINE(171)}
+    Reset_Zone_7 : BOOL;
+    {LINE(172)}
+    Reset_Zone_8 : BOOL;
+    {LINE(173)}
+    Reset_Zone_9 : BOOL;
+    {LINE(174)}
+    Reset_Zone_10 : BOOL;
+    {LINE(175)}
+    Reset_Zone_11 : BOOL;
+    {LINE(176)}
+    Reset_Zone_12 : BOOL;
+    {LINE(177)}
+    Reset_Zone_13 : BOOL;
+    {LINE(178)}
+    Reset_Zone_14 : BOOL;
+    {LINE(179)}
+    Reset_Zone_15 : BOOL;
+    {LINE(180)}
+    Reset_Zone_16 : BOOL;
+    {LINE(181)}
+    Reset_Zone_17 : BOOL;
+    {LINE(182)}
+    Reset_Zone_18 : BOOL;
+    {LINE(183)}
+    Reset_Zone_19 : BOOL;
+    {LINE(184)}
+    Reset_Zone_20 : BOOL;
+    {LINE(185)}
+    Reset_Zone_21 : BOOL;
+    {LINE(186)}
+    Reset_Zone_22 : BOOL;
+    {LINE(187)}
+    Reset_Zone_23 : BOOL;
+    {LINE(188)}
+    Reset_Zone_24 : BOOL;
+    {LINE(189)}
+    Reset_Zone_25 : BOOL;
+    {LINE(190)}
+    Reset_Zone_26 : BOOL;
+    {LINE(191)}
+    Reset_Zone_27 : BOOL;
+    {LINE(192)}
+    Reset_Zone_28 : BOOL;
+    {LINE(193)}
+    Reset_Zone_29 : BOOL;
+    {LINE(194)}
+    Reset_Zone_30 : BOOL;
+    {LINE(195)}
+    Safety_Reset_Comm AT %ID8 : DWORD {Custom('SL1.SM1.DINT1002')};
+END_VAR
+
+VAR_GLOBAL {Group(196)}
+    {LINE(197)}
+    Safety_ModuleFault AT %QX0.0 : BOOL {Custom('SL1.SM1.BOOL00001')};
+END_VAR
+
+VAR_GLOBAL {Group(198)}
+    {LINE(199)}
+    SafetyZone_1_DataFromSafePLC AT %QW2 : WORD {Custom('SL1.SM1.INT0001')};
+    {LINE(200)}
+    SafetyZone_2_DataFromSafePLC AT %QW4 : WORD {Custom('SL1.SM1.INT0002')};
+    {LINE(201)}
+    SafetyZone_3_DataFromSafePLC AT %QW6 : WORD {Custom('SL1.SM1.INT0003')};
+    {LINE(202)}
+    SafetyZone_4_DataFromSafePLC AT %QW8 : WORD {Custom('SL1.SM1.INT0004')};
+    {LINE(203)}
+    SafetyZone_5_DataFromSafePLC AT %QW10 : WORD {Custom('SL1.SM1.INT0005')};
+    {LINE(204)}
+    SafetyZone_6_DataFromSafePLC AT %QW12 : WORD {Custom('SL1.SM1.INT0006')};
+    {LINE(205)}
+    SafetyZone_7_DataFromSafePLC AT %QW14 : WORD {Custom('SL1.SM1.INT0007')};
+    {LINE(206)}
+    SafetyZone_8_DataFromSafePLC AT %QW16 : WORD {Custom('SL1.SM1.INT0008')};
+    {LINE(207)}
+    SafetyZone_9_DataFromSafePLC AT %QW18 : WORD {Custom('SL1.SM1.INT0009')};
+    {LINE(208)}
+    SafetyZone_10_DataFromSafePLC AT %QW20 : WORD {Custom('SL1.SM1.INT0010')};
+    {LINE(209)}
+    SafetyZone_11_DataFromSafePLC AT %QW22 : WORD {Custom('SL1.SM1.INT0011')};
+    {LINE(210)}
+    SafetyZone_12_DataFromSafePLC AT %QW24 : WORD {Custom('SL1.SM1.INT0012')};
+    {LINE(211)}
+    SafetyZone_13_DataFromSafePLC AT %QW26 : WORD {Custom('SL1.SM1.INT0013')};
+    {LINE(212)}
+    SafetyZone_14_DataFromSafePLC AT %QW28 : WORD {Custom('SL1.SM1.INT0014')};
+    {LINE(213)}
+    SafetyZone_15_DataFromSafePLC AT %QW30 : WORD {Custom('SL1.SM1.INT0015')};
+    {LINE(214)}
+    SafetyZone_16_DataFromSafePLC AT %QW32 : WORD {Custom('SL1.SM1.INT0016')};
+    {LINE(215)}
+    SafetyZone_17_DataFromSafePLC AT %QW34 : WORD {Custom('SL1.SM1.INT0017')};
+    {LINE(216)}
+    SafetyZone_18_DataFromSafePLC AT %QW36 : WORD {Custom('SL1.SM1.INT0018')};
+    {LINE(217)}
+    SafetyZone_19_DataFromSafePLC AT %QW38 : WORD {Custom('SL1.SM1.INT0019')};
+    {LINE(218)}
+    SafetyZone_20_DataFromSafePLC AT %QW40 : WORD {Custom('SL1.SM1.INT0020')};
+    {LINE(219)}
+    SafetyZone_21_DataFromSafePLC AT %QW42 : WORD {Custom('SL1.SM1.INT0021')};
+    {LINE(220)}
+    SafetyZone_22_DataFromSafePLC AT %QW44 : WORD {Custom('SL1.SM1.INT0022')};
+    {LINE(221)}
+    SafetyZone_23_DataFromSafePLC AT %QW46 : WORD {Custom('SL1.SM1.INT0023')};
+    {LINE(222)}
+    SafetyZone_24_DataFromSafePLC AT %QW48 : WORD {Custom('SL1.SM1.INT0024')};
+    {LINE(223)}
+    SafetyZone_25_DataFromSafePLC AT %QW50 : WORD {Custom('SL1.SM1.INT0025')};
+    {LINE(224)}
+    SafetyZone_26_DataFromSafePLC AT %QW52 : WORD {Custom('SL1.SM1.INT0026')};
+    {LINE(225)}
+    SafetyZone_27_DataFromSafePLC AT %QW54 : WORD {Custom('SL1.SM1.INT0027')};
+    {LINE(226)}
+    SafetyZone_28_DataFromSafePLC AT %QW56 : WORD {Custom('SL1.SM1.INT0028')};
+    {LINE(227)}
+    SafetyZone_29_DataFromSafePLC AT %QW58 : WORD {Custom('SL1.SM1.INT0029')};
+    {LINE(228)}
+    SafetyZone_30_DataFromSafePLC AT %QW60 : WORD {Custom('SL1.SM1.INT0030')};
+END_VAR

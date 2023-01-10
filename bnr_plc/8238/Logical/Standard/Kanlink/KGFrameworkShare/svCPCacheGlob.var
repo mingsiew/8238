@@ -1,0 +1,18 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Package: KGFrameworkShare
+ * File: svCPCacheGlob.var
+ * Author: hunholz
+ * Created: March 29, 2012
+ ********************************************************************
+ * Variables of package KGFrameworkShare
+ ********************************************************************)
+VAR CONSTANT
+	SVCPCACHE_DB_REQUEST : USINT := 0; (*0 - keine Anfrage an der Datenbank, 1 - Anfrage bei DataFocus II*)
+	SVCPCACHE_CNT_RELATIONS : UINT := 100; (*Anzahl der Kategorie-Programm-Zuordnungen*)
+	SVCPCACHE_CNT_LISTRELATIONS : UINT := 10; (*Anzahl der Kategorie-Programm-Zuordnungen für die Anzeige*)
+	SVCPCACHE_MAX_PARSELINES : UINT := 120; (*Maximale Anzahl von Zeilen in der CSV-Datei für die Kategorie-Programm-Relationen*)
+	SVCPCACHE_NO_INDCONTAINER : USINT := 2; (*Containernummer mit Programmen*)
+	SVCPCACHE_IDXPAR_NAME : UINT := 4; (*Parameterindex des Programmnamen*)
+END_VAR

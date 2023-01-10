@@ -1,0 +1,38 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Package: --
+ * File: mnParamGlob.var
+ * Author: hunholz
+ * Created: August 04, 2011
+ ********************************************************************
+ * Variables of package --
+ ********************************************************************)
+(*KONSTANTEN*)
+VAR CONSTANT
+	MNPARAM_MSGSTATIDX : UINT := 1; (*Entsprechend Zuordnungsliste*)
+	MNPARAM_TEMPWRITECSVSIZE : UDINT := 75000; (*Speichergroese zum parsen von CSV-Dateien (Default: 50000)*)
+	MNPARAM_MAXPARSELINES : UINT := 1500; (*Maximale Anzahl Zeilen in einer CSV-Datei inkl. Kommentare usw. Definiert die Groesse des temp. Speichers zum halten der Zeilentabelle (Default 1000)*)
+	MNPARAM_CNT_LOGICSTRUCT : UINT := 150; (*Maximale Anzahl von Logical-Struct Definitionen im Datenmodell <= MNPARAM_MAXIDX_LOGICSTRUCT = 100*)
+	MNPARAM_CNT_PARAMNUM : UINT := 500; (*Maximale Anzahl von numerischen Parameter Definitionen im Datenmodell <= MNPARAM_MAXIDX_PARAMNUM = 500*)
+	MNPARAM_CNT_PARAMSTRING : UINT := 50; (*Maximale Anzahl von Zeichenketten Parameter Definitionen im Datenmodell <= MNPARAM_MAXIDX_PARAMSTRING = 200*)
+	MNPARAM_CNT_NUMPARAMS : UINT := 5000; (*Maximale Anzahl numerischer Parameter in einem Datencontainer*)
+	MNPARAM_CNT_STRINGPARAMS : UINT := 500; (*Maximale Anzahl String Parameter in einem Datencontainer*)
+	MNPARAM_CNT_CSVFILES : UINT := 110; (*Maximale Anzahl möglicher CSV-Daten-Dateien*)
+	MNPARAM_CNT_EDITROWS : UINT := 5; (*Anzahl der Edit-Zeilen für Parameterbearbeitung*)
+	MNPARAM_CNT_NAMELIST : UINT := 100; (*Anzahl möglicher Einträge in der Namensliste für Instanzen (Programme)*)
+END_VAR
+(*Soll beim Importieren eines Datencontainers die Maschinennummer geprüft werden.*)
+VAR CONSTANT
+	MNPARAM_CMNO : UINT := 0; (*0 - Maschinennummer wird geprüft. 1 - Maschinennummer wird nicht geprüft.*)
+END_VAR
+(*Definition des Programmnamens*)
+VAR CONSTANT
+	MNPARAM_IDX_PROGCONTAINER : USINT := 2; (*Nummer des Containers mit den Programmen*)
+	MNPARAM_PARIDX_PROGNAME : UINT := 4; (*Parameterindes des Stringparameters für den Programmnamen*)
+END_VAR
+(*Definition des Maschinennamens*)
+VAR CONSTANT
+	MNPARAM_IDX_MACHINENAMECONTAINER : UINT := 1; (*Nummer des Containers mit dem Maschinennamen*)
+	MNPARAM_PARIDX_MACHINENAME : UINT := 5; (*Parameterindex des Stringparameters für den Maschinennamen*)
+END_VAR

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.3.3.196?>
+<BusConfiguration Version="4.0" ARVersion="42602" SafetyRelease="1.10" Communication="/IF=tcpip /LOPO=11159 /SA=25 /RT=1000 /DAIP=10.8.4.20 /REPO=11159 /ANSL=1 /AM=* /PORT=50000">
+  <Module ID="IF3.ST3" Name="X20SL8100a" Hardware="X20SL8100" SafeLogicID="1" SafeModuleID="1" HWC_Revision="1.10.1.0" FrontFoto="X20SL8100.front.png" Icon="hw_x20sl.ico" HWTypeCode="5" HWC_LastEdit="14/11/2016 15:15:56" FirstPublishedSafetyRelease="1.7" ProjectSL="1" Description-de="X20 SafeLOGIC, POWERLINK V2, 24V, univ." Description-en="X20 SafeLOGIC, POWERLINK V2, 24V, univ." FromSafetyRelease="1.10" AdditionalSADR="100" MaxSdgIndex="10">
+    <Template ID="YesNo" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNo2" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="MinFwRev" Type="UDINT">
+      <Parameter ID="1" Name-en="Test Version" Name-de="Test Version" Name-fr="todo" />
+      <Parameter ID="256" Name-en="Basic Release" Name-de="Basic Release" Name-fr="todo" />
+    </Template>
+    <Template ID="AdaptPrescale" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Group ID="DataFromAs">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+      <Parameter ID="2" Name-en="Startup" Name-de="Hochlauf" Name-fr="avant de lancer" />
+      <Parameter ID="3" Name-en="Not Present" Name-de="Nicht vorhanden" Name-fr="absente" />
+    </Group>
+    <Group ID="Basic">
+      <BitStream ID="VendorID" Value="0x00006065" Type="UDINT" />
+      <BitStream ID="HWC_CRC" Value="1430206502" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_RxSpdos" Value="10" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_TxSpdos" Value="10" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Maps_per_Spdo" Value="32" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Machine_Options" Value="0" Type="UDINT" />
+      <BitStream ID="ProductCode" Value="56673" Type="UDINT" />
+      <BitStream ID="RevisionNumber" Value="0x00000001" Type="UDINT" />
+      <BitStream ID="SDPayLoad" Value="8" Type="UDINT" />
+      <BitStream ID="Refresh_Prescale_us" Value="100" Range="1-10000000" Type="UDINT" />
+      <BitStream ID="SODautoDefault" Value="1" Type="UDINT" />
+      <Parameter ID="Min_required_FW_Rev" UniqueID="0_0" Value="256" Template="MinFwRev" />
+      <Parameter ID="Optional" UniqueID="0_1" Value="0" Template="Optional" />
+      <Parameter ID="External_UDID" UniqueID="0_2" Value="0" Template="YesNo2" />
+    </Group>
+    <Group ID="Safety_Response_Time">
+      <BitStream ID="Manual_Configuration" Value="1" Type="USINT" />
+      <Parameter ID="Syncronous_Network_Only" UniqueID="1_1" Name-en="Synchronous_Network_Only" Value="1" Template="YesNo" />
+      <Parameter ID="Max_X2X_CyleTime_us" UniqueID="1_2" Name-en="Max_SDG_Powerlink_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Max_Powerlink_CyleTime_us" UniqueID="1_3" Name-en="Max_Powerlink_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Max_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_4" Name-en="Max_CPU_CrossLinkTask_CycleTime_us" Value="5000" Range="0-3000000" Type="UDINT" />
+      <Parameter ID="Min_X2X_CyleTime_us" UniqueID="1_5" Name-en="Min_SDG_Powerlink_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Min_Powerlink_CyleTime_us" UniqueID="1_6" Name-en="Min_Powerlink_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Min_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_7" Name-en="Min_CPU_CrossLinkTask_CycleTime_us" Value="0" Range="0-3000000" Type="UDINT" />
+      <Parameter ID="Worst_Case_Response_Time_us" UniqueID="1_8" Value="100000" Range="3000-12500000" Type="UDINT" />
+      <Parameter ID="Module_Cycle_Time_max_us" UniqueID="1_9" Name-en="Max_SDG_Cycle_Time_us" Name-de="Max_SDG_Cycle_Time_us" Value="5000" Range="800-20000" Type="UDINT" />
+      <Parameter ID="Module_Cycle_Time_min_us" UniqueID="1_10" Name-en="Min_SDG_Cycle_Time_us" Name-de="Min_SDG_Cycle_Time_us" Value="1600" Range="800-20000" Type="UDINT" />
+      <Parameter ID="AdaptPrescale" UniqueID="1_11" Name-en="Slow_Connection" Value="0" Template="AdaptPrescale" />
+      <Parameter ID="Node_Guarding_Lifetime" UniqueID="1_12" Value="5" Range="1-255" Type="USINT" />
+      <BitStream ID="HWC_Version" Value="1" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_LOW" Value="0" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_HIGH" Value="1" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_USINT_LOW" Value="0x01" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_USINT_HIGH" Value="250" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_LOW" Value="0x000A" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_HIGH" Value="65000" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_LOW" Value="100" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_HIGH" Value="4000000000" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_LOW" Value="6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_HIGH" Value="-6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_INT_LOW" Value="0x8300" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_INT_HIGH" Value="32000" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_LOW" Value="-2000000000" Type="DINT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_HIGH" Value="0x77359400" Type="DINT" />
+    </Group>
+    <Channel ID="BOOL1" Repeat="99" Direction="IN" Type="BOOL" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="8" />
+    <Channel ID="BOOLext1" Repeat="256" Direction="IN" Type="BOOL" Group="CPU_SafeLOGIC" Digits="3" CrossLink="true" Active="0" />
+    <Channel ID="INT1" Repeat="99" Direction="IN" Type="INT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="UINT1" Repeat="99" Direction="IN" Type="UINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="UDINT1" Repeat="99" Direction="IN" Type="UDINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="DINT1" Repeat="99" Direction="IN" Type="DINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="BOOL0" Repeat="99" Direction="OUT" Type="BOOL" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="8" />
+    <Channel ID="BOOLext0" Repeat="256" Direction="OUT" Type="BOOL" Group="CPU_SafeLOGIC" Digits="3" CrossLink="true" Active="0" />
+    <Channel ID="INT0" Repeat="99" Direction="OUT" Type="INT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="UINT0" Repeat="99" Direction="OUT" Type="UINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="UDINT0" Repeat="99" Direction="OUT" Type="UDINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="DINT0" Repeat="99" Direction="OUT" Type="DINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="SafeMachineOption00" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption01" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption02" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption03" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption04" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption05" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption06" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption07" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption08" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption09" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption10" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption11" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption12" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption13" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption14" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption15" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption16" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption17" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption18" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption19" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption20" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption21" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption22" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption23" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption24" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption25" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption26" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption27" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption28" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption29" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption30" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption31" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+  </Module>
+  <Module ID="IF3.ST2.IF1.ST5" Name="X20SI9100" Hardware="X20SI9100" SafeLogicID="1" SafeModuleID="2" HWC_Revision="1.10.0.2" FrontFoto="X20SI9100.front.png" Icon="hw_x20si.ico" HWTypeCode="27" HWC_LastEdit="11/11/2016 12:01:54" FirstPublishedSafetyRelease="1.5" Description-de="X20 Safe Digital In, 20xE, 24V" Description-en="X20 Safe Digital In, 20xI, 24V" AdditionalSADR="0" FromSafetyRelease="1.10" SafeIN="27" MinModuleCycleTime="400" MaxModuleCycleTime="799" GPDOIn="0" GPDOOut="0">
+    <Channel ID="SafeModuleOk" Safe="true" Direction="IN" Type="BOOL" ConnectionValidation="1" />
+    <Channel ID="SafeDigitalInput01" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="4" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6000" SODSubIndex="0x01" Group="Channel 01-04" />
+    <Channel ID="SafeDigitalInput02" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="4" BitOffset="1" Direction="IN" Type="BOOL" Group="Channel 01-04" />
+    <Channel ID="SafeDigitalInput03" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="4" BitOffset="2" Direction="IN" Type="BOOL" Group="Channel 01-04" />
+    <Channel ID="SafeDigitalInput04" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="4" BitOffset="3" Direction="IN" Type="BOOL" Group="Channel 01-04" />
+    <Channel ID="SafeDigitalInput05" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="4" BitOffset="4" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeDigitalInput06" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="4" BitOffset="5" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeDigitalInput07" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="4" BitOffset="6" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeDigitalInput08" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="4" BitOffset="7" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeDigitalInput09" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="5" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6000" SODSubIndex="0x02" Group="Channel 09-12" />
+    <Channel ID="SafeDigitalInput10" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="5" BitOffset="1" Direction="IN" Type="BOOL" Group="Channel 09-12" />
+    <Channel ID="SafeDigitalInput11" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="5" BitOffset="2" Direction="IN" Type="BOOL" Group="Channel 09-12" />
+    <Channel ID="SafeDigitalInput12" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="5" BitOffset="3" Direction="IN" Type="BOOL" Group="Channel 09-12" />
+    <Channel ID="SafeDigitalInput13" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="5" BitOffset="4" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeDigitalInput14" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="5" BitOffset="5" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeDigitalInput15" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="5" BitOffset="6" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeDigitalInput16" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="5" BitOffset="7" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeDigitalInput17" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="6" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6000" SODSubIndex="0x03" Group="Channel 17-20" />
+    <Channel ID="SafeDigitalInput18" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="6" BitOffset="1" Direction="IN" Type="BOOL" Group="Channel 17-20" />
+    <Channel ID="SafeDigitalInput19" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="6" BitOffset="2" Direction="IN" Type="BOOL" Group="Channel 17-20" />
+    <Channel ID="SafeDigitalInput20" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Address="6" BitOffset="3" Direction="IN" Type="BOOL" Group="Channel 17-20" />
+    <Channel ID="SafeTwoChannelInput0102" Safe="true" Description-de="2-Kanalauswertung: Kanal 1/2" Description-en="2-channel evaluation: channel 1/2" Address="6" BitOffset="4" Direction="IN" Type="BOOL" Group="Channel 01-04" />
+    <Channel ID="SafeTwoChannelInput0304" Safe="true" Description-de="2-Kanalauswertung: Kanal 3/4" Description-en="2-channel evaluation: channel 3/4" Address="6" BitOffset="5" Direction="IN" Type="BOOL" Group="Channel 01-04" />
+    <Channel ID="SafeTwoChannelInput0506" Safe="true" Description-de="2-Kanalauswertung: Kanal 5/6" Description-en="2-channel evaluation: channel 5/6" Address="6" BitOffset="6" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeTwoChannelInput0708" Safe="true" Description-de="2-Kanalauswertung: Kanal 7/8" Description-en="2-channel evaluation: channel 7/8" Address="6" BitOffset="7" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeTwoChannelInput0910" Safe="true" Description-de="2-Kanalauswertung: Kanal 9/10" Description-en="2-channel evaluation: channel 9/10" Address="7" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6000" SODSubIndex="0x04" Group="Channel 09-12" />
+    <Channel ID="SafeTwoChannelInput1112" Safe="true" Description-de="2-Kanalauswertung: Kanal 11/12" Description-en="2-channel evaluation: channel 11/12" Address="7" BitOffset="1" Direction="IN" Type="BOOL" Group="Channel 09-12" />
+    <Channel ID="SafeTwoChannelInput1314" Safe="true" Description-de="2-Kanalauswertung: Kanal 13/14" Description-en="2-channel evaluation: channel 13/14" Address="7" BitOffset="2" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeTwoChannelInput1516" Safe="true" Description-de="2-Kanalauswertung: Kanal 15/16" Description-en="2-channel evaluation: channel 15/16" Address="7" BitOffset="3" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeTwoChannelInput1718" Safe="true" Description-de="2-Kanalauswertung: Kanal 17/18" Description-en="2-channel evaluation: channel 17/18" Address="7" BitOffset="4" Direction="IN" Type="BOOL" Group="Channel 17-20" />
+    <Channel ID="SafeTwoChannelInput1920" Safe="true" Description-de="2-Kanalauswertung: Kanal 19/20" Description-en="2-channel evaluation: channel 19/20" Address="7" BitOffset="5" Direction="IN" Type="BOOL" Group="Channel 17-20" />
+    <Channel ID="Fuellbit1" Safe="true" Disabled="true" Direction="IN" Type="BOOL" />
+    <Channel ID="Fuellbit2" Safe="true" Disabled="true" Direction="IN" Type="BOOL" />
+    <Channel ID="SafeChannelOK01" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="8" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6000" SODSubIndex="0x05" Group="Channel 01-04" />
+    <Channel ID="SafeChannelOK02" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="8" BitOffset="1" Direction="IN" Type="BOOL" Group="Channel 01-04" />
+    <Channel ID="SafeChannelOK03" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="8" BitOffset="2" Direction="IN" Type="BOOL" Group="Channel 01-04" />
+    <Channel ID="SafeChannelOK04" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="8" BitOffset="3" Direction="IN" Type="BOOL" Group="Channel 01-04" />
+    <Channel ID="SafeChannelOK05" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="8" BitOffset="4" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeChannelOK06" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="8" BitOffset="5" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeChannelOK07" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="8" BitOffset="6" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeChannelOK08" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="8" BitOffset="7" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeChannelOK09" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="9" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6000" SODSubIndex="0x06" Group="Channel 09-12" />
+    <Channel ID="SafeChannelOK10" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="9" BitOffset="1" Direction="IN" Type="BOOL" Group="Channel 09-12" />
+    <Channel ID="SafeChannelOK11" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="9" BitOffset="2" Direction="IN" Type="BOOL" Group="Channel 09-12" />
+    <Channel ID="SafeChannelOK12" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="9" BitOffset="3" Direction="IN" Type="BOOL" Group="Channel 09-12" />
+    <Channel ID="SafeChannelOK13" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="9" BitOffset="4" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeChannelOK14" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="9" BitOffset="5" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeChannelOK15" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="9" BitOffset="6" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeChannelOK16" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="9" BitOffset="7" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeChannelOK17" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="10" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6000" SODSubIndex="0x07" Group="Channel 17-20" />
+    <Channel ID="SafeChannelOK18" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="10" BitOffset="1" Direction="IN" Type="BOOL" Group="Channel 17-20" />
+    <Channel ID="SafeChannelOK19" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="10" BitOffset="2" Direction="IN" Type="BOOL" Group="Channel 17-20" />
+    <Channel ID="SafeChannelOK20" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Address="10" BitOffset="3" Direction="IN" Type="BOOL" Group="Channel 17-20" />
+    <Channel ID="SafeTwoChannelOk0102" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Address="10" BitOffset="4" Direction="IN" Type="BOOL" Group="Channel 01-04" />
+    <Channel ID="SafeTwoChannelOk0304" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Address="10" BitOffset="5" Direction="IN" Type="BOOL" Group="Channel 01-04" />
+    <Channel ID="SafeTwoChannelOk0506" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Address="10" BitOffset="6" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeTwoChannelOk0708" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Address="10" BitOffset="7" Direction="IN" Type="BOOL" Group="Channel 05-08" />
+    <Channel ID="SafeTwoChannelOk0910" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Address="11" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6000" SODSubIndex="0x08" Group="Channel 09-12" />
+    <Channel ID="SafeTwoChannelOk1112" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Address="11" BitOffset="1" Direction="IN" Type="BOOL" Group="Channel 09-12" />
+    <Channel ID="SafeTwoChannelOk1314" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Address="11" BitOffset="2" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeTwoChannelOk1516" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Address="11" BitOffset="3" Direction="IN" Type="BOOL" Group="Channel 13-16" />
+    <Channel ID="SafeTwoChannelOk1718" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Address="11" BitOffset="4" Direction="IN" Type="BOOL" Group="Channel 17-20" />
+    <Channel ID="SafeTwoChannelOk1920" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Address="11" BitOffset="5" Direction="IN" Type="BOOL" Group="Channel 17-20" />
+  </Module>
+  <Module ID="IF3.ST3.IF1.ST3" Name="X20SO2110" Hardware="X20SO2110" SafeLogicID="1" SafeModuleID="3" HWC_Revision="1.10.0.2" FrontFoto="X20SO2110.front.png" Icon="hw_x20so.ico" HWTypeCode="43" HWC_LastEdit="11/11/2016 13:59:36" FirstPublishedSafetyRelease="1.5" Description-de="X20 Safe Digital Out, 2xA, 24 V, 0.5 A" Description-en="X20 Safe Digital Out, 2xO, 24 V, 0.5 A" AdditionalSADR="0" FromSafetyRelease="1.10" SafeIN="13" SafeOUT="15" MinModuleCycleTime="400" MaxModuleCycleTime="799" GPDOIn="3" GPDOOut="1">
+    <Channel ID="SafeModuleOk" Safe="true" Direction="IN" Type="BOOL" ConnectionValidation="1" />
+    <Channel ID="SafeDigitalOutput01" Safe="true" Address="4" BitOffset="0" Direction="OUT" Type="BOOL" SODIndex="0x6200" SODSubIndex="0x01" />
+    <Channel ID="SafeDigitalOutput02" Safe="true" Address="4" BitOffset="1" Direction="OUT" Type="BOOL" />
+    <Channel ID="SafeDigitalOutput03" Safe="true" Disabled="true" Direction="OUT" Type="BOOL" />
+    <Channel ID="SafeDigitalOutput04" Safe="true" Disabled="true" Direction="OUT" Type="BOOL" />
+    <Channel ID="SafeChannelOK01" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Address="4" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6000" SODSubIndex="0x01" />
+    <Channel ID="SafeChannelOK02" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Address="4" BitOffset="1" Direction="IN" Type="BOOL" />
+    <Channel ID="SafeChannelOK03" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Disabled="true" Direction="IN" Type="BOOL" />
+    <Channel ID="SafeChannelOK04" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Disabled="true" Direction="IN" Type="BOOL" />
+    <Channel ID="ReleaseOutput01" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Address="5" BitOffset="0" Direction="OUT" Type="BOOL" SODIndex="0x6200" SODSubIndex="0x02" SafeTransport="true" />
+    <Channel ID="ReleaseOutput02" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Address="5" BitOffset="1" Direction="OUT" Type="BOOL" SafeTransport="true" />
+    <Channel ID="PhysicalStateChannel1" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Address="0" BitOffset="0" Direction="IN" Type="BOOL" Group="General" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel2" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Address="0" BitOffset="1" Direction="IN" Type="BOOL" Group="General" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel3_placeholder" Disabled="true" Address="0" BitOffset="2" Direction="IN" Type="BOOL" Group="General" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel4_placeholder" Disabled="true" Address="0" BitOffset="3" Direction="IN" Type="BOOL" Group="General" CrossLink="true" />
+    <Channel ID="CurrentOK01" Description-de="TRUE bei Strömen zwischen 50 mA und 0.5 A" Description-en="TRUE if current is between 50 mA and 0.5 A" Address="0" BitOffset="4" Direction="IN" Type="BOOL" Group="General" CrossLink="true" />
+    <Channel ID="CurrentOK02" Description-de="TRUE bei Strömen zwischen 50 mA und 0.5 A" Description-en="TRUE if current is between 50 mA and 0.5 A" Address="0" BitOffset="5" Direction="IN" Type="BOOL" Group="General" CrossLink="true" />
+  </Module>
+</BusConfiguration>

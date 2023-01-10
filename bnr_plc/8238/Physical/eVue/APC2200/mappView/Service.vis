@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vdef:Visualization id="service" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+	<StartPage pageRefId="page_Home" />
+	<Pages>
+		<Page refId="page_Camera"/>
+		<Page refId="page_Logger"/>
+		<Page refId="page_MappSafety"/>	
+		<Page refId="page_Home"/>	
+		<Page refId="page_Drives"/>
+		<Page refId="page_DrivesDiag"/>		
+		<Page refId="page_Fuses"/>	
+		<Page refId="page_MotorStarters"/>	
+		<Page refId="page_Sdm"/>				
+	</Pages>
+	<Navigations>
+		<!--<Navigation refId="" />-->
+	</Navigations>  
+	<BindingsSets>
+		<BindingsSet refId="Camera_binding" />
+		<BindingsSet refId="Fuse_Binding" />
+		<BindingsSet refId="Logger_binding" />
+		<BindingsSet refId="MappSafetyBinding"/>
+		<BindingsSet refId="Drives_Binding"/>
+		<BindingsSet refId="contactron_Binding"/>
+	</BindingsSets>
+	<EventBindingsSets>
+		<EventBindingsSet refId="Camera_eventbinding" />
+		<EventBindingsSet refId="ContentNav_eventbinding" />
+		<EventBindingsSet refId="content_Drives_eventbinding" />	
+		<EventBindingsSet refId="content_Fuses_eventbinding" />	
+		<EventBindingsSet refId="content_Contactron_eventbinding" />	
+		<EventBindingsSet refId="content_Logger_eventbinding" />	
+	</EventBindingsSets>
+	<Dialogs>
+		<!--<Dialog refId="dialog_AsSafetySolution" />-->
+		<Dialog refId="LoginDialog" />	
+	</Dialogs>
+	<Contents>
+		<!--<Content refId="" />-->
+	</Contents>
+	<SnippetsSets>
+		<!--<SnippetsSet refId=""/>-->
+	</SnippetsSets>
+	<ExpressionsSets>
+		<!--<ExpressionsSet refId=""/>-->
+	</ExpressionsSets>
+	<VariablesSets>
+		<VariablesSet refId="SessionVars" />
+	</VariablesSets>
+	<StartTheme themeRefId="KannegiesserTheme" />
+	<Themes>
+		<!--<Theme refId="BuRTheme1"/>-->
+		<Theme refId="KannegiesserTheme"/>
+	</Themes>
+	<Configurations>
+		<Configuration key="activityCount" value="false" />
+		<Configuration key="zoom" value="true" />  
+		<Gestures>
+			<!--<SystemGesture1 touchPoints="2" />
+			<SystemGesture2 touchPoints="2" />
+			<SystemGesture3 touchPoints="2" />-->
+		</Gestures>
+		<VirtualKeyboards>
+			<!--<InputProcessing onKeyDown="true" />-->
+		</VirtualKeyboards> 
+	</Configurations>
+</vdef:Visualization>

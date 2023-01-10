@@ -1,0 +1,11 @@
+(*CONTROL WORD STATES- DO NOT CHANGE*)
+VAR CONSTANT
+	DISABLE_VOLTAGE : UINT := 2#0000010000000000; (*Constanst for setting control word in case statement*)
+	FAULT_RESET : UINT := 2#0000010011110000; (*Constanst for setting control word in case statement*)
+	QUICK_STOP : UINT := 2#0000010001110000; (*Constanst for setting control word in case statement*)
+	ENABLE_OPERATION : UINT := 2#0000010001111111; (*Constanst for setting control word in case statement*)
+	RAMP_DOWN : UINT := 2#0000010001110111; (*Constanst for setting control word in case statement*)
+	SHUT_DOWN : UINT := 2#0000010001110110; (*Constanst for setting control word in case statement*)
+	SET_REMOTE : UINT := 2#0000010000000000; (*Constanst for setting control word in case statement*)
+	SWITCH_ON : UINT := 2#0000010001110111; (*Constanst for setting control word in case statement*)
+END_VAR

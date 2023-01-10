@@ -1,0 +1,3 @@
+VAR
+	OpcUa : {REDUND_UNREPLICABLE} OpcUa_type;
+END_VAR

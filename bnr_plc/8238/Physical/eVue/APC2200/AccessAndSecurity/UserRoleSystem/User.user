@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="Anonymous" Type="User">
+    <Property ID="UserID" Value="1" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Everyone" />
+      <Property ID="Role[2]" Value="" />
+    </Group>
+  </Element>
+  <Element ID="admin" Type="User">
+    <Property ID="UserID" Value="2" />
+    <Property ID="Password" Value="bk68fBE02VdnNJSILd5Lz/k4STbE3cTxNIDINqnwULroSFJ7pDw=" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Administrators" />
+      <Property ID="Role[2]" Value="Everyone" />
+    </Group>
+  </Element>
+  <Element ID="UA_Expert" Type="User">
+    <Property ID="UserID" Value="4" />
+    <Property ID="Password" Value="Nufr7dL8thR5aeAqwtXUT3NS2+pberbf0736zEmNWESCiyh6Im4=" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Administrators" />
+    </Group>
+  </Element>
+  <Element ID="Supertrack" Type="User">
+    <Property ID="UserID" Value="5" />
+    <Property ID="Password" Value="0+LJhhoSwBoQmbuMSwzatZJ+lEl+yQq+OMP12WGx5fTzIEoA78I=" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Administrators" />
+    </Group>
+  </Element>
+  <Element ID="mappView" Type="User">
+    <Property ID="UserID" Value="6" />
+    <Property ID="Password" Value="V9EuW4qm+Av403OhVC+jdmLP/x8l2W0mWhT+E3iD+/HKbD3AzvU=" Description="admin1234!" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Administrators" />
+    </Group>
+  </Element>
+  <Element ID="Programmer" Type="User">
+    <Property ID="UserID" Value="7" />
+    <Property ID="Password" Value="5zoGUtAv8lARhHf1MBRTCxgQqAt1xL3nJm8wdGA0zGAEu0HH/BI=" Description="7253" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Administrators" />
+      <Property ID="Role[2]" Value="Engineer_Role" />
+      <Property ID="Role[3]" Value="Everyone" />
+      <Property ID="Role[4]" Value="Supervisor_Role" />
+    </Group>
+  </Element>
+  <Element ID="Engineer" Type="User">
+    <Property ID="UserID" Value="8" />
+    <Property ID="Password" Value="rorChLAODQDuVhVHZ04oY6afi4UUrk5BvTEiJFYRP+2oGBlgsCM=" Description="0189" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Engineer_Role" />
+      <Property ID="Role[2]" Value="Supervisor_Role" />
+      <Property ID="Role[3]" Value="Everyone" />
+    </Group>
+  </Element>
+  <Element ID="Supervisor" Type="User">
+    <Property ID="UserID" Value="9" />
+    <Property ID="Password" Value="79x2keAUj96FpHriPOiZK6/EuXQk7EivV5m9GYqIu+axrCMiKEs=" Description="1234" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Supervisor_Role" />
+      <Property ID="Role[2]" Value="Everyone" />
+    </Group>
+  </Element>
+  <Element ID="Safety" Type="User">
+    <Property ID="UserID" Value="10" />
+    <Property ID="Password" Value="aW3cbwVYPpMSqlo0booxr1fHcFcSp9kxZIlyBNNBUKOPDIXxe0g=" Description="safeplc" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Administrators" />
+      <Property ID="Role[2]" Value="Engineer_Role" />
+      <Property ID="Role[3]" Value="Supervisor_Role" />
+      <Property ID="Role[4]" Value="Everyone" />
+    </Group>
+  </Element>
+</Configuration>

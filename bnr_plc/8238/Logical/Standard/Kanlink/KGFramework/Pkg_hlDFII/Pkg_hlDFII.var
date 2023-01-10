@@ -1,0 +1,24 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Package: pkg_sqlreq
+ * File: pkg_sqlreq.var
+ * Author: hunholz
+ * Created: April 05, 2011
+ ********************************************************************
+ * Variables of package pkg_sqlreq
+ ********************************************************************)
+(*Konstanten*)
+VAR CONSTANT
+	HLDFII_STAT_OK : UINT := 0; (*OK*)
+	HLDFII_STAT_DISABLED : UINT := 100; (*Per Konfiguration und Parameter deaktiviert*)
+	HLDFII_STAT_INIT : UINT := 101; (*Initialisierung. Wartet noch auf OK von mnParam und mnEth*)
+	HLDFII_STAT_NO_CONNECTION : UINT := 60000; (*Es konnte keine Verbindung zur Datenbank aufgebaut werden.*)
+END_VAR
+(*Stati*)
+VAR
+	hlDFIIStat : Stat_typ := (0);
+	hlDFIIStatAd : hlDFIIStatAd_typ;
+	hlDFIIPar : hlDFIIPar_typ;
+	IFhlDFII : IFhlDFII_typ;
+END_VAR

@@ -1,0 +1,12 @@
+(*
+T: FUNCTION_BLOCK SafeModuleOk
+FW: NO
+CI#: 83
+QSL: 3
+QVE: 3
+QVPC: 3
+QPar: 2
+QFBI: 0
+*)
+SafeStatusOk	@IV 1	@TYP:43	VAR_OUTPUT
+Safety_Module_Fault	@IV 2	@TYP:1	VAR_OUTPUT

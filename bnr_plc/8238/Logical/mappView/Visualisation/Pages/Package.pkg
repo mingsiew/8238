@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package SubType="PagesPackage" PackageType="PagesPackage" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Package" Description="AreaContents">AreaContents</Object>
+    <Object Type="Package">Camera</Object>
+    <Object Type="Package">Drives</Object>
+    <Object Type="Package">Fuses</Object>
+    <Object Type="Package">Home</Object>
+    <Object Type="Package">Logger</Object>
+    <Object Type="Package">MotorStarters</Object>
+    <Object Type="Package">SDM</Object>
+    <Object Type="Package">Safety</Object>
+  </Objects>
+</Package>

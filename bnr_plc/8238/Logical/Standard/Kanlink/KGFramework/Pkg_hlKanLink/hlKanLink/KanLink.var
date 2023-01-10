@@ -1,0 +1,84 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Program: WetLink
+ * File: WetLink.var
+ * Author: stahlhut
+ * Created: December 23, 2011
+ ********************************************************************
+ * Local variables of program WetLink
+ ********************************************************************)
+VAR
+	_AsArLogCreate : AsArLogCreate;
+	_AsArLogGetInfo : AsArLogGetInfo;
+	_dClient : REFERENCE TO KL_ClientListe_typ;
+	_dCltIf : REFERENCE TO IF_Client_typ;
+	_dSrvIf : REFERENCE TO IF_Server_typ;
+END_VAR
+VAR CONSTANT
+	_HLKANLINK_IDX_STRUCDEF_RESP_0 : UINT := 1;
+	_HLKANLINK_MAX_IDX_DEFSTRUC : UINT := 5;
+END_VAR
+VAR
+	_i : UINT;
+	_iCltIdx : INT;
+	_iCltRespCnt : INT;
+	_ifDummy : IF_Client_typ;
+	_iIdxFound : INT;
+END_VAR
+VAR RETAIN
+	_iLastCltIdx : UINT;
+	_iLastMuCltIdx : UINT;
+END_VAR
+VAR
+	_iLastServerIdx : UINT;
+	_iMuCltIdx : INT;
+	_InsertRB : kgRBinsert;
+	_k : UINT;
+	_kgArLogWrite : kgArLogWrite;
+	_kgRBcreateKanLinklog : kgRBcreate;
+	_lAdr : UDINT;
+	_lLen : UDINT;
+	_lMemIdent : UDINT;
+	_LogEntry : ErrLog_typ;
+	_LogEntryIn : ErrLog_typ;
+	_lPtrStrucDef : ARRAY[0..5] OF UDINT;
+	_lPtrStrucLen : ARRAY[0..5] OF UDINT;
+	_lTempMemIdent : UDINT;
+	_MemAlloc : AsMemPartAllocClear;
+	_MemAllocTemp : AsMemPartAllocClear;
+	_MemFreeTemp : AsMemPartFree;
+	_MemPartCreate : AsMemPartCreate;
+	_ptrIndex : REFERENCE TO KL_ServerListe_typ;
+	_ReadRB : kgRBread;
+	_sClientIPAdr : STRING[16];
+	_sDebString : REFERENCE TO STRING[31];
+	_sName : STRING[80];
+	_sPkgName : STRING[11];
+	_state : USINT;
+	_tcnr : SINT;
+	_VerStruc : MoVerStruc_typ;
+	_wClt : UINT;
+	_wDebIdx : UINT;
+	_wDebOffset : UINT;
+	_wLogStep : UINT;
+	_wPtrRBloc : UINT;
+	_wPtrRBread : UINT;
+	_wPtrRBstart : UINT;
+	_wPtrRBwrite : UINT;
+	_wSrv : UINT;
+	_wStatus : UINT;
+	_xAdrErr : BOOL;
+	_xAdrOK : BOOL;
+	_xCheckClt : BOOL;
+	_xCltFound : BOOL;
+	_xIdxFound : BOOL;
+	_xInitOK : BOOL;
+	_xRBReady : BOOL;
+	_xSaveConfig : BOOL;
+	_xSendNow : BOOL;
+	_xServerFound : BOOL;
+	Kanlink : KanLink_FB;
+	KL_SaveConfDO_0 : KL_SaveConfDO;
+	WL_ErrorNr : UINT;
+END_VAR

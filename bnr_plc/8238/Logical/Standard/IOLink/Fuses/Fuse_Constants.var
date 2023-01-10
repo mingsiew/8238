@@ -1,0 +1,9 @@
+VAR CONSTANT
+	MAX_FUSE_CHANNELS : USINT := 8; (*Max number of fuses in 1 bank*)
+END_VAR
+(*Reset Channels*)
+VAR CONSTANT
+	EB_SET_STATE_OFF : USINT := 1;
+	EB_SET_STATE_ON : USINT := 2;
+	EB_SET_STATE_RESET : USINT := 3;
+END_VAR

@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="content_MotorStarters" height="768" width="1235" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Rectangle" id="RectangleBase3" top="0" left="0" width="1235" height="65" zIndex="4" cornerRadius="6px" lineColor="rgba(4, 78, 123, 1)" backColor="rgba(58, 175, 248, 1)" shadow="8px 8px 14px rgba(62, 79, 92, 0.75)" backGroundGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" />
+    <Widget xsi:type="widgets.brease.GroupBox" id="gb_Selector_1" top="66" left="0" width="308" height="350" zIndex="3" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" permissionView="['Engineer_Role']">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput32" top="10" left="18" width="270" height="57" zIndex="0" multiLine="true" value="$IAT/Contactron.Manual.SelectContactron" textColor="rgba(255, 255, 255, 1)" textAlign="center bottom" fontSize="16px" bold="true" />
+        <Widget xsi:type="widgets.brease.ListBox" id="ListBox1" top="83" left="18" width="270" height="255" zIndex="1" textAlign="center" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="gb_Selector_2" top="66" left="309" width="308" height="350" zIndex="1" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" permissionView="['Engineer_Role']">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput33" top="10" left="18" width="270" height="57" zIndex="0" multiLine="true" value="$IAT/Contactron.Manual.SelectContactron" textColor="rgba(255, 255, 255, 1)" textAlign="center bottom" fontSize="16px" bold="true" />
+        <Widget xsi:type="widgets.brease.ListBox" id="ListBox2" top="83" left="18" width="270" height="255" zIndex="1" textAlign="center" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="gb_Selector_3" top="66" left="618" width="308" height="350" zIndex="2" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" permissionView="['Engineer_Role']">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput34" top="10" left="18" width="270" height="57" zIndex="0" multiLine="true" value="$IAT/Contactron.Manual.SelectContactron" textColor="rgba(255, 255, 255, 1)" textAlign="center bottom" fontSize="16px" bold="true" />
+        <Widget xsi:type="widgets.brease.ListBox" id="ListBox3" top="83" left="18" width="270" height="255" zIndex="1" textAlign="center" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="gb_Selector_4" top="66" left="927" width="308" height="350" zIndex="5" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" permissionView="['Engineer_Role']">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput35" top="10" left="18" width="270" height="57" zIndex="0" multiLine="true" value="$IAT/Contactron.Manual.SelectContactron" textColor="rgba(255, 255, 255, 1)" textAlign="center bottom" fontSize="16px" bold="true" />
+        <Widget xsi:type="widgets.brease.ListBox" id="ListBox4" top="83" left="18" width="270" height="255" zIndex="1" textAlign="center" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="gb_Selector_5" top="417" left="0" width="308" height="350" zIndex="0" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" permissionView="['Engineer_Role']">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput36" top="10" left="18" width="270" height="57" zIndex="0" multiLine="true" value="$IAT/Contactron.Manual.SelectContactron" textColor="rgba(255, 255, 255, 1)" textAlign="center bottom" fontSize="16px" bold="true" />
+        <Widget xsi:type="widgets.brease.ListBox" id="ListBox5" top="83" left="18" width="270" height="255" zIndex="1" textAlign="center" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="gb_Selector_6" top="417" left="309" width="308" height="350" zIndex="6" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" permissionView="['Engineer_Role']">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput37" top="10" left="18" width="270" height="57" zIndex="0" multiLine="true" value="$IAT/Contactron.Manual.SelectContactron" textColor="rgba(255, 255, 255, 1)" textAlign="center bottom" fontSize="16px" bold="true" />
+        <Widget xsi:type="widgets.brease.ListBox" id="ListBox6" top="83" left="18" width="270" height="255" zIndex="1" textAlign="center" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="gb_Selector_7" top="417" left="618" width="308" height="350" zIndex="7" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" permissionView="['Engineer_Role']">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput38" top="10" left="18" width="270" height="57" zIndex="0" multiLine="true" value="$IAT/Contactron.Manual.SelectContactron" textColor="rgba(255, 255, 255, 1)" textAlign="center bottom" fontSize="16px" bold="true" />
+        <Widget xsi:type="widgets.brease.ListBox" id="ListBox7" top="83" left="18" width="270" height="255" zIndex="1" textAlign="center" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="gb_Selector_8" top="417" left="927" width="308" height="350" zIndex="8" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" permissionView="['Engineer_Role']">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput39" top="10" left="18" width="270" height="57" zIndex="0" multiLine="true" value="$IAT/Contactron.Manual.SelectContactron" textColor="rgba(255, 255, 255, 1)" textAlign="center bottom" fontSize="16px" bold="true" />
+        <Widget xsi:type="widgets.brease.ListBox" id="ListBox8" top="83" left="18" width="270" height="255" zIndex="1" textAlign="center" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.Label" id="lbl_title" top="8" left="418" width="400" height="50" zIndex="9" text="$IAT/Conatctron.Title.Manual" textColor="rgba(255, 255, 255, 1)" textAlign="center" fontSize="24px" bold="true" />
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox1" top="66" left="0" width="308" height="350" zIndex="10" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" visible="false">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput4" top="53" left="23" width="130" zIndex="0" value="$IAT/Contactron.ModuleOK" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput8" top="83" left="23" width="130" zIndex="1" value="$IAT/Contactron.ActualCurrent" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txt_DriveName_1" top="8" left="8" width="254" zIndex="7" value="Contactron Name" backColor="rgba(255, 255, 255, 0)" borderStyle="none" textAlign="left" fontSize="25px" bold="true" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="noActCurrent_1" top="83" left="153" width="130" zIndex="2" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unit="{'metric':'AMP','imperial':'AMP','imperial-us':'AMP'}" unitAlign="right" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse9" top="56" left="206" width="24" height="24" zIndex="4" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(255, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle1" top="53" left="153" width="130" height="30" zIndex="3" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(8, 140, 221, 1)" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunFwd_1" top="290" left="183" zIndex="5" text="$IAT/Contactron.Manual.RunForward" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunRev_1" top="290" left="23" zIndex="6" text="$IAT/Contactron.Manual.RunReverse" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_ErrReset_1" top="233" left="239" width="25" height="25" zIndex="8" image="Media/Images/Refresh.png" imageAlign="bottom" mouseDownBorderWidth="0px" fontSize="14px" padding="0px" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Button" id="close_1" top="8" left="270" width="30" zIndex="9" text="X" fontSize="14px" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="eModOK_1" top="56" left="206" width="24" height="24" zIndex="10" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(124, 252, 0, 1)" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="Txt_Error_1" top="123" left="23" width="260" height="100" zIndex="11" ellipsis="true" multiLine="true" backColor="rgba(255, 0, 0, 1)" textAlign="left top" tabIndex="1" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox2" top="66" left="309" width="308" height="350" zIndex="21" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" visible="false">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput5" top="53" left="23" width="130" zIndex="0" value="$IAT/Contactron.ModuleOK" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput9" top="83" left="23" width="130" zIndex="1" value="$IAT/Contactron.ActualCurrent" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txt_DriveName_2" top="8" left="8" width="254" zIndex="7" value="Contactron Name" backColor="rgba(255, 255, 255, 0)" borderStyle="none" textAlign="left" fontSize="25px" bold="true" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="noActCurrent_2" top="83" left="153" width="130" zIndex="2" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unit="{'metric':'AMP','imperial':'AMP','imperial-us':'AMP'}" unitAlign="right" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse10" top="56" left="206" width="24" height="24" zIndex="4" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(255, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle2" top="53" left="153" width="130" height="30" zIndex="3" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(8, 140, 221, 1)" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunFwd_2" top="290" left="183" zIndex="5" text="$IAT/Contactron.Manual.RunForward" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunRev_2" top="290" left="23" zIndex="6" text="$IAT/Contactron.Manual.RunReverse" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_ErrReset_2" top="233" left="239" width="25" height="25" zIndex="8" image="Media/Images/Refresh.png" imageAlign="bottom" mouseDownBorderWidth="0px" fontSize="14px" padding="0px" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Button" id="close_2" top="8" left="270" width="30" zIndex="9" text="X" fontSize="14px" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="eModOK_2" top="56" left="206" width="24" height="24" zIndex="10" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(124, 252, 0, 1)" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="Txt_Error_2" top="123" left="23" width="260" height="100" zIndex="11" ellipsis="true" multiLine="true" backColor="rgba(255, 0, 0, 1)" textAlign="left top" tabIndex="1" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox3" top="66" left="618" width="308" height="350" zIndex="11" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" visible="false">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput6" top="53" left="23" width="130" zIndex="0" value="$IAT/Contactron.ModuleOK" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput10" top="83" left="23" width="130" zIndex="1" value="$IAT/Contactron.ActualCurrent" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txt_DriveName_3" top="8" left="8" width="254" zIndex="7" value="Contactron Name" backColor="rgba(255, 255, 255, 0)" borderStyle="none" textAlign="left" fontSize="25px" bold="true" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="noActCurrent_3" top="83" left="153" width="130" zIndex="2" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unit="{'metric':'AMP','imperial':'AMP','imperial-us':'AMP'}" unitAlign="right" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse11" top="56" left="206" width="24" height="24" zIndex="4" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(255, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle3" top="53" left="153" width="130" height="30" zIndex="3" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(8, 140, 221, 1)" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunFwd_3" top="290" left="183" zIndex="5" text="$IAT/Contactron.Manual.RunForward" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunRev_3" top="290" left="23" zIndex="6" text="$IAT/Contactron.Manual.RunReverse" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_ErrReset_3" top="233" left="239" width="25" height="25" zIndex="8" image="Media/Images/Refresh.png" imageAlign="bottom" mouseDownBorderWidth="0px" fontSize="14px" padding="0px" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Button" id="close_3" top="8" left="270" width="30" zIndex="9" text="X" fontSize="14px" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="eModOK_3" top="56" left="206" width="24" height="24" zIndex="10" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(124, 252, 0, 1)" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="Txt_Error_3" top="123" left="23" width="260" height="100" zIndex="11" ellipsis="true" multiLine="true" backColor="rgba(255, 0, 0, 1)" textAlign="left top" tabIndex="1" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox4" top="66" left="926" width="308" height="350" zIndex="12" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" visible="false">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput7" top="53" left="23" width="130" zIndex="0" value="$IAT/Contactron.ModuleOK" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput11" top="83" left="23" width="130" zIndex="1" value="$IAT/Contactron.ActualCurrent" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txt_DriveName_4" top="8" left="8" width="254" zIndex="7" value="Contactron Name" backColor="rgba(255, 255, 255, 0)" borderStyle="none" textAlign="left" fontSize="25px" bold="true" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="noActCurrent_4" top="83" left="153" width="130" zIndex="2" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unit="{'metric':'AMP','imperial':'AMP','imperial-us':'AMP'}" unitAlign="right" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse12" top="56" left="206" width="24" height="24" zIndex="4" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(255, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle4" top="53" left="153" width="130" height="30" zIndex="3" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(8, 140, 221, 1)" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunFwd_4" top="290" left="183" zIndex="5" text="$IAT/Contactron.Manual.RunForward" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunRev_4" top="290" left="23" zIndex="6" text="$IAT/Contactron.Manual.RunReverse" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_ErrReset_4" top="233" left="239" width="25" height="25" zIndex="8" image="Media/Images/Refresh.png" imageAlign="bottom" mouseDownBorderWidth="0px" fontSize="14px" padding="0px" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Button" id="close_4" top="8" left="270" width="30" zIndex="9" text="X" fontSize="14px" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="eModOK_4" top="56" left="206" width="24" height="24" zIndex="10" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(124, 252, 0, 1)" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="Txt_Error_4" top="123" left="23" width="260" height="100" zIndex="11" ellipsis="true" multiLine="true" backColor="rgba(255, 0, 0, 1)" textAlign="left top" tabIndex="1" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox5" top="417" left="0" width="308" height="350" zIndex="25" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" visible="false">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput12" top="53" left="23" width="130" zIndex="0" value="$IAT/Contactron.ModuleOK" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput13" top="83" left="23" width="130" zIndex="1" value="$IAT/Contactron.ActualCurrent" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txt_DriveName_5" top="8" left="8" width="254" zIndex="7" value="Contactron Name" backColor="rgba(255, 255, 255, 0)" borderStyle="none" textAlign="left" fontSize="25px" bold="true" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="noActCurrent_5" top="83" left="153" width="130" zIndex="2" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unit="{'metric':'AMP','imperial':'AMP','imperial-us':'AMP'}" unitAlign="right" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse13" top="56" left="206" width="24" height="24" zIndex="4" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(255, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle5" top="53" left="153" width="130" height="30" zIndex="3" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(8, 140, 221, 1)" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunFwd_5" top="290" left="183" zIndex="5" text="$IAT/Contactron.Manual.RunForward" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunRev_5" top="290" left="23" zIndex="6" text="$IAT/Contactron.Manual.RunReverse" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_ErrReset_5" top="233" left="239" width="25" height="25" zIndex="8" image="Media/Images/Refresh.png" imageAlign="bottom" mouseDownBorderWidth="0px" fontSize="14px" padding="0px" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Button" id="close_5" top="8" left="270" width="30" zIndex="9" text="X" fontSize="14px" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="eModOK_5" top="56" left="206" width="24" height="24" zIndex="10" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(124, 252, 0, 1)" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="Txt_Error_5" top="123" left="23" width="260" height="100" zIndex="11" ellipsis="true" multiLine="true" backColor="rgba(255, 0, 0, 1)" textAlign="left top" tabIndex="1" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox7" top="417" left="618" width="308" height="350" zIndex="13" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" visible="false">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput16" top="53" left="23" width="130" zIndex="0" value="$IAT/Contactron.ModuleOK" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput17" top="83" left="23" width="130" zIndex="1" value="$IAT/Contactron.ActualCurrent" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txt_DriveName_7" top="8" left="8" width="254" zIndex="7" value="Contactron Name" backColor="rgba(255, 255, 255, 0)" borderStyle="none" textAlign="left" fontSize="25px" bold="true" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="noActCurrent_7" top="83" left="153" width="130" zIndex="2" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unit="{'metric':'AMP','imperial':'AMP','imperial-us':'AMP'}" unitAlign="right" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse15" top="56" left="206" width="24" height="24" zIndex="4" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(255, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle7" top="53" left="153" width="130" height="30" zIndex="3" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(8, 140, 221, 1)" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunFwd_7" top="290" left="183" zIndex="5" text="$IAT/Contactron.Manual.RunForward" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunRev_7" top="290" left="23" zIndex="6" text="$IAT/Contactron.Manual.RunReverse" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_ErrReset_7" top="233" left="239" width="25" height="25" zIndex="8" image="Media/Images/Refresh.png" imageAlign="bottom" mouseDownBorderWidth="0px" fontSize="14px" padding="0px" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Button" id="close_7" top="8" left="270" width="30" zIndex="9" text="X" fontSize="14px" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="eModOK_7" top="56" left="206" width="24" height="24" zIndex="10" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(124, 252, 0, 1)" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="Txt_Error_7" top="123" left="23" width="260" height="100" zIndex="11" ellipsis="true" multiLine="true" backColor="rgba(255, 0, 0, 1)" textAlign="left top" tabIndex="1" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox6" top="417" left="309" width="308" height="350" zIndex="14" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" visible="false">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput14" top="53" left="23" width="130" zIndex="0" value="$IAT/Contactron.ModuleOK" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput15" top="83" left="23" width="130" zIndex="1" value="$IAT/Contactron.ActualCurrent" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txt_DriveName_6" top="8" left="8" width="254" zIndex="7" value="Contactron Name" backColor="rgba(255, 255, 255, 0)" borderStyle="none" textAlign="left" fontSize="25px" bold="true" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="noActCurrent_6" top="83" left="153" width="130" zIndex="2" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unit="{'metric':'AMP','imperial':'AMP','imperial-us':'AMP'}" unitAlign="right" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse14" top="56" left="206" width="24" height="24" zIndex="4" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(255, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle6" top="53" left="153" width="130" height="30" zIndex="3" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(8, 140, 221, 1)" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunFwd_6" top="290" left="183" zIndex="5" text="$IAT/Contactron.Manual.RunForward" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunRev_6" top="290" left="23" zIndex="6" text="$IAT/Contactron.Manual.RunReverse" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_ErrReset_6" top="233" left="239" width="25" height="25" zIndex="8" image="Media/Images/Refresh.png" imageAlign="bottom" mouseDownBorderWidth="0px" fontSize="14px" padding="0px" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Button" id="close_6" top="8" left="270" width="30" zIndex="9" text="X" fontSize="14px" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="eModOK_6" top="56" left="206" width="24" height="24" zIndex="10" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(124, 252, 0, 1)" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="Txt_Error_6" top="123" left="23" width="260" height="100" zIndex="11" ellipsis="true" multiLine="true" backColor="rgba(255, 0, 0, 1)" textAlign="left top" tabIndex="1" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox8" top="417" left="927" width="308" height="350" zIndex="26" borderWidth="1px" cornerRadius="5px" backColor="rgba(58, 175, 248, 1)" headerBackColor="rgba(255, 255, 255, 0)" contentGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" borderColor="rgba(0, 0, 0, 1)" margin="0px 0px 0px 0px" visible="false">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput18" top="53" left="23" width="130" zIndex="0" value="$IAT/Contactron.ModuleOK" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput19" top="83" left="23" width="130" zIndex="1" value="$IAT/Contactron.ActualCurrent" textAlign="center" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txt_DriveName_8" top="8" left="8" width="254" zIndex="7" value="Contactron Name" backColor="rgba(255, 255, 255, 0)" borderStyle="none" textAlign="left" fontSize="25px" bold="true" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="noActCurrent_8" top="83" left="153" width="130" zIndex="2" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unit="{'metric':'AMP','imperial':'AMP','imperial-us':'AMP'}" unitAlign="right" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="Ellipse16" top="56" left="206" width="24" height="24" zIndex="4" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(255, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle8" top="53" left="153" width="130" height="30" zIndex="3" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(8, 140, 221, 1)" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunFwd_8" top="290" left="183" zIndex="5" text="$IAT/Contactron.Manual.RunForward" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_RunRev_8" top="290" left="23" zIndex="6" text="$IAT/Contactron.Manual.RunReverse" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="btn_ErrReset_8" top="233" left="239" width="25" height="25" zIndex="8" image="Media/Images/Refresh.png" imageAlign="bottom" mouseDownBorderWidth="0px" fontSize="14px" padding="0px" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Button" id="close_8" top="8" left="270" width="30" zIndex="9" text="X" fontSize="14px" padding="0px 0px" permissionOperate="['Engineer_Role']" style="Kannegiesser1" />
+        <Widget xsi:type="widgets.brease.Ellipse" id="eModOK_8" top="56" left="206" width="24" height="24" zIndex="10" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(124, 252, 0, 1)" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="Txt_Error_8" top="123" left="23" width="260" height="100" zIndex="11" ellipsis="true" multiLine="true" backColor="rgba(255, 0, 0, 1)" textAlign="left top" tabIndex="1" style="Kannegiesser1" />
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

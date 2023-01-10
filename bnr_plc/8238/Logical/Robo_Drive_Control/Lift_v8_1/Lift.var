@@ -1,0 +1,102 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: PosnVC
+ * File: PosnVC.var
+ * Author: D.Jefferys
+ * Created: February 12, 2009
+ ********************************************************************
+ * Local variables of program PosnVC
+ ********************************************************************)
+VAR
+	AutoNewPosn : DINT;
+	AutoPosnDiff : DINT;
+	AutoSavedBottom : DINT;
+	AutoSavedTop : DINT;
+	CANopenNMT_0 : CANopenNMT;
+	DisableDrive : BOOL;
+	DistRemain : DINT;
+	EnableDrive : BOOL;
+	EnableForwards : BOOL;
+	EnableReference : BOOL;
+	EnableReverse : BOOL;
+	EnableTune : BOOL;
+	FC302_ReadParam_0 : FC302_ReadParam;
+	FC302_ReadParamTbl_0 : FC302_ReadParamTbl;
+	FC302_ReadSTW_0 : FC302_ReadSTW;
+	FC302_WriteCTW_0 : FC302_WriteCTW;
+	FC302_WriteParam_0 : FC302_WriteParam;
+	I_InPosition : BOOL;
+END_VAR
+VAR RETAIN
+	idx : UINT;
+END_VAR
+VAR
+	LimitsOk : BOOL;
+	ManualControl : BOOL;
+	MaxHz : UINT;
+	MonitorIndex : UINT := 0;
+	MonitorSubIndex : USINT;
+	MotorNomHz : UINT;
+	myRead : UDINT;
+	myStatus : UINT;
+	node : USINT;
+	ParameterEnable : BOOL;
+	PosnDiff : DINT;
+	PosnValid : BOOL;
+	PowerSave : BOOL;
+	QuickStop : BOOL;
+	RailAligned : BOOL;
+	RampDist : REAL;
+	RampFactor : REAL;
+	RampTime : UINT;
+	Referencing : BOOL;
+	ReleaseSwitchOk : BOOL := FALSE;
+	ReceiveSwitchOk : BOOL := FALSE;
+	RequiredHz : UINT;
+	ResetTrip : BOOL;
+	RunSpeed : REAL;
+	RunTask : BOOL;
+	SavedBottom : DINT;
+	SavedPosition : DINT;
+	SavedTop : DINT;
+	ScanClock : TIME;
+	ScanCount : UINT;
+	ScanLastClock : TIME;
+	ScanNow : TIME := T#0ms;
+	sDevice : STRING[12];
+	SlowWindow : DINT;
+	sTableName : STRING[10];
+	STEP : UINT;
+	StopDist : DINT;
+	StopFactor : REAL;
+	TableTooLarge : BOOL;
+	TaskName : STRING[11];
+	TaskNameID : UINT;
+	TaskNameLen : UINT;
+	TON_10ms_PastRef : TON_10ms;
+	TON_10ms_Restart : TON_10ms;
+	TON_10ms_Retry : TON_10ms;
+	WriteIndex : UINT;
+	WriteListLength : UINT;
+	JogHz : UINT;
+	TmrJog : TON_10ms;
+	AlignSwitchCheck : BOOL;
+	AlignSwitchesOk : BOOL;
+	mySlowWindow : DINT;
+	myDist : DINT;
+	RefSpeed : UINT;
+	CountCardFailedPLS : BOOL;
+	RetryCount : UINT;
+	I_RefPosnPLS : BOOL;
+	AutoRefTolerance : DINT;
+	Debug_PositionErrorCount : UDINT;
+	PositionErrorLastValue : ARRAY[0..100] OF DINT;
+	IndexPostion : UINT;
+	Debug_CycleCount : UDINT;
+	DebugLastActual : DINT;
+	DebugRef : DINT;
+	PositionError : DINT;
+	TestValue : DINT;
+	TestResult : DINT;
+END_VAR

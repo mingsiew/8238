@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="content_DrivesDiag" height="768" width="1235" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Rectangle" id="RectangleBase2" top="164" left="139" width="308" height="350" zIndex="1" cornerRadius="6px" lineColor="rgba(4, 78, 123, 1)" backColor="rgba(58, 175, 248, 1)" shadow="8px 8px 14px rgba(62, 79, 92, 0.75)" backGroundGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButton1" top="18" left="1056" width="130" zIndex="2" pageId="page_Drives" text="$IAT/Drives.Nav.Manual" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="RectangleBase3" top="0" left="0" width="1235" height="65" zIndex="0" cornerRadius="6px" lineColor="rgba(4, 78, 123, 1)" backColor="rgba(58, 175, 248, 1)" shadow="8px 8px 14px rgba(62, 79, 92, 0.75)" backGroundGradient="radial-gradient(ellipse at center, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%)" />
+    <Widget xsi:type="widgets.brease.Label" id="lbl_title" top="8" left="418" width="400" height="50" zIndex="3" text="$IAT/Drive.Title.Diagnostics" textColor="rgba(255, 255, 255, 1)" textAlign="center" fontSize="24px" bold="true" />
+  </Widgets>
+</Content>

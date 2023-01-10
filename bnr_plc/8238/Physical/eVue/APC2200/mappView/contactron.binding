@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="contactron_Binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<!--Manual Control Group 1-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].Name" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="txt_DriveName_1" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].Status.Running" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="eModOK_1" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].ErrorReset" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_1" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].RunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_1" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].RunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_1" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="GroupBox1" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].Status.Current" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="noActCurrent_1" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].EnableRunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_1" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].EnableRunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_1" attribute="enable" />
+		</Binding>	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].ErrorString" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_1" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_1" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_1" attribute="visible" />
+		</Binding>
+		<!--End Manual Control Group 1-->
+		
+		<!--Manual Control Group 2-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].Name" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="txt_DriveName_2" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].Status.Running" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="eModOK_2" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].ErrorReset" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_2" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].RunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_2" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].RunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_2" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="GroupBox2" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].Status.Current" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="noActCurrent_2" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].EnableRunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_2" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].EnableRunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_2" attribute="enable" />
+		</Binding>	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].ErrorString" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_2" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_2" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_2" attribute="visible" />
+		</Binding>
+		<!--End Manual Control Group 2-->
+		<!--Manual Control Group 3-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].Name" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="txt_DriveName_3" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].Status.Running" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="eModOK_3" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].ErrorReset" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_3" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].RunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_3" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].RunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_3" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="GroupBox3" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].Status.Current" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="noActCurrent_3" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].EnableRunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_3" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].EnableRunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_3" attribute="enable" />
+		</Binding>	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].ErrorString" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_3" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_3" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_3" attribute="visible" />
+		</Binding>
+		<!--End Manual Control Group 3-->
+		<!--Manual Control Group 4-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].Name" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="txt_DriveName_4" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].Status.Running" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="eModOK_4" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].ErrorReset" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_4" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].RunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_4" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].RunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_4" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="GroupBox4" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].Status.Current" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="noActCurrent_4" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].EnableRunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_4" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].EnableRunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_4" attribute="enable" />
+		</Binding>	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].ErrorString" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_4" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_4" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_4" attribute="visible" />
+		</Binding>
+		<!--End Manual Control Group 4-->
+		<!--Manual Control Group 5-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].Name" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="txt_DriveName_5" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].Status.Running" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="eModOK_5" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].ErrorReset" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_5" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].RunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_5" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].RunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_5" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="GroupBox5" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].Status.Current" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="noActCurrent_5" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].EnableRunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_5" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].EnableRunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_5" attribute="enable" />
+		</Binding>	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].ErrorString" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_5" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_5" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_5" attribute="visible" />
+		</Binding>
+		<!--End Manual Control Group 5-->
+		
+		<!--Manual Control Group 6-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].Name" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="txt_DriveName_6" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].Status.Running" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="eModOK_6" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].ErrorReset" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_6" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].RunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_6" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].RunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_6" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="GroupBox6" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].Status.Current" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="noActCurrent_6" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].EnableRunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_6" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].EnableRunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_6" attribute="enable" />
+		</Binding>	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].ErrorString" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_6" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_6" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_6" attribute="visible" />
+		</Binding>
+		<!--End Manual Control Group 6-->
+		<!--Manual Control Group 7-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].Name" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="txt_DriveName_7" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].Status.Running" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="eModOK_7" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].ErrorReset" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_7" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].RunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_7" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].RunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_7" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="GroupBox7" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].Status.Current" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="noActCurrent_7" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].EnableRunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_7" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].EnableRunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_7" attribute="enable" />
+		</Binding>	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].ErrorString" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_7" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_7" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_7" attribute="visible" />
+		</Binding>
+		<!--End Manual Control Group 7-->
+		<!--Manual Control Group 8-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].Name" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="txt_DriveName_8" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].Status.Running" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="eModOK_8" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].ErrorReset" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_8" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].RunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_8" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].RunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_8" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].Visible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="GroupBox8" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].Status.Current" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="noActCurrent_8" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].EnableRunReverse" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunRev_8" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].EnableRunForwards" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_RunFwd_8" attribute="enable" />
+		</Binding>	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].ErrorString" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_8" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="Txt_Error_8" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].Error" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="btn_ErrReset_8" attribute="visible" />
+		</Binding>
+		<!--End Manual Control Group 8-->
+		<!--List Boxes-->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:manualSelectDrowDown" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox1" attribute="dataProvider" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].selectedValue" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox1" attribute="selectedValue" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:manualSelectDrowDown" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox2" attribute="dataProvider" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].selectedValue" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox2" attribute="selectedValue" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:manualSelectDrowDown" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox3" attribute="dataProvider" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].selectedValue" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox3" attribute="selectedValue" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:manualSelectDrowDown" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox4" attribute="dataProvider" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].selectedValue" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox4" attribute="selectedValue" />
+		</Binding>	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:manualSelectDrowDown" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox5" attribute="dataProvider" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].selectedValue" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox5" attribute="selectedValue" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:manualSelectDrowDown" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox6" attribute="dataProvider" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].selectedValue" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox6" attribute="selectedValue" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:manualSelectDrowDown" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox7" attribute="dataProvider" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].selectedValue" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox7" attribute="selectedValue" />
+		</Binding><Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:manualSelectDrowDown" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox8" attribute="dataProvider" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].selectedValue" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="ListBox8" attribute="selectedValue" />
+		</Binding>	
+		<!--End List Boxes		-->
+	
+	
+		<!--Selector Group Boxes	-->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[1].ListBoxVisible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="gb_Selector_1" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[2].ListBoxVisible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="gb_Selector_2" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[3].ListBoxVisible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="gb_Selector_3" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[4].ListBoxVisible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="gb_Selector_4" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[5].ListBoxVisible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="gb_Selector_5" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[6].ListBoxVisible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="gb_Selector_6" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[7].ListBoxVisible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="gb_Selector_7" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Contactron:visu_manual[8].ListBoxVisible" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MotorStarters" widgetRefId="gb_Selector_8" attribute="visible" />
+		</Binding>		
+		<!--END Selector Group Boxes-->
+	
+	
+	</Bindings>
+</BindingsSet>

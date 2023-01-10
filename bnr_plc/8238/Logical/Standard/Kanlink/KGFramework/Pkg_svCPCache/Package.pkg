@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="0.03.2" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global data types">Pkg_svCPCache.typ</Object>
+    <Object Type="File" Description="Global variables">Pkg_svCPCache.var</Object>
+    <Object Type="Program" Language="IEC" Description="Category-Program-Cache">svCPCache</Object>
+    <Object Type="File">svCPCacheHistory.txt</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,44 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Program: zzRoboPosnNames
+ * File: zzRoboPosnNames.ab
+ * Author: Dave
+ * Created: January 28, 2013
+ ********************************************************************
+ * Implementation of program zzRoboPosnNames
+ ********************************************************************)
+
+PROGRAM _INIT
+
+
+(* TODO : Add your code here *)
+
+
+END_PROGRAM
+
+
+PROGRAM _CYCLIC
+
+	myTviewRobo = D[90]
+	myTviewPosn = D[91]
+		
+	;New Robo selected then reset current position
+	IF (myTviewRobo <> myPLCRobo) THEN
+		myPLCRobo = myTviewRobo
+		myPLCPosn = 1
+	ENDIF
+		
+	;Select next position once TrackView has ready the previous	
+	IF ((myPLCRobo > 0) AND (myTviewPosn = myPLCPosn)) THEN
+		IF myPLCPosn < MaxPositions THEN
+			myPLCPosn = myPLCPosn + 1
+		ENDIF
+	ENDIF
+	
+	D[92] = myPLCRobo
+	D[93] = myPLCPosn
+	D[94] = RB_PosnName[myPLCRobo].Name[myPLCPosn]
+	D[95] = RB_PosnName[myPLCRobo].Extra[myPLCPosn]
+
+END_PROGRAM

@@ -1,0 +1,15 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * File: Global.var
+ * Author: tamme
+ * Created: March 17, 2011
+ ********************************************************************
+ * Global variables of project Ethernetmanager
+ ********************************************************************)
+VAR
+	IFmnEth : IFmnEth_typ;
+	mnEthPar : mnEthPar_typ;
+	mnEthCmd : KG_Cmd_typ;
+	mnEthStatAd : mnEthStatAd_typ;
+END_VAR

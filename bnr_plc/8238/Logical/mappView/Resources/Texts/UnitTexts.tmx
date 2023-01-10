@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">Localization/Units/User</prop>
+  </header>
+  <body>
+    <tu tuid="4543793.Name">
+      <tuv xml:lang="fr">
+        <seg>Mon unité</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Meine Einheit</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>tenthSeconds</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543793.Sym">
+      <tuv xml:lang="fr">
+        <seg>Unité</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Einheit</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Unit</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543793.Desc">
+      <tuv xml:lang="fr">
+        <seg>Ma description</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Meine Beschreibung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>My description</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543794.Name">
+      <tuv xml:lang="fr">
+        <seg>Mon unité</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Meine Einheit</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>tenthAmps</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543794.Sym">
+      <tuv xml:lang="fr">
+        <seg>Unité</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Einheit</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Unit</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543794.Desc">
+      <tuv xml:lang="fr">
+        <seg>Ma description</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Meine Beschreibung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>My description</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543795.Name">
+      <tuv xml:lang="fr">
+        <seg>Percent</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Percent</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Percent</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543795.Sym">
+      <tuv xml:lang="fr">
+        <seg>%</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>%</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>%</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543795.Desc">
+      <tuv xml:lang="fr">
+        <seg>Ma description</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Meine Beschreibung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>My description</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543796.Name">
+      <tuv xml:lang="fr">
+        <seg>Percent</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Percent</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>TenthsPercent</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543796.Sym">
+      <tuv xml:lang="fr">
+        <seg>%</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>%</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>%</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543796.Desc">
+      <tuv xml:lang="fr">
+        <seg>Ma description</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Meine Beschreibung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>My description</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543797.Name">
+      <tuv xml:lang="en">
+        <seg>TenthsVolts</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543797.Sym">
+      <tuv xml:lang="en">
+        <seg>Unit</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543797.Desc">
+      <tuv xml:lang="fr">
+        <seg>Ma description</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Meine Beschreibung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>My description</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543798.Name">
+      <tuv xml:lang="en">
+        <seg>EB Amps</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543798.Sym">
+      <tuv xml:lang="en">
+        <seg>Unit</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4543798.Desc">
+      <tuv xml:lang="en">
+        <seg>Desc</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<OpcUaSource FileVersion="7" ArVersion="B4.91">
+  <Aliases>
+    <ACLAliases>
+      <ACL Id="1">
+        <ACE RoleName="Administrators" Access="0x017F" />
+        <ACE RoleName="Everyone" Access="0x005F" />
+        <ACE RoleName="Supervisor_Role" Access="0x005F" />
+        <ACE RoleName="Engineer_Role" Access="0x005F" />
+      </ACL>
+    </ACLAliases>
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView AclId="1">
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="MappSafety">
+          <Variable Name="State" />
+          <Variable Name="Commands">
+            <Variable Name="Transfer" />
+            <Variable Name="Complete" />
+            <Variable Name="Exchange" />
+            <Variable Name="Format" />
+            <Variable Name="Restart" />
+            <Variable Name="ActivateSetupMode" />
+            <Variable Name="ResetError" />
+          </Variable>
+          <Variable Name="Visu">
+            <Variable Name="Transfer">
+              <Variable Name="Enable" />
+              <Variable Name="Visible" />
+            </Variable>
+            <Variable Name="Complete">
+              <Variable Name="Enable" />
+              <Variable Name="Visible" />
+            </Variable>
+            <Variable Name="Exchange">
+              <Variable Name="Enable" />
+              <Variable Name="Visible" />
+            </Variable>
+            <Variable Name="Format">
+              <Variable Name="Enable" />
+              <Variable Name="Visible" />
+            </Variable>
+            <Variable Name="Restart">
+              <Variable Name="Enable" />
+              <Variable Name="Visible" />
+            </Variable>
+            <Variable Name="ActivateSetupMode">
+              <Variable Name="Enable" />
+              <Variable Name="Visible" />
+            </Variable>
+            <Variable Name="ResetError">
+              <Variable Name="Enable" />
+              <Variable Name="Visible" />
+            </Variable>
+          </Variable>
+        </Variable>
+      </GlobalVariables>
+      <Task Name="mappSafety">
+        <Variable Name="safetyInfo">
+          <Variable Name="Status">
+            <Variable Name="SafeOSState" />
+            <Variable Name="SafeNodesState" />
+            <Variable Name="SystemState" />
+            <Variable Name="OperationalModeState" />
+            <Variable Name="SafeCommissioningUnused" />
+            <Variable Name="FWExchanged" />
+            <Variable Name="NumberOfFWExchanged" />
+            <Variable Name="SNExchanged" />
+            <Variable Name="NumberOfSNExchanged" />
+            <Variable Name="SKExchanged" />
+            <Variable Name="SetupModeActive" />
+          </Variable>
+          <Variable Name="SafeApplication">
+            <Variable Name="ExistOnSafeLogic" />
+            <Variable Name="CRC" />
+            <Variable Name="Acknowledged" />
+          </Variable>
+          <Variable Name="UDID_low" />
+          <Variable Name="UDID_high" />
+        </Variable>
+        <Variable Name="sfDomainTransfer">
+          <Variable Name="Progress" />
+        </Variable>
+        <Variable Name="sState" />
+        <Variable Name="sSystemState" />
+        <Variable Name="sSafeNodeState" />
+        <Variable Name="sOperationalModeState" />
+        <Variable Name="sSafeOsState" />
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

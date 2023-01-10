@@ -1,0 +1,16 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Program: zzRoboPosnNames
+ * File: zzRoboPosnNames.var
+ * Author: Dave
+ * Created: January 28, 2013
+ ********************************************************************
+ * Local variables of program zzRoboPosnNames
+ ********************************************************************)
+VAR
+	myTviewRobo : UINT;
+	myTviewPosn : UINT;
+	myPLCRobo : UINT;
+	myPLCPosn : UINT;
+END_VAR

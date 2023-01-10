@@ -1,0 +1,17 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * File: mnCntGlob.var
+ * Author: hunholz
+ * Created: November 03, 2011
+ ********************************************************************
+ * Global variables of project IFPOWERTRANSplusLoad
+ ********************************************************************)
+VAR CONSTANT
+	MNCNT_MAX_RBENTRY_BATCH : UINT := 80; (*Anzahl der Einträge in der Batch-Historie*)
+	MNCNT_MAX_RBENTRY_COUNTER : UINT := 500; (*Anzahl der Einträge in der Counter-Historie*)
+	MNCNT_MAX_RBENTRY_TIME : UINT := 100; (*Anzahl der Einträge in der Zeit-Historie*)
+	MNCNT_MAX_RBENTRY_DOSE : UINT := 1200; (*Anzahl der Einträge in der Dosierungs-Historie*)
+	MNCNT_IDX_COUNTER_MAX : UINT := 127;
+	MNCNT_IDX_KGMSGSTAT : UINT := 5;
+END_VAR

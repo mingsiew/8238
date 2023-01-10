@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">IAT</prop>
+  </header>
+  <body>
+    <tu tuid="MappSafety.Transfer">
+      <tuv xml:lang="en">
+        <seg>Download Program</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Exchange">
+      <tuv xml:lang="en">
+        <seg>Exchange</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Complete">
+      <tuv xml:lang="en">
+        <seg>Complete Setup</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Restart">
+      <tuv xml:lang="en">
+        <seg>Restart SafePLC</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Format">
+      <tuv xml:lang="en">
+        <seg>Format SafePLC</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.ResetError">
+      <tuv xml:lang="en">
+        <seg>Reset Error</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Setup">
+      <tuv xml:lang="en">
+        <seg>Enable Setup Mode</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.Connect">
+      <tuv xml:lang="en">
+        <seg>Connecting to SafePLC</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.GetInfo">
+      <tuv xml:lang="en">
+        <seg>Reading info from SafePLC</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.Idle">
+      <tuv xml:lang="en">
+        <seg>Idle</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.Transfer">
+      <tuv xml:lang="en">
+        <seg>Transferring to SafePLC</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.ProgramNotDownloaded">
+      <tuv xml:lang="en">
+        <seg>Program Not Downloaded</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.CompleteSetup">
+      <tuv xml:lang="en">
+        <seg>Completing setup</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.Exchange">
+      <tuv xml:lang="en">
+        <seg>Exchanging Modules</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.Restart">
+      <tuv xml:lang="en">
+        <seg>Restarting SafePLC</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.Format">
+      <tuv xml:lang="en">
+        <seg>Formating the SafePLC</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.ActivateSetupMode">
+      <tuv xml:lang="en">
+        <seg>Activating Setup Mode</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.Function.State.Error">
+      <tuv xml:lang="en">
+        <seg>ERROR</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafePLC.Downloaded">
+      <tuv xml:lang="en">
+        <seg>Safe Program Downloaded</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafePLC.SetupModeActive">
+      <tuv xml:lang="en">
+        <seg>Setup Mode Active</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafePLC.Prog_Acknowledged">
+      <tuv xml:lang="en">
+        <seg>Safe Program Acknowledged</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafePLC">
+      <tuv xml:lang="en">
+        <seg>Safe PLC State</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState">
+      <tuv xml:lang="en">
+        <seg>Safe OS State</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState.Invalid">
+      <tuv xml:lang="en">
+        <seg>Invalid</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState.On">
+      <tuv xml:lang="en">
+        <seg>On</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState.Loading">
+      <tuv xml:lang="en">
+        <seg>Loading</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState.SafeStop">
+      <tuv xml:lang="en">
+        <seg>Safe Stop</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState.SafeRun">
+      <tuv xml:lang="en">
+        <seg>Safe Run</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState.DebugHalt">
+      <tuv xml:lang="en">
+        <seg>Debug Halt</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState.DebugStop">
+      <tuv xml:lang="en">
+        <seg>Debug Stop</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState.DebugRun">
+      <tuv xml:lang="en">
+        <seg>Debug Run</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState.NoExecution">
+      <tuv xml:lang="en">
+        <seg>No Execution</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeOsState.DebugOffline">
+      <tuv xml:lang="en">
+        <seg>Debug Offline</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeNodeState">
+      <tuv xml:lang="en">
+        <seg>Safe Nodes State</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeNodeState.Ok">
+      <tuv xml:lang="en">
+        <seg>Ok</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeNodeState.Missing">
+      <tuv xml:lang="en">
+        <seg>Node Missing</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeNodeState.Exchanged">
+      <tuv xml:lang="en">
+        <seg>Exchanged</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeSystemState">
+      <tuv xml:lang="en">
+        <seg>Safe System State</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeSystemState.Ok">
+      <tuv xml:lang="en">
+        <seg>Ok</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeSystemState.FW_Exchange">
+      <tuv xml:lang="en">
+        <seg>Firmware Exchange</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.SafeSystemState.SK_Exchange">
+      <tuv xml:lang="en">
+        <seg>SafeKey Exchange</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.OperationalModeState">
+      <tuv xml:lang="en">
+        <seg>Operational Mode State</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.OperationalModeState.Operational">
+      <tuv xml:lang="en">
+        <seg>Operational</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.OperationalModeState.Preoperational">
+      <tuv xml:lang="en">
+        <seg>Preoperational</seg>
+      </tuv>
+    </tu>
+    <tu tuid="MappSafety.OperationalModeState.FailSafe">
+      <tuv xml:lang="en">
+        <seg>Fail Safe</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

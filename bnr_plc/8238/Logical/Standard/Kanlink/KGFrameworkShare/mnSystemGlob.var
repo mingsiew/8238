@@ -1,0 +1,14 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * File: mnSystemGlob.var
+ * Author: hunholz
+ * Created: Mar 16, 2012
+ ********************************************************************
+ * Global variables of project KGFramework
+ ********************************************************************)
+VAR CONSTANT
+	MNSYSTEM_IDX_KGMSGSTAT : UINT := 102;
+	MNSYSTEM_CNT_MODULELINES : UINT := 10;
+	MNSYSTEM_CNT_MODULES : UINT := 10;
+END_VAR

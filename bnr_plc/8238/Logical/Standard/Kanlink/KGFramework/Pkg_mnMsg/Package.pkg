@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="1.12.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Package data types">Pkg_mnMsg.typ</Object>
+    <Object Type="File" Description="Package variables">Pkg_mnMsg.var</Object>
+    <Object Type="Program" Language="IEC" Description="Meldungsmanager">mnMsg</Object>
+    <Object Type="Library" Language="IEC" Description="A new source library">KGlibMsg</Object>
+    <Object Type="File">mnMsg-History.txt</Object>
+    <Object Type="File">CfgMsgStat.mnMsg.txt</Object>
+  </Objects>
+  <Dependencies>
+    <Dependency ObjectName="standard" />
+    <Dependency ObjectName="dataobj" />
+    <Dependency ObjectName="astime" />
+    <Dependency ObjectName="KGstdLib" />
+    <Dependency ObjectName="asarlog" />
+    <Dependency ObjectName="sys_lib" />
+    <Dependency ObjectName="asbrwstr" />
+  </Dependencies>
+</Package>

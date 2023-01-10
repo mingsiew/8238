@@ -1,0 +1,4 @@
+VAR
+	bag_2_wieight : INT;
+	doubleDrop : BOOL;
+END_VAR

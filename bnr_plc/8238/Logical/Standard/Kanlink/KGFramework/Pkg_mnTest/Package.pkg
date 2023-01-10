@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Package data types">Pkg_mnTest.typ</Object>
+    <Object Type="File" Description="Package variables">Pkg_mnTest.var</Object>
+    <Object Type="Program" Language="IEC" Description="Testadapter">mnTest</Object>
+  </Objects>
+  <Dependencies>
+    <Dependency ObjectName="standard" />
+    <Dependency ObjectName="sys_lib" />
+    <Dependency ObjectName="KGmsgLib" />
+    <Dependency ObjectName="dataobj" />
+  </Dependencies>
+</Package>

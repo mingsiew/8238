@@ -1,0 +1,13 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Package: Pkg_mnEthShare
+ * File: Pkg_mnEthShare.var
+ * Author: hunholz
+ * Created: June 23, 2011
+ ********************************************************************
+ * Variables of package Pkg_mnEthShare
+ ********************************************************************)
+VAR CONSTANT
+	MNETH_IDX_KGMSGSTAT : UINT := 4;
+END_VAR

@@ -1,0 +1,20 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * File: Global.var
+ * Author: Bernecker + Rainer
+ * Created: June 02, 2008
+ ********************************************************************
+ * Global variables of project LibAsUDP
+ ********************************************************************)
+VAR
+	hlKanLinkStatAd : hlKanLinkStatAd_typ;
+	IFhlKanLink : IFhlKanLink_Typ;
+END_VAR
+(*Konstanten*)
+VAR CONSTANT
+	HLKANLINK_MSG_NO_STRUCDEF : UINT := 60000;
+END_VAR
+VAR
+	IFhlKL_Visu : IFhlKLVisu_typ;
+END_VAR

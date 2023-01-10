@@ -1,0 +1,6 @@
+1.02.0	NEU: kgGetMacAdress, kgGetBatchNoLong, kgGetBatchNoUnique
+	    Library umbenannt in KGstdLib
+		Umgestellt auf AS 3.0.90
+1.16.2  Bugfix kgCheckDo
+		Abhängigkeiten ergänzt
+1.17.0	kgUnitconfREALtoDisplay erweitert um Einheitenstring

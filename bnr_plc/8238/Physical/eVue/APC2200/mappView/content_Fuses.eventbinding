@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="content_Fuses_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="content_Fuses.btn_fuse_action_1.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_1" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::FuseManage:visu_action[1].Value">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.btn_fuse_action_2.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_2" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::FuseManage:visu_action[2].Value">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.btn_fuse_action_3.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_3" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::FuseManage:visu_action[3].Value">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.btn_fuse_action_4.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_4" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::FuseManage:visu_action[4].Value">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.btn_fuse_action_5.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_5" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::FuseManage:visu_action[5].Value">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.btn_fuse_action_6.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_6" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::FuseManage:visu_action[6].Value">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.btn_fuse_action_7.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_7" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::FuseManage:visu_action[7].Value">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.btn_fuse_action_8.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="content_Fuses" widgetRefId="btn_fuse_action_8" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::FuseManage:visu_action[8].Value">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.Historical_Current_1.Freeze">
+      <Source xsi:type="widgets.brease.OnlineChartHDA.Event" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.OnlineChartHDA.Action" contentRefId="content_Fuses" widgetRefId="Historical_Current_1">
+            <Method xsi:type="widgets.brease.OnlineChartHDA.Action.Freeze" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.Historical_Current_1.Unfreeze">
+      <Source xsi:type="widgets.brease.OnlineChartHDA.Event" contentRefId="content_Fuses" widgetRefId="Historical_Current_1" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.OnlineChartHDA.Action" contentRefId="content_Fuses" widgetRefId="Historical_Current_1">
+            <Method xsi:type="widgets.brease.OnlineChartHDA.Action.Unfreeze" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.button_prev.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="content_Fuses" widgetRefId="button_prev" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::FuseManage:visu_index">
+            <Method xsi:type="opcUa.NodeAction.AddValue" value="-1" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Fuses.button_next.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="content_Fuses" widgetRefId="button_next" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::FuseManage:visu_index">
+            <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="content_Logger_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="content_Logger.btn_Scroll_Right.MouseDown">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="content_Logger" widgetRefId="btn_Scroll_Right" event="MouseDown" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.OnlineChartHDA.Action" contentRefId="content_Logger" widgetRefId="OnlineChartHDA1">
+            <Method xsi:type="widgets.brease.OnlineChartHDA.Action.ScrollRight" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Logger.btn_Scroll_Left.MouseDown">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="content_Logger" widgetRefId="btn_Scroll_Left" event="MouseDown" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.OnlineChartHDA.Action" contentRefId="content_Logger" widgetRefId="OnlineChartHDA1">
+            <Method xsi:type="widgets.brease.OnlineChartHDA.Action.ScrollLeft" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Logger.btn_Unfreeze.MouseDown">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="content_Logger" widgetRefId="btn_Unfreeze" event="MouseDown" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.OnlineChartHDA.Action" contentRefId="content_Logger" widgetRefId="OnlineChartHDA1">
+                <Method xsi:type="widgets.brease.OnlineChartHDA.Action.Unfreeze" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="content_Logger" widgetRefId="btn_Freeze">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="content_Logger" widgetRefId="btn_Scroll_Left">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="content_Logger" widgetRefId="btn_Scroll_Right">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="4">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="content_Logger" widgetRefId="btn_Unfreeze">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="content_Logger.btn_Freeze.MouseDown">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="content_Logger" widgetRefId="btn_Freeze" event="MouseDown" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.OnlineChartHDA.Action" contentRefId="content_Logger" widgetRefId="OnlineChartHDA1">
+                <Method xsi:type="widgets.brease.OnlineChartHDA.Action.Freeze" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="content_Logger" widgetRefId="btn_Scroll_Left">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="content_Logger" widgetRefId="btn_Scroll_Right">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="content_Logger" widgetRefId="btn_Unfreeze">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="4">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="content_Logger" widgetRefId="btn_Freeze">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

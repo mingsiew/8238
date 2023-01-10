@@ -1,0 +1,18 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Package: KanLink_A2
+ * File: KanLink_A2.var
+ * Author: treamsbottom
+ * Created: September 07, 2012
+ ********************************************************************
+ * Variables of package KanLink_A2
+ ********************************************************************)
+VAR
+	Kanlink : KanLinkCon_Typ; (**Configuration parameters*)
+	PTResp : ARRAY[0..HLKANLINK_MAX_CLIENTCONNS] OF KL_BTxf_typ; (**Client comm var*)
+	PT100 : ARRAY[0..HLKANLINK_MAX_SERVERCONNS] OF KL_BTxf_typ; (**Server comm var*)
+	Batch : ARRAY[0..HLKANLINK_MAX_SERVERCONNS] OF KANBatch_typ;
+	STOverReq : ARRAY[0..HLKANLINK_MAX_CLIENTCONNS] OF KL_BI_typ; (*Overview Batch Info Server*)
+	STOverResp : ARRAY[0..HLKANLINK_MAX_SERVERCONNS] OF KL_BI_typ; (*Overview Batch Info Client*)
+END_VAR

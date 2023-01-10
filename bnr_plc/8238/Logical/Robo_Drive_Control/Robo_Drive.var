@@ -1,0 +1,29 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Package: FC302
+ * File: FC302.var
+ * Author: D.Jefferys
+ * Created: February 08, 2009
+ ********************************************************************
+ * Variables of package FC302
+ ********************************************************************)
+VAR CONSTANT
+	AlignReceive : USINT := 1;
+	AlignRelease : USINT := 0;
+	AlignNone : USINT := 2;
+	AlignRest : USINT := 3;
+END_VAR
+VAR
+	StartNode : USINT := 0;
+	RB : ARRAY[0..MaxRobo] OF FC302_Drive_Typ := [8(0)];
+END_VAR
+VAR RETAIN
+	RB_Retain : ARRAY[0..MaxRobo] OF FC302_Drive_Retain_Typ;
+	RB_Posn : ARRAY[0..MaxRobo] OF FC302_Position_Type;
+	RB_Perm : ARRAY[0..MaxRobo] OF FC302_Drive_Permanent_Typ;
+END_VAR
+VAR
+	RB_PosnName : ARRAY[0..MaxRobo] OF RoboPositionNames;
+	MonitorIdx : USINT := 0;
+END_VAR

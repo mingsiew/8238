@@ -1,0 +1,68 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Program: svCPCache
+ * File: svCPCache.var
+ * Author: hunholz
+ * Created: March 29, 2012
+ ********************************************************************
+ * Local variables of program svCPCache
+ ********************************************************************)
+VAR CONSTANT
+	_SVCPCACHE_CSV_FILE : STRING[15] := 'cpcache.csv';
+	_SVCPCACHE_CSV_PATH : STRING[31] := 'PM\Export\';
+END_VAR
+VAR
+	_sPkgName : STRING[11];
+	_VerStruc : MoVerStruc_typ;
+	_CPCache : ARRAY[1..SVCPCACHE_CNT_RELATIONS] OF mnParam_CProw_typ;
+	_wCntRelations : UINT;
+	_i : UINT;
+	_lMemLen : UDINT;
+	_lLineAdress : ARRAY[1..SVCPCACHE_MAX_PARSELINES] OF UDINT;
+	_wLineLen : ARRAY[1..SVCPCACHE_MAX_PARSELINES] OF UINT;
+	_wStartLine : UINT;
+	_CountLines : mnParam_CountLines;
+	_GetCsvDat : mnParam_GetCsvDat;
+	_enCmd : enum_CmdCP;
+	_enImport : enum_ImportCP;
+	_enSave : enum_SaveCP;
+	_xImpFault : BOOL;
+	_xImpReady : BOOL;
+	_MemPartCreate : AsMemPartCreate;
+	_FileOpen : FileOpen;
+	_FileRead : FileRead;
+	_FileClose : FileClose;
+	_MemPartAllocClear : AsMemPartAllocClear;
+	_MemPartFree : AsMemPartFree;
+	_lTempMem : UDINT;
+	_lFileLen : UDINT;
+	_xCacheInitReady : BOOL;
+	_xCacheReady : BOOL;
+	_wfcli : UINT;
+	_wfclj : UINT;
+	_SaveMemPartAlloc : AsMemPartAllocClear;
+	_lWriteSize : UDINT;
+	_WriteBOM : mnParam_WriteBOM_Mem;
+	_WriteComment : mnParam_WriteCSV254_Mem;
+	_WriteNewLine : mnParam_WriteNewline_Mem;
+	_MachineNoRow : mnParam_HeaderMachineNoRow_typ;
+	_WriteMachineNo : mnParam_WriteCSV252_Mem;
+	_DTGetTime : DTGetTime;
+	_HeaderTimeRow : mnParam_HeaderTimeRow_typ;
+	_WriteTimeStamp : mnParam_WriteCSV251_Mem;
+	_sci : UINT;
+	_WriteCP : mnParam_WriteCSV81_Mem;
+	_FileCreate : FileCreate;
+	_FileDelete : FileDelete;
+	_wSaveCSVstatus : UINT;
+	_SaveMemPartFree : AsMemPartFree;
+	_FileWrite : FileWrite;
+	_sCategory : STRING[11];
+	_xCategoryExist : BOOL;
+	_wCmd : UINT;
+	_TrimCat : _TrimCategory;
+	_wCategoryIdx : UINT;
+	_sDevice : STRING[31];
+	_sPathFile : STRING[31];
+END_VAR

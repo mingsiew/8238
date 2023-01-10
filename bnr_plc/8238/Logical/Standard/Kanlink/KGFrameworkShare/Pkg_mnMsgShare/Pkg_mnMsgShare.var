@@ -1,0 +1,21 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Package: Pkg_mnMsgShare
+ * File: Pkg_mnMsgShare.var
+ * Author: hunholz
+ * Created: June 21, 2011
+ ********************************************************************
+ * Variables of package Pkg_mnMsgShare
+ ********************************************************************)
+(*Globale Variable fü Meldungsmanager *)
+VAR CONSTANT
+	MNMSG_RUN_VC : BOOL := FALSE;
+	MNMSG_MAX_IDX_VCMSGLIST : UINT := 2;
+	MNMSG_MAX_IDX_VCMSGHISTLIST : UINT := 2;
+	MNMSG_MAX_IDX_VCMSGSTATLIST : UINT := 2;
+	MNMSG_MAX_VCMSGLISTMAINT : UINT := 1;
+	MNMSG_MAX_MESSAGEHISTORY : UINT := 500; (*Anzahl der Meldungen in Ringbuffer, 500*)
+	MNMSG_MAX_CFGMESSAGES : UINT := 2000; (*Anzahl der möglichen Meldungen in der Konfiguration*)
+	MNMSG_IDX_KGMSGSTAT : UINT := 2;
+END_VAR

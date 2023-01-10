@@ -1,0 +1,1841 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.2.98?>
+<BusConfiguration Version="4.0" ARVersion="47203" SafetyRelease="1.8" Communication="/IF=tcpip /LOPO=11159 /SA=1 /COMT=2500 /RT=1000 /AM=* /SDT=5 /DAIP=10.8.12.31 /REPO=11159 /ANSL=1 /PT=11169 /PORT=50000">
+  <Module ID="SL1.IF1.ST239" Name="X20SL8100" Hardware="X20SL8100" SafeLogicID="1" SafeModuleID="1" HWC_Revision="1.10.8.2" HWTypeCode="5" HWC_LastEdit="08/10/2019 11:07:24" ProjectSL="1" Description-de="X20 SafeLOGIC, POWERLINK V2, 24V, univ." Description-en="X20 SafeLOGIC, POWERLINK V2, 24V, univ." AdditionalSADR="100" CommissioningLocal="1" PasswordSupport="true" FunctionMode="31" TypicalSafeInputSize="1" TypicalSafeOutputSize="1" TypicalInputSize="132" TypicalOutputSize="132" CRC-de="3491122803" CRC-en="1622465340" CRC-fr="2466522195" CRC-data="2572713555" CRC-default="2422076120" FromSafetyRelease="1.7" ToSafetyRelease="1.8">
+    <Template ID="TableSources" Type="UDINT">
+      <Parameter ID="0" Name-en="NOT used" Name-de="NICHT verwendet" Name-fr="inutilisée" />
+      <Parameter ID="1" Name-en="SafeDESIGNER download" Name-de="Download über SafeDESIGNER" Name-fr="SafeDESIGNER téléchargement" />
+      <Parameter ID="2" Name-en="Remote download" Name-de="Download über CPU" Name-fr="Remote téléchargement" />
+    </Template>
+    <Template ID="TableTypes" Type="UDINT">
+      <Parameter ID="82" Name-en="R" Name-de="R" Name-fr="R" />
+      <Parameter ID="83" Name-en="S" Name-de="S" Name-fr="S" />
+    </Template>
+    <Template ID="ExternalMOs" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="512" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="Optional" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+      <Parameter ID="2" Name-en="Startup" Name-de="Hochlauf" Name-fr="avant de lancer" />
+    </Template>
+    <Template ID="YesNo" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNo2" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="OnOff" Type="BOOL">
+      <Parameter ID="0" Name-en="OFF" Name-de="AUS" Name-fr="DE" />
+      <Parameter ID="1" Name-en="ON" Name-de="EIN" Name-fr="SUR" />
+    </Template>
+    <Template ID="MinFwRev" Type="UDINT">
+      <Parameter ID="1" Name-en="Test Version" Name-de="Test Version" Name-fr="todo" />
+      <Parameter ID="256" Name-en="Basic Release" Name-de="Basic Release" Name-fr="todo" />
+    </Template>
+    <Template ID="SSDOAdjust" Type="USINT">
+      <Parameter ID="0" Name-en="Time dependent" Name-de="Zeitabhängig" />
+      <Parameter ID="1" Name-en="1 per 5 cycles" Name-de="1 je 5 Zyklen" />
+      <Parameter ID="2" Name-en="1 per cycle" Name-de="1 je Zyklus" />
+      <Parameter ID="3" Name-en="5 per cycle" Name-de="5 je Zyklus" />
+    </Template>
+    <Group ID="Basic">
+      <BitStream ID="VendorID" Value="0x00006065" Type="UDINT" />
+      <BitStream ID="HWC_CRC" Value="2427721457" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_RxSpdos" Value="100" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_TxSpdos" Value="100" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Maps_per_Spdo" Value="32" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Machine_Options" Value="32" Type="UDINT" />
+      <BitStream ID="ProductCode" Value="56673" Type="UDINT" />
+      <BitStream ID="RevisionNumber" Value="0x00000001" Type="UDINT" />
+      <BitStream ID="SDPayLoad" Value="8" Type="UDINT" />
+      <BitStream ID="ConsecutiveTimeBase_us" Value="100" Type="UDINT" />
+      <BitStream ID="SSDO_Timeout_CT" Value="40000" SODIndex="0x1201" SODSubIndex="1" CopyToDomainCRC="true" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="SSDO_Retries" Value="3" SODIndex="0x1201" SODSubIndex="2" CopyToDomainCRC="true" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SNMT_Timeout_CT" Value="20000" SODIndex="0x1202" SODSubIndex="1" CopyToDomainCRC="true" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="SNMT_Retries" Value="3" SODIndex="0x1202" SODSubIndex="2" CopyToDomainCRC="true" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="External_UDID" Value="0" Type="UDINT" />
+      <BitStream ID="Max_Program_Size" Value="1527808" Type="UDINT" />
+      <BitStream ID="DiagBuf_Size" Value="8192" Type="UDINT" />
+      <BitStream ID="CF_CodeAddress" Value="0x80CD6000" Type="UDINT" />
+      <BitStream ID="CF_DataAddress" Value="0x80f58000" Type="UDINT" />
+      <BitStream ID="CF_XchgData" Value="0x80fd9000" Type="UDINT" />
+      <BitStream ID="CF_CodeLength" Value="0x280000" Type="UDINT" />
+      <BitStream ID="CF_DataLength" Value="0x80000" Type="UDINT" />
+      <BitStream ID="SL2SL_Channels" Value="32" Type="UDINT" />
+      <BitStream ID="TransportProtocol" Value="0" Type="UDINT" />
+      <BitStream ID="SODautoDefault" Value="1" Type="UDINT" />
+      <BitStream ID="FunctionMode" Value="31" Type="UDINT" />
+      <BitStream ID="ProcessorType" Value="1" Type="USINT" />
+      <BitStream ID="SMCaxisPar" SODIndex="0x2112" SODSubIndex="0" Type="USINT" Value="0" />
+      <BitStream ID="ConValidPar" SODIndex="0x2111" SODSubIndex="0" Type="USINT" Value="0" />
+      <BitStream ID="EmoAddrPar" SODIndex="0x2115" SODSubIndex="0" Type="USINT" Value="0" />
+      <BitStream ID="EmoMapPar" SODIndex="0x2116" SODSubIndex="0" Type="USINT" Value="0" CopyToDomainCRC="true" />
+      <BitStream ID="RemoteControlAllowed" Value="1" SODIndex="0xD000" SODSubIndex="6" CopyToDomainCRC="false" CopyToSCM="1" Type="UDINT" CopyToDomain="true" />
+      <Parameter ID="Optional" UniqueID="0_4" Value="0" Template="Optional" />
+      <Parameter ID="Min_required_FW_Rev" UniqueID="0_0" Value="256" Template="MinFwRev" />
+      <Parameter ID="Cycle_Time_us" UniqueID="0_1" Value="2000" Range="800-20000" SODIndex="0x2114" SODSubIndex="0" CopyToDomainCRC="true" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Cycle_Time_max_us" UniqueID="0_9" Value="21000" Range="800-21000" SODIndex="0x2113" SODSubIndex="0" CopyToDomainCRC="true" CopyToDomain="true" Type="UDINT">
+        <Conditions>
+          <Validation Name="Check Cycle_Time">
+            <GreaterEqual>
+              <Parameter>Cycle_Time_us</Parameter>
+            </GreaterEqual>
+            <Action>
+              <Error>
+                <Description xml:lang="en">Parameter 'Cycle_Time_max_us' has to be greater equal than the parameter 'Cycle_Time_us'!</Description>
+                <Description xml:lang="de">Der Parameter 'Cycle_Time_max_us' muss grösser gleich dem Parameter 'Cycle_Time_us' sein!</Description>
+                <Description xml:lang="fr">Parameter 'Cycle_Time_max_us' has to be greater equal than the parameter 'Cycle_Time_us'!</Description>
+              </Error>
+            </Action>
+          </Validation>
+        </Conditions>
+      </Parameter>
+      <Parameter ID="SSDO_Creation" UniqueID="0_2" Value="0" Template="SSDOAdjust" SODIndex="0xD001" SODSubIndex="1" CopyToDomainCRC="false" CopyToDomain="true" />
+      <Parameter ID="Node_Guarding_Timeout_s" UniqueID="0_3" Value="60" Range="30-3000" Type="UDINT" />
+      <Parameter ID="ScansAtStartUp" UniqueID="0_8" Name-en="Number_of_scans" Value="5" Range="1-10" SODIndex="0xD000" SODSubIndex="7" CopyToDomainCRC="false" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="ExternalMachineOptions" UniqueID="0_5" Value="0" Template="ExternalMOs" />
+      <Parameter ID="ExternalStartupFlags" UniqueID="0_6" Value="0" Template="YesNo2" SODIndex="0xD000" SODSubIndex="5" CopyToDomainCRC="false" CopyToDomain="true" />
+      <Parameter ID="KeepRemanent" UniqueID="0_7" Value="0" Template="YesNo2" SODIndex="0xD100" SODSubIndex="2" CopyToDomainCRC="true" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="BNP_UL_COMP_TARGET_SAFEOS1_PROG_LEN" Value="0x18f000" Type="UDINT" />
+      <BitStream ID="BNP_UL_COMP_TARGET_SAFEOS2_PROG_LEN" Value="0x176000" Type="UDINT" />
+      <BitStream ID="BNP_UL_COMP_SAFEOS2_MAXSIZE_FB_INSTANCE_LIST" Value="4096" Type="UDINT" />
+    </Group>
+    <Group ID="Safety_Response_Time_Defaults">
+      <Parameter ID="Default_Syncronous_Network_Only" UniqueID="1_0" Name-en="Default_Synchronous_Network_Only" Name-de="Default_Synchronous_Network_Only" Value="1" Template="YesNo" />
+      <Parameter ID="Default_Max_X2X_CyleTime_us" UniqueID="1_1" Name-en="Default_Max_X2X_CycleTime_us" Name-de="Default_Max_X2X_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Default_Max_Powerlink_CyleTime_us" UniqueID="1_2" Name-en="Default_Max_Powerlink_CycleTime_us" Name-de="Default_Max_Powerlink_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Default_Max_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_3" Name-en="Default_Max_CPU_CrossLinkTask_CycleTime_us" Name-de="Default_Max_CPU_CrossLinkTask_CycleTime_us" Value="5000" Range="0-30000" Type="UDINT" />
+      <Parameter ID="Default_Min_X2X_CyleTime_us" UniqueID="1_4" Name-en="Default_Min_X2X_CycleTime_us" Name-de="Default_Min_X2X_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Default_Min_Powerlink_CyleTime_us" UniqueID="1_5" Name-en="Default_Min_Powerlink_CycleTime_us" Name-de="Default_Min_Powerlink_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Default_Min_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_6" Name-en="Default_Min_CPU_CrossLinkTask_CycleTime_us" Name-de="Default_Min_CPU_CrossLinkTask_CycleTime_us" Value="0" Range="0-30000" Type="UDINT" />
+      <Parameter ID="Default_Worst_Case_Response_Time_us" UniqueID="1_7" Value="50000" Range="3000-500000" Type="UDINT" />
+      <Parameter ID="Default_Node_Guarding_Lifetime" UniqueID="1_8" Value="5" Range="1-255" SODIndex="0x100C" SODSubIndex="2" CopyToDomainCRC="true" Type="USINT" />
+      <BitStream ID="HWC_Version" Value="1" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_LOW" Value="0" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_HIGH" Value="1" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_USINT_LOW" Value="0x01" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_USINT_HIGH" Value="250" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_LOW" Value="0x000A" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_HIGH" Value="65000" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_LOW" Value="100" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_HIGH" Value="4000000000" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_LOW" Value="6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_HIGH" Value="-6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_INT_LOW" Value="0x8300" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_INT_HIGH" Value="32000" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_LOW" Value="-2000000000" Type="DINT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_HIGH" Value="0x77359400" Type="DINT" />
+      <BitStream ID="RTC_Supported" Name-de="Wird die autom. Reaktionszeitberechnung unterstützt?" Value="1" Type="BOOL" />
+    </Group>
+    <Group ID="Commissioning">
+      <Parameter ID="SafeMachineOption00" UniqueID="2_0" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption01" UniqueID="2_1" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption02" UniqueID="2_2" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption03" UniqueID="2_3" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption04" UniqueID="2_4" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption05" UniqueID="2_5" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption06" UniqueID="2_6" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption07" UniqueID="2_7" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption08" UniqueID="2_8" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption09" UniqueID="2_9" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption10" UniqueID="2_10" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption11" UniqueID="2_11" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption12" UniqueID="2_12" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption13" UniqueID="2_13" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption14" UniqueID="2_14" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption15" UniqueID="2_15" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption16" UniqueID="2_16" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption17" UniqueID="2_17" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption18" UniqueID="2_18" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption19" UniqueID="2_19" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption20" UniqueID="2_20" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption21" UniqueID="2_21" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption22" UniqueID="2_22" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption23" UniqueID="2_23" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption24" UniqueID="2_24" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption25" UniqueID="2_25" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption26" UniqueID="2_26" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption27" UniqueID="2_27" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption28" UniqueID="2_28" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption29" UniqueID="2_29" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption30" UniqueID="2_30" Value="0" Template="OnOff" Extension="3" />
+      <Parameter ID="SafeMachineOption31" UniqueID="2_31" Value="0" Template="OnOff" Extension="3" />
+    </Group>
+    <Group ID="Tables">
+      <Parameter ID="TableSource_01" UniqueID="3_1" Name-en="TableSource_01" Name-de="TableSource_01" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_01" UniqueID="4_1" Name-en="TableType_01" Name-de="TableType_01" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_02" UniqueID="3_2" Name-en="TableSource_02" Name-de="TableSource_02" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_02" UniqueID="4_2" Name-en="TableType_02" Name-de="TableType_02" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_03" UniqueID="3_3" Name-en="TableSource_03" Name-de="TableSource_03" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_03" UniqueID="4_3" Name-en="TableType_03" Name-de="TableType_03" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_04" UniqueID="3_4" Name-en="TableSource_04" Name-de="TableSource_04" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_04" UniqueID="4_4" Name-en="TableType_04" Name-de="TableType_04" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_05" UniqueID="3_5" Name-en="TableSource_05" Name-de="TableSource_05" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_05" UniqueID="4_5" Name-en="TableType_05" Name-de="TableType_05" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_06" UniqueID="3_6" Name-en="TableSource_06" Name-de="TableSource_06" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_06" UniqueID="4_6" Name-en="TableType_06" Name-de="TableType_06" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_07" UniqueID="3_7" Name-en="TableSource_07" Name-de="TableSource_07" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_07" UniqueID="4_7" Name-en="TableType_07" Name-de="TableType_07" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_08" UniqueID="3_8" Name-en="TableSource_08" Name-de="TableSource_08" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_08" UniqueID="4_8" Name-en="TableType_08" Name-de="TableType_08" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_09" UniqueID="3_9" Name-en="TableSource_09" Name-de="TableSource_09" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_09" UniqueID="4_9" Name-en="TableType_09" Name-de="TableType_09" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_10" UniqueID="3_10" Name-en="TableSource_10" Name-de="TableSource_10" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_10" UniqueID="4_10" Name-en="TableType_10" Name-de="TableType_10" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_11" UniqueID="3_11" Name-en="TableSource_11" Name-de="TableSource_11" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_11" UniqueID="4_11" Name-en="TableType_11" Name-de="TableType_11" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_12" UniqueID="3_12" Name-en="TableSource_12" Name-de="TableSource_12" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_12" UniqueID="4_12" Name-en="TableType_12" Name-de="TableType_12" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_13" UniqueID="3_13" Name-en="TableSource_13" Name-de="TableSource_13" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_13" UniqueID="4_13" Name-en="TableType_13" Name-de="TableType_13" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_14" UniqueID="3_14" Name-en="TableSource_14" Name-de="TableSource_14" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_14" UniqueID="4_14" Name-en="TableType_14" Name-de="TableType_14" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_15" UniqueID="3_15" Name-en="TableSource_15" Name-de="TableSource_15" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_15" UniqueID="4_15" Name-en="TableType_15" Name-de="TableType_15" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_16" UniqueID="3_16" Name-en="TableSource_16" Name-de="TableSource_16" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_16" UniqueID="4_16" Name-en="TableType_16" Name-de="TableType_16" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_17" UniqueID="3_17" Name-en="TableSource_17" Name-de="TableSource_17" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_17" UniqueID="4_17" Name-en="TableType_17" Name-de="TableType_17" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_18" UniqueID="3_18" Name-en="TableSource_18" Name-de="TableSource_18" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_18" UniqueID="4_18" Name-en="TableType_18" Name-de="TableType_18" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_19" UniqueID="3_19" Name-en="TableSource_19" Name-de="TableSource_19" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_19" UniqueID="4_19" Name-en="TableType_19" Name-de="TableType_19" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_20" UniqueID="3_20" Name-en="TableSource_20" Name-de="TableSource_20" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_20" UniqueID="4_20" Name-en="TableType_20" Name-de="TableType_20" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_21" UniqueID="3_21" Name-en="TableSource_21" Name-de="TableSource_21" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_21" UniqueID="4_21" Name-en="TableType_21" Name-de="TableType_21" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_22" UniqueID="3_22" Name-en="TableSource_22" Name-de="TableSource_22" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_22" UniqueID="4_22" Name-en="TableType_22" Name-de="TableType_22" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_23" UniqueID="3_23" Name-en="TableSource_23" Name-de="TableSource_23" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_23" UniqueID="4_23" Name-en="TableType_23" Name-de="TableType_23" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_24" UniqueID="3_24" Name-en="TableSource_24" Name-de="TableSource_24" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_24" UniqueID="4_24" Name-en="TableType_24" Name-de="TableType_24" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_25" UniqueID="3_25" Name-en="TableSource_25" Name-de="TableSource_25" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_25" UniqueID="4_25" Name-en="TableType_25" Name-de="TableType_25" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_26" UniqueID="3_26" Name-en="TableSource_26" Name-de="TableSource_26" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_26" UniqueID="4_26" Name-en="TableType_26" Name-de="TableType_26" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_27" UniqueID="3_27" Name-en="TableSource_27" Name-de="TableSource_27" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_27" UniqueID="4_27" Name-en="TableType_27" Name-de="TableType_27" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_28" UniqueID="3_28" Name-en="TableSource_28" Name-de="TableSource_28" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_28" UniqueID="4_28" Name-en="TableType_28" Name-de="TableType_28" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_29" UniqueID="3_29" Name-en="TableSource_29" Name-de="TableSource_29" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_29" UniqueID="4_29" Name-en="TableType_29" Name-de="TableType_29" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_30" UniqueID="3_30" Name-en="TableSource_30" Name-de="TableSource_30" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_30" UniqueID="4_30" Name-en="TableType_30" Name-de="TableType_30" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_31" UniqueID="3_31" Name-en="TableSource_31" Name-de="TableSource_31" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_31" UniqueID="4_31" Name-en="TableType_31" Name-de="TableType_31" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_32" UniqueID="3_32" Name-en="TableSource_32" Name-de="TableSource_32" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_32" UniqueID="4_32" Name-en="TableType_32" Name-de="TableType_32" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_33" UniqueID="3_33" Name-en="TableSource_33" Name-de="TableSource_33" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_33" UniqueID="4_33" Name-en="TableType_33" Name-de="TableType_33" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_34" UniqueID="3_34" Name-en="TableSource_34" Name-de="TableSource_34" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_34" UniqueID="4_34" Name-en="TableType_34" Name-de="TableType_34" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_35" UniqueID="3_35" Name-en="TableSource_35" Name-de="TableSource_35" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_35" UniqueID="4_35" Name-en="TableType_35" Name-de="TableType_35" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_36" UniqueID="3_36" Name-en="TableSource_36" Name-de="TableSource_36" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_36" UniqueID="4_36" Name-en="TableType_36" Name-de="TableType_36" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_37" UniqueID="3_37" Name-en="TableSource_37" Name-de="TableSource_37" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_37" UniqueID="4_37" Name-en="TableType_37" Name-de="TableType_37" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_38" UniqueID="3_38" Name-en="TableSource_38" Name-de="TableSource_38" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_38" UniqueID="4_38" Name-en="TableType_38" Name-de="TableType_38" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_39" UniqueID="3_39" Name-en="TableSource_39" Name-de="TableSource_39" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_39" UniqueID="4_39" Name-en="TableType_39" Name-de="TableType_39" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_40" UniqueID="3_40" Name-en="TableSource_40" Name-de="TableSource_40" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_40" UniqueID="4_40" Name-en="TableType_40" Name-de="TableType_40" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_41" UniqueID="3_41" Name-en="TableSource_41" Name-de="TableSource_41" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_41" UniqueID="4_41" Name-en="TableType_41" Name-de="TableType_41" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_42" UniqueID="3_42" Name-en="TableSource_42" Name-de="TableSource_42" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_42" UniqueID="4_42" Name-en="TableType_42" Name-de="TableType_42" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_43" UniqueID="3_43" Name-en="TableSource_43" Name-de="TableSource_43" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_43" UniqueID="4_43" Name-en="TableType_43" Name-de="TableType_43" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_44" UniqueID="3_44" Name-en="TableSource_44" Name-de="TableSource_44" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_44" UniqueID="4_44" Name-en="TableType_44" Name-de="TableType_44" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_45" UniqueID="3_45" Name-en="TableSource_45" Name-de="TableSource_45" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_45" UniqueID="4_45" Name-en="TableType_45" Name-de="TableType_45" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_46" UniqueID="3_46" Name-en="TableSource_46" Name-de="TableSource_46" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_46" UniqueID="4_46" Name-en="TableType_46" Name-de="TableType_46" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_47" UniqueID="3_47" Name-en="TableSource_47" Name-de="TableSource_47" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_47" UniqueID="4_47" Name-en="TableType_47" Name-de="TableType_47" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_48" UniqueID="3_48" Name-en="TableSource_48" Name-de="TableSource_48" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_48" UniqueID="4_48" Name-en="TableType_48" Name-de="TableType_48" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_49" UniqueID="3_49" Name-en="TableSource_49" Name-de="TableSource_49" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_49" UniqueID="4_49" Name-en="TableType_49" Name-de="TableType_49" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_50" UniqueID="3_50" Name-en="TableSource_50" Name-de="TableSource_50" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_50" UniqueID="4_50" Name-en="TableType_50" Name-de="TableType_50" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_51" UniqueID="3_51" Name-en="TableSource_51" Name-de="TableSource_51" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_51" UniqueID="4_51" Name-en="TableType_51" Name-de="TableType_51" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_52" UniqueID="3_52" Name-en="TableSource_52" Name-de="TableSource_52" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_52" UniqueID="4_52" Name-en="TableType_52" Name-de="TableType_52" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_53" UniqueID="3_53" Name-en="TableSource_53" Name-de="TableSource_53" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_53" UniqueID="4_53" Name-en="TableType_53" Name-de="TableType_53" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_54" UniqueID="3_54" Name-en="TableSource_54" Name-de="TableSource_54" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_54" UniqueID="4_54" Name-en="TableType_54" Name-de="TableType_54" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_55" UniqueID="3_55" Name-en="TableSource_55" Name-de="TableSource_55" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_55" UniqueID="4_55" Name-en="TableType_55" Name-de="TableType_55" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_56" UniqueID="3_56" Name-en="TableSource_56" Name-de="TableSource_56" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_56" UniqueID="4_56" Name-en="TableType_56" Name-de="TableType_56" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_57" UniqueID="3_57" Name-en="TableSource_57" Name-de="TableSource_57" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_57" UniqueID="4_57" Name-en="TableType_57" Name-de="TableType_57" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_58" UniqueID="3_58" Name-en="TableSource_58" Name-de="TableSource_58" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_58" UniqueID="4_58" Name-en="TableType_58" Name-de="TableType_58" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_59" UniqueID="3_59" Name-en="TableSource_59" Name-de="TableSource_59" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_59" UniqueID="4_59" Name-en="TableType_59" Name-de="TableType_59" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_60" UniqueID="3_60" Name-en="TableSource_60" Name-de="TableSource_60" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_60" UniqueID="4_60" Name-en="TableType_60" Name-de="TableType_60" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_61" UniqueID="3_61" Name-en="TableSource_61" Name-de="TableSource_61" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_61" UniqueID="4_61" Name-en="TableType_61" Name-de="TableType_61" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_62" UniqueID="3_62" Name-en="TableSource_62" Name-de="TableSource_62" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_62" UniqueID="4_62" Name-en="TableType_62" Name-de="TableType_62" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_63" UniqueID="3_63" Name-en="TableSource_63" Name-de="TableSource_63" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_63" UniqueID="4_63" Name-en="TableType_63" Name-de="TableType_63" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_64" UniqueID="3_64" Name-en="TableSource_64" Name-de="TableSource_64" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_64" UniqueID="4_64" Name-en="TableType_64" Name-de="TableType_64" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_65" UniqueID="3_65" Name-en="TableSource_65" Name-de="TableSource_65" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_65" UniqueID="4_65" Name-en="TableType_65" Name-de="TableType_65" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_66" UniqueID="3_66" Name-en="TableSource_66" Name-de="TableSource_66" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_66" UniqueID="4_66" Name-en="TableType_66" Name-de="TableType_66" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_67" UniqueID="3_67" Name-en="TableSource_67" Name-de="TableSource_67" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_67" UniqueID="4_67" Name-en="TableType_67" Name-de="TableType_67" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_68" UniqueID="3_68" Name-en="TableSource_68" Name-de="TableSource_68" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_68" UniqueID="4_68" Name-en="TableType_68" Name-de="TableType_68" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_69" UniqueID="3_69" Name-en="TableSource_69" Name-de="TableSource_69" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_69" UniqueID="4_69" Name-en="TableType_69" Name-de="TableType_69" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_70" UniqueID="3_70" Name-en="TableSource_70" Name-de="TableSource_70" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_70" UniqueID="4_70" Name-en="TableType_70" Name-de="TableType_70" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_71" UniqueID="3_71" Name-en="TableSource_71" Name-de="TableSource_71" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_71" UniqueID="4_71" Name-en="TableType_71" Name-de="TableType_71" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_72" UniqueID="3_72" Name-en="TableSource_72" Name-de="TableSource_72" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_72" UniqueID="4_72" Name-en="TableType_72" Name-de="TableType_72" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_73" UniqueID="3_73" Name-en="TableSource_73" Name-de="TableSource_73" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_73" UniqueID="4_73" Name-en="TableType_73" Name-de="TableType_73" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_74" UniqueID="3_74" Name-en="TableSource_74" Name-de="TableSource_74" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_74" UniqueID="4_74" Name-en="TableType_74" Name-de="TableType_74" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_75" UniqueID="3_75" Name-en="TableSource_75" Name-de="TableSource_75" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_75" UniqueID="4_75" Name-en="TableType_75" Name-de="TableType_75" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_76" UniqueID="3_76" Name-en="TableSource_76" Name-de="TableSource_76" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_76" UniqueID="4_76" Name-en="TableType_76" Name-de="TableType_76" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_77" UniqueID="3_77" Name-en="TableSource_77" Name-de="TableSource_77" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_77" UniqueID="4_77" Name-en="TableType_77" Name-de="TableType_77" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_78" UniqueID="3_78" Name-en="TableSource_78" Name-de="TableSource_78" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_78" UniqueID="4_78" Name-en="TableType_78" Name-de="TableType_78" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_79" UniqueID="3_79" Name-en="TableSource_79" Name-de="TableSource_79" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_79" UniqueID="4_79" Name-en="TableType_79" Name-de="TableType_79" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_80" UniqueID="3_80" Name-en="TableSource_80" Name-de="TableSource_80" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_80" UniqueID="4_80" Name-en="TableType_80" Name-de="TableType_80" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_81" UniqueID="3_81" Name-en="TableSource_81" Name-de="TableSource_81" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_81" UniqueID="4_81" Name-en="TableType_81" Name-de="TableType_81" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_82" UniqueID="3_82" Name-en="TableSource_82" Name-de="TableSource_82" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_82" UniqueID="4_82" Name-en="TableType_82" Name-de="TableType_82" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_83" UniqueID="3_83" Name-en="TableSource_83" Name-de="TableSource_83" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_83" UniqueID="4_83" Name-en="TableType_83" Name-de="TableType_83" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_84" UniqueID="3_84" Name-en="TableSource_84" Name-de="TableSource_84" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_84" UniqueID="4_84" Name-en="TableType_84" Name-de="TableType_84" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_85" UniqueID="3_85" Name-en="TableSource_85" Name-de="TableSource_85" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_85" UniqueID="4_85" Name-en="TableType_85" Name-de="TableType_85" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_86" UniqueID="3_86" Name-en="TableSource_86" Name-de="TableSource_86" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_86" UniqueID="4_86" Name-en="TableType_86" Name-de="TableType_86" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_87" UniqueID="3_87" Name-en="TableSource_87" Name-de="TableSource_87" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_87" UniqueID="4_87" Name-en="TableType_87" Name-de="TableType_87" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_88" UniqueID="3_88" Name-en="TableSource_88" Name-de="TableSource_88" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_88" UniqueID="4_88" Name-en="TableType_88" Name-de="TableType_88" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_89" UniqueID="3_89" Name-en="TableSource_89" Name-de="TableSource_89" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_89" UniqueID="4_89" Name-en="TableType_89" Name-de="TableType_89" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_90" UniqueID="3_90" Name-en="TableSource_90" Name-de="TableSource_90" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_90" UniqueID="4_90" Name-en="TableType_90" Name-de="TableType_90" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_91" UniqueID="3_91" Name-en="TableSource_91" Name-de="TableSource_91" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_91" UniqueID="4_91" Name-en="TableType_91" Name-de="TableType_91" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_92" UniqueID="3_92" Name-en="TableSource_92" Name-de="TableSource_92" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_92" UniqueID="4_92" Name-en="TableType_92" Name-de="TableType_92" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_93" UniqueID="3_93" Name-en="TableSource_93" Name-de="TableSource_93" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_93" UniqueID="4_93" Name-en="TableType_93" Name-de="TableType_93" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_94" UniqueID="3_94" Name-en="TableSource_94" Name-de="TableSource_94" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_94" UniqueID="4_94" Name-en="TableType_94" Name-de="TableType_94" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_95" UniqueID="3_95" Name-en="TableSource_95" Name-de="TableSource_95" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_95" UniqueID="4_95" Name-en="TableType_95" Name-de="TableType_95" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_96" UniqueID="3_96" Name-en="TableSource_96" Name-de="TableSource_96" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_96" UniqueID="4_96" Name-en="TableType_96" Name-de="TableType_96" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_97" UniqueID="3_97" Name-en="TableSource_97" Name-de="TableSource_97" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_97" UniqueID="4_97" Name-en="TableType_97" Name-de="TableType_97" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_98" UniqueID="3_98" Name-en="TableSource_98" Name-de="TableSource_98" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_98" UniqueID="4_98" Name-en="TableType_98" Name-de="TableType_98" Value="82" Template="TableTypes" />
+      <Parameter ID="TableSource_99" UniqueID="3_99" Name-en="TableSource_99" Name-de="TableSource_99" Value="0" Template="TableSources" />
+      <Parameter ID="TableType_99" UniqueID="4_99" Name-en="TableType_99" Name-de="TableType_99" Value="82" Template="TableTypes" />
+    </Group>
+    <Channel ID="BOOL1" Repeat="99" Direction="IN" Type="BOOL" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="16">
+      <Mapping>
+        <Channel ID="01" ASVariable="SafetyZone[1].Main_Reset" />
+        <Channel ID="02" ASVariable="SafetyZone[1].EDM" />
+        <Channel ID="03" ASVariable="SafetyZone[2].EDM" />
+        <Channel ID="04" ASVariable="SafetyZone[3].EDM" />
+        <Channel ID="05" ASVariable="SafetyZone[4].EDM" />
+        <Channel ID="06" ASVariable="SafetyZone[5].EDM" />
+        <Channel ID="16" ASVariable="Safety.MasterReset" />
+      </Mapping>
+    </Channel>
+    <Channel ID="BOOLext1" Repeat="256" Direction="IN" Type="BOOL" Group="CPU_SafeLOGIC" Digits="3" CrossLink="true" Active="0" />
+    <Channel ID="INT1" Repeat="99" Direction="IN" Type="INT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="UINT1" Repeat="99" Direction="IN" Type="UINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="UDINT1" Repeat="99" Direction="IN" Type="UDINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="DINT1" Repeat="99" Direction="IN" Type="DINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="BOOL0" Repeat="99" Direction="OUT" Type="BOOL" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="16">
+      <Mapping>
+        <Channel ID="01" ASVariable="SafetyZone[1].Zone_Status" />
+        <Channel ID="02" ASVariable="SafetyZone[2].Zone_Status" />
+        <Channel ID="03" ASVariable="SafetyZone[3].Zone_Status" />
+        <Channel ID="04" ASVariable="SafetyZone[4].Zone_Status" />
+        <Channel ID="05" ASVariable="SafetyZone[5].Zone_Status" />
+        <Channel ID="06" ASVariable="SafetyZone[6].Zone_Status" />
+        <Channel ID="09" ASVariable="SafetyZone[1].ResetReady" />
+        <Channel ID="10" ASVariable="SafetyZone[2].ResetReady" />
+        <Channel ID="11" ASVariable="SafetyZone[3].ResetReady" />
+        <Channel ID="12" ASVariable="SafetyZone[4].ResetReady" />
+        <Channel ID="13" ASVariable="SafetyZone[5].ResetReady" />
+        <Channel ID="14" ASVariable="SafetyZone[6].ResetReady" />
+        <Channel ID="16" ASVariable="Safety.ModuleFault" />
+      </Mapping>
+    </Channel>
+    <Channel ID="BOOLext0" Repeat="256" Direction="OUT" Type="BOOL" Group="CPU_SafeLOGIC" Digits="3" CrossLink="true" Active="0" />
+    <Channel ID="INT0" Repeat="99" Direction="OUT" Type="INT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="UINT0" Repeat="99" Direction="OUT" Type="UINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="UDINT0" Repeat="99" Direction="OUT" Type="UDINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="DINT0" Repeat="99" Direction="OUT" Type="DINT" Group="CPU_SafeLOGIC" Digits="2" CrossLink="true" Active="0" />
+    <Channel ID="SafeMachineOption00" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption01" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption02" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption03" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption04" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption05" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption06" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption07" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption08" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption09" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption10" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption11" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption12" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption13" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption14" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption15" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption16" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption17" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption18" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption19" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption20" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption21" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption22" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption23" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption24" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption25" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption26" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption27" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption28" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption29" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption30" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Channel ID="SafeMachineOption31" Safe="true" Direction="IN" Type="BOOL" SafetyOption="1" Group="SafeDESIGNER_MachineOptions" />
+    <Table ID="Table" Repeat="99" Group="Table_Objects" Digits="2" />
+    <ExternalMachineOption ID="ExternalMachineOption" Repeat="512" Direction="IN" Active="512" Safe="true" Type="BOOL" Group="ExternalMachineOptionsBIT" Digits="3" />
+    <ExternalMachineOption ID="ExternalMachineOptionINT" Repeat="64" Direction="IN" Active="64" Safe="true" Type="INT" Group="ExternalMachineOptionsINT" SafetyOption="2" Digits="2" />
+    <ExternalMachineOption ID="ExternalMachineOptionUINT" Repeat="64" Direction="IN" Active="64" Safe="true" Type="UINT" Group="ExternalMachineOptionsUINT" SafetyOption="2" Digits="2" />
+    <ExternalMachineOption ID="ExternalMachineOptionDINT" Repeat="64" Direction="IN" Active="64" Safe="true" Type="DINT" Group="ExternalMachineOptionsDINT" SafetyOption="2" Digits="2" />
+    <ExternalMachineOption ID="ExternalMachineOptionUDINT" Repeat="64" Direction="IN" Active="64" Safe="true" Type="UDINT" Group="ExternalMachineOptionsUDINT" SafetyOption="2" Digits="2" />
+    <RemanentData ID="RemanentDataDINT" Repeat="32" Direction="IN" Active="32" Safe="true" Type="DINT" Constant="true" Group="RemanentDataDINT" Digits="2" />
+    <RemanentData ID="RemanentDataUDINT" Repeat="32" Direction="IN" Active="32" Safe="true" Type="UDINT" Constant="true" Group="RemanentDataUDINT" Digits="2" />
+  </Module>
+  <Module ID="SL1.IF1.ST2.IF1.ST2" Name="X20SI8110" Hardware="X20SI8110" SafeLogicID="1" SafeModuleID="2" HWC_Revision="1.10.9.1" HWTypeCode="27" HWC_LastEdit="08/10/2019 11:07:24" Description-de="X20 Safe Digital In, 8xE, 24V" Description-en="X20 Safe Digital In, 8xI, 24V" AdditionalSADR="0" RevisionNumber="1" SDPayLoad="8" TypicalSafeInputSize="3" CRC-de="286374943" CRC-en="3701223811" CRC-fr="3494880259" CRC-data="4214394959" CRC-default="3625002935" SafeIN="17" FromSafetyRelease="1.7" ToSafetyRelease="1.8">
+    <Template ID="OptChoice" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+      <Parameter ID="2" Name-en="Startup" Name-de="Hochlauf" Name-fr="avant de lancer" />
+    </Template>
+    <Template ID="YesNo" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="TemplatePulseMode" Type="USINT">
+      <Parameter ID="0" Name-en="internal" Name-de="intern" Name-fr="ToDo" />
+      <Parameter ID="2" Name-en="no Pulse" Name-de="kein Takt" Name-fr="ToDo" />
+    </Template>
+    <Template ID="TemplatePulseSource" Type="USINT">
+      <Parameter ID="1" Name-en="Pulse 1" Name-de="Puls 1" />
+      <Parameter ID="2" Name-en="Pulse 2" Name-de="Puls 2" />
+      <Parameter ID="3" Name-en="Pulse 3" Name-de="Puls 3" />
+      <Parameter ID="4" Name-en="Pulse 4" Name-de="Puls 4" />
+    </Template>
+    <Template ID="YesNo2" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoByte" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoBOOL" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="MinFwRev" Type="UDINT">
+      <Parameter ID="1" Name-en="Test Version" Name-de="Test Version" />
+      <Parameter ID="256" Name-en="Basic Release" Name-de="Basic Release" />
+    </Template>
+    <Template ID="TwoChannelProcessingMode" Type="USINT">
+      <Parameter ID="0" Name-en="none" Name-de="kein" Name-fr="rien" />
+      <Parameter ID="1" Name-en="Equivalent" Name-de="Equivalent" Name-fr="Equivalent" />
+      <Parameter ID="2" Name-en="Antivalent" Name-de="Antivalent" Name-fr="Antivalent" />
+    </Template>
+    <Group ID="Basic">
+      <BitStream ID="VendorID" Value="0x00006065" Type="UDINT" />
+      <BitStream ID="HWC_CRC" Value="2858526416" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_RxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_TxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Maps_per_Spdo" Value="8" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Machine_Options" Value="0" Type="UDINT" />
+      <BitStream ID="ProductCode" Value="59202" Type="UDINT" />
+      <BitStream ID="RevisionNumber" Value="0x00000001" Type="UDINT" />
+      <BitStream ID="SDPayLoad" Value="8" Type="UDINT" />
+      <BitStream ID="ConsecutiveTimeBase_us" Value="100" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_min_us" Value="390" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_max_us" Value="810" Type="UDINT" />
+      <Parameter ID="Min_required_FW_Rev" UniqueID="MinReq_FWVer" Value="256" Template="MinFwRev" />
+      <Parameter ID="Optional" UniqueID="Optional" Value="0" Template="OptChoice" />
+      <Parameter ID="External_UDID" UniqueID="ExtUDID" Value="0" Template="YesNo2" />
+      <BitStream ID="ParameterVersionSC" Value="2" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ParameterLengthSC" Value="144" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="Disable_OSSD" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="ReserveSC2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="ReserveSC3" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="ReserveSC4" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="ParameterVersionSI" Value="2" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ParameterLengthSI" Value="128" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="TestpulsePeriod_ms" Value="100" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ExtLowTime_us" Value="2500" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="SODautoDefault" Value="1" Type="UDINT" />
+    </Group>
+    <Group ID="Safety_Response_Time">
+      <Parameter ID="Manual_Configuration" UniqueID="Man_Config" Value="0" Template="YesNo" />
+      <Parameter ID="Syncronous_Network_Only" UniqueID="Sync_Network" Name-en="Synchronous_Network_Only" Value="1" Template="YesNo" />
+      <Parameter ID="Max_X2X_CyleTime_us" UniqueID="MaxX2X_CycT" Name-en="Max_X2X_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Max_Powerlink_CyleTime_us" UniqueID="MaxPowerLink_CycT" Name-en="Max_Powerlink_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Max_CPU_CrossLinkTask_CyleTime_us" UniqueID="MaxCrossLink_CycT" Name-en="Max_CPU_CrossLinkTask_CycleTime_us" Value="5000" Range="0-30000" Type="UDINT" />
+      <Parameter ID="Min_X2X_CyleTime_us" UniqueID="MinX2X_CycT" Name-en="Min_X2X_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Min_Powerlink_CyleTime_us" UniqueID="MinPowerLink_CycT" Name-en="Min_Powerlink_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Min_CPU_CrossLinkTask_CyleTime_us" UniqueID="MinCrossLink_CycT" Name-en="Min_CPU_CrossLinkTask_CycleTime_us" Value="0" Range="0-30000" Type="UDINT" />
+      <Parameter ID="Worst_Case_Response_Time_us" UniqueID="WCase_RespT" Value="50000" Range="3000-500000" Type="UDINT" />
+      <Parameter ID="Node_Guarding_Lifetime" UniqueID="NodeG_LifeT" Value="5" Range="0-255" Type="USINT" />
+      <BitStream ID="Refresh_Prescale_us" Value="100" Type="UDINT" />
+      <BitStream ID="HWC_Version" Value="1" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_LOW" Value="0" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_HIGH" Value="1" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_USINT_LOW" Value="0x01" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_USINT_HIGH" Value="250" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_LOW" Value="0x000A" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_HIGH" Value="65000" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_LOW" Value="100" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_HIGH" Value="4000000000" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_LOW" Value="6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_HIGH" Value="-6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_INT_LOW" Value="0x8300" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_INT_HIGH" Value="32000" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_LOW" Value="-2000000000" Type="DINT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_HIGH" Value="0x77359400" Type="DINT" />
+      <BitStream ID="MinSafetyResponseTime_us" Value="6000" Type="UDINT" />
+      <BitStream ID="RTC_Supported" Name-de="Wird die autom. Reaktionszeitberechnung unterstützt?" Value="1" Type="BOOL" />
+    </Group>
+    <Channel ID="SafeModuleOk" Safe="true" Direction="IN" Type="BOOL" ConnectionValidation="1" />
+    <Channel ID="SafeDigitalInput01" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x01">
+      <Parameter ID="Pulse_Source" UniqueID="SI01_PSrc" Value="1" Template="TemplatePulseSource" CopyToDomain="true" />
+      <Parameter ID="Pulse_Mode" UniqueID="SI01_PMode" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="Filter_Off_us" UniqueID="SI01_Foff" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Filter_On_us" UniqueID="SI01_Fon" Value="100000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us" UniqueID="SI01_DiscT" Name-en="Discrepancy_Time_us" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode" UniqueID="SI01_TwoChnl" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalInput02" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="1">
+      <Parameter ID="Pulse_Source" UniqueID="SI02_PSrc" Value="2" Template="TemplatePulseSource" CopyToDomain="true" />
+      <Parameter ID="Pulse_Mode" UniqueID="SI02_PMode" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="Filter_Off_us" UniqueID="SI02_Foff" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Filter_On_us" UniqueID="SI02_Fon" Value="100000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us" Value="0" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode" Value="0" CopyToDomain="true" Type="USINT" />
+    </Channel>
+    <Channel ID="SafeDigitalInput03" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="2" ASVariable="Hoist_Safety[1].OutOfPosition">
+      <Parameter ID="Pulse_Source" UniqueID="SI03_PSrc" Value="3" Template="TemplatePulseSource" CopyToDomain="true" />
+      <Parameter ID="Pulse_Mode" UniqueID="SI03_PMode" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="Filter_Off_us" UniqueID="SI03_Foff" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Filter_On_us" UniqueID="SI03_Fon" Value="100000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us" UniqueID="SI03_DiscT" Name-en="Discrepancy_Time_us" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode" UniqueID="SI03_TwoChnl" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalInput04" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="3" ASVariable="Hoist_Safety[2].OutOfPosition">
+      <Parameter ID="Pulse_Source" UniqueID="SI04_PSrc" Value="4" Template="TemplatePulseSource" CopyToDomain="true" />
+      <Parameter ID="Pulse_Mode" UniqueID="SI04_PMode" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="Filter_Off_us" UniqueID="SI04_Foff" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Filter_On_us" UniqueID="SI04_Fon" Value="100000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us" Value="0" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode" Value="0" CopyToDomain="true" Type="USINT" />
+    </Channel>
+    <Channel ID="SafeDigitalInput05" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="4" ASVariable="Hoist_Safety[3].OutOfPosition">
+      <Parameter ID="Pulse_Source" UniqueID="SI05_PSrc" Value="1" Template="TemplatePulseSource" CopyToDomain="true" />
+      <Parameter ID="Pulse_Mode" UniqueID="SI05_PMode" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="Filter_Off_us" UniqueID="SI05_Foff" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Filter_On_us" UniqueID="SI05_Fon" Value="100000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us" UniqueID="SI05_DiscT" Name-en="Discrepancy_Time_us" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode" UniqueID="SI05_TwoChnl" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalInput06" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="5">
+      <Parameter ID="Pulse_Source" UniqueID="SI06_PSrc" Value="2" Template="TemplatePulseSource" CopyToDomain="true" />
+      <Parameter ID="Pulse_Mode" UniqueID="SI06_PMode" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="Filter_Off_us" UniqueID="SI06_Foff" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Filter_On_us" UniqueID="SI06_Fon" Value="100000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us" Value="0" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode" Value="0" CopyToDomain="true" Type="USINT" />
+    </Channel>
+    <Channel ID="SafeDigitalInput07" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="6">
+      <Parameter ID="Pulse_Source" UniqueID="SI07_PSrc" Value="3" Template="TemplatePulseSource" CopyToDomain="true" />
+      <Parameter ID="Pulse_Mode" UniqueID="SI07_PMode" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="Filter_Off_us" UniqueID="SI07_Foff" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Filter_On_us" UniqueID="SI07_Fon" Value="100000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us" UniqueID="SI07_DiscT" Name-en="Discrepancy_Time_us" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode" UniqueID="SI07_TwoChnl" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalInput08" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="7">
+      <Parameter ID="Pulse_Source" UniqueID="SI08_PSrc" Value="4" Template="TemplatePulseSource" CopyToDomain="true" />
+      <Parameter ID="Pulse_Mode" UniqueID="SI08_PMode" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="Filter_Off_us" UniqueID="SI08_Foff" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Filter_On_us" UniqueID="SI08_Fon" Value="100000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us" Value="0" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="ParameterVersionSO" Value="2" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ParameterLengthSO" Value="8" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="DisableOSSD" Value="0" Template="YesNoByte" CopyToDomain="true" />
+      <BitStream ID="Auto_Restart" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+      <BitStream ID="Reserve1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="Reserve2" Value="0" CopyToDomain="true" Type="USINT" />
+    </Channel>
+    <Channel ID="SafeTwoChannelInput0102" Safe="true" Description-de="2-Kanalauswertung Kanal 1/2" Description-en="2-channel evaluation channel 1/2" Direction="IN" Type="BOOL" Address="5" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x02" ASVariable="SafetyZone[1].E_Stop.ES_SI_Two_Channel[1]" />
+    <Channel ID="SafeTwoChannelInput0304" Safe="true" Description-de="2-Kanalauswertung Kanal 3/4" Description-en="2-channel evaluation channel 3/4" Direction="IN" Type="BOOL" Address="5" BitOffset="1" />
+    <Channel ID="SafeTwoChannelInput0506" Safe="true" Description-de="2-Kanalauswertung Kanal 5/6" Description-en="2-channel evaluation channel 5/6" Direction="IN" Type="BOOL" Address="5" BitOffset="2" />
+    <Channel ID="SafeTwoChannelInput0708" Safe="true" Description-de="2-Kanalauswertung Kanal 7/8" Description-en="2-channel evaluation channel 7/8" Direction="IN" Type="BOOL" Address="5" BitOffset="3" />
+    <Channel ID="SafeTwoChannelOk0102" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="4" />
+    <Channel ID="SafeTwoChannelOk0304" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="5" />
+    <Channel ID="SafeTwoChannelOk0506" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="6" />
+    <Channel ID="SafeTwoChannelOk0708" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="7" />
+    <Channel ID="SafeInputOK01" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x03" />
+    <Channel ID="SafeInputOK02" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="1" />
+    <Channel ID="SafeInputOK03" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="2" />
+    <Channel ID="SafeInputOK04" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="3" />
+    <Channel ID="SafeInputOK05" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="4" />
+    <Channel ID="SafeInputOK06" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="5" />
+    <Channel ID="SafeInputOK07" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="6" />
+    <Channel ID="SafeInputOK08" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="7" />
+  </Module>
+  <Module ID="SL1.IF1.ST2.IF1.ST3" Name="X20SO4120" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="3" HWC_Revision="1.10.9.1" HWTypeCode="43" HWC_LastEdit="08/10/2019 11:07:26" Description-de="X20 Safe Digital Out, 4xA, 24 V, 2A" Description-en="X20 Safe Digital Out, 4xO, 24 V, 2A" AdditionalSADR="0" RevisionNumber="1" SDPayLoad="8" TypicalSafeInputSize="1" TypicalSafeOutputSize="1" TypicalInputSize="1" TypicalOutputSize="1" CRC-de="1143410013" CRC-en="1478443144" CRC-fr="2366068016" CRC-data="1350055776" CRC-default="3965264789" SafeIN="13" SafeOUT="15" FromSafetyRelease="1.6" ToSafetyRelease="1.8">
+    <Template ID="OptChoice" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+      <Parameter ID="2" Name-en="Startup" Name-de="Hochlauf" Name-fr="avant de lancer" />
+    </Template>
+    <Template ID="YesNo" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNo2" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNo3" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoBOOL" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="MinFwRev" Type="UDINT">
+      <Parameter ID="1" Name-en="Test Version" Name-de="Test Version" />
+      <Parameter ID="256" Name-en="Basic Release" Name-de="Basic Release" />
+    </Template>
+    <Group ID="Basic">
+      <BitStream ID="VendorID" Value="0x00006065" Type="UDINT" />
+      <BitStream ID="HWC_CRC" Value="2964228698" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_RxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_TxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Maps_per_Spdo" Value="4" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Machine_Options" Value="0" Type="UDINT" />
+      <BitStream ID="ProductCode" Value="8199" Type="UDINT" />
+      <BitStream ID="RevisionNumber" Value="0x00000001" Type="UDINT" />
+      <BitStream ID="SDPayLoad" Value="8" Type="UDINT" />
+      <BitStream ID="ConsecutiveTimeBase_us" Value="100" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_min_us" Value="400" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_max_us" Value="799" Type="UDINT" />
+      <Parameter ID="Min_required_FW_Rev" UniqueID="0_0" Value="256" Template="MinFwRev" />
+      <Parameter ID="Optional" UniqueID="0_1" Value="0" Template="OptChoice" />
+      <Parameter ID="External_UDID" UniqueID="0_3" Value="0" Template="YesNo2" />
+      <BitStream ID="ParameterVersion" Value="2" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ParameterLength" Value="8" CopyToDomain="true" Type="UINT" />
+      <Parameter ID="Disable_OSSD" UniqueID="0_2" Value="0" Template="YesNo3" CopyToDomain="true" />
+      <BitStream ID="SODautoDefault" Value="1" Type="UDINT" />
+    </Group>
+    <Group ID="Safety_Response_Time">
+      <Parameter ID="Manual_Configuration" UniqueID="1_0" Value="0" Template="YesNo" />
+      <Parameter ID="Syncronous_Network_Only" UniqueID="1_1" Name-en="Synchronous_Network_Only" Value="1" Template="YesNo" />
+      <Parameter ID="Max_X2X_CyleTime_us" UniqueID="1_2" Name-en="Max_X2X_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Max_Powerlink_CyleTime_us" UniqueID="1_3" Name-en="Max_Powerlink_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Max_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_4" Name-en="Max_CPU_CrossLinkTask_CycleTime_us" Value="5000" Range="0-30000" Type="UDINT" />
+      <Parameter ID="Min_X2X_CyleTime_us" UniqueID="1_5" Name-en="Min_X2X_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Min_Powerlink_CyleTime_us" UniqueID="1_6" Name-en="Min_Powerlink_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Min_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_7" Name-en="Min_CPU_CrossLinkTask_CycleTime_us" Value="0" Range="0-30000" Type="UDINT" />
+      <Parameter ID="Worst_Case_Response_Time_us" UniqueID="1_8" Value="50000" Range="3000-5000000" Type="UDINT" />
+      <Parameter ID="Node_Guarding_Lifetime" UniqueID="1_9" Value="5" Range="1-255" Type="USINT" />
+      <BitStream ID="Refresh_Prescale_us" Value="100" Type="UDINT" />
+      <BitStream ID="HWC_Version" Value="1" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_LOW" Value="0" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_HIGH" Value="1" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_USINT_LOW" Value="0x01" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_USINT_HIGH" Value="250" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_LOW" Value="0x000A" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_HIGH" Value="65000" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_LOW" Value="100" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_HIGH" Value="4000000000" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_LOW" Value="6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_HIGH" Value="-6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_INT_LOW" Value="0x8300" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_INT_HIGH" Value="32000" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_LOW" Value="-2000000000" Type="DINT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_HIGH" Value="0x77359400" Type="DINT" />
+      <BitStream ID="MinSafetyResponseTime_us" Value="6000" Type="UDINT" />
+      <BitStream ID="RTC_Supported" Name-de="Wird die autom. Reaktionszeitberechnung unterstützt?" Value="1" Type="BOOL" />
+    </Group>
+    <Channel ID="SafeModuleOk" Safe="true" Direction="IN" Type="BOOL" ConnectionValidation="1" />
+    <Channel ID="SafeDigitalOutput01" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6200" SODSubIndex="0x01">
+      <Parameter ID="Auto_Restart" UniqueID="SO01_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalOutput02" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="1">
+      <Parameter ID="Auto_Restart" UniqueID="SO02_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalOutput03" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="2">
+      <Parameter ID="Auto_Restart" UniqueID="SO03_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalOutput04" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="3">
+      <Parameter ID="Auto_Restart" UniqueID="SO04_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+      <BitStream ID="Reserve1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="Reserve2" Value="0" CopyToDomain="true" Type="USINT" />
+    </Channel>
+    <Channel ID="SafeChannelOK01" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x01" />
+    <Channel ID="SafeChannelOK02" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="1" />
+    <Channel ID="SafeChannelOK03" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="2" />
+    <Channel ID="SafeChannelOK04" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="3" />
+    <Channel ID="ReleaseOutput01" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="0" SODIndex="0x6200" SODSubIndex="0x02" SafeTransport="true" />
+    <Channel ID="ReleaseOutput02" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="1" SafeTransport="true" />
+    <Channel ID="ReleaseOutput03" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="2" SafeTransport="true" />
+    <Channel ID="ReleaseOutput04" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="3" SafeTransport="true" />
+    <Channel ID="PhysicalStateChannel1" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="0" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel2" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="1" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel3" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="2" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel4" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="3" CrossLink="true" />
+    <Channel ID="CurrentOK01" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="4" CrossLink="true" />
+    <Channel ID="CurrentOK02" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="5" CrossLink="true" />
+    <Channel ID="CurrentOK03" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="6" CrossLink="true" />
+    <Channel ID="CurrentOK04" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="7" CrossLink="true" />
+  </Module>
+  <Module ID="SL1.IF1.ST2.IF1.ST4" Name="X20SO4120a" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="4" HWC_Revision="1.10.9.1" HWTypeCode="43" HWC_LastEdit="08/10/2019 11:07:26" Description-de="X20 Safe Digital Out, 4xA, 24 V, 2A" Description-en="X20 Safe Digital Out, 4xO, 24 V, 2A" AdditionalSADR="0" RevisionNumber="1" SDPayLoad="8" TypicalSafeInputSize="1" TypicalSafeOutputSize="1" TypicalInputSize="1" TypicalOutputSize="1" CRC-de="1143410013" CRC-en="1478443144" CRC-fr="2366068016" CRC-data="1350055776" CRC-default="3965264789" SafeIN="13" SafeOUT="15" FromSafetyRelease="1.6" ToSafetyRelease="1.8">
+    <Template ID="OptChoice" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+      <Parameter ID="2" Name-en="Startup" Name-de="Hochlauf" Name-fr="avant de lancer" />
+    </Template>
+    <Template ID="YesNo" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNo2" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNo3" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoBOOL" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="MinFwRev" Type="UDINT">
+      <Parameter ID="1" Name-en="Test Version" Name-de="Test Version" />
+      <Parameter ID="256" Name-en="Basic Release" Name-de="Basic Release" />
+    </Template>
+    <Group ID="Basic">
+      <BitStream ID="VendorID" Value="0x00006065" Type="UDINT" />
+      <BitStream ID="HWC_CRC" Value="2964228698" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_RxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_TxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Maps_per_Spdo" Value="4" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Machine_Options" Value="0" Type="UDINT" />
+      <BitStream ID="ProductCode" Value="8199" Type="UDINT" />
+      <BitStream ID="RevisionNumber" Value="0x00000001" Type="UDINT" />
+      <BitStream ID="SDPayLoad" Value="8" Type="UDINT" />
+      <BitStream ID="ConsecutiveTimeBase_us" Value="100" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_min_us" Value="400" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_max_us" Value="799" Type="UDINT" />
+      <Parameter ID="Min_required_FW_Rev" UniqueID="0_0" Value="256" Template="MinFwRev" />
+      <Parameter ID="Optional" UniqueID="0_1" Value="0" Template="OptChoice" />
+      <Parameter ID="External_UDID" UniqueID="0_3" Value="0" Template="YesNo2" />
+      <BitStream ID="ParameterVersion" Value="2" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ParameterLength" Value="8" CopyToDomain="true" Type="UINT" />
+      <Parameter ID="Disable_OSSD" UniqueID="0_2" Value="0" Template="YesNo3" CopyToDomain="true" />
+      <BitStream ID="SODautoDefault" Value="1" Type="UDINT" />
+    </Group>
+    <Group ID="Safety_Response_Time">
+      <Parameter ID="Manual_Configuration" UniqueID="1_0" Value="0" Template="YesNo" />
+      <Parameter ID="Syncronous_Network_Only" UniqueID="1_1" Name-en="Synchronous_Network_Only" Value="1" Template="YesNo" />
+      <Parameter ID="Max_X2X_CyleTime_us" UniqueID="1_2" Name-en="Max_X2X_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Max_Powerlink_CyleTime_us" UniqueID="1_3" Name-en="Max_Powerlink_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Max_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_4" Name-en="Max_CPU_CrossLinkTask_CycleTime_us" Value="5000" Range="0-30000" Type="UDINT" />
+      <Parameter ID="Min_X2X_CyleTime_us" UniqueID="1_5" Name-en="Min_X2X_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Min_Powerlink_CyleTime_us" UniqueID="1_6" Name-en="Min_Powerlink_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Min_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_7" Name-en="Min_CPU_CrossLinkTask_CycleTime_us" Value="0" Range="0-30000" Type="UDINT" />
+      <Parameter ID="Worst_Case_Response_Time_us" UniqueID="1_8" Value="50000" Range="3000-5000000" Type="UDINT" />
+      <Parameter ID="Node_Guarding_Lifetime" UniqueID="1_9" Value="5" Range="1-255" Type="USINT" />
+      <BitStream ID="Refresh_Prescale_us" Value="100" Type="UDINT" />
+      <BitStream ID="HWC_Version" Value="1" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_LOW" Value="0" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_HIGH" Value="1" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_USINT_LOW" Value="0x01" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_USINT_HIGH" Value="250" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_LOW" Value="0x000A" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_HIGH" Value="65000" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_LOW" Value="100" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_HIGH" Value="4000000000" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_LOW" Value="6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_HIGH" Value="-6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_INT_LOW" Value="0x8300" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_INT_HIGH" Value="32000" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_LOW" Value="-2000000000" Type="DINT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_HIGH" Value="0x77359400" Type="DINT" />
+      <BitStream ID="MinSafetyResponseTime_us" Value="6000" Type="UDINT" />
+      <BitStream ID="RTC_Supported" Name-de="Wird die autom. Reaktionszeitberechnung unterstützt?" Value="1" Type="BOOL" />
+    </Group>
+    <Channel ID="SafeModuleOk" Safe="true" Direction="IN" Type="BOOL" ConnectionValidation="1" />
+    <Channel ID="SafeDigitalOutput01" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6200" SODSubIndex="0x01">
+      <Parameter ID="Auto_Restart" UniqueID="SO01_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalOutput02" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="1">
+      <Parameter ID="Auto_Restart" UniqueID="SO02_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalOutput03" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="2">
+      <Parameter ID="Auto_Restart" UniqueID="SO03_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalOutput04" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="3">
+      <Parameter ID="Auto_Restart" UniqueID="SO04_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+      <BitStream ID="Reserve1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="Reserve2" Value="0" CopyToDomain="true" Type="USINT" />
+    </Channel>
+    <Channel ID="SafeChannelOK01" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x01" />
+    <Channel ID="SafeChannelOK02" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="1" />
+    <Channel ID="SafeChannelOK03" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="2" />
+    <Channel ID="SafeChannelOK04" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="3" />
+    <Channel ID="ReleaseOutput01" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="0" SODIndex="0x6200" SODSubIndex="0x02" SafeTransport="true" />
+    <Channel ID="ReleaseOutput02" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="1" SafeTransport="true" />
+    <Channel ID="ReleaseOutput03" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="2" SafeTransport="true" />
+    <Channel ID="ReleaseOutput04" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="3" SafeTransport="true" />
+    <Channel ID="PhysicalStateChannel1" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="0" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel2" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="1" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel3" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="2" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel4" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="3" CrossLink="true" />
+    <Channel ID="CurrentOK01" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="4" CrossLink="true" />
+    <Channel ID="CurrentOK02" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="5" CrossLink="true" />
+    <Channel ID="CurrentOK03" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="6" CrossLink="true" />
+    <Channel ID="CurrentOK04" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="7" CrossLink="true" />
+  </Module>
+  <Module ID="SL1.IF1.ST11.IF1.ST8" Name="X67SI8103_401" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="5" HWC_Revision="1.10.9.1" HWTypeCode="27" HWC_LastEdit="08/10/2019 11:07:28" Description-de="X67 Safe Digital In, 8xE, 24V" Description-en="X67 Safe Digital In, 8xI, 24V" AdditionalSADR="0" RevisionNumber="1" SDPayLoad="8" TypicalSafeInputSize="4" TypicalSafeOutputSize="3" TypicalInputSize="2" TypicalOutputSize="2" CRC-de="2337410273" CRC-en="2191181063" CRC-fr="4209381707" CRC-data="946695421" CRC-default="260499431" SafeIN="17" FromSafetyRelease="1.6" ToSafetyRelease="1.8">
+    <Template ID="OptChoice" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+      <Parameter ID="2" Name-en="Startup" Name-de="Hochlauf" Name-fr="avant de lancer" />
+    </Template>
+    <Template ID="YesNo" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoUSINT" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="TemplatePulseMode" Type="USINT">
+      <Parameter ID="0" Name-en="internal" Name-de="intern" />
+      <Parameter ID="2" Name-en="no Pulse" Name-de="kein Puls" />
+    </Template>
+    <Template ID="YesNo2" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoBOOL" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="MinFwRev" Type="UDINT">
+      <Parameter ID="1" Name-en="Test Version" Name-de="Test Version" />
+      <Parameter ID="256" Name-en="Basic Release" Name-de="Basic Release" />
+    </Template>
+    <Template ID="TemplateDoolockFUB" Type="USINT">
+      <Parameter ID="0" Name-en="none" Name-de="kein" Name-fr="rien" />
+      <Parameter ID="1" Name-en="Type-B" Name-de="Type-B" />
+      <Parameter ID="2" Name-en="Type-Z" Name-de="Type-Z" />
+      <Parameter ID="3" Name-en="Type-BZ" Name-de="Type-BZ" />
+    </Template>
+    <Template ID="TwoChannelProcessingMode" Type="USINT">
+      <Parameter ID="0" Name-en="none" Name-de="kein" Name-fr="rien" />
+      <Parameter ID="1" Name-en="Equivalent" Name-de="Equivalent" />
+      <Parameter ID="2" Name-en="Antivalent" Name-de="Antivalent" />
+    </Template>
+    <Group ID="Basic">
+      <BitStream ID="VendorID" Value="0x00006065" Type="UDINT" />
+      <BitStream ID="HWC_CRC" Value="1682890357" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_RxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_TxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Maps_per_Spdo" Value="4" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Machine_Options" Value="0" Type="UDINT" />
+      <BitStream ID="ProductCode" Value="47996" Type="UDINT" />
+      <BitStream ID="RevisionNumber" Value="0x00000001" Type="UDINT" />
+      <BitStream ID="SDPayLoad" Value="3" Type="UDINT" />
+      <BitStream ID="ConsecutiveTimeBase_us" Value="100" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_min_us" Value="400" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_max_us" Value="799" Type="UDINT" />
+      <Parameter ID="Min_required_FW_Rev" UniqueID="0_0" Value="256" Template="MinFwRev" />
+      <Parameter ID="Optional" UniqueID="0_1" Value="0" Template="OptChoice" />
+      <Parameter ID="External_UDID" UniqueID="0_2" Value="0" Template="YesNo2" />
+      <BitStream ID="ParameterVersionSI" Value="2" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ParameterLengthSI" Value="168" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="TestpulsePeriod_ms" Value="100" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ExtLowTime_us" Value="2500" CopyToDomain="true" Type="UINT" />
+    </Group>
+    <Group ID="Safety_Response_Time">
+      <Parameter ID="Manual_Configuration" UniqueID="1_0" Value="0" Template="YesNo" />
+      <Parameter ID="Syncronous_Network_Only" UniqueID="1_1" Name-en="Synchronous_Network_Only" Value="1" Template="YesNo" />
+      <Parameter ID="Max_X2X_CyleTime_us" UniqueID="1_2" Name-en="Max_X2X_CycleTime_us" Value="5000" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Max_Powerlink_CyleTime_us" UniqueID="1_3" Name-en="Max_Powerlink_CycleTime_us" Value="5000" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Max_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_4" Name-en="Max_CPU_CrossLinkTask_CycleTime_us" Value="5000" Range="0-25000" Type="UDINT" />
+      <Parameter ID="Min_X2X_CyleTime_us" UniqueID="1_5" Name-en="Min_X2X_CycleTime_us" Value="200" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Min_Powerlink_CyleTime_us" UniqueID="1_6" Name-en="Min_Powerlink_CycleTime_us" Value="200" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Min_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_7" Name-en="Min_CPU_CrossLinkTask_CycleTime_us" Value="0" Range="0-25000" Type="UDINT" />
+      <Parameter ID="Worst_Case_Response_Time_us" UniqueID="1_8" Value="50000" Range="3000-5000000" Type="UDINT" />
+      <Parameter ID="Node_Guarding_Lifetime" UniqueID="1_9" Value="5" Range="1-255" Type="USINT" />
+      <BitStream ID="Refresh_Prescale_us" Value="100" Type="UDINT" />
+      <BitStream ID="HWC_Version" Value="1" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_LOW" Value="0" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_HIGH" Value="1" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_USINT_LOW" Value="0x01" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_USINT_HIGH" Value="250" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_LOW" Value="0x000A" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_HIGH" Value="65000" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_LOW" Value="100" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_HIGH" Value="4000000000" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_LOW" Value="6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_HIGH" Value="-6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_INT_LOW" Value="0x8300" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_INT_HIGH" Value="32000" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_LOW" Value="-2000000000" Type="DINT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_HIGH" Value="0x77359400" Type="DINT" />
+      <BitStream ID="MinSafetyResponseTime_us" Value="6000" Type="UDINT" />
+      <BitStream ID="RTC_Supported" Name-de="Wird die autom. Reaktionszeitberechnung unterstützt?" Value="1" Type="BOOL" />
+    </Group>
+    <Group ID="Connector01">
+      <BitStream ID="Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput01_Pulse_Mode" UniqueID="2_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput01_Filter_Off_us" UniqueID="2_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput01_Filter_On_us" UniqueID="2_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us01" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode01" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput02_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput02_Pulse_Mode" UniqueID="3_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput02_Filter_Off_us" UniqueID="3_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput02_Filter_On_us" UniqueID="3_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_02" Name-en="Discrepance_Time_us" UniqueID="3_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_02" Name-en="TwoChannelProcessingMode" UniqueID="3_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalInput01" UniqueID="3_6" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalOutput01" UniqueID="3_7" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_StartReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_AutoReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+    </Group>
+    <Group ID="Connector02">
+      <BitStream ID="SafeDigitalInput03_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput03_Pulse_Mode" UniqueID="4_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput03_Filter_Off_us" UniqueID="4_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput03_Filter_On_us" UniqueID="4_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us03" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput04_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput04_Pulse_Mode" UniqueID="5_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput04_Filter_Off_us" UniqueID="5_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput04_Filter_On_us" UniqueID="5_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_04" Name-en="Discrepance_Time_us" UniqueID="5_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_04" Name-en="TwoChannelProcessingMode" UniqueID="5_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalInput02" UniqueID="5_6" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalOutput02" UniqueID="5_7" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_StartReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_AutoReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+    </Group>
+    <Group ID="Connector03">
+      <BitStream ID="SafeDigitalInput05_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput05_Pulse_Mode" UniqueID="6_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput05_Filter_Off_us" UniqueID="6_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput05_Filter_On_us" UniqueID="6_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us05" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode05" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput06_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput06_Pulse_Mode" UniqueID="7_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput06_Filter_Off_us" UniqueID="7_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput06_Filter_On_us" UniqueID="7_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_06" Name-en="Discrepance_Time_us" UniqueID="7_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_06" Name-en="TwoChannelProcessingMode" UniqueID="7_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <BitStream ID="InvertDigitalInput03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking03_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking03_StartReset" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking03_AutoReset" Value="0" CopyToDomain="true" Type="USINT" />
+    </Group>
+    <Group ID="Connector04">
+      <BitStream ID="SafeDigitalInput07_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput07_Pulse_Mode" UniqueID="8_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput07_Filter_Off_us" UniqueID="8_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput07_Filter_On_us" UniqueID="8_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us07" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode07" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput08_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput08_Pulse_Mode" UniqueID="9_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput08_Filter_Off_us" UniqueID="9_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput08_Filter_On_us" UniqueID="9_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_08" Name-en="Discrepance_Time_us" UniqueID="9_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_08" Name-en="TwoChannelProcessingMode" UniqueID="9_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <BitStream ID="InvertDigitalInput04" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput04" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking04_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking04_StartReset" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking04_AutoReset" Value="0" CopyToDomain="true" Type="USINT" />
+    </Group>
+    <Channel ID="SafeModuleOk" Safe="true" Direction="IN" Type="BOOL" ConnectionValidation="1" />
+    <Channel ID="SafeDigitalInput01" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x01" Group="Connector 1" />
+    <Channel ID="SafeDigitalInput02" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="1" Group="Connector 1" />
+    <Channel ID="SafeDigitalInput03" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="2" Group="Connector 2" />
+    <Channel ID="SafeDigitalInput04" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="3" Group="Connector 2" />
+    <Channel ID="SafeDigitalInput05" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="4" Group="Connector 3" />
+    <Channel ID="SafeDigitalInput06" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="5" Group="Connector 3" />
+    <Channel ID="SafeDigitalInput07" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="6" Group="Connector 4" />
+    <Channel ID="SafeDigitalInput08" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="7" Group="Connector 4" />
+    <Channel ID="SafeTwoChannelInput0102" Safe="true" Description-de="2-Kanalauswertung Kanal 1/2" Description-en="2-channel evaluation channel 1/2" Direction="IN" Type="BOOL" Address="5" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x02" Group="Connector 1" ASVariable="SafetyZone[2].Interlock.GS_Two_Channel_Input" />
+    <Channel ID="SafeTwoChannelInput0304" Safe="true" Description-de="2-Kanalauswertung Kanal 3/4" Description-en="2-channel evaluation channel 3/4" Direction="IN" Type="BOOL" Address="5" BitOffset="1" Group="Connector 2" />
+    <Channel ID="SafeTwoChannelInput0506" Safe="true" Description-de="2-Kanalauswertung Kanal 5/6" Description-en="2-channel evaluation channel 5/6" Direction="IN" Type="BOOL" Address="5" BitOffset="2" Group="Connector 3" ASVariable="SafetyZone[1].E_Stop.ES_SI_Two_Channel[2]" />
+    <Channel ID="SafeTwoChannelInput0708" Safe="true" Description-de="2-Kanalauswertung Kanal 7/8" Description-en="2-channel evaluation channel 7/8" Direction="IN" Type="BOOL" Address="5" BitOffset="3" Group="Connector 4" />
+    <Channel ID="SafeTwoChannelOk0102" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="4" Group="Connector 1" />
+    <Channel ID="SafeTwoChannelOk0304" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="5" Group="Connector 2" />
+    <Channel ID="SafeTwoChannelOk0506" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="6" Group="Connector 3" />
+    <Channel ID="SafeTwoChannelOk0708" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="7" Group="Connector 4" />
+    <Channel ID="SafeInputOK01" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x03" Group="Connector 1" />
+    <Channel ID="SafeInputOK02" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="1" Group="Connector 1" />
+    <Channel ID="SafeInputOK03" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="2" Group="Connector 2" />
+    <Channel ID="SafeInputOK04" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="3" Group="Connector 2" />
+    <Channel ID="SafeInputOK05" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="4" Group="Connector 3" />
+    <Channel ID="SafeInputOK06" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="5" Group="Connector 3" />
+    <Channel ID="SafeInputOK07" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="6" Group="Connector 4" />
+    <Channel ID="SafeInputOK08" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="7" Group="Connector 4" />
+    <Channel ID="DigitalInput01" Description-de="Eingang 01" Description-en="Input 01" Direction="IN" Type="BOOL" Address="0" BitOffset="0" Group="Connector 1" CrossLink="true" ASVariable="SafetyZone[2].Interlock.GS_DI_01_Access_Reset" />
+    <Channel ID="DigitalInput02" Description-de="Eingang 02" Description-en="Input 02" Direction="IN" Type="BOOL" Address="0" BitOffset="1" Group="Connector 2" CrossLink="true" />
+    <Channel ID="DigitalOutput01OK" Description-de="Status Digital Ausgang 01 (1=OK)" Description-en="Status digital output 01 (1=OK)" Direction="IN" Type="BOOL" Address="0" BitOffset="2" Group="Connector 1" CrossLink="true" />
+    <Channel ID="DigitalOutput02OK" Description-de="Status Digital Ausgang 02 (1=OK)" Description-en="Status digital output 02 (1=OK)" Direction="IN" Type="BOOL" Address="0" BitOffset="3" Group="Connector 2" CrossLink="true" />
+    <Channel ID="PhysicalStateOutput01" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="4" Group="Connector 1" CrossLink="true" />
+    <Channel ID="PhysicalStateOutput02" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="5" Group="Connector 2" CrossLink="true" />
+  </Module>
+  <Module ID="SL1.IF1.ST11.IF1.ST16" Name="X67SI8103_402" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="6" HWC_Revision="1.10.9.1" HWTypeCode="27" HWC_LastEdit="08/10/2019 11:07:28" Description-de="X67 Safe Digital In, 8xE, 24V" Description-en="X67 Safe Digital In, 8xI, 24V" AdditionalSADR="0" RevisionNumber="1" SDPayLoad="8" TypicalSafeInputSize="4" TypicalSafeOutputSize="3" TypicalInputSize="2" TypicalOutputSize="2" CRC-de="2337410273" CRC-en="2191181063" CRC-fr="4209381707" CRC-data="946695421" CRC-default="260499431" SafeIN="17" FromSafetyRelease="1.6" ToSafetyRelease="1.8">
+    <Template ID="OptChoice" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+      <Parameter ID="2" Name-en="Startup" Name-de="Hochlauf" Name-fr="avant de lancer" />
+    </Template>
+    <Template ID="YesNo" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoUSINT" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="TemplatePulseMode" Type="USINT">
+      <Parameter ID="0" Name-en="internal" Name-de="intern" />
+      <Parameter ID="2" Name-en="no Pulse" Name-de="kein Puls" />
+    </Template>
+    <Template ID="YesNo2" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoBOOL" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="MinFwRev" Type="UDINT">
+      <Parameter ID="1" Name-en="Test Version" Name-de="Test Version" />
+      <Parameter ID="256" Name-en="Basic Release" Name-de="Basic Release" />
+    </Template>
+    <Template ID="TemplateDoolockFUB" Type="USINT">
+      <Parameter ID="0" Name-en="none" Name-de="kein" Name-fr="rien" />
+      <Parameter ID="1" Name-en="Type-B" Name-de="Type-B" />
+      <Parameter ID="2" Name-en="Type-Z" Name-de="Type-Z" />
+      <Parameter ID="3" Name-en="Type-BZ" Name-de="Type-BZ" />
+    </Template>
+    <Template ID="TwoChannelProcessingMode" Type="USINT">
+      <Parameter ID="0" Name-en="none" Name-de="kein" Name-fr="rien" />
+      <Parameter ID="1" Name-en="Equivalent" Name-de="Equivalent" />
+      <Parameter ID="2" Name-en="Antivalent" Name-de="Antivalent" />
+    </Template>
+    <Group ID="Basic">
+      <BitStream ID="VendorID" Value="0x00006065" Type="UDINT" />
+      <BitStream ID="HWC_CRC" Value="1682890357" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_RxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_TxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Maps_per_Spdo" Value="4" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Machine_Options" Value="0" Type="UDINT" />
+      <BitStream ID="ProductCode" Value="47996" Type="UDINT" />
+      <BitStream ID="RevisionNumber" Value="0x00000001" Type="UDINT" />
+      <BitStream ID="SDPayLoad" Value="3" Type="UDINT" />
+      <BitStream ID="ConsecutiveTimeBase_us" Value="100" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_min_us" Value="400" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_max_us" Value="799" Type="UDINT" />
+      <Parameter ID="Min_required_FW_Rev" UniqueID="0_0" Value="256" Template="MinFwRev" />
+      <Parameter ID="Optional" UniqueID="0_1" Value="0" Template="OptChoice" />
+      <Parameter ID="External_UDID" UniqueID="0_2" Value="0" Template="YesNo2" />
+      <BitStream ID="ParameterVersionSI" Value="2" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ParameterLengthSI" Value="168" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="TestpulsePeriod_ms" Value="100" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ExtLowTime_us" Value="2500" CopyToDomain="true" Type="UINT" />
+    </Group>
+    <Group ID="Safety_Response_Time">
+      <Parameter ID="Manual_Configuration" UniqueID="1_0" Value="0" Template="YesNo" />
+      <Parameter ID="Syncronous_Network_Only" UniqueID="1_1" Name-en="Synchronous_Network_Only" Value="1" Template="YesNo" />
+      <Parameter ID="Max_X2X_CyleTime_us" UniqueID="1_2" Name-en="Max_X2X_CycleTime_us" Value="5000" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Max_Powerlink_CyleTime_us" UniqueID="1_3" Name-en="Max_Powerlink_CycleTime_us" Value="5000" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Max_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_4" Name-en="Max_CPU_CrossLinkTask_CycleTime_us" Value="5000" Range="0-25000" Type="UDINT" />
+      <Parameter ID="Min_X2X_CyleTime_us" UniqueID="1_5" Name-en="Min_X2X_CycleTime_us" Value="200" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Min_Powerlink_CyleTime_us" UniqueID="1_6" Name-en="Min_Powerlink_CycleTime_us" Value="200" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Min_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_7" Name-en="Min_CPU_CrossLinkTask_CycleTime_us" Value="0" Range="0-25000" Type="UDINT" />
+      <Parameter ID="Worst_Case_Response_Time_us" UniqueID="1_8" Value="50000" Range="3000-5000000" Type="UDINT" />
+      <Parameter ID="Node_Guarding_Lifetime" UniqueID="1_9" Value="5" Range="1-255" Type="USINT" />
+      <BitStream ID="Refresh_Prescale_us" Value="100" Type="UDINT" />
+      <BitStream ID="HWC_Version" Value="1" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_LOW" Value="0" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_HIGH" Value="1" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_USINT_LOW" Value="0x01" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_USINT_HIGH" Value="250" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_LOW" Value="0x000A" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_HIGH" Value="65000" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_LOW" Value="100" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_HIGH" Value="4000000000" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_LOW" Value="6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_HIGH" Value="-6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_INT_LOW" Value="0x8300" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_INT_HIGH" Value="32000" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_LOW" Value="-2000000000" Type="DINT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_HIGH" Value="0x77359400" Type="DINT" />
+      <BitStream ID="MinSafetyResponseTime_us" Value="6000" Type="UDINT" />
+      <BitStream ID="RTC_Supported" Name-de="Wird die autom. Reaktionszeitberechnung unterstützt?" Value="1" Type="BOOL" />
+    </Group>
+    <Group ID="Connector01">
+      <BitStream ID="Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput01_Pulse_Mode" UniqueID="2_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput01_Filter_Off_us" UniqueID="2_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput01_Filter_On_us" UniqueID="2_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us01" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode01" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput02_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput02_Pulse_Mode" UniqueID="3_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput02_Filter_Off_us" UniqueID="3_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput02_Filter_On_us" UniqueID="3_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_02" Name-en="Discrepance_Time_us" UniqueID="3_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_02" Name-en="TwoChannelProcessingMode" UniqueID="3_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalInput01" UniqueID="3_6" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalOutput01" UniqueID="3_7" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_StartReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_AutoReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+    </Group>
+    <Group ID="Connector02">
+      <BitStream ID="SafeDigitalInput03_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput03_Pulse_Mode" UniqueID="4_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput03_Filter_Off_us" UniqueID="4_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput03_Filter_On_us" UniqueID="4_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us03" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput04_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput04_Pulse_Mode" UniqueID="5_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput04_Filter_Off_us" UniqueID="5_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput04_Filter_On_us" UniqueID="5_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_04" Name-en="Discrepance_Time_us" UniqueID="5_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_04" Name-en="TwoChannelProcessingMode" UniqueID="5_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalInput02" UniqueID="5_6" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalOutput02" UniqueID="5_7" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_StartReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_AutoReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+    </Group>
+    <Group ID="Connector03">
+      <BitStream ID="SafeDigitalInput05_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput05_Pulse_Mode" UniqueID="6_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput05_Filter_Off_us" UniqueID="6_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput05_Filter_On_us" UniqueID="6_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us05" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode05" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput06_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput06_Pulse_Mode" UniqueID="7_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput06_Filter_Off_us" UniqueID="7_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput06_Filter_On_us" UniqueID="7_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_06" Name-en="Discrepance_Time_us" UniqueID="7_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_06" Name-en="TwoChannelProcessingMode" UniqueID="7_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <BitStream ID="InvertDigitalInput03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking03_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking03_StartReset" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking03_AutoReset" Value="0" CopyToDomain="true" Type="USINT" />
+    </Group>
+    <Group ID="Connector04">
+      <BitStream ID="SafeDigitalInput07_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput07_Pulse_Mode" UniqueID="8_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput07_Filter_Off_us" UniqueID="8_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput07_Filter_On_us" UniqueID="8_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us07" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode07" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput08_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput08_Pulse_Mode" UniqueID="9_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput08_Filter_Off_us" UniqueID="9_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput08_Filter_On_us" UniqueID="9_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_08" Name-en="Discrepance_Time_us" UniqueID="9_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_08" Name-en="TwoChannelProcessingMode" UniqueID="9_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <BitStream ID="InvertDigitalInput04" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput04" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking04_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking04_StartReset" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking04_AutoReset" Value="0" CopyToDomain="true" Type="USINT" />
+    </Group>
+    <Channel ID="SafeModuleOk" Safe="true" Direction="IN" Type="BOOL" ConnectionValidation="1" />
+    <Channel ID="SafeDigitalInput01" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x01" Group="Connector 1" />
+    <Channel ID="SafeDigitalInput02" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="1" Group="Connector 1" />
+    <Channel ID="SafeDigitalInput03" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="2" Group="Connector 2" />
+    <Channel ID="SafeDigitalInput04" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="3" Group="Connector 2" />
+    <Channel ID="SafeDigitalInput05" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="4" Group="Connector 3" />
+    <Channel ID="SafeDigitalInput06" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="5" Group="Connector 3" />
+    <Channel ID="SafeDigitalInput07" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="6" Group="Connector 4" />
+    <Channel ID="SafeDigitalInput08" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="7" Group="Connector 4" />
+    <Channel ID="SafeTwoChannelInput0102" Safe="true" Description-de="2-Kanalauswertung Kanal 1/2" Description-en="2-channel evaluation channel 1/2" Direction="IN" Type="BOOL" Address="5" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x02" Group="Connector 1" ASVariable="SafetyZone[3].Interlock.GS_Two_Channel_Input" />
+    <Channel ID="SafeTwoChannelInput0304" Safe="true" Description-de="2-Kanalauswertung Kanal 3/4" Description-en="2-channel evaluation channel 3/4" Direction="IN" Type="BOOL" Address="5" BitOffset="1" Group="Connector 2" />
+    <Channel ID="SafeTwoChannelInput0506" Safe="true" Description-de="2-Kanalauswertung Kanal 5/6" Description-en="2-channel evaluation channel 5/6" Direction="IN" Type="BOOL" Address="5" BitOffset="2" Group="Connector 3" ASVariable="SafetyZone[1].E_Stop.ES_SI_Two_Channel[4]" />
+    <Channel ID="SafeTwoChannelInput0708" Safe="true" Description-de="2-Kanalauswertung Kanal 7/8" Description-en="2-channel evaluation channel 7/8" Direction="IN" Type="BOOL" Address="5" BitOffset="3" Group="Connector 4" />
+    <Channel ID="SafeTwoChannelOk0102" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="4" Group="Connector 1" />
+    <Channel ID="SafeTwoChannelOk0304" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="5" Group="Connector 2" />
+    <Channel ID="SafeTwoChannelOk0506" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="6" Group="Connector 3" />
+    <Channel ID="SafeTwoChannelOk0708" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="7" Group="Connector 4" />
+    <Channel ID="SafeInputOK01" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x03" Group="Connector 1" />
+    <Channel ID="SafeInputOK02" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="1" Group="Connector 1" />
+    <Channel ID="SafeInputOK03" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="2" Group="Connector 2" />
+    <Channel ID="SafeInputOK04" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="3" Group="Connector 2" />
+    <Channel ID="SafeInputOK05" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="4" Group="Connector 3" />
+    <Channel ID="SafeInputOK06" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="5" Group="Connector 3" />
+    <Channel ID="SafeInputOK07" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="6" Group="Connector 4" />
+    <Channel ID="SafeInputOK08" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="7" Group="Connector 4" />
+    <Channel ID="DigitalInput01" Description-de="Eingang 01" Description-en="Input 01" Direction="IN" Type="BOOL" Address="0" BitOffset="0" Group="Connector 1" CrossLink="true" ASVariable="SafetyZone[3].Interlock.GS_DI_01_Access_Reset" />
+    <Channel ID="DigitalInput02" Description-de="Eingang 02" Description-en="Input 02" Direction="IN" Type="BOOL" Address="0" BitOffset="1" Group="Connector 2" CrossLink="true" />
+    <Channel ID="DigitalOutput01OK" Description-de="Status Digital Ausgang 01 (1=OK)" Description-en="Status digital output 01 (1=OK)" Direction="IN" Type="BOOL" Address="0" BitOffset="2" Group="Connector 1" CrossLink="true" />
+    <Channel ID="DigitalOutput02OK" Description-de="Status Digital Ausgang 02 (1=OK)" Description-en="Status digital output 02 (1=OK)" Direction="IN" Type="BOOL" Address="0" BitOffset="3" Group="Connector 2" CrossLink="true" />
+    <Channel ID="PhysicalStateOutput01" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="4" Group="Connector 1" CrossLink="true" />
+    <Channel ID="PhysicalStateOutput02" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="5" Group="Connector 2" CrossLink="true" />
+  </Module>
+  <Module ID="SL1.IF1.ST11.IF1.ST13" Name="X67SI8103_403" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="7" HWC_Revision="1.10.9.1" HWTypeCode="27" HWC_LastEdit="08/10/2019 11:07:28" Description-de="X67 Safe Digital In, 8xE, 24V" Description-en="X67 Safe Digital In, 8xI, 24V" AdditionalSADR="0" RevisionNumber="1" SDPayLoad="8" TypicalSafeInputSize="4" TypicalSafeOutputSize="3" TypicalInputSize="2" TypicalOutputSize="2" CRC-de="2337410273" CRC-en="2191181063" CRC-fr="4209381707" CRC-data="946695421" CRC-default="260499431" SafeIN="17" FromSafetyRelease="1.6" ToSafetyRelease="1.8">
+    <Template ID="OptChoice" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+      <Parameter ID="2" Name-en="Startup" Name-de="Hochlauf" Name-fr="avant de lancer" />
+    </Template>
+    <Template ID="YesNo" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoUSINT" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="TemplatePulseMode" Type="USINT">
+      <Parameter ID="0" Name-en="internal" Name-de="intern" />
+      <Parameter ID="2" Name-en="no Pulse" Name-de="kein Puls" />
+    </Template>
+    <Template ID="YesNo2" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoBOOL" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="MinFwRev" Type="UDINT">
+      <Parameter ID="1" Name-en="Test Version" Name-de="Test Version" />
+      <Parameter ID="256" Name-en="Basic Release" Name-de="Basic Release" />
+    </Template>
+    <Template ID="TemplateDoolockFUB" Type="USINT">
+      <Parameter ID="0" Name-en="none" Name-de="kein" Name-fr="rien" />
+      <Parameter ID="1" Name-en="Type-B" Name-de="Type-B" />
+      <Parameter ID="2" Name-en="Type-Z" Name-de="Type-Z" />
+      <Parameter ID="3" Name-en="Type-BZ" Name-de="Type-BZ" />
+    </Template>
+    <Template ID="TwoChannelProcessingMode" Type="USINT">
+      <Parameter ID="0" Name-en="none" Name-de="kein" Name-fr="rien" />
+      <Parameter ID="1" Name-en="Equivalent" Name-de="Equivalent" />
+      <Parameter ID="2" Name-en="Antivalent" Name-de="Antivalent" />
+    </Template>
+    <Group ID="Basic">
+      <BitStream ID="VendorID" Value="0x00006065" Type="UDINT" />
+      <BitStream ID="HWC_CRC" Value="1682890357" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_RxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_TxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Maps_per_Spdo" Value="4" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Machine_Options" Value="0" Type="UDINT" />
+      <BitStream ID="ProductCode" Value="47996" Type="UDINT" />
+      <BitStream ID="RevisionNumber" Value="0x00000001" Type="UDINT" />
+      <BitStream ID="SDPayLoad" Value="3" Type="UDINT" />
+      <BitStream ID="ConsecutiveTimeBase_us" Value="100" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_min_us" Value="400" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_max_us" Value="799" Type="UDINT" />
+      <Parameter ID="Min_required_FW_Rev" UniqueID="0_0" Value="256" Template="MinFwRev" />
+      <Parameter ID="Optional" UniqueID="0_1" Value="0" Template="OptChoice" />
+      <Parameter ID="External_UDID" UniqueID="0_2" Value="0" Template="YesNo2" />
+      <BitStream ID="ParameterVersionSI" Value="2" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ParameterLengthSI" Value="168" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="TestpulsePeriod_ms" Value="100" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ExtLowTime_us" Value="2500" CopyToDomain="true" Type="UINT" />
+    </Group>
+    <Group ID="Safety_Response_Time">
+      <Parameter ID="Manual_Configuration" UniqueID="1_0" Value="0" Template="YesNo" />
+      <Parameter ID="Syncronous_Network_Only" UniqueID="1_1" Name-en="Synchronous_Network_Only" Value="1" Template="YesNo" />
+      <Parameter ID="Max_X2X_CyleTime_us" UniqueID="1_2" Name-en="Max_X2X_CycleTime_us" Value="5000" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Max_Powerlink_CyleTime_us" UniqueID="1_3" Name-en="Max_Powerlink_CycleTime_us" Value="5000" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Max_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_4" Name-en="Max_CPU_CrossLinkTask_CycleTime_us" Value="5000" Range="0-25000" Type="UDINT" />
+      <Parameter ID="Min_X2X_CyleTime_us" UniqueID="1_5" Name-en="Min_X2X_CycleTime_us" Value="200" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Min_Powerlink_CyleTime_us" UniqueID="1_6" Name-en="Min_Powerlink_CycleTime_us" Value="200" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Min_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_7" Name-en="Min_CPU_CrossLinkTask_CycleTime_us" Value="0" Range="0-25000" Type="UDINT" />
+      <Parameter ID="Worst_Case_Response_Time_us" UniqueID="1_8" Value="50000" Range="3000-5000000" Type="UDINT" />
+      <Parameter ID="Node_Guarding_Lifetime" UniqueID="1_9" Value="5" Range="1-255" Type="USINT" />
+      <BitStream ID="Refresh_Prescale_us" Value="100" Type="UDINT" />
+      <BitStream ID="HWC_Version" Value="1" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_LOW" Value="0" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_HIGH" Value="1" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_USINT_LOW" Value="0x01" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_USINT_HIGH" Value="250" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_LOW" Value="0x000A" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_HIGH" Value="65000" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_LOW" Value="100" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_HIGH" Value="4000000000" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_LOW" Value="6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_HIGH" Value="-6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_INT_LOW" Value="0x8300" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_INT_HIGH" Value="32000" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_LOW" Value="-2000000000" Type="DINT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_HIGH" Value="0x77359400" Type="DINT" />
+      <BitStream ID="MinSafetyResponseTime_us" Value="6000" Type="UDINT" />
+      <BitStream ID="RTC_Supported" Name-de="Wird die autom. Reaktionszeitberechnung unterstützt?" Value="1" Type="BOOL" />
+    </Group>
+    <Group ID="Connector01">
+      <BitStream ID="Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput01_Pulse_Mode" UniqueID="2_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput01_Filter_Off_us" UniqueID="2_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput01_Filter_On_us" UniqueID="2_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us01" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode01" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput02_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput02_Pulse_Mode" UniqueID="3_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput02_Filter_Off_us" UniqueID="3_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput02_Filter_On_us" UniqueID="3_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_02" Name-en="Discrepance_Time_us" UniqueID="3_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_02" Name-en="TwoChannelProcessingMode" UniqueID="3_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalInput01" UniqueID="3_6" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalOutput01" UniqueID="3_7" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_StartReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_AutoReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+    </Group>
+    <Group ID="Connector02">
+      <BitStream ID="SafeDigitalInput03_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput03_Pulse_Mode" UniqueID="4_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput03_Filter_Off_us" UniqueID="4_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput03_Filter_On_us" UniqueID="4_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us03" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput04_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput04_Pulse_Mode" UniqueID="5_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput04_Filter_Off_us" UniqueID="5_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput04_Filter_On_us" UniqueID="5_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_04" Name-en="Discrepance_Time_us" UniqueID="5_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_04" Name-en="TwoChannelProcessingMode" UniqueID="5_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalInput02" UniqueID="5_6" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalOutput02" UniqueID="5_7" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_StartReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_AutoReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+    </Group>
+    <Group ID="Connector03">
+      <BitStream ID="SafeDigitalInput05_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput05_Pulse_Mode" UniqueID="6_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput05_Filter_Off_us" UniqueID="6_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput05_Filter_On_us" UniqueID="6_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us05" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode05" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput06_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput06_Pulse_Mode" UniqueID="7_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput06_Filter_Off_us" UniqueID="7_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput06_Filter_On_us" UniqueID="7_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_06" Name-en="Discrepance_Time_us" UniqueID="7_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_06" Name-en="TwoChannelProcessingMode" UniqueID="7_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <BitStream ID="InvertDigitalInput03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking03_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking03_StartReset" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking03_AutoReset" Value="0" CopyToDomain="true" Type="USINT" />
+    </Group>
+    <Group ID="Connector04">
+      <BitStream ID="SafeDigitalInput07_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput07_Pulse_Mode" UniqueID="8_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput07_Filter_Off_us" UniqueID="8_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput07_Filter_On_us" UniqueID="8_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us07" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode07" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput08_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput08_Pulse_Mode" UniqueID="9_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput08_Filter_Off_us" UniqueID="9_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput08_Filter_On_us" UniqueID="9_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_08" Name-en="Discrepance_Time_us" UniqueID="9_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_08" Name-en="TwoChannelProcessingMode" UniqueID="9_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <BitStream ID="InvertDigitalInput04" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput04" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking04_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking04_StartReset" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking04_AutoReset" Value="0" CopyToDomain="true" Type="USINT" />
+    </Group>
+    <Channel ID="SafeModuleOk" Safe="true" Direction="IN" Type="BOOL" ConnectionValidation="1" />
+    <Channel ID="SafeDigitalInput01" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x01" Group="Connector 1" />
+    <Channel ID="SafeDigitalInput02" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="1" Group="Connector 1" />
+    <Channel ID="SafeDigitalInput03" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="2" Group="Connector 2" />
+    <Channel ID="SafeDigitalInput04" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="3" Group="Connector 2" />
+    <Channel ID="SafeDigitalInput05" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="4" Group="Connector 3" />
+    <Channel ID="SafeDigitalInput06" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="5" Group="Connector 3" />
+    <Channel ID="SafeDigitalInput07" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="6" Group="Connector 4" />
+    <Channel ID="SafeDigitalInput08" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="7" Group="Connector 4" />
+    <Channel ID="SafeTwoChannelInput0102" Safe="true" Description-de="2-Kanalauswertung Kanal 1/2" Description-en="2-channel evaluation channel 1/2" Direction="IN" Type="BOOL" Address="5" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x02" Group="Connector 1" ASVariable="SafetyZone[4].Interlock.GS_Two_Channel_Input" />
+    <Channel ID="SafeTwoChannelInput0304" Safe="true" Description-de="2-Kanalauswertung Kanal 3/4" Description-en="2-channel evaluation channel 3/4" Direction="IN" Type="BOOL" Address="5" BitOffset="1" Group="Connector 2" />
+    <Channel ID="SafeTwoChannelInput0506" Safe="true" Description-de="2-Kanalauswertung Kanal 5/6" Description-en="2-channel evaluation channel 5/6" Direction="IN" Type="BOOL" Address="5" BitOffset="2" Group="Connector 3" ASVariable="SafetyZone[1].E_Stop.ES_SI_Two_Channel[3]" />
+    <Channel ID="SafeTwoChannelInput0708" Safe="true" Description-de="2-Kanalauswertung Kanal 7/8" Description-en="2-channel evaluation channel 7/8" Direction="IN" Type="BOOL" Address="5" BitOffset="3" Group="Connector 4" ASVariable="Hoist_Safety[3].I_GuardClosed" />
+    <Channel ID="SafeTwoChannelOk0102" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="4" Group="Connector 1" />
+    <Channel ID="SafeTwoChannelOk0304" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="5" Group="Connector 2" />
+    <Channel ID="SafeTwoChannelOk0506" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="6" Group="Connector 3" />
+    <Channel ID="SafeTwoChannelOk0708" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="7" Group="Connector 4" />
+    <Channel ID="SafeInputOK01" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x03" Group="Connector 1" />
+    <Channel ID="SafeInputOK02" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="1" Group="Connector 1" />
+    <Channel ID="SafeInputOK03" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="2" Group="Connector 2" />
+    <Channel ID="SafeInputOK04" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="3" Group="Connector 2" />
+    <Channel ID="SafeInputOK05" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="4" Group="Connector 3" />
+    <Channel ID="SafeInputOK06" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="5" Group="Connector 3" />
+    <Channel ID="SafeInputOK07" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="6" Group="Connector 4" />
+    <Channel ID="SafeInputOK08" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="7" Group="Connector 4" />
+    <Channel ID="DigitalInput01" Description-de="Eingang 01" Description-en="Input 01" Direction="IN" Type="BOOL" Address="0" BitOffset="0" Group="Connector 1" CrossLink="true" ASVariable="SafetyZone[4].Interlock.GS_DI_01_Access_Reset" />
+    <Channel ID="DigitalInput02" Description-de="Eingang 02" Description-en="Input 02" Direction="IN" Type="BOOL" Address="0" BitOffset="1" Group="Connector 2" CrossLink="true" />
+    <Channel ID="DigitalOutput01OK" Description-de="Status Digital Ausgang 01 (1=OK)" Description-en="Status digital output 01 (1=OK)" Direction="IN" Type="BOOL" Address="0" BitOffset="2" Group="Connector 1" CrossLink="true" />
+    <Channel ID="DigitalOutput02OK" Description-de="Status Digital Ausgang 02 (1=OK)" Description-en="Status digital output 02 (1=OK)" Direction="IN" Type="BOOL" Address="0" BitOffset="3" Group="Connector 2" CrossLink="true" />
+    <Channel ID="PhysicalStateOutput01" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="4" Group="Connector 1" CrossLink="true" />
+    <Channel ID="PhysicalStateOutput02" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="5" Group="Connector 2" CrossLink="true" />
+  </Module>
+  <Module ID="SL1.IF1.ST12.IF1.ST7" Name="X67SI8103_404" Hardware="X67SI8103" SafeLogicID="1" SafeModuleID="8" HWC_Revision="1.10.9.1" HWTypeCode="27" HWC_LastEdit="08/10/2019 11:07:28" Description-de="X67 Safe Digital In, 8xE, 24V" Description-en="X67 Safe Digital In, 8xI, 24V" AdditionalSADR="0" RevisionNumber="1" SDPayLoad="8" TypicalSafeInputSize="4" TypicalSafeOutputSize="3" TypicalInputSize="2" TypicalOutputSize="2" CRC-de="2337410273" CRC-en="2191181063" CRC-fr="4209381707" CRC-data="946695421" CRC-default="260499431" SafeIN="17" FromSafetyRelease="1.6" ToSafetyRelease="1.8">
+    <Template ID="OptChoice" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+      <Parameter ID="2" Name-en="Startup" Name-de="Hochlauf" Name-fr="avant de lancer" />
+    </Template>
+    <Template ID="YesNo" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoUSINT" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="TemplatePulseMode" Type="USINT">
+      <Parameter ID="0" Name-en="internal" Name-de="intern" />
+      <Parameter ID="2" Name-en="no Pulse" Name-de="kein Puls" />
+    </Template>
+    <Template ID="YesNo2" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoBOOL" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="MinFwRev" Type="UDINT">
+      <Parameter ID="1" Name-en="Test Version" Name-de="Test Version" />
+      <Parameter ID="256" Name-en="Basic Release" Name-de="Basic Release" />
+    </Template>
+    <Template ID="TemplateDoolockFUB" Type="USINT">
+      <Parameter ID="0" Name-en="none" Name-de="kein" Name-fr="rien" />
+      <Parameter ID="1" Name-en="Type-B" Name-de="Type-B" />
+      <Parameter ID="2" Name-en="Type-Z" Name-de="Type-Z" />
+      <Parameter ID="3" Name-en="Type-BZ" Name-de="Type-BZ" />
+    </Template>
+    <Template ID="TwoChannelProcessingMode" Type="USINT">
+      <Parameter ID="0" Name-en="none" Name-de="kein" Name-fr="rien" />
+      <Parameter ID="1" Name-en="Equivalent" Name-de="Equivalent" />
+      <Parameter ID="2" Name-en="Antivalent" Name-de="Antivalent" />
+    </Template>
+    <Group ID="Basic">
+      <BitStream ID="VendorID" Value="0x00006065" Type="UDINT" />
+      <BitStream ID="HWC_CRC" Value="1682890357" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_RxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_TxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Maps_per_Spdo" Value="4" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Machine_Options" Value="0" Type="UDINT" />
+      <BitStream ID="ProductCode" Value="47996" Type="UDINT" />
+      <BitStream ID="RevisionNumber" Value="0x00000001" Type="UDINT" />
+      <BitStream ID="SDPayLoad" Value="3" Type="UDINT" />
+      <BitStream ID="ConsecutiveTimeBase_us" Value="100" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_min_us" Value="400" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_max_us" Value="799" Type="UDINT" />
+      <Parameter ID="Min_required_FW_Rev" UniqueID="0_0" Value="256" Template="MinFwRev" />
+      <Parameter ID="Optional" UniqueID="0_1" Value="0" Template="OptChoice" />
+      <Parameter ID="External_UDID" UniqueID="0_2" Value="0" Template="YesNo2" />
+      <BitStream ID="ParameterVersionSI" Value="2" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ParameterLengthSI" Value="168" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="TestpulsePeriod_ms" Value="100" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ExtLowTime_us" Value="2500" CopyToDomain="true" Type="UINT" />
+    </Group>
+    <Group ID="Safety_Response_Time">
+      <Parameter ID="Manual_Configuration" UniqueID="1_0" Value="0" Template="YesNo" />
+      <Parameter ID="Syncronous_Network_Only" UniqueID="1_1" Name-en="Synchronous_Network_Only" Value="1" Template="YesNo" />
+      <Parameter ID="Max_X2X_CyleTime_us" UniqueID="1_2" Name-en="Max_X2X_CycleTime_us" Value="5000" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Max_Powerlink_CyleTime_us" UniqueID="1_3" Name-en="Max_Powerlink_CycleTime_us" Value="5000" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Max_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_4" Name-en="Max_CPU_CrossLinkTask_CycleTime_us" Value="5000" Range="0-25000" Type="UDINT" />
+      <Parameter ID="Min_X2X_CyleTime_us" UniqueID="1_5" Name-en="Min_X2X_CycleTime_us" Value="200" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Min_Powerlink_CyleTime_us" UniqueID="1_6" Name-en="Min_Powerlink_CycleTime_us" Value="200" Range="200-25000" Type="UDINT" />
+      <Parameter ID="Min_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_7" Name-en="Min_CPU_CrossLinkTask_CycleTime_us" Value="0" Range="0-25000" Type="UDINT" />
+      <Parameter ID="Worst_Case_Response_Time_us" UniqueID="1_8" Value="50000" Range="3000-5000000" Type="UDINT" />
+      <Parameter ID="Node_Guarding_Lifetime" UniqueID="1_9" Value="5" Range="1-255" Type="USINT" />
+      <BitStream ID="Refresh_Prescale_us" Value="100" Type="UDINT" />
+      <BitStream ID="HWC_Version" Value="1" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_LOW" Value="0" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_HIGH" Value="1" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_USINT_LOW" Value="0x01" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_USINT_HIGH" Value="250" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_LOW" Value="0x000A" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_HIGH" Value="65000" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_LOW" Value="100" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_HIGH" Value="4000000000" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_LOW" Value="6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_HIGH" Value="-6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_INT_LOW" Value="0x8300" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_INT_HIGH" Value="32000" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_LOW" Value="-2000000000" Type="DINT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_HIGH" Value="0x77359400" Type="DINT" />
+      <BitStream ID="MinSafetyResponseTime_us" Value="6000" Type="UDINT" />
+      <BitStream ID="RTC_Supported" Name-de="Wird die autom. Reaktionszeitberechnung unterstützt?" Value="1" Type="BOOL" />
+    </Group>
+    <Group ID="Connector01">
+      <BitStream ID="Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput01_Pulse_Mode" UniqueID="2_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput01_Filter_Off_us" UniqueID="2_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput01_Filter_On_us" UniqueID="2_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us01" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode01" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput02_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput02_Pulse_Mode" UniqueID="3_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput02_Filter_Off_us" UniqueID="3_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput02_Filter_On_us" UniqueID="3_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_02" Name-en="Discrepance_Time_us" UniqueID="3_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_02" Name-en="TwoChannelProcessingMode" UniqueID="3_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalInput01" UniqueID="3_6" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalOutput01" UniqueID="3_7" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_StartReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking01_AutoReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+    </Group>
+    <Group ID="Connector02">
+      <BitStream ID="SafeDigitalInput03_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput03_Pulse_Mode" UniqueID="4_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput03_Filter_Off_us" UniqueID="4_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput03_Filter_On_us" UniqueID="4_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us03" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy2" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput04_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput04_Pulse_Mode" UniqueID="5_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput04_Filter_Off_us" UniqueID="5_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput04_Filter_On_us" UniqueID="5_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_04" Name-en="Discrepance_Time_us" UniqueID="5_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_04" Name-en="TwoChannelProcessingMode" UniqueID="5_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalInput02" UniqueID="5_6" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <Parameter ID="InvertDigitalOutput02" UniqueID="5_7" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_StartReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+      <BitStream ID="DoorLocking02_AutoReset" Value="0" Template="YesNoUSINT" CopyToDomain="true" />
+    </Group>
+    <Group ID="Connector03">
+      <BitStream ID="SafeDigitalInput05_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput05_Pulse_Mode" UniqueID="6_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput05_Filter_Off_us" UniqueID="6_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput05_Filter_On_us" UniqueID="6_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us05" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode05" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy5" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput06_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput06_Pulse_Mode" UniqueID="7_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput06_Filter_Off_us" UniqueID="7_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput06_Filter_On_us" UniqueID="7_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_06" Name-en="Discrepance_Time_us" UniqueID="7_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_06" Name-en="TwoChannelProcessingMode" UniqueID="7_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <BitStream ID="InvertDigitalInput03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput03" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking03_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking03_StartReset" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking03_AutoReset" Value="0" CopyToDomain="true" Type="USINT" />
+    </Group>
+    <Group ID="Connector04">
+      <BitStream ID="SafeDigitalInput07_Pulse_Src" Value="1" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput07_Pulse_Mode" UniqueID="8_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput07_Filter_Off_us" UniqueID="8_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput07_Filter_On_us" UniqueID="8_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="Discrepance_Time_us07" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <BitStream ID="TwoChannelProcessingMode07" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalInput_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingMode_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingStartReset_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLockingAutoReset_dummy7" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="SafeDigitalInput08_Pulse_Src" Value="2" CopyToDomain="true" Type="USINT" />
+      <Parameter ID="SafeDigitalInput08_Pulse_Mode" UniqueID="9_1" Value="0" Template="TemplatePulseMode" CopyToDomain="true" />
+      <Parameter ID="SafeDigitalInput08_Filter_Off_us" UniqueID="9_2" Value="0" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="SafeDigitalInput08_Filter_On_us" UniqueID="9_3" Value="200000" Range="0-500000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="Discrepance_Time_us_08" Name-en="Discrepance_Time_us" UniqueID="9_4" Value="0" Range="0-10000000" CopyToDomain="true" Type="UDINT" />
+      <Parameter ID="TwoChannelProcessingMode_08" Name-en="TwoChannelProcessingMode" UniqueID="9_5" Value="0" Template="TwoChannelProcessingMode" CopyToDomain="true" />
+      <BitStream ID="InvertDigitalInput04" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="InvertDigitalOutput04" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking04_Mode" Value="0" Template="TemplateDoolockFUB" CopyToDomain="true" />
+      <BitStream ID="DoorLocking04_StartReset" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="DoorLocking04_AutoReset" Value="0" CopyToDomain="true" Type="USINT" />
+    </Group>
+    <Channel ID="SafeModuleOk" Safe="true" Direction="IN" Type="BOOL" ConnectionValidation="1" />
+    <Channel ID="SafeDigitalInput01" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x01" Group="Connector 1" />
+    <Channel ID="SafeDigitalInput02" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="1" Group="Connector 1" />
+    <Channel ID="SafeDigitalInput03" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="2" Group="Connector 2" />
+    <Channel ID="SafeDigitalInput04" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="3" Group="Connector 2" />
+    <Channel ID="SafeDigitalInput05" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="4" Group="Connector 3" />
+    <Channel ID="SafeDigitalInput06" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="5" Group="Connector 3" />
+    <Channel ID="SafeDigitalInput07" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="6" Group="Connector 4" />
+    <Channel ID="SafeDigitalInput08" Safe="true" Description-de="24 VDC, Sink" Description-en="24 VDC, sink" Direction="IN" Type="BOOL" Address="4" BitOffset="7" Group="Connector 4" />
+    <Channel ID="SafeTwoChannelInput0102" Safe="true" Description-de="2-Kanalauswertung Kanal 1/2" Description-en="2-channel evaluation channel 1/2" Direction="IN" Type="BOOL" Address="5" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x02" Group="Connector 1" />
+    <Channel ID="SafeTwoChannelInput0304" Safe="true" Description-de="2-Kanalauswertung Kanal 3/4" Description-en="2-channel evaluation channel 3/4" Direction="IN" Type="BOOL" Address="5" BitOffset="1" Group="Connector 2" />
+    <Channel ID="SafeTwoChannelInput0506" Safe="true" Description-de="2-Kanalauswertung Kanal 5/6" Description-en="2-channel evaluation channel 5/6" Direction="IN" Type="BOOL" Address="5" BitOffset="2" Group="Connector 3" />
+    <Channel ID="SafeTwoChannelInput0708" Safe="true" Description-de="2-Kanalauswertung Kanal 7/8" Description-en="2-channel evaluation channel 7/8" Direction="IN" Type="BOOL" Address="5" BitOffset="3" Group="Connector 4" />
+    <Channel ID="SafeTwoChannelOk0102" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="4" Group="Connector 1" />
+    <Channel ID="SafeTwoChannelOk0304" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="5" Group="Connector 2" />
+    <Channel ID="SafeTwoChannelOk0506" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="6" Group="Connector 3" />
+    <Channel ID="SafeTwoChannelOk0708" Safe="true" Description-de="Status 2-Kanalauswertung (1=OK)" Description-en="Status 2-channel evaluation (1=OK)" Direction="IN" Type="BOOL" Address="5" BitOffset="7" Group="Connector 4" />
+    <Channel ID="SafeInputOK01" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x03" Group="Connector 1" />
+    <Channel ID="SafeInputOK02" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="1" Group="Connector 1" />
+    <Channel ID="SafeInputOK03" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="2" Group="Connector 2" />
+    <Channel ID="SafeInputOK04" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="3" Group="Connector 2" />
+    <Channel ID="SafeInputOK05" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="4" Group="Connector 3" />
+    <Channel ID="SafeInputOK06" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="5" Group="Connector 3" />
+    <Channel ID="SafeInputOK07" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="6" Group="Connector 4" />
+    <Channel ID="SafeInputOK08" Safe="true" Description-de="Status digitaler Eingang (1=OK)" Description-en="Status digital input (1=OK)" Direction="IN" Type="BOOL" Address="6" BitOffset="7" Group="Connector 4" />
+    <Channel ID="DigitalInput01" Description-de="Eingang 01" Description-en="Input 01" Direction="IN" Type="BOOL" Address="0" BitOffset="0" Group="Connector 1" CrossLink="true" ASVariable="SafetyZone[6].PressureSwitch" />
+    <Channel ID="DigitalInput02" Description-de="Eingang 02" Description-en="Input 02" Direction="IN" Type="BOOL" Address="0" BitOffset="1" Group="Connector 2" CrossLink="true" />
+    <Channel ID="DigitalOutput01OK" Description-de="Status Digital Ausgang 01 (1=OK)" Description-en="Status digital output 01 (1=OK)" Direction="IN" Type="BOOL" Address="0" BitOffset="2" Group="Connector 1" CrossLink="true" />
+    <Channel ID="DigitalOutput02OK" Description-de="Status Digital Ausgang 02 (1=OK)" Description-en="Status digital output 02 (1=OK)" Direction="IN" Type="BOOL" Address="0" BitOffset="3" Group="Connector 2" CrossLink="true" />
+    <Channel ID="PhysicalStateOutput01" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="4" Group="Connector 1" CrossLink="true" />
+    <Channel ID="PhysicalStateOutput02" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="5" Group="Connector 2" CrossLink="true" />
+  </Module>
+  <Module ID="SL1.IF1.ST4.IF1.ST2" Name="X20SO4120b" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="9" HWC_Revision="1.10.9.1" HWTypeCode="43" HWC_LastEdit="08/10/2019 11:07:26" Description-de="X20 Safe Digital Out, 4xA, 24 V, 2A" Description-en="X20 Safe Digital Out, 4xO, 24 V, 2A" AdditionalSADR="0" RevisionNumber="1" SDPayLoad="8" TypicalSafeInputSize="1" TypicalSafeOutputSize="1" TypicalInputSize="1" TypicalOutputSize="1" CRC-de="1143410013" CRC-en="1478443144" CRC-fr="2366068016" CRC-data="1350055776" CRC-default="3965264789" SafeIN="13" SafeOUT="15" FromSafetyRelease="1.6" ToSafetyRelease="1.8">
+    <Template ID="OptChoice" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+      <Parameter ID="2" Name-en="Startup" Name-de="Hochlauf" Name-fr="avant de lancer" />
+    </Template>
+    <Template ID="YesNo" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes" Name-de="Ja" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNo2" Type="UDINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNo3" Type="USINT">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="YesNoBOOL" Type="BOOL">
+      <Parameter ID="0" Name-en="No" Name-de="Nein" Name-fr="DE" />
+      <Parameter ID="1" Name-en="Yes-ATTENTION" Name-de="Ja-ACHTUNG" Name-fr="SUR" />
+    </Template>
+    <Template ID="MinFwRev" Type="UDINT">
+      <Parameter ID="1" Name-en="Test Version" Name-de="Test Version" />
+      <Parameter ID="256" Name-en="Basic Release" Name-de="Basic Release" />
+    </Template>
+    <Group ID="Basic">
+      <BitStream ID="VendorID" Value="0x00006065" Type="UDINT" />
+      <BitStream ID="HWC_CRC" Value="2964228698" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_RxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_TxSpdos" Value="1" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Maps_per_Spdo" Value="4" Type="UDINT" />
+      <BitStream ID="CRC_Number_of_Machine_Options" Value="0" Type="UDINT" />
+      <BitStream ID="ProductCode" Value="8199" Type="UDINT" />
+      <BitStream ID="RevisionNumber" Value="0x00000001" Type="UDINT" />
+      <BitStream ID="SDPayLoad" Value="8" Type="UDINT" />
+      <BitStream ID="ConsecutiveTimeBase_us" Value="100" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_min_us" Value="400" Type="UDINT" />
+      <BitStream ID="Module_Cycle_Time_max_us" Value="799" Type="UDINT" />
+      <Parameter ID="Min_required_FW_Rev" UniqueID="0_0" Value="256" Template="MinFwRev" />
+      <Parameter ID="Optional" UniqueID="0_1" Value="0" Template="OptChoice" />
+      <Parameter ID="External_UDID" UniqueID="0_3" Value="0" Template="YesNo2" />
+      <BitStream ID="ParameterVersion" Value="2" CopyToDomain="true" Type="UINT" />
+      <BitStream ID="ParameterLength" Value="8" CopyToDomain="true" Type="UINT" />
+      <Parameter ID="Disable_OSSD" UniqueID="0_2" Value="0" Template="YesNo3" CopyToDomain="true" />
+      <BitStream ID="SODautoDefault" Value="1" Type="UDINT" />
+    </Group>
+    <Group ID="Safety_Response_Time">
+      <Parameter ID="Manual_Configuration" UniqueID="1_0" Value="0" Template="YesNo" />
+      <Parameter ID="Syncronous_Network_Only" UniqueID="1_1" Name-en="Synchronous_Network_Only" Value="1" Template="YesNo" />
+      <Parameter ID="Max_X2X_CyleTime_us" UniqueID="1_2" Name-en="Max_X2X_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Max_Powerlink_CyleTime_us" UniqueID="1_3" Name-en="Max_Powerlink_CycleTime_us" Value="5000" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Max_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_4" Name-en="Max_CPU_CrossLinkTask_CycleTime_us" Value="5000" Range="0-30000" Type="UDINT" />
+      <Parameter ID="Min_X2X_CyleTime_us" UniqueID="1_5" Name-en="Min_X2X_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Min_Powerlink_CyleTime_us" UniqueID="1_6" Name-en="Min_Powerlink_CycleTime_us" Value="200" Range="200-30000" Type="UDINT" />
+      <Parameter ID="Min_CPU_CrossLinkTask_CyleTime_us" UniqueID="1_7" Name-en="Min_CPU_CrossLinkTask_CycleTime_us" Value="0" Range="0-30000" Type="UDINT" />
+      <Parameter ID="Worst_Case_Response_Time_us" UniqueID="1_8" Value="50000" Range="3000-5000000" Type="UDINT" />
+      <Parameter ID="Node_Guarding_Lifetime" UniqueID="1_9" Value="5" Range="1-255" Type="USINT" />
+      <BitStream ID="Refresh_Prescale_us" Value="100" Type="UDINT" />
+      <BitStream ID="HWC_Version" Value="1" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_LOW" Value="0" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_BOOL_HIGH" Value="1" Type="BOOL" />
+      <BitStream ID="BUR_SAFEPAR_USINT_LOW" Value="0x01" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_USINT_HIGH" Value="250" Type="USINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_LOW" Value="0x000A" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UINT_HIGH" Value="65000" Type="UINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_LOW" Value="100" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_UDINT_HIGH" Value="4000000000" Type="UDINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_LOW" Value="6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_SINT_HIGH" Value="-6" Type="SINT" />
+      <BitStream ID="BUR_SAFEPAR_INT_LOW" Value="0x8300" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_INT_HIGH" Value="32000" Type="INT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_LOW" Value="-2000000000" Type="DINT" />
+      <BitStream ID="BUR_SAFEPAR_DINT_HIGH" Value="0x77359400" Type="DINT" />
+      <BitStream ID="MinSafetyResponseTime_us" Value="6000" Type="UDINT" />
+      <BitStream ID="RTC_Supported" Name-de="Wird die autom. Reaktionszeitberechnung unterstützt?" Value="1" Type="BOOL" />
+    </Group>
+    <Channel ID="SafeModuleOk" Safe="true" Direction="IN" Type="BOOL" ConnectionValidation="1" />
+    <Channel ID="SafeDigitalOutput01" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6200" SODSubIndex="0x01">
+      <Parameter ID="Auto_Restart" UniqueID="SO01_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalOutput02" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="1">
+      <Parameter ID="Auto_Restart" UniqueID="SO02_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalOutput03" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="2">
+      <Parameter ID="Auto_Restart" UniqueID="SO03_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+    </Channel>
+    <Channel ID="SafeDigitalOutput04" Safe="true" Direction="OUT" Type="BOOL" Address="4" BitOffset="3">
+      <Parameter ID="Auto_Restart" UniqueID="SO04_ARst" Value="0" Template="YesNoBOOL" CopyToDomain="true" />
+      <BitStream ID="Reserve1" Value="0" CopyToDomain="true" Type="USINT" />
+      <BitStream ID="Reserve2" Value="0" CopyToDomain="true" Type="USINT" />
+    </Channel>
+    <Channel ID="SafeChannelOK01" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="0" SODIndex="0x6000" SODSubIndex="0x01" />
+    <Channel ID="SafeChannelOK02" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="1" />
+    <Channel ID="SafeChannelOK03" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="2" />
+    <Channel ID="SafeChannelOK04" Safe="true" Description-de="Status digitaler Ausgang (1=OK)" Description-en="Status digital output (1=OK)" Direction="IN" Type="BOOL" Address="4" BitOffset="3" />
+    <Channel ID="ReleaseOutput01" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="0" SODIndex="0x6200" SODSubIndex="0x02" SafeTransport="true" />
+    <Channel ID="ReleaseOutput02" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="1" SafeTransport="true" />
+    <Channel ID="ReleaseOutput03" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="2" SafeTransport="true" />
+    <Channel ID="ReleaseOutput04" Description-de="Freigabe der Wiederanlaufsperre" Description-en="Release of Restart Inhibit" Direction="OUT" Type="BOOL" Address="5" BitOffset="3" SafeTransport="true" />
+    <Channel ID="PhysicalStateChannel1" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="0" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel2" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="1" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel3" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="2" CrossLink="true" />
+    <Channel ID="PhysicalStateChannel4" Description-de="Rücklesewert des Kanals" Description-en="Read back value of channel" Direction="IN" Type="BOOL" Address="0" BitOffset="3" CrossLink="true" />
+    <Channel ID="CurrentOK01" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="4" CrossLink="true" />
+    <Channel ID="CurrentOK02" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="5" CrossLink="true" />
+    <Channel ID="CurrentOK03" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="6" CrossLink="true" />
+    <Channel ID="CurrentOK04" Description-de="TRUE bei Strömen zwischen 50 mA und 2 A" Description-en="TRUE if current is between 50 mA and 2 A" Direction="IN" Type="BOOL" Address="0" BitOffset="7" CrossLink="true" />
+  </Module>
+</BusConfiguration>

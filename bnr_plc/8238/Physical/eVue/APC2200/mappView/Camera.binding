@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="Camera_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+  <Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.cameraID" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericOutput1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Parameters.Read.Exposure" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericOutput3" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Parameters.Read.Focus" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericOutput2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Parameters.Read.Gain" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericOutput4" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.ModuleOk" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="Ellipse3" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Internal.state" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="TextPicker1" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Info.Temperature" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericOutput6" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.cmd.Capture" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="btn_Capture" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.cmd.Repeat" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="btn_Repeat" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.cmd.AutoTune" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="btn_AutoTune" attribute="value" />
+</Binding>
+
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Parameters.Write.Timeout" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericOutput5" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.voltageOk" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="Ellipse4" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Interface.Result" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="TextOutput17" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Interface.ResultReady" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="Ellipse8" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Interface.ReadFail" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="Ellipse16" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Interface.AutoTuneDone" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="Ellipse7" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Interface.Ready" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="Ellipse14" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Interface.Read" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="Ellipse15" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Interface.AutoTune" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="Ellipse13" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Results" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="TextOutput21" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_settings.Name" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="TextOutput1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_settings.Focus" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericInput1" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_settings.Exposure" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericInput2" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_settings.ReadCount" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericInput4" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_settings.Timeout" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericInput5" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_settings.Gain" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericInput3" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_settings.Name" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="TextInput1" attribute="value" />
+</Binding>
+<!--<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.ImageAddress" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="WV_CameraImage" attribute="src" />
+</Binding>-->
+<!--<Binding mode="twoWay">
+	<Source xsi:type="brease" contentRefId="content_Camera" widgetRefId="WV_CameraImage" attribute="busy" />
+	<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="Label1" attribute="visible" />
+</Binding>-->		
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.buttonEnable.Capture" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="btn_Capture" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.buttonEnable.Repeat" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="btn_Repeat" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.buttonEnable.Tune" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="btn_AutoTune" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="SessionPassword" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentLoginDialog" widgetRefId="Password1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="SessionUser" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentLoginDialog" widgetRefId="TextInput1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="SessionLoginFail" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentLoginDialog" widgetRefId="Image1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="SessionLoginFail" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentLoginDialog" widgetRefId="Label3" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="SessionUser" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentLoginDialog" widgetRefId="LoginButton1" attribute="userName" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="SessionPassword" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentLoginDialog" widgetRefId="LoginButton1" attribute="password" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.enableSettings" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericInput1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.enableSettings" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericInput5" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.enableSettings" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericInput4" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.enableSettings" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericInput2" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.enableSettings" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericInput3" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.enableSettings" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="TextInput1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.enableSettings" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="btn_Save" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu_camera.Node" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="NumericOutput7" attribute="value" />
+</Binding>
+<!--<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.ImageAddress" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="Image1" attribute="image" />
+</Binding>-->
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Camera_Dri:visu.ImageAddress" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_Camera" widgetRefId="BCR_image" attribute="image" />
+</Binding>
+</Bindings>
+</BindingsSet>

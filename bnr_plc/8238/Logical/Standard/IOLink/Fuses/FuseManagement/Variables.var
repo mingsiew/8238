@@ -1,0 +1,31 @@
+VAR
+	visu_fuse : REFERENCE TO Fuse_typ;
+	Fuse : ARRAY[0..MAX_FUSE_BANKS] OF Fuse_typ;
+	fuseTrippedAlarm : ARRAY[1..MAX_FUSE_BANKS] OF BOOL; (*alarm : REFERENCE TO Alm;*)
+	reset : ARRAY[0..2] OF BOOL;
+	fuseFault : ARRAY[0..2] OF BOOL;
+	fuse : REFERENCE TO Fuse_typ;
+	n : INT;
+	plc : USINT;
+	state : REFERENCE TO UINT;
+	Channel : REFERENCE TO UINT;
+	i : USINT;
+	error : REFERENCE TO UINT;
+	read_8 : REFERENCE TO ioLinkRead;
+	read_16 : REFERENCE TO ioLinkRead;
+	write : REFERENCE TO ioLinkWrite;
+	channel : UINT;
+	writeChannel : UINT;
+	readVoltage : {REDUND_UNREPLICABLE} ioLinkRead;
+	readCurrent : {REDUND_UNREPLICABLE} ioLinkRead;
+	visu_index : USINT;
+	act_current_channel : USINT;
+	actualCurrent : UINT;
+	inputVoltage : UINT;
+	index : USINT;
+	visu_settings : REFERENCE TO FuseSetting_typ;
+	visu_action : ARRAY[0..MAX_FUSE_CHANNELS] OF visu_action_btn_typ;
+	visu_set_current : ARRAY[0..MAX_FUSE_CHANNELS] OF STRING[3];
+	last_visu_index : USINT;
+	sIndex : STRING[5];
+END_VAR

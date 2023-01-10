@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">Safety.typ</Object>
+    <Object Type="File">Safety.var</Object>
+    <Object Type="Program" Language="IEC" Description="*Mapping to allow access into zones">AccessControl</Object>
+    <Object Type="Program" Language="IEC">Safety</Object>
+    <Object Type="File">Passwords.txt</Object>
+    <Object Type="File">mappSafety.var</Object>
+    <Object Type="File">mappSafety.typ</Object>
+    <Object Type="Program" Language="IEC">mappSafety</Object>
+  </Objects>
+</Package>

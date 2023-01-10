@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="1.08.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Program" Language="IEC" Description="Systemtask für Versionierung">mnSystem</Object>
+    <Object Type="File" Description="Local data types">Pkg_mnSystem.typ</Object>
+    <Object Type="File" Description="Local variables">Pkg_mnSystem.var</Object>
+    <Object Type="File">mnSystem.History.txt</Object>
+    <Object Type="File">CfgMsgStat.mnSystem.txt</Object>
+  </Objects>
+  <Dependencies>
+    <Dependency ObjectName="sys_lib" />
+    <Dependency ObjectName="astime" />
+  </Dependencies>
+</Package>

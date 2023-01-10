@@ -1,0 +1,967 @@
+;--------------------------------------
+;Lift Drive Control - Original 2 Column 
+;--------------------------------------
+
+;Version 1.00 23/02/2009 D.J. First Issue
+;Version 2.00 03/11/2010 D.J. Changed RB to RB (Robo)
+;Version 3.00 04/12/2010 D.J. New distance calculation by using encoder pulses for 1 meter
+;Version 4.00 04/03/2011 D.J. Set RunHz to 0 when not on step 30
+;Version 5.00 08/01/2013 T.R Add module OK to monitor Counter Card and force step 0 after error/powerup..Increased Param Count for Brake contact monitoring. Force init values when 0. 	
+;Version 5.01 12/03/2013 T.R Change function of module OK monitoring to always restart seq after fail due to power cycles on remote panels.
+;Version 6.01 			T.R Add Auto Reference function
+;Version 6.02 27/11/2015 TR. Add Correct comments,
+;Version V8 -- TR Send QS command when enable is off due to DANFOSS issues.
+
+PROGRAM _INIT
+
+
+	
+ 	;Set array index with each init call	
+	idx  = 0
+		
+	TaskNameID = ST_name(0,ADR(TaskName),0)
+	
+	IF (TaskNameID = 0) THEN
+		TaskNameLen = strlen(ADR(TaskName))
+		idx 		= UINT(atoi(ADR(TaskName) + (TaskNameLen - 1)))
+	ENDIF
+		
+	RunTask = (idx > 0) and (idx <= (SIZEOF(RB)/SIZEOF(RB[0])))
+		
+	IF RunTask THEN
+		
+		;Calculate in future for different arrangements
+		;----------------------------------------------
+		
+		;New calculation based on measuring the pulsed for 1000 mm of Travel
+		;-------------------------------------------------------------------
+		
+		;Pulses per meter = 122864.6  
+		;My Ratio (Gearbox and Cog combined) = 4096 / 122.8646 = 33.3375 
+		;mm/minute 				= Motor Nominal Speed 1500 * My Ratio = 50006.25
+		;mm/sec @ 50 Hz 		= 833.4375
+		;mm/Hz 	833.4375 / 50 	= 16.6687
+		
+		RB[idx].Lift.PulsePer10th_mm = REAL(12.2865)
+		RB[idx].Lift.mmPerHz = 16.6687
+		;Force Init value if 0
+		IF RB_Posn[idx].Lift.RefOffset = 0 THEN
+			RB_Posn[idx].Lift.RefOffset = 20000 ; 2metres
+		ENDIF
+		IF RB_Posn[idx].Lift.MaxSpeed = 0 THEN
+			RB_Posn[idx].Lift.MaxSpeed = 200
+		ENDIF
+		
+		
+		
+		
+		// Temp to force input parameters.
+
+		strcpy(ADR(RB[idx].Lift.SeqIn.sDevice),ADR("SL1.IF3"))
+		strcpy(ADR(RB[idx].Lift.SeqIn.sParTblName),ADR("Param_1_5k"))
+		RB[idx].Lift.SeqIn.Node := 10 + USINT(idx);
+		RB[idx].Lift.ModuleOK := TRUE
+		// END
+		
+	ENDIF
+	
+	STEP 					= 0
+	RB[idx].Lift.SeqStep	= 0
+	RetryCount				= 0		
+	
+END_PROGRAM
+PROGRAM _CYCLIC
+
+	;----
+	;Lift
+	;----
+	
+	myStatus = FC302_SEQ_OK
+	
+	;CAN node, Parameter Table Name and IF address
+	node 	= RB[idx].Lift.SeqIn.Node
+	strcpy(ADR(sTableName),ADR(RB[idx].Lift.SeqIn.sParTblName))
+	strcpy(ADR(sDevice),ADR(RB[idx].Lift.SeqIn.sDevice))
+	
+	
+	RB[idx].Lift.SeqIn.I_RefPosn  = X[30 + (idx * 2)].X04
+	
+	;Read drive status
+	FC302_ReadSTW_0.StatusWord = RB[idx].Lift.CAN.StatusWord
+	FC302_ReadSTW_0 FUB FC302_ReadSTW()
+	RB[idx].Lift.STW = FC302_ReadSTW_0.STW
+	
+	;Clear control word - drive stopped
+	RB[idx].Lift.CTW.ExtRefSelectionLSB 	= FALSE
+	RB[idx].Lift.CTW.ExtRefSelectionMSB 	= FALSE
+	RB[idx].Lift.CTW.DC_Brake				= FALSE
+	RB[idx].Lift.CTW.Coasting				= FALSE
+	RB[idx].Lift.CTW.QuickStop				= FALSE
+	RB[idx].Lift.CTW.HoldOutputFreq			= FALSE
+	RB[idx].Lift.CTW.RampStopStart			= FALSE
+	RB[idx].Lift.CTW.ResetTrip				= ResetTrip
+	RB[idx].Lift.CTW.Jog					= FALSE
+	RB[idx].Lift.CTW.RampSelection			= FALSE
+	RB[idx].Lift.CTW.DataValid				= TRUE
+	RB[idx].Lift.CTW.Relay01Active			= FALSE
+	RB[idx].Lift.CTW.Relay02Active			= FALSE
+	RB[idx].Lift.CTW.ParaSetUpLSB			= FALSE
+	RB[idx].Lift.CTW.ParaSetUpMSB			= FALSE
+	RB[idx].Lift.CTW.Reverse				= FALSE
+	
+	RB[idx].Lift.RunForwards				= FALSE
+	RB[idx].Lift.RunReverse					= FALSE
+	RB[idx].Lift.CAN.TargetVelocity			= 0
+	RB[idx].Lift.RunFreq 					= 0
+	RB[idx].Lift.SeqOut.RefComplete 		= FALSE	
+	RB[idx].Lift.SeqOut.PosnOk				= FALSE
+	RB[idx].Lift.SeqOut.DriveDisabled		= FALSE
+	Referencing								= FALSE
+	DisableDrive 							= (RB[idx].Lift.SeqIn.DisableDrive OR RB[idx].Lift.SeqIn.EStop OR NOT RB[idx].Lift.STW.DriveReady OR NOT RB[idx].Lift.ModuleOK)
+	LimitsOk								= (RB[idx].Lift.SeqIn.I_ForwardLimitOk AND RB[idx].Lift.SeqIn.I_ReverseLimitOk)
+	ManualControl							= (RB_Posn[idx].Lift.OperationMode = 1)
+	
+	
+	;Init var ensure not lost if no Init
+	RB[idx].Lift.PulsePer10th_mm 			= REAL(12.2865)
+	RB[idx].Lift.mmPerHz 					= 16.6687
+	
+	;Current Position
+	RB[idx].Lift.PosnActRaw = (RB[idx].Lift.Encoder + $7FFFFFFF)
+	RB[idx].Lift.PosnAct	= DINT(RB[idx].Lift.PosnActRaw / RB[idx].Lift.PulsePer10th_mm)
+	RB[idx].Lift.PosnNow	= ((RB_Retain[idx].Lift.PosnRef - RB[idx].Lift.PosnAct) + RB_Posn[idx].Lift.RefOffset)
+	RB[idx].Lift.DistRemain = ABS(RB[idx].Lift.SeqIn.PosnReq - RB[idx].Lift.PosnNow)
+	
+	;TrackView Display
+	RB_Posn[idx].Lift.PositionNow 	= RB[idx].Lift.PosnNow 
+	RB_Posn[idx].Lift.CycleCount 	= RB_Perm[idx].Lift.CycleCount 
+	
+	;Step Shifting
+	STEP = RB[idx].Lift.SeqStep
+	RB_Posn[idx].Lift.SeqStep = DINT(STEP)
+	
+	;Enable Parameter writing slower speed - Every 60ms
+	ScanClock 		= clock_ms()  
+	ScanNow 		= (ScanClock - ScanLastClock)
+	ScanLastClock 	= ScanClock
+	ScanCount 		= (ScanCount + UINT(ScanNow))
+	IF (ScanCount >= 60) THEN
+		ScanCount = 0
+	ENDIF
+	ParameterEnable = (ScanCount = 0)
+	
+	;If ModuleOK Fails force reference.// Change to restart to CAN Sequence to ensure full control and correct params
+;	F_TRIG(RB[idx].Lift.ModuleOK,CountCardFailedPLS)
+;	IF CountCardFailedPLS AND (RetryCount < 5) THEN
+;		RetryCount = RetryCount + 1  ;If required limit number of retries on the reference TEST IF REQUIRED> HOW TO HANDLE ERROR??
+;		RB[idx].Lift.SeqIn.DoRef = TRUE
+;	ENDIF
+	IF NOT RB[idx].Lift.ModuleOK THEN	; Code to disable drive if count card failed/poweroff.
+		RB[idx].Lift.SeqStep = 0
+	ENDIF
+	
+	;Step 0 ;Disabled
+	IF (STEP = 0) THEN
+		IF (RunTask AND RB[idx].Lift.ModuleOK) THEN
+			RB[idx].Lift.SeqStep = 1 
+		ELSE
+			;Do Nothing
+		ENDIF
+	ENDIF
+	
+	;Set CAN node to pre-operational
+	TON_10ms_Restart.IN = (STEP = 1)
+	TON_10ms_Restart.PT = 1000
+	TON_10ms_Restart FUB TON_10ms()
+	IF (STEP = 1) THEN
+		
+		IF (StartNode = node) THEN
+			StartNode = 0
+		ENDIF
+		
+		myStatus = FC302_SEQ_SetCANPreOperational
+			
+		IF (RB[idx].Lift.CAN.ModuleOk OR (RB[idx].Lift.CAN.NodeStatus = 3)) THEN
+		
+			CANopenNMT_0.enable 	= TRUE
+			CANopenNMT_0.pDevice 	= ADR(sDevice)
+			CANopenNMT_0.node 		= node
+			CANopenNMT_0.state 		= coENTER_PRE_OPERATIONAL
+			CANopenNMT_0 FUB CANopenNMT()
+		
+			IF (CANopenNMT_0.status = 0) OR (CANopenNMT_0.status < 65535) THEN 
+				RB[idx].Lift.SeqStep = 10
+			ENDIF
+		
+		ELSE IF TON_10ms_Restart.Q THEN
+			RB[idx].Lift.SeqStep = 2 ;Reset node here if not true
+		ENDIF
+		
+	ENDIF
+	
+	;Restart node
+	IF (STEP = 2) THEN
+		
+		myStatus = FC302_SEQ_RestartCANnode
+		
+		CANopenNMT_0.enable 	= TRUE
+		CANopenNMT_0.pDevice 	= ADR(sDevice)
+		CANopenNMT_0.node 		= node
+		CANopenNMT_0.state 		= coRESET_NODE
+		CANopenNMT_0 FUB CANopenNMT()
+	
+		IF (CANopenNMT_0.status = 0) OR (CANopenNMT_0.status < 65535) THEN 
+			RB[idx].Lift.SeqStep = 1
+		ENDIF
+	
+	ENDIF
+		
+	;Read from parameter table
+	IF (STEP = 10) THEN
+		
+		myStatus = FC302_SEQ_ReadParameterTable
+		
+		TableTooLarge = FALSE
+		
+		FC302_ReadParamTbl_0.Enable 		= TRUE
+		FC302_ReadParamTbl_0.adrTableName 	= ADR(sTableName) 
+		FC302_ReadParamTbl_0.adrDestTable 	= ADR(RB[idx].Lift.ParaList)
+		FC302_ReadParamTbl_0.ParamLimit 	= (SIZEOF(RB[idx].Lift.ParaList) / 8)	
+		FC302_ReadParamTbl_0 FUB FC302_ReadParamTbl()
+		
+		IF FC302_ReadParamTbl_0.Status = 0 THEN	
+			WriteListLength = FC302_ReadParamTbl_0.ParamCount	;Total parameters to write to the drive
+			WriteIndex 		= 0 								;First index to write 0 not used
+			RB[idx].Lift.SeqStep = 11
+		ELSE IF FC302_ReadParamTbl_0.Status = 1 THEN
+			TableTooLarge = TRUE
+		ELSE
+			;Error
+		ENDIF
+		
+	ENDIF 
+	
+	;Write parameter list to drive
+	IF (STEP = 11) THEN
+		
+		myStatus = FC302_SEQ_WriteParameters
+		
+		IF ParameterEnable THEN
+				
+			FC302_WriteParam_0.enable 	= TRUE
+			FC302_WriteParam_0.pDevice 	= ADR(sDevice)
+			FC302_WriteParam_0.node 	= node 
+			FC302_WriteParam_0.index 	= RB[idx].Lift.ParaList[WriteIndex].index
+			FC302_WriteParam_0.subindex = RB[idx].Lift.ParaList[WriteIndex].subindex
+			FC302_WriteParam_0.data 	= RB[idx].Lift.ParaList[WriteIndex].data
+			FC302_WriteParam_0.bytelen 	= RB[idx].Lift.ParaList[WriteIndex].datalen
+			FC302_WriteParam_0 FUB FC302_WriteParam()
+
+			IF (FC302_WriteParam_0.status = 0) THEN
+				RB[idx].Lift.SeqStep = 12				
+			ENDIF
+		
+		ENDIF
+			
+	ENDIF
+	
+	;Read Parameter from drive
+	IF (STEP = 12) THEN
+		
+		myStatus = FC302_SEQ_WriteParameters
+		
+		IF ParameterEnable THEN
+					
+			FC302_ReadParam_0.enable 	= TRUE
+			FC302_ReadParam_0.pDevice 	= ADR(sDevice)
+			FC302_ReadParam_0.node 		= node
+			FC302_ReadParam_0.index 	= RB[idx].Lift.ParaList[WriteIndex].index  
+			FC302_ReadParam_0.subindex 	= RB[idx].Lift.ParaList[WriteIndex].subindex
+			FC302_ReadParam_0 FUB FC302_ReadParam()
+	
+			IF (FC302_ReadParam_0.status = 0) THEN
+				myRead 	= UDINT(FC302_ReadParam_0.data)
+				IF RB[idx].Lift.ParaList[WriteIndex].data = myRead THEN
+					WriteIndex = WriteIndex + 1
+					;Once = all parameters have been completed as 60 = 0-59  
+					IF (WriteIndex = WriteListLength) THEN 
+						RB[idx].Lift.SeqStep = 13
+					ELSE
+						RB[idx].Lift.SeqStep = 11 ;Write Next Parameter
+					ENDIF	
+				ELSE
+					RB[idx].Lift.ParamWrite.ErrorCount 	= RB[idx].Lift.ParamWrite.ErrorCount + 1
+					RB[idx].Lift.ParamWrite.Index 		= RB[idx].Lift.ParaList[WriteIndex].index
+					RB[idx].Lift.ParamWrite.SubIndex 	= RB[idx].Lift.ParaList[WriteIndex].subindex
+					RB[idx].Lift.SeqStep = 11 ;Try Write Again
+				ENDIF
+			ENDIF
+		
+		ENDIF
+		
+	ENDIF
+	
+	
+	
+	;Store Parameters
+	IF (STEP = 13) THEN
+		
+		myStatus = FC302_SEQ_WriteParameters
+		
+		IF ParameterEnable THEN
+		
+			FC302_WriteParam_0.enable 	= TRUE
+			FC302_WriteParam_0.pDevice 	= ADR(sDevice)
+			FC302_WriteParam_0.node 	= node 
+			FC302_WriteParam_0.index 	= 1031
+			FC302_WriteParam_0.subindex = 0
+			FC302_WriteParam_0.data 	= 1
+			FC302_WriteParam_0.bytelen 	= 1
+			FC302_WriteParam_0 FUB FC302_WriteParam()
+
+			IF (FC302_WriteParam_0.status = 0) THEN
+				RB[idx].Lift.SeqStep = 14
+			ENDIF
+		
+		ENDIF
+	
+	ENDIF
+	
+	;Check Parameters are stored
+	IF (STEP = 14) THEN
+		
+		myStatus = FC302_SEQ_CheckParamStored
+		
+		IF ParameterEnable THEN
+					
+			FC302_ReadParam_0.enable 	= TRUE
+			FC302_ReadParam_0.pDevice 	= ADR(sDevice)
+			FC302_ReadParam_0.node 		= node
+			FC302_ReadParam_0.index 	= 1031 
+			FC302_ReadParam_0.subindex 	= 0
+			FC302_ReadParam_0 FUB FC302_ReadParam()
+	
+			IF (FC302_ReadParam_0.status = 0) THEN
+				IF (FC302_ReadParam_0.data = 0) THEN
+					RB[idx].Lift.SeqStep = 15
+				ENDIF
+			ENDIF
+		
+		ENDIF
+		
+	ENDIF
+	
+	;Start CAN node
+	IF (STEP = 15) THEN
+		
+		IF (StartNode = 0) THEN
+			StartNode = node
+		ENDIF
+		
+		IF (ParameterEnable AND (StartNode = node)) THEN
+				
+			myStatus = FC302_SEQ_StartCANnode
+		
+			CANopenNMT_0.enable 	= TRUE
+			CANopenNMT_0.pDevice 	= ADR(sDevice)
+			CANopenNMT_0.node 		= node
+			CANopenNMT_0.state 		= coSTART_REMOTE_NODE
+			CANopenNMT_0 FUB CANopenNMT()
+		
+			IF (CANopenNMT_0.status = 0) THEN 
+				RB[idx].Lift.SeqStep = 20
+			ENDIF
+		ENDIF
+		
+	ENDIF
+	
+	;Wait for drive operational
+	TON_10ms_Retry.IN = (STEP = 20)
+	TON_10ms_Retry.PT = 100 ;2000
+	TON_10ms_Retry FUB TON_10ms()
+	IF (STEP = 20) THEN
+		myStatus = FC302_SEQ_WaitDriveOperational
+		IF RB[idx].Lift.CAN.ModuleOk THEN
+			IF (StartNode = node) THEN
+				StartNode = 0
+			ENDIF
+			RB[idx].Lift.SeqStep 	= 21 
+		ELSE IF TON_10ms_Retry.Q THEN
+			IF (StartNode = node) THEN
+				StartNode = 0
+			ENDIF
+			RB[idx].Lift.SeqStep 	= 15 ;0
+		ENDIF
+	ENDIF
+	
+	;-----------------
+	;Find ref Position
+	;-----------------
+	
+	EnableReference = NOT DisableDrive
+	
+	;Past Reference position timer
+	TON_10ms_PastRef.IN = NOT RB[idx].Lift.SeqIn.I_RefPosn
+	TON_10ms_PastRef.PT = 30
+	TON_10ms_PastRef FUB TON_10ms()
+	
+	RefSpeed = 100 ;150 ;15Hz
+				
+	;Move carriage down until refence or bottom limit
+	IF (STEP = 21) THEN
+		myStatus = FC302_SEQ_Referencing
+		Referencing					= TRUE
+		RB[idx].Lift.RunForwards 	= FALSE
+		RB[idx].Lift.RunReverse 	= EnableReference
+		RB[idx].Lift.RunFreq		= RefSpeed
+		IF RB[idx].Lift.SeqIn.I_RefPosn THEN
+			RB[idx].Lift.SeqStep = 23
+		ELSE IF NOT RB[idx].Lift.SeqIn.I_ReverseLimitOk THEN
+			RB[idx].Lift.SeqStep = 22
+		ELSE IF NOT RB[idx].Lift.SeqIn.I_ForwardLimitOk THEN
+			myStatus = FC302_SEQ_MotorWiringFault
+		ENDIF
+	ENDIF
+	
+	;Bottom limit was found - try moving up
+	IF (STEP = 22) THEN
+		myStatus = FC302_SEQ_Referencing
+		Referencing					= TRUE
+		RB[idx].Lift.RunForwards 	= EnableReference
+		RB[idx].Lift.RunReverse 	= FALSE
+		RB[idx].Lift.RunFreq		= RefSpeed
+		IF RB[idx].Lift.SeqIn.I_RefPosn THEN
+			RB[idx].Lift.SeqStep = 23
+		ELSE IF NOT RB[idx].Lift.SeqIn.I_ForwardLimitOk THEN
+			myStatus = FC302_SEQ_RefNotFound
+		ENDIF
+	ENDIF
+	
+	;Move carriage down past reference
+	IF (STEP = 23) THEN
+		myStatus = FC302_SEQ_Referencing
+		Referencing					= TRUE
+		RB[idx].Lift.RunForwards 	= FALSE
+		RB[idx].Lift.RunReverse 	= EnableReference
+		RB[idx].Lift.RunFreq		= RefSpeed
+		IF TON_10ms_PastRef.Q THEN
+			RB[idx].Lift.SeqStep = 24
+		ENDIF
+	ENDIF
+	
+	;Move carriage back up to reference
+	IF (STEP = 24) THEN
+		myStatus = FC302_SEQ_Referencing
+		Referencing					= TRUE
+		RB[idx].Lift.RunForwards 	= EnableReference
+		RB[idx].Lift.RunReverse 	= FALSE
+		RB[idx].Lift.RunFreq		= RefSpeed
+		IF RB[idx].Lift.SeqIn.I_RefPosn THEN
+			RB[idx].Lift.SeqStep = 25
+		ENDIF
+	ENDIF
+	
+	;Move carriage up clear of reference
+	IF (STEP = 25) THEN
+		myStatus = FC302_SEQ_Referencing
+		Referencing					= TRUE
+		RB[idx].Lift.RunForwards 	= EnableReference
+		RB[idx].Lift.RunReverse 	= FALSE
+		RB[idx].Lift.RunFreq		= 100
+		IF TON_10ms_PastRef.Q THEN
+			RB[idx].Lift.SeqStep = 26
+		ENDIF
+	ENDIF
+	
+	;Move carriage down until refence - final posioning
+	IF (STEP = 26) THEN
+		myStatus = FC302_SEQ_Referencing
+		Referencing					= TRUE
+		RB[idx].Lift.RunForwards 	= FALSE
+		RB[idx].Lift.RunReverse 	= EnableReference
+		RB[idx].Lift.RunFreq		= 10  ;1Hz get exact location
+		IF RB[idx].Lift.SeqIn.I_RefPosn THEN
+			RB_Retain[idx].Lift.PosnRef = RB[idx].Lift.PosnAct
+			RB[idx].Lift.SeqStep = 30
+		ENDIF
+	ENDIF
+	
+	;------------------
+	;Auto tune Position
+	;------------------
+	
+	EnableTune = NOT DisableDrive
+	
+	;Rail in correct position proximity - depending on which is required
+	I_InPosition = FALSE
+	IF (RB[idx].Lift.SeqIn.AutoTuneReceive = AlignReceive) THEN
+		I_InPosition = RB[idx].Lift.SeqIn.I_RailOkReceive
+	ELSE 
+		I_InPosition = RB[idx].Lift.SeqIn.I_RailOkRelease
+	ENDIF
+			
+	;Check in rough position Release or Recieve Prox Made
+	IF (STEP = 41) THEN
+		myStatus = FC302_SEQ_AutoTune
+		RB[idx].Lift.SeqOut.AutoTunePosn = RB[idx].Lift.SeqIn.AutoTunePosn ;Auto Tune Status back to sequence
+		IF I_InPosition THEN
+			RB[idx].Lift.SeqStep = 42
+		ELSE 
+			;Do What?
+		ENDIF
+		IF (RB[idx].Lift.SeqIn.AutoTunePosn = 0) THEN
+			RB[idx].Lift.SeqStep = 30 ;Cancel AutoTune
+		ENDIF
+	ENDIF
+	
+
+	;Move up until prox not made and store value
+	IF (STEP = 42) THEN
+		myStatus = FC302_SEQ_AutoTune
+		RB[idx].Lift.RunForwards 	= EnableTune 
+		RB[idx].Lift.RunReverse 	= FALSE
+		RB[idx].Lift.RunFreq		= 10
+		IF NOT I_InPosition THEN
+			AutoSavedTop			= RB[idx].Lift.PosnNow
+			RB[idx].Lift.SeqStep 	= 43
+		ENDIF
+		IF (RB[idx].Lift.SeqIn.AutoTunePosn = 0) THEN
+			RB[idx].Lift.SeqStep = 30 ;Cancel AutoTune
+		ENDIF
+	ENDIF
+	
+	;Move down until prox made
+	IF (STEP = 43) THEN
+		myStatus = FC302_SEQ_AutoTune
+		RB[idx].Lift.RunForwards 	= FALSE
+		RB[idx].Lift.RunReverse 	= EnableTune
+		RB[idx].Lift.RunFreq		= 10
+		IF I_InPosition THEN
+			RB[idx].Lift.SeqStep 	= 44
+		ENDIF
+		IF (RB[idx].Lift.SeqIn.AutoTunePosn = 0) THEN
+			RB[idx].Lift.SeqStep = 30 ;Cancel AutoTune
+		ENDIF
+	ENDIF
+	
+	;Move down until prox not made and calc position difference
+	IF (STEP = 44) THEN
+		myStatus = FC302_SEQ_AutoTune
+		RB[idx].Lift.RunForwards 	= FALSE
+		RB[idx].Lift.RunReverse 	= EnableTune
+		RB[idx].Lift.RunFreq		= 10
+		IF NOT I_InPosition THEN
+			AutoSavedBottom			= RB[idx].Lift.PosnNow
+			RB[idx].Lift.SeqStep 	= 45
+		ENDIF
+		IF (RB[idx].Lift.SeqIn.AutoTunePosn = 0) THEN
+			RB[idx].Lift.SeqStep = 30 ;Cancel AutoTune
+		ENDIF
+	ENDIF
+	
+	;Store new position
+	IF (STEP = 45) THEN
+		
+		myStatus = FC302_SEQ_AutoTune
+		
+		;Calculate position
+		AutoPosnDiff = ((AutoSavedTop - AutoSavedBottom) / 2)
+		AutoNewPosn  = (AutoSavedTop - AutoPosnDiff)	
+		
+		RB_Posn[idx].Lift.Posn[RB[idx].Lift.SeqIn.AutoTunePosn] = AutoNewPosn
+				
+		RB[idx].Lift.SeqOut.AutoTunePosn = 0 ;Clear Auto Position
+		RB[idx].Lift.SeqStep = 46
+		
+	ENDIF
+	
+	;Wait until RB sequence has cancelled auto position
+	IF (STEP = 46) THEN
+		IF (RB[idx].Lift.SeqIn.AutoTunePosn = 0) THEN
+			RB[idx].Lift.SeqStep = 30
+		ENDIF		
+	ENDIF
+	
+		
+	;Read a parameter - not used at present	
+	IF ((STEP < 11) OR (STEP > 14)) AND (RB[idx].Lift.CAN.ModuleOk OR (RB[idx].Lift.CAN.NodeStatus = 3)) THEN
+		
+		IF ParameterEnable THEN
+			
+		//	D[85] = MonitorIdx
+			
+			MonitorSubIndex = 0
+			IF (MonitorIdx = 1) THEN
+				MonitorIndex 	= 1610 ;Motor Power
+			ELSE IF (MonitorIdx = 2) THEN
+				MonitorIndex 	= 1612 ;Motor Voltage
+			ELSE IF (MonitorIdx = 3) THEN
+				MonitorIndex 	= 1613 ;Motor Hz
+			ELSE IF (MonitorIdx = 4) THEN
+				MonitorIndex 	= 1614 ;Motor A
+			ELSE IF (MonitorIdx = 5) THEN
+				MonitorIndex 	= 1616 ;Motor Torque Nm
+			ELSE IF (MonitorIdx = 6) THEN
+				MonitorIndex 	= 1617 ;Motor RPM
+			ELSE IF (MonitorIdx = 7) THEN
+				MonitorIndex 	= 1634 ;Drive °C
+			ELSE IF (MonitorIdx = 8) THEN
+				MonitorIndex 	= 1502 ;Motor kWh
+			ELSE IF (MonitorIdx = 9) THEN
+				MonitorIndex 	= 1690 ;Alarm word
+			ELSE IF (MonitorIdx = 10) THEN
+				MonitorIndex 	= 1691 ;Alarm word 2
+			ELSE IF (MonitorIdx = 11) THEN
+				MonitorIndex 	= 1692 ;Warning word
+			ELSE IF (MonitorIdx = 12) THEN
+				MonitorIndex 	= 1693 ;Warning word 2
+			ELSE 
+				MonitorIdx = 1
+			ENDIF
+			
+			;Monitor caused CAN problems do not use!!
+			;----------------------------------------
+			;FC302_ReadParam_0.enable 	= TRUE
+			;FC302_ReadParam_0.pDevice 	= ADR(sDevice)
+			;FC302_ReadParam_0.node 		= node
+			;FC302_ReadParam_0.index 	= MonitorIndex  
+			;FC302_ReadParam_0.subindex 	= MonitorSubIndex
+			;FC302_ReadParam_0 FUB FC302_ReadParam()
+	
+			;IF (FC302_ReadParam_0.status = 0) THEN
+			;	myRead 	= UINT(FC302_ReadParam_0.data)
+			;ENDIF
+			
+			RB[idx].Lift.Motor.Value = INT(myRead)
+			RB_Posn[idx].Lift.Monitor = INT(myRead)
+			
+		ENDIF
+		
+	ENDIF
+			
+	;Normal Operation
+	IF (STEP = 30) THEN
+		
+		IF (mySlowWindow = 0) THEN
+			mySlowWindow = 500 ;200 ;1000
+		ENDIF
+		IF (myDist = 0) THEN
+			myDist = 250 ;200
+		ENDIF
+		
+		RB[idx].Lift.SeqOut.RefComplete = TRUE
+		
+		;Power Save mode changed - re-calculate run speed
+		IF PowerSave <> RB[idx].Lift.SeqIn.PowerSave THEN
+			RB[idx].Lift.RunHz 	= 0 
+			PowerSave 			= RB[idx].Lift.SeqIn.PowerSave
+		ENDIF
+		
+		;Calculate the required speed and stop distance with each run signal
+		IF RB[idx].Lift.SeqIn.Run THEN 
+			IF (RB[idx].Lift.RunHz = 0) THEN
+				;Required speed
+				MotorNomHz 				= 50	;Motor nominal speed 50Hz
+				RampTime 				= 10 	;1.0 sec - Read value in future?
+				RampDist				= ((MotorNomHz * RB[idx].Lift.mmPerHz) * RampTime) ;Nominal Ramp Dist @ 50Hz
+				DistRemain				= RB[idx].Lift.DistRemain
+				RampFactor 				= (DistRemain / RampDist) ;eg 500mm Remain / 620mm (RampDist @ 50Hz) = 0.8
+				RequiredHz				= UINT((MotorNomHz * RampFactor) * 10)
+				MaxHz					= UINT((RB[idx].Lift.SeqIn.MaxSpeed / RB[idx].Lift.mmPerHz) * 10)
+				;Restrict speed to value from sequence or 1000mm/sec (80.6 Hz)
+				;IF (MaxHz > 806) THEN
+				;	MaxHz = 806
+				;ENDIF
+				IF (MaxHz > 1209) THEN
+					MaxHz = 1209
+				ENDIF
+				IF (RequiredHz > MaxHz) THEN
+					RB[idx].Lift.RunHz 	= MaxHz		
+				ELSE
+					RB[idx].Lift.RunHz 	= RequiredHz
+				ENDIF
+				;Stop Distance
+				;RB[idx].Lift.StopDist 	= (((RB[idx].Lift.RunHz * RB[idx].Lift.SeqIn.RunSpeed) * RampTime) / 1000)
+				StopFactor				= (REAL(RB[idx].Lift.RunHz) / (MotorNomHz * 10))
+				RunSpeed				= (StopFactor * (RampDist / 10))
+				RB[idx].Lift.StopDist	= UDINT((RunSpeed * StopFactor) / 0.2) 
+				SlowWindow 				= mySlowWindow ;1000 ;10tenths mm - try lower larger than CAN scan time
+				StopDist				= RB[idx].Lift.StopDist + SlowWindow
+			ENDIF
+			
+		ELSE
+			RB[idx].Lift.RunHz = 0
+		ENDIF
+		
+		
+					
+		;Position Required?
+		IF (RB[idx].Lift.DistRemain > StopDist) THEN
+			RB[idx].Lift.RunFreq 	= RB[idx].Lift.RunHz
+		ELSE IF (RB[idx].Lift.DistRemain > myDist) THEN ;200) THEN 	;100 = 10mm
+			RB[idx].Lift.RunFreq = 81 					;8.1Hz = 100mm/sec
+		ELSE IF (RB[idx].Lift.DistRemain > 5) 	THEN 	;5 = 0.5mm
+			RB[idx].Lift.RunFreq = 12					;1.2Hz, 0.8Hz = 10mm/sec			
+		ELSE 
+			RB[idx].Lift.RunFreq = 0
+		ENDIF
+		
+		;Final Ramp Time
+		IF (RB[idx].Lift.RunFreq = RB[idx].Lift.RunHz) THEN
+			RB[idx].Lift.RampStart 	= 0
+			RB[idx].Lift.RampTime 	= 0
+		ELSE IF (RB[idx].Lift.RunFreq > 0) THEN
+			IF (RB[idx].Lift.RampStart = 0) THEN
+				RB[idx].Lift.RampStart = clock_ms()
+			ENDIF
+		ELSE IF (RB[idx].Lift.RunFreq = 0) THEN
+			IF (RB[idx].Lift.RampTime = 0) THEN
+				RB[idx].Lift.RampTime = (clock_ms() - TIME(RB[idx].Lift.RampStart))
+			ENDIF
+			;Store Max final ramp time
+			IF (RB[idx].Lift.RampTime > RB[idx].Lift.RampMax) THEN
+				RB[idx].Lift.RampMax = RB[idx].Lift.RampTime
+			ENDIF
+		ENDIF
+		
+		RB[idx].Lift.RunForwards 	= (RB[idx].Lift.SeqIn.Run AND (RB[idx].Lift.PosnNow < RB[idx].Lift.SeqIn.PosnReq))
+		RB[idx].Lift.RunReverse 	= (RB[idx].Lift.SeqIn.Run AND (RB[idx].Lift.PosnNow > RB[idx].Lift.SeqIn.PosnReq))
+		
+		;Check Rail Alignment Switches
+		IF RB[idx].Lift.SeqIn.Run THEN 
+			IF NOT AlignSwitchCheck THEN
+				AlignSwitchCheck 	= TRUE
+				ReleaseSwitchOk 	= FALSE
+				ReceiveSwitchOk		= FALSE
+			ENDIF
+		ELSE
+			AlignSwitchCheck = FALSE
+		ENDIF
+		
+		;Switches have gone off during operation
+		IF NOT RB[idx].Lift.SeqIn.I_RailOkRelease THEN
+			ReleaseSwitchOk = TRUE
+		ENDIF
+		
+		IF NOT RB[idx].Lift.SeqIn.I_RailOkReceive THEN
+			ReceiveSwitchOk = TRUE
+		ENDIF
+		;------------------------------
+				
+		RailAligned = FALSE
+		IF (RB[idx].Lift.SeqIn.RailAlign = AlignNone) THEN
+			RailAligned	= TRUE
+		ELSE IF (RB[idx].Lift.SeqIn.RailAlign = AlignReceive) AND RB[idx].Lift.SeqIn.I_RailOkReceive THEN
+			RailAligned	= TRUE
+		ELSE IF (RB[idx].Lift.SeqIn.RailAlign = AlignRelease) AND RB[idx].Lift.SeqIn.I_RailOkRelease THEN
+			RailAligned	= TRUE 
+		ENDIF
+		PosnValid					= (RB[idx].Lift.DistRemain <= 10) ;10=1mm
+		AlignSwitchesOk				= (ReleaseSwitchOk AND ReceiveSwitchOk)
+		RB[idx].Lift.SeqOut.PosnOk  = ((RB[idx].Lift.RunFreq = 0) AND PosnValid AND RailAligned AND AlignSwitchesOk)
+		
+		IF ((RB[idx].Lift.RunFreq = 0) AND PosnValid) THEN
+			IF NOT RailAligned THEN
+				myStatus = FC302_SEQ_RailNotAligned
+			ELSE IF NOT ReleaseSwitchOk THEN
+				myStatus = FC302_SEQ_ReleaseSwitchFault
+			ELSE IF NOT ReceiveSwitchOk THEN
+				myStatus = FC302_SEQ_ReceiveSwitchFault
+			ENDIF
+		ENDIF
+		
+		;Reference Check - CHeck position when moving down onto reference switch..
+
+		
+				
+		;Travel limit reached go-to reference
+		;IF NOT LimitsOk THEN
+		;	RB[idx].Lift.SeqStep = 0  
+		;ENDIF
+		
+		;No reference position then go-to reference
+		IF (RB_Retain[idx].Lift.PosnRef = 0) THEN
+			RB[idx].Lift.SeqStep = 0
+		ENDIF
+		
+		;Go to Manual Jog
+		IF (RB[idx].Lift.SeqIn.JogForwards OR RB[idx].Lift.SeqIn.JogReverse) THEN
+			JogHz				 = 100
+			RB[idx].Lift.SeqStep = 32
+		ENDIF
+		
+		;Auto fine tune required?
+		IF (RB[idx].Lift.SeqIn.AutoTunePosn > 0) THEN
+			RB[idx].Lift.SeqStep = 41
+		ENDIF
+		
+		;Drive disable request or e-stop from sequence
+		IF DisableDrive THEN
+			RB[idx].Lift.SeqStep = 31
+		ENDIF
+		
+	ELSE
+		RB[idx].Lift.RunHz = 0	
+	ENDIF ;\Step 30
+	
+	;Drive Disabled - RB Sequence stops drive operation
+	IF (STEP = 31) THEN
+		RB[idx].Lift.SeqOut.RefComplete 	= TRUE
+		RB[idx].Lift.SeqOut.DriveDisabled 	= DisableDrive
+		IF NOT DisableDrive THEN
+			RB[idx].Lift.SeqStep = 30
+		ENDIF
+	ELSE IF Referencing THEN
+		RB[idx].Lift.SeqOut.DriveDisabled 	= DisableDrive
+	ENDIF
+	
+	;RB Seq Do Reference Received
+	IF (STEP <> 31) THEN
+		IF RB[idx].Lift.SeqIn.DoRef THEN
+			RB[idx].Lift.SeqIn.DoRef 	= FALSE
+			IF (RB[idx].Lift.CAN.NodeStatus = 261) THEN
+				RB[idx].Lift.SeqStep = 21
+			ELSE
+				RB[idx].Lift.SeqStep = 0
+			ENDIF
+		ENDIF
+	ENDIF
+	
+	;Enable reset of drive when in error - trip lock and drive not ready etc..
+	IF ((STEP = 31) AND NOT RB[idx].Lift.SeqIn.DisableDrive) THEN 
+		IF RB[idx].Lift.SeqIn.DoRef THEN
+			RB[idx].Lift.SeqIn.DoRef 	= FALSE
+			RB[idx].Lift.SeqStep 		= 0
+		ENDIF
+	ENDIF
+	
+	;Jog mode - 1 second slow before accelleration
+	TmrJog.IN = (STEP = 32)
+	TmrJog.PT = 100
+	TmrJog FUB TON_10ms()
+	IF (STEP = 32) THEN
+		myStatus = FC302_SEQ_Jog
+		Referencing					= TRUE
+		RB[idx].Lift.RunForwards 	= RB[idx].Lift.SeqIn.JogForwards
+		RB[idx].Lift.RunReverse 	= RB[idx].Lift.SeqIn.JogReverse
+		RB[idx].Lift.RunFreq		= (JogHz / 10)
+		IF (TmrJog.Q AND (JogHz < 1600)) THEN ;160 (1600 / 10) around 200mm/sec
+			JogHz = JogHz + 1 ;Acc by 0.1 Hz / Scan 81 = 8.1Hz = 100mm/sec
+		ENDIF
+		IF (NOT RB[idx].Lift.SeqIn.JogForwards AND NOT RB[idx].Lift.SeqIn.JogReverse) THEN
+			RB[idx].Lift.SeqStep = 30
+		ENDIF	
+	ENDIF
+	
+	EnableForwards 	= (RB[idx].Lift.RunForwards AND RB[idx].Lift.SeqIn.I_ForwardLimitOk)
+	EnableReverse	= (RB[idx].Lift.RunReverse  AND RB[idx].Lift.SeqIn.I_ReverseLimitOk)
+		
+	EnableDrive 	= (NOT DisableDrive AND (EnableForwards OR EnableReverse) AND (RB[idx].Lift.RunFreq > 0))
+	
+	QuickStop		= (RB[idx].Lift.SeqIn.EStop OR (NOT Referencing AND (NOT RB[idx].Lift.SeqIn.I_ForwardLimitOk OR NOT RB[idx].Lift.SeqIn.I_ReverseLimitOk)))
+	;QuickStop		= RB[idx].Lift.SeqIn.EStop
+	
+	;Estop
+	;Drive ready from status word and bus control
+		
+	;Give current position to RB sequence
+	RB[idx].Lift.SeqOut.PosnNow = INT(RB[idx].Lift.PosnNow / 10) 
+	
+	;Drive Control Word
+	IF RB[idx].Lift.CAN.ModuleOk THEN
+		IF EnableDrive AND NOT QuickStop THEN
+			RB[idx].Lift.CTW.DC_Brake		= TRUE
+			RB[idx].Lift.CTW.Coasting		= TRUE
+			RB[idx].Lift.CTW.QuickStop		= (RB[idx].Lift.RunFreq > 0)
+			RB[idx].Lift.CTW.HoldOutputFreq	= TRUE
+			RB[idx].Lift.CTW.RampStopStart	= TRUE
+			RB[idx].Lift.CTW.ResetTrip		= FALSE
+			RB[idx].Lift.CTW.DataValid		= TRUE
+			RB[idx].Lift.CTW.Reverse		= EnableForwards  	;Due to mechanical arrangement Reverse is Up/Forwards
+			RB[idx].Lift.CAN.TargetVelocity	= UINT(($4000 / 1000) * RB[idx].Lift.RunFreq)
+		ELSE
+			RB[idx].Lift.CTW.DC_Brake		= FALSE//TRUE
+			RB[idx].Lift.CTW.Coasting		= TRUE
+			RB[idx].Lift.CTW.QuickStop		= FALSE// NOT QuickStop ;0 = QuickStop
+			RB[idx].Lift.CTW.HoldOutputFreq	= FALSE//TRUE
+			RB[idx].Lift.CTW.RampStopStart	= FALSE
+			RB[idx].Lift.CTW.ResetTrip		= FALSE
+			RB[idx].Lift.CTW.DataValid		= TRUE
+			RB[idx].Lift.CTW.Reverse		= FALSE
+			RB[idx].Lift.CAN.TargetVelocity	= $0000
+		ENDIF
+	ENDIF	
+		
+	;Write control word to drive
+	FC302_WriteCTW_0.CTW = RB[idx].Lift.CTW
+	FC302_WriteCTW_0 FUB FC302_WriteCTW()
+	RB[idx].Lift.CAN.ControlWord = FC302_WriteCTW_0.ControlWord
+	
+	
+	;Scan time calculation
+	IF NOT RB[idx].Lift.Scan.StartTrig AND NOT RB[idx].Lift.Scan.EndTrig THEN
+		IF RB[idx].Lift.CTW.RampStopStart THEN
+			RB[idx].Lift.Scan.Start 	= clock_ms()
+			RB[idx].Lift.Scan.StartTrig = TRUE
+		ENDIF
+	ELSE IF RB[idx].Lift.Scan.StartTrig AND NOT RB[idx].Lift.Scan.EndTrig THEN
+		IF RB[idx].Lift.STW.InOperation THEN
+			RB[idx].Lift.Scan.End 		= clock_ms()
+			RB[idx].Lift.Scan.EndTrig	= TRUE
+			
+			RB[idx].Lift.Scan.LastScan = UINT(RB[idx].Lift.Scan.End - RB[idx].Lift.Scan.Start)
+			IF ((RB[idx].Lift.Scan.LastScan < RB[idx].Lift.Scan.MinScan) OR (RB[idx].Lift.Scan.MinScan = 0)) THEN    
+				RB[idx].Lift.Scan.MinScan = RB[idx].Lift.Scan.LastScan
+			ENDIF
+			IF (RB[idx].Lift.Scan.LastScan > RB[idx].Lift.Scan.MaxScan) THEN    
+				RB[idx].Lift.Scan.MaxScan = RB[idx].Lift.Scan.LastScan
+			ENDIF
+		ENDIF
+	ELSE IF NOT RB[idx].Lift.CTW.RampStopStart AND NOT RB[idx].Lift.STW.InOperation THEN
+		RB[idx].Lift.Scan.StartTrig = FALSE
+		RB[idx].Lift.Scan.EndTrig 	= FALSE
+	ENDIF
+	
+	;Status Word Warnings and Alarms
+	IF RB[idx].Lift.STW.Trip THEN
+		myStatus = FC302_STW_Trip
+	ELSE IF RB[idx].Lift.STW.Error THEN
+		myStatus = FC302_STW_Error
+	ELSE IF RB[idx].Lift.STW.TripLock THEN
+		myStatus = FC302_STW_TripLock
+	ELSE IF RB[idx].Lift.STW.Warning THEN
+		myStatus = FC302_STW_Warning
+	ELSE IF RB[idx].Lift.STW.DriveOverTemp THEN
+		myStatus = FC302_STW_DriveOverTemp
+	ELSE IF RB[idx].Lift.STW.DriveVoltageFault THEN
+		myStatus = FC302_STW_DriveVoltageFault
+	ELSE IF RB[idx].Lift.STW.DriveTorqueLimit THEN
+		myStatus = FC302_STW_DriveTorqueLimit
+	ELSE IF RB[idx].Lift.STW.ThermalTimerLimit THEN
+		myStatus = FC302_STW_ThermalTimeLimit
+	ENDIF
+	
+	RB[idx].Lift.SeqOut.Status = myStatus
+	
+	;I/O Status to TrackView
+	;-----------------------
+	
+	;Lift
+	RB_Posn[idx].Lift.IOStatus  = 0 ;Clear
+	IF RB[idx].Lift.SeqIn.I_RefPosn THEN
+		RB_Posn[idx].Lift.IOStatus = BIT_SET(RB_Posn[idx].Lift.IOStatus, 0)
+	ENDIF
+	IF NOT RB[idx].Lift.SeqIn.I_ForwardLimitOk THEN
+		RB_Posn[idx].Lift.IOStatus = BIT_SET(RB_Posn[idx].Lift.IOStatus, 1)
+	ENDIF
+	IF NOT RB[idx].Lift.SeqIn.I_ReverseLimitOk THEN
+		RB_Posn[idx].Lift.IOStatus = BIT_SET(RB_Posn[idx].Lift.IOStatus, 2)
+	ENDIF
+	IF RB[idx].Lift.SeqIn.I_RailOkRelease THEN
+		RB_Posn[idx].Lift.IOStatus = BIT_SET(RB_Posn[idx].Lift.IOStatus, 3)
+	ENDIF
+	IF RB[idx].Lift.SeqIn.I_RailOkReceive THEN
+		RB_Posn[idx].Lift.IOStatus = BIT_SET(RB_Posn[idx].Lift.IOStatus, 4)
+	ENDIF
+		
+END_PROGRAM

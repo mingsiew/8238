@@ -1,0 +1,10 @@
+0.12.0		09.01.2012	AH	- Version wird in mnCntStatAdd eingetragen.
+							- Statistik verwalten, Ringbuffer verwalten, Daten an DFII senden
+0.13.0		25.01.2012	AH Anpassung an KGStandard 1.13.0 (Ringbuffer)							
+
+0.14.0		26.01.2012  AH Substatus für Active erweitert. Prepforstop
+0.14.1		07.02.2012	AH Startpointer wurde an RBread nicht übergeben. Damit kam es immer zum Status = 4
+0.15.0		10.02.2012	AH Batcheven um zweite Location erweitert. CompNo im Location entfällt.
+0.16.0		13.02.2012  AH Strukturänderungen in den Events. Fehlerbehebung beim Eintragen in die Requests an DFII
+						   Kompatibel zu hlDFII 1.12.0
+0.16.1		20.03.2012	AH Abhängigkeiten ergänzt

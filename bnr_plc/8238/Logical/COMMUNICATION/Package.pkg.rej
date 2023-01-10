@@ -1,0 +1,8 @@
+diff a/bnr_plc/8245/Logical/COMMUNICATION/Package.pkg b/bnr_plc/8245/Logical/COMMUNICATION/Package.pkg	(rejected hunks)
+@@ -9,4 +9,4 @@
+     <Object Type="Program" Language="IEC" Description="udpComm">udpComm</Object>
+     <Object Type="Program" Language="IEC" Description="tcpComm">tcpComm</Object>
+   </Objects>
+-</Package>
+\ No newline at end of file
++</Package>

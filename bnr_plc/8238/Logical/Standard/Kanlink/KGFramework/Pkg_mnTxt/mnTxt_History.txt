@@ -1,0 +1,12 @@
+0.03.0	02.01.12	AH	Texte werden nun eingelesen. Das Ändern der LCID bewirkt ein Neuladen der Texte
+0.04.0	10.01.12	AH	PackageVersion wird in mnTxtStatAd angezeigt
+0.04.1	12.01.12	AH	Ausgabe der korrekten Anzahl vorhandener Meldungs- und Meldungs-Hilfs-Zeilen
+0.04.3	17.01.12	AH	Einlesen der Meldungs- und Meldungshilfstexte hat nicht funktioniert.
+0.05.0	18.01.12	AH	Texte auf 63 Zeichen verlängert. Erfordert mnParam ab Version 0.10.0
+0.06.0	17.02.12	AH  Speichernutzung optimiert
+0.06.1	08.02.12	AH	Bugfix
+0.07.0	13.03.12	AH	Datenobjektinitialisierung wieder in den Init-Teil gelegt
+0.07.1	20.03.12	AH	Abhängigkeiten ergänzt
+0.08.0	22.06.12	AH	In Hilfstexten werden \n durch ein $R und $N ersetzt.
+0.09.0	03.09.12	AH	Erweiterung Bug 836:Sprachresourcen können auch sprachspezifisch geladen werden.
+						Konstante MNTXT_ENABLE_LANSPECRESOURCE vom Tyb USINT anlegen. 0 - Summenresourcen werden geladen, 1 - spez. Sprachresourcen

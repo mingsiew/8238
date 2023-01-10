@@ -1,0 +1,37 @@
+FUNCTION_BLOCK stASC_UINT
+	(* Implementation of stASC_UINT *)
+	
+	IF Enable THEN
+		
+		Internal = 0
+		
+		IF ((Input[0] >= $30) AND (Input[0] <= $39)) THEN
+			Internal = Internal + ((Input[0] - $30) * 4096)
+		ELSE IF ((Input[0] >= $41) AND (Input[0] <= $46)) THEN
+			Internal = Internal + ((Input[0] - $37) * 4096)
+		ENDIF
+		
+		IF Input[1] <= $39 THEN
+			Internal = Internal + ((Input[1] - $30) * 256)
+		ELSE IF ((Input[1] >= $41) AND (Input[1] <= $46)) THEN
+			Internal = Internal + ((Input[1] - $37) * 256)
+		ENDIF
+		
+		IF Input[2] <= $39 THEN
+			Internal = Internal + ((Input[2] - $30) * 16)
+		ELSE IF ((Input[2] >= $41) AND (Input[2] <= $46)) THEN
+			Internal = Internal + ((Input[2] - $37) * 16)
+		ENDIF
+		
+		IF Input[3] <= $39 THEN
+			Internal = Internal + (Input[3] - $30)
+		ELSE IF ((Input[3] >= $41) AND (Input[3] <= $46)) THEN
+			Internal = Internal + (Input[3] - $37)
+		ENDIF
+		
+		Output = Internal
+		
+	ELSE
+		Output = 0
+	ENDIF
+END_FUNCTION_BLOCK

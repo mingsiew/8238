@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.3.7.46 SP?>
+<Package Version="1.00.6" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global data types">hlKanLink.typ</Object>
+    <Object Type="File" Description="Global variables">hlKanLink.var</Object>
+    <Object Type="Program" Language="IEC" Description="Kanlink Task">hlKanLink</Object>
+    <Object Type="File">history.txt</Object>
+    <Object Type="Library" Language="IEC" Description="KanlinkHilfsfunktionen">KanLinkLib</Object>
+    <Object Type="File">kanlink.vsd</Object>
+  </Objects>
+</Package>

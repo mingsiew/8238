@@ -1,0 +1,1306 @@
+(*
+T: RESOURCE CPU
+FW: NO
+CI#: 0
+QSL: 216
+QVE: 216
+QVPC: 216
+QPar: 0
+QFBI: 0
+*)
+@V 1 2 0
+SM_SC01_SafeModuleOK	1	VAR_GLOBAL	@TYP:43
+%SIX 6.2		     
+
+;
+
+@V 1 3 0
+SM_MC01_K109_SafeModuleOK	2	VAR_GLOBAL	@TYP:43
+%SIX 4.0		     
+
+;
+
+@V 1 4 0
+SM_MC01_K110_SafeModuleOK	3	VAR_GLOBAL	@TYP:43
+%SIX 4.1		     
+
+;
+
+@V 1 5 0
+SM_1408_SafeModuleOK	4	VAR_GLOBAL	@TYP:43
+%SIX 4.5		     
+
+;
+
+@V 1 6 0
+SM_1401_SafeModuleOK	5	VAR_GLOBAL	@TYP:43
+%SIX 4.7		     
+
+;
+
+@V 1 7 0
+SM_1402_SafeModuleOK	6	VAR_GLOBAL	@TYP:43
+%SIX 5.0		     
+
+;
+
+@V 1 8 0
+SM_1403_SafeModuleOK	7	VAR_GLOBAL	@TYP:43
+%SIX 5.1		     
+
+;
+
+@V 1 9 0
+SM_1404_SafeModuleOK	8	VAR_GLOBAL	@TYP:43
+%SIX 5.2		     
+
+;
+
+@V 1 10 0
+SM_1406_SafeModuleOK	9	VAR_GLOBAL	@TYP:43
+%SIX 5.3		     
+
+;
+
+@V 1 11 0
+SM_1409_SafeModuleOK	10	VAR_GLOBAL	@TYP:43
+%SIX 5.4		     
+
+;
+
+@V 1 12 0
+SM_1410_SafeModuleOK	11	VAR_GLOBAL	@TYP:43
+%SIX 5.5		     
+
+;
+
+@V 1 13 0
+SM_1411_SafeModuleOK	12	VAR_GLOBAL	@TYP:43
+%SIX 5.6		     
+
+;
+
+@V 1 14 0
+SM_1414_SafeModuleOK	13	VAR_GLOBAL	@TYP:43
+%SIX 5.7		     
+
+;
+
+@V 1 15 0
+SM_1415_SafeModuleOK	14	VAR_GLOBAL	@TYP:43
+%SIX 6.0		     
+
+;
+
+@V 1 16 0
+SM_1416_SafeModuleOK	15	VAR_GLOBAL	@TYP:43
+%SIX 6.1		     
+
+;
+
+@V 1 17 0
+SM_SC03_SafeModuleOK	16	VAR_GLOBAL	@TYP:43
+%SIX 6.4		     
+
+;
+
+@V 1 18 0
+SM_SC02_SafeModuleOK	17	VAR_GLOBAL	@TYP:43
+%SIX 6.3		     
+
+;
+
+@V 1 19 0
+SM_SC04_SafeModuleOK	18	VAR_GLOBAL	@TYP:43
+%SIX 6.5		     
+
+;
+
+@V 1 20 0
+SM_SC05_SafeModuleOK	19	VAR_GLOBAL	@TYP:43
+%SIX 6.6		     
+
+;
+
+@V 1 21 0
+SM_MC02_K108_SafeModuleOK	20	VAR_GLOBAL	@TYP:43
+%SIX 4.2		     
+
+;
+
+@V 1 22 0
+SM_MC02_K109_SafeModuleOK	21	VAR_GLOBAL	@TYP:43
+%SIX 4.3		     
+
+;
+
+@V 1 23 0
+SM_MC02_K110_SafeModuleOK	22	VAR_GLOBAL	@TYP:43
+%SIX 4.4		     
+
+;
+
+@V 1 24 0
+SM_MC02_K111_SafeModuleOK	23	VAR_GLOBAL	@TYP:43
+%SIX 4.6		     
+
+;
+
+@V 1 26 0
+ESTOP_1411_3	24	VAR_GLOBAL	@TYP:43
+%SIX 53.2		     
+
+;
+
+@V 1 27 0
+ESTOP_1416_3	25	VAR_GLOBAL	@TYP:43
+%SIX 65.2		     
+
+;
+
+@V 1 28 0
+ESTOP_1416_4	26	VAR_GLOBAL	@TYP:43
+%SIX 65.3		     
+
+;
+
+@V 1 29 0
+ESTOP_1401_3	27	VAR_GLOBAL	@TYP:43
+%SIX 25.2		     
+
+;
+
+@V 1 30 0
+Pullcord_1414_3	28	VAR_GLOBAL	@TYP:43
+%SIX 57.2		     
+
+;
+
+@V 1 31 0
+Pullcord_1414_4	29	VAR_GLOBAL	@TYP:43
+%SIX 57.3		     
+
+;
+
+@V 1 32 0
+Pullcord_1415_3	30	VAR_GLOBAL	@TYP:43
+%SIX 61.2		     
+
+;
+
+@V 1 33 0
+Pullcord_1415_4	31	VAR_GLOBAL	@TYP:43
+%SIX 61.3		     
+
+;
+
+@V 1 35 0
+GS_1401_1	32	VAR_GLOBAL	@TYP:43
+%SIX 25.0		     
+
+;
+
+@V 1 36 0
+GS_1401_DI1	33	VAR_GLOBAL	@TYP:1
+%NSIX 522.0		     
+
+;
+
+@V 1 37 0
+GS_1404_1	34	VAR_GLOBAL	@TYP:43
+%SIX 37.0		     
+
+;
+
+@V 1 38 0
+GS_1404_DI1	35	VAR_GLOBAL	@TYP:1
+%NSIX 528.0		     
+
+;
+
+@V 1 39 0
+GS_1402_1	36	VAR_GLOBAL	@TYP:43
+%SIX 29.0		     
+
+;
+
+@V 1 40 0
+GS_1402_DI1	37	VAR_GLOBAL	@TYP:1
+%NSIX 524.0		     
+
+;
+
+@V 1 41 0
+GS_1406_1	38	VAR_GLOBAL	@TYP:43
+%SIX 41.0		     
+
+;
+
+@V 1 42 0
+GS_1406_DI1	39	VAR_GLOBAL	@TYP:1
+%NSIX 530.0		     
+
+;
+
+@V 1 43 0
+GS_1404_2	40	VAR_GLOBAL	@TYP:43
+%SIX 37.1		     
+
+;
+
+@V 1 44 0
+GS_1406_2	41	VAR_GLOBAL	@TYP:43
+%SIX 41.1		     
+
+;
+
+@V 1 46 0
+SM5_SafeDigitalOutput01	42	VAR_GLOBAL	@TYP:43
+%SQX 2.0		     
+
+;
+
+@V 1 47 0
+SM5_SafeDigitalOutput02	43	VAR_GLOBAL	@TYP:43
+%SQX 2.1		     
+
+;
+
+@V 1 48 0
+SM5_SafeDigitalOutput03	44	VAR_GLOBAL	@TYP:43
+%SQX 2.2		     
+
+;
+
+@V 1 49 0
+SM5_SafeDigitalOutput04	45	VAR_GLOBAL	@TYP:43
+%SQX 2.3		     
+
+;
+
+@V 1 50 0
+MC02_K109_Output_1	46	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 51 0
+MC02_K109_Output_2	47	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 52 0
+MC02_K109_Output_3	48	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 53 0
+SM6_SafeDigitalOutput01	49	VAR_GLOBAL	@TYP:43
+%SQX 3.0		     
+
+;
+
+@V 1 54 0
+SM6_SafeDigitalOutput02	50	VAR_GLOBAL	@TYP:43
+%SQX 3.1		     
+
+;
+
+@V 1 55 0
+SM6_SafeDigitalOutput03	51	VAR_GLOBAL	@TYP:43
+%SQX 3.2		     
+
+;
+
+@V 1 56 0
+SM6_SafeDigitalOutput04	52	VAR_GLOBAL	@TYP:43
+%SQX 3.3		     
+
+;
+
+@V 1 57 0
+MC02_K110_Output_1	53	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 58 0
+MC02_K110_Output_2	54	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 59 0
+MC02_K110_Output_3	55	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 60 0
+MC02_K110_Output_4	56	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 61 0
+SM8_SafeDigitalOutput01	57	VAR_GLOBAL	@TYP:43
+%SQX 4.0		     
+
+;
+
+@V 1 62 0
+SM8_SafeDigitalOutput02	58	VAR_GLOBAL	@TYP:43
+%SQX 4.1		     
+
+;
+
+@V 1 63 0
+SM8_SafeDigitalOutput03	59	VAR_GLOBAL	@TYP:43
+%SQX 4.2		     
+
+;
+
+@V 1 64 0
+SM8_SafeDigitalOutput04	60	VAR_GLOBAL	@TYP:43
+%SQX 4.3		     
+
+;
+
+@V 1 65 0
+MC02_K111_Output_1	61	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 66 0
+MC02_K111_Output_2	62	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 67 0
+MC02_K111_Output_3	63	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 68 0
+MC02_K111_Output_4	64	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 69 0
+SC01_Output_1	65	VAR_GLOBAL	@TYP:43
+%SQX 5.0		     
+
+;
+
+@V 1 70 0
+SC01_Output_2	66	VAR_GLOBAL	@TYP:43
+%SQX 5.1		     
+
+;
+
+@V 1 71 0
+SC05_Output_1	67	VAR_GLOBAL	@TYP:43
+%SQX 9.0		     
+
+;
+
+@V 1 72 0
+SC02_Output_1	68	VAR_GLOBAL	@TYP:43
+%SQX 6.0		     
+
+;
+
+@V 1 73 0
+SC02_Output_2	69	VAR_GLOBAL	@TYP:43
+%SQX 6.1		     
+
+;
+
+@V 1 74 0
+SC05_Output_2	70	VAR_GLOBAL	@TYP:43
+%SQX 9.1		     
+
+;
+
+@V 1 75 0
+SC01_Output_3	71	VAR_GLOBAL	@TYP:43
+%SQX 5.2		     
+
+;
+
+@V 1 76 0
+SC01_Output_4	72	VAR_GLOBAL	@TYP:43
+%SQX 5.3		     
+
+;
+
+@V 1 77 0
+SC02_Output_3	73	VAR_GLOBAL	@TYP:43
+%SQX 6.2		     
+
+;
+
+@V 1 78 0
+SC02_Output_4	74	VAR_GLOBAL	@TYP:43
+%SQX 6.3		     
+
+;
+
+@V 1 79 0
+SC03_Output_1	75	VAR_GLOBAL	@TYP:43
+%SQX 7.0		     
+
+;
+
+@V 1 80 0
+SC03_Output_2	76	VAR_GLOBAL	@TYP:43
+%SQX 7.1		     
+
+;
+
+@V 1 81 0
+SC03_Output_3	77	VAR_GLOBAL	@TYP:43
+%SQX 7.2		     
+
+;
+
+@V 1 82 0
+SC03_Output_4	78	VAR_GLOBAL	@TYP:43
+%SQX 7.3		     
+
+;
+
+@V 1 84 0
+CSL01_BELT_SI03	79	VAR_GLOBAL	@TYP:43
+%SIX 20.2		     
+
+;
+
+@V 1 85 0
+CSL02_BELT_SI05	80	VAR_GLOBAL	@TYP:43
+%SIX 20.4		     
+
+;
+
+@V 1 87 0
+SC01_Released	81	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 88 0
+SC02_Released	82	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 89 0
+SC03_Released	83	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 90 0
+SC04_Released	84	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 91 0
+SC05_Released	85	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 93 0
+SM_MC01_K110_ReleaseOutput	86	VAR_GLOBAL	@TYP:1
+%NSQX 516.0		     
+
+;
+
+@V 1 94 0
+SC01_SO_ReleaseOutput	87	VAR_GLOBAL	@TYP:1
+%NSQX 544.0		     
+
+;
+
+@V 1 95 0
+SC02_SO_ReleaseOutput	88	VAR_GLOBAL	@TYP:1
+%NSQX 545.0		     
+
+;
+
+@V 1 96 0
+SC03_SO_ReleaseOutput	89	VAR_GLOBAL	@TYP:1
+%NSQX 546.0		     
+
+;
+
+@V 1 97 0
+SC04_SO_ReleaseOutput	90	VAR_GLOBAL	@TYP:1
+%NSQX 547.0		     
+
+;
+
+@V 1 98 0
+SC05_SO_ReleaseOutput	91	VAR_GLOBAL	@TYP:1
+%NSQX 548.0		     
+
+;
+
+@V 1 99 0
+SM_MC02_K109_ReleaseOutput	92	VAR_GLOBAL	@TYP:1
+%NSQX 517.0		     
+
+;
+
+@V 1 100 0
+SM_MC02_K110_ReleaseOutput	93	VAR_GLOBAL	@TYP:1
+%NSQX 518.0		     
+
+;
+
+@V 1 101 0
+SM_MC02_K111_ReleaseOutput	94	VAR_GLOBAL	@TYP:1
+%NSQX 519.0		     
+
+;
+
+@V 1 103 0
+Zone_1_Healthy	95	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 104 0
+Zone_2_Healthy	96	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 105 0
+Zone_3_Healthy	97	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 106 0
+Zone_4_Healthy	98	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 107 0
+Zone_5_Healthy	99	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 108 0
+Zone_6_Healthy	100	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 109 0
+Zone_7_Healthy	101	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 110 0
+Zone_8_Healthy	102	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 111 0
+Zone_9_Healthy	103	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 112 0
+Zone_10_Healthy	104	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 113 0
+Zone_11_Healthy	105	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 114 0
+Zone_12_Healthy	106	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 115 0
+Zone_13_Healthy	107	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 116 0
+Zone_14_Healthy	108	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 117 0
+Zone_15_Healthy	109	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 118 0
+Zone_16_Healthy	110	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 119 0
+Zone_17_Healthy	111	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 120 0
+Zone_18_Healthy	112	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 121 0
+Zone_19_Healthy	113	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 122 0
+Zone_20_Healthy	114	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 123 0
+Zone_28_Healthy	115	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 124 0
+Zone_27_Healthy	116	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 125 0
+Zone_29_Healthy	117	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 126 0
+Zone_30_Healthy	118	VAR_GLOBAL	@TYP:43
+		     
+
+;
+
+@V 1 128 0
+MasterReset_1	119	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 129 0
+MasterReset_2	120	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 130 0
+MasterReset_3	121	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 131 0
+MasterReset_4	122	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 132 0
+Safety_MasterReset_Comm	123	VAR_GLOBAL	@TYP:18
+%NSIW 0		     
+
+;
+
+@V 1 134 0
+EDM_Zone_1	124	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 135 0
+EDM_Zone_2	125	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 136 0
+EDM_Zone_3	126	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 137 0
+EDM_Zone_4	127	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 138 0
+EDM_Zone_5	128	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 139 0
+EDM_Zone_6	129	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 140 0
+EDM_Zone_7	130	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 141 0
+EDM_Zone_8	131	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 142 0
+EDM_Zone_9	132	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 143 0
+EDM_Zone_10	133	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 144 0
+EDM_Zone_11	134	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 145 0
+EDM_Zone_12	135	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 146 0
+EDM_Zone_13	136	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 147 0
+EDM_Zone_14	137	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 148 0
+EDM_Zone_15	138	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 149 0
+EDM_Zone_16	139	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 150 0
+EDM_Zone_17	140	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 151 0
+EDM_Zone_18	141	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 152 0
+EDM_Zone_19	142	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 153 0
+EDM_Zone_20	143	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 154 0
+EDM_Zone_21	144	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 155 0
+EDM_Zone_22	145	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 156 0
+EDM_Zone_23	146	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 157 0
+EDM_Zone_24	147	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 158 0
+EDM_Zone_25	148	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 159 0
+EDM_Zone_26	149	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 160 0
+EDM_Zone_27	150	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 161 0
+EDM_Zone_28	151	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 162 0
+EDM_Zone_29	152	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 163 0
+EDM_Zone_30	153	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 164 0
+Safety_EDM_Comm	154	VAR_GLOBAL	@TYP:19
+%NSID 4		     
+
+;
+
+@V 1 166 0
+Reset_Zone_1	155	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 167 0
+Reset_Zone_2	156	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 168 0
+Reset_Zone_3	157	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 169 0
+Reset_Zone_4	158	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 170 0
+Reset_Zone_5	159	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 171 0
+Reset_Zone_6	160	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 172 0
+Reset_Zone_7	161	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 173 0
+Reset_Zone_8	162	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 174 0
+Reset_Zone_9	163	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 175 0
+Reset_Zone_10	164	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 176 0
+Reset_Zone_11	165	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 177 0
+Reset_Zone_12	166	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 178 0
+Reset_Zone_13	167	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 179 0
+Reset_Zone_14	168	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 180 0
+Reset_Zone_15	169	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 181 0
+Reset_Zone_16	170	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 182 0
+Reset_Zone_17	171	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 183 0
+Reset_Zone_18	172	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 184 0
+Reset_Zone_19	173	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 185 0
+Reset_Zone_20	174	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 186 0
+Reset_Zone_21	175	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 187 0
+Reset_Zone_22	176	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 188 0
+Reset_Zone_23	177	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 189 0
+Reset_Zone_24	178	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 190 0
+Reset_Zone_25	179	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 191 0
+Reset_Zone_26	180	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 192 0
+Reset_Zone_27	181	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 193 0
+Reset_Zone_28	182	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 194 0
+Reset_Zone_29	183	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 195 0
+Reset_Zone_30	184	VAR_GLOBAL	@TYP:1
+		     
+
+;
+
+@V 1 196 0
+Safety_Reset_Comm	185	VAR_GLOBAL	@TYP:19
+%NSID 8		     
+
+;
+
+@V 1 198 0
+Safety_ModuleFault	186	VAR_GLOBAL	@TYP:1
+%NSQX 0.0		     
+
+;
+
+@V 1 200 0
+SafetyZone_1_DataFromSafePLC	187	VAR_GLOBAL	@TYP:18
+%NSQW 2		     
+
+;
+
+@V 1 201 0
+SafetyZone_2_DataFromSafePLC	188	VAR_GLOBAL	@TYP:18
+%NSQW 4		     
+
+;
+
+@V 1 202 0
+SafetyZone_3_DataFromSafePLC	189	VAR_GLOBAL	@TYP:18
+%NSQW 6		     
+
+;
+
+@V 1 203 0
+SafetyZone_4_DataFromSafePLC	190	VAR_GLOBAL	@TYP:18
+%NSQW 8		     
+
+;
+
+@V 1 204 0
+SafetyZone_5_DataFromSafePLC	191	VAR_GLOBAL	@TYP:18
+%NSQW 10		     
+
+;
+
+@V 1 205 0
+SafetyZone_6_DataFromSafePLC	192	VAR_GLOBAL	@TYP:18
+%NSQW 12		     
+
+;
+
+@V 1 206 0
+SafetyZone_7_DataFromSafePLC	193	VAR_GLOBAL	@TYP:18
+%NSQW 14		     
+
+;
+
+@V 1 207 0
+SafetyZone_8_DataFromSafePLC	194	VAR_GLOBAL	@TYP:18
+%NSQW 16		     
+
+;
+
+@V 1 208 0
+SafetyZone_9_DataFromSafePLC	195	VAR_GLOBAL	@TYP:18
+%NSQW 18		     
+
+;
+
+@V 1 209 0
+SafetyZone_10_DataFromSafePLC	196	VAR_GLOBAL	@TYP:18
+%NSQW 20		     
+
+;
+
+@V 1 210 0
+SafetyZone_11_DataFromSafePLC	197	VAR_GLOBAL	@TYP:18
+%NSQW 22		     
+
+;
+
+@V 1 211 0
+SafetyZone_12_DataFromSafePLC	198	VAR_GLOBAL	@TYP:18
+%NSQW 24		     
+
+;
+
+@V 1 212 0
+SafetyZone_13_DataFromSafePLC	199	VAR_GLOBAL	@TYP:18
+%NSQW 26		     
+
+;
+
+@V 1 213 0
+SafetyZone_14_DataFromSafePLC	200	VAR_GLOBAL	@TYP:18
+%NSQW 28		     
+
+;
+
+@V 1 214 0
+SafetyZone_15_DataFromSafePLC	201	VAR_GLOBAL	@TYP:18
+%NSQW 30		     
+
+;
+
+@V 1 215 0
+SafetyZone_16_DataFromSafePLC	202	VAR_GLOBAL	@TYP:18
+%NSQW 32		     
+
+;
+
+@V 1 216 0
+SafetyZone_17_DataFromSafePLC	203	VAR_GLOBAL	@TYP:18
+%NSQW 34		     
+
+;
+
+@V 1 217 0
+SafetyZone_18_DataFromSafePLC	204	VAR_GLOBAL	@TYP:18
+%NSQW 36		     
+
+;
+
+@V 1 218 0
+SafetyZone_19_DataFromSafePLC	205	VAR_GLOBAL	@TYP:18
+%NSQW 38		     
+
+;
+
+@V 1 219 0
+SafetyZone_20_DataFromSafePLC	206	VAR_GLOBAL	@TYP:18
+%NSQW 40		     
+
+;
+
+@V 1 220 0
+SafetyZone_21_DataFromSafePLC	207	VAR_GLOBAL	@TYP:18
+%NSQW 42		     
+
+;
+
+@V 1 221 0
+SafetyZone_22_DataFromSafePLC	208	VAR_GLOBAL	@TYP:18
+%NSQW 44		     
+
+;
+
+@V 1 222 0
+SafetyZone_23_DataFromSafePLC	209	VAR_GLOBAL	@TYP:18
+%NSQW 46		     
+
+;
+
+@V 1 223 0
+SafetyZone_24_DataFromSafePLC	210	VAR_GLOBAL	@TYP:18
+%NSQW 48		     
+
+;
+
+@V 1 224 0
+SafetyZone_25_DataFromSafePLC	211	VAR_GLOBAL	@TYP:18
+%NSQW 50		     
+
+;
+
+@V 1 225 0
+SafetyZone_26_DataFromSafePLC	212	VAR_GLOBAL	@TYP:18
+%NSQW 52		     
+
+;
+
+@V 1 226 0
+SafetyZone_27_DataFromSafePLC	213	VAR_GLOBAL	@TYP:18
+%NSQW 54		     
+
+;
+
+@V 1 227 0
+SafetyZone_28_DataFromSafePLC	214	VAR_GLOBAL	@TYP:18
+%NSQW 56		     
+
+;
+
+@V 1 228 0
+SafetyZone_29_DataFromSafePLC	215	VAR_GLOBAL	@TYP:18
+%NSQW 58		     
+
+;
+
+@V 1 229 0
+SafetyZone_30_DataFromSafePLC	216	VAR_GLOBAL	@TYP:18
+%NSQW 60		     
+
+;
+

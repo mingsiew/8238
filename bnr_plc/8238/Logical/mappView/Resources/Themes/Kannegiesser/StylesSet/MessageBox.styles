@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles id="KannegiesserMessageBox" xmlns="http://www.br-automation.com/iat2015/styles/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<!--Message Box-->
+	<Style id="Kannegiesser1" xsi:type="system.brease.MessageBox"
+		
+		headerGradient="linear-gradient(to bottom, #c5deea 0%,#8abbd7 31%,#67a6e4 100%)"
+		fontSize="20px"
+		headerTextColor="#055d94"
+		textColor="#474747"
+		cornerRadius="8px 8px 8px 8px"
+		borderWidth="1px"
+		borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0"
+		shadow="5px 5px 20px 0px rgba(62, 79, 92, 0.75)"
+		buttonBorderColor="#A899A0 #5F5F5F #5F5F5F #A899A0"
+		buttonBorderWidth="0px 0px 0px 0px"
+		buttonCornerRadius="5px"
+		buttonTextColor="#474747"
+		buttonBackGroundGradient="linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(229,229,229,1) 100%)" />
+	
+	<!--Dialog Box-->
+	<Style id="Kannegiesser1" xsi:type="system.brease.Dialog"
+		
+		headerGradient="linear-gradient(to bottom, #c5deea 0%,#8abbd7 31%,#67a6e4 100%)"
+		headerBorderColor="#A899A0 #5F5F5F #5F5F5F #A899A0"
+		headerBorderWidth="1px"
+		fontSize="20px"
+		textColor="#474747"
+		backColor="#FFFFFF"
+		cornerRadius="8px 8px 8px 8px"
+		borderWidth="1px"
+		borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0"
+		shadow="5px 5px 20px 0px rgba(62, 79, 92, 0.75)"
+	/>
+	
+	<Style id="KgLoginDialog" xsi:type="system.brease.Dialog"
+		
+		headerGradient="linear-gradient(to bottom, #c5deea 0%,#8abbd7 31%,#67a6e4 100%)"
+		headerBorderColor="#A899A0 #5F5F5F #5F5F5F #A899A0"
+		headerBorderWidth="1px"
+		fontSize="5px"
+		textColor="#474747"
+		backColor="#FFFFFF"
+		cornerRadius="8px 8px 8px 8px"
+		borderWidth="1px"
+		borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0"
+		shadow="5px 5px 20px 0px rgba(62, 79, 92, 0.75)"
+	/>
+		
+</Styles>

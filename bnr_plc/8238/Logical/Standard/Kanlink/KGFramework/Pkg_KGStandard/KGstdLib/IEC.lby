@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="IEC" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>KGstdLib_History.txt</File>
+    <File>KGstdLib_Doc.txt</File>
+    <File Description="Package data types">KG_Cmd.typ</File>
+    <File Description="Package data types">Stat.typ</File>
+    <File Description="Exported data types">KGstdLib.typ</File>
+    <File Description="Package data types">kgMachineState.typ</File>
+    <File Description="Package data types">kgMachinetyp.typ</File>
+    <File Description="Package variables">KG_Cmd.var</File>
+    <File Description="Exported constants">KGstdLib.var</File>
+    <File Description="Package variables">kgMachineState.var</File>
+    <File Description="Exported functions and function blocks">KGstdLib.fun</File>
+    <File Description="Wandelt UDINT in String">kgitoa_udint.st</File>
+    <File Description="String in UDINT wandeln">kgatoi_udint.st</File>
+    <File Description="atoi für UINT mit Fehlermeldung">kgatoi_uint.st</File>
+    <File Description="Legt ggf. Datenobjekt zum Speichern der laufenden Postennummer an">kgInitBatchNoLong.st</File>
+    <File Description="Generiert eine neue Postennummer bei positiver Flanke von Enable">kgNextBatchNoLong.st</File>
+    <File>kgGetMacAdress.st</File>
+    <File Description="Batchnummer als Unique Identifier 16 Byte, wenn Enable = TRUE">kgGetBatchNoUnique.st</File>
+    <File Description="Extrahiere aus GUID ein UDINT">kgBatchNoToUDINT.st</File>
+    <File Description="Konvertiere USINT-Array to GUID_typ">kgUSINT16toGUID.st</File>
+    <File Description="GUID-String erzeugen">kgGUIDtoSTRING.st</File>
+    <File Description="Logzeile mit zwei numerischen Variablen erzeugen">kgLogLine.st</File>
+    <File Description="Checks ident on &gt; 0 and formats string with two numbers">kgArLogWrite.st</File>
+    <File Description="Erzeuge Datenobjekt für Ringbuffer">kgRBcreate.st</File>
+    <File Description="Insert any entry into a ringbuffer">kgRBinsert.st</File>
+    <File Description="Reads one entry and moves the readpointer">kgRBread.st</File>
+    <File Description="Free Readpointer access">kgRBloc.st</File>
+    <File Description="Prüfen, ob alle 16 Byte der GUID 0 sind.">kgGUIDisZero.st</File>
+    <File Description="Lese mehrere Einträge gleichzeitig in ein Array">kgRBbulkloc.st</File>
+    <File Description="Returns the CPUs ethernet port as string">kgGetEthPort.st</File>
+    <File Description="Maschinennummer und -typ aus Stationsadresse berechnen">kgGetLineNumberW3.st</File>
+    <File Description="Ermittelt die Maschinenadresse aus Liniennummer und Maschinentyp">kgGetMachineAdressW3.st</File>
+    <File Description="Prüfe auf Datenobjekt und erzeuge es ggf. neu">kgCheckDo.st</File>
+    <File Description="XOR über Byte-Feld">kgXOR.st</File>
+    <File Description="Wandelt Wert entsprechend der Unit">kgUnitconfREALtoDisplay.st</File>
+    <File Description="Wandelt Wert entsprechend der Unit">kgUnitconfDisplayToREAL.st</File>
+    <File Description="Read Programdata from a dataobject">kgGetProgdata.st</File>
+    <File Description="Process red/yellow/green">kgSignalLight.st</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="astime" />
+    <Dependency ObjectName="AsIODiag" />
+    <Dependency ObjectName="Ethernet" />
+    <Dependency ObjectName="AsBrStr" />
+    <Dependency ObjectName="DataObj" />
+    <Dependency ObjectName="AsArLog" />
+  </Dependencies>
+</Library>

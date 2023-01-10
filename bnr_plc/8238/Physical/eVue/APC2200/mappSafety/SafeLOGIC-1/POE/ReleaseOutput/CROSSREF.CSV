@@ -1,0 +1,4 @@
+ModuleOk,POE\ReleaseOutput\ReleaseOutput.GB,1,IN,0,12,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,
+Release_Output,POE\ReleaseOutput\ReleaseOutput.GB,1,OUT,4,11,Write,,BOOL,,,VAR_OUTPUT,LOCAL,,
+TON_Delay,POE\ReleaseOutput\ReleaseOutput.GB,0,,10,48,,,,,,VAR,FB,,
+Zone_Released,POE\ReleaseOutput\ReleaseOutput.GB,1,OUT,17,11,Write,,SAFEBOOL,,,VAR_OUTPUT,LOCAL,,

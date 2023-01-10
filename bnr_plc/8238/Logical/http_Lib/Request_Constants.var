@@ -1,0 +1,26 @@
+VAR CONSTANT
+	HTTP_IF_CALL_USP_NOREPLY_URL : STRING[100] := '/httpcomms/api/plcToSql/calluspnoquery'; (**POST Put Procedure string in the body data*)
+	HTTP_IF_CALL_USP_REPLY_URL : STRING[100] := '/httpcomms/api/plcToSql/callusp?sql='; (**GET Function - Put Procedure in URL*)
+END_VAR
+(*POST - USPS*)
+VAR CONSTANT
+	HTTP_POST_MAINT_COMPLETE : STRING[100] := '[SUPDB].[Maintenance].[uspMaintenanceBagMaintComplete]'; (*Maint Complete. Needs @PLC,@Bag*)
+	HTTP_USP_WRITE_SEQ_COUNT_DATA : STRING[100] := '[SUPDB].[PLC].[uspWriteSequenceCount]'; (*Stored procedure uspWriteSequenceCount. Requires @PLCStn, @SeqNum, @CountIn*)
+	HTTP_USP_WRITE_REPORT_DATA : STRING[100] := '[SUPDB].[PLC].[uspReportWrite]'; (*Stored procedure uspReportWrite*)
+	HTTP_POST_BATCH_LOCATION_UPDATE : STRING[100] := '[SUPDB].[Master].[uspBatch_LocationUpdate]'; (*Stored procedure [Master].[uspBatch_LocationUpdate] Update batch location.
+*)
+	HTTP_POST_BATCH_PROPERTY_UPDATE : STRING[100] := '[SUPDB].[Master].[uspBatch_Property_Update]'; (*Stored procedure [Master].[uspBatch_Property_Update] Update a single batch propery by name...
+*)
+END_VAR
+(*GET*)
+VAR CONSTANT
+	HTTP_GET_SUPERTRACK_CON_STATUS : STRING[100] := '/supertrack/api/settings/connectOpc';
+	HTTP_GET_OPCUA_CONNECTION_STATUS : STRING[100] := '/KanDisplay.Manager.API/api/settings/connectOpc';
+	HTTP_GET_MAINT_COMPLETE : STRING[100] := '[SUPDB].[Maintenance].[uspMaintenanceBagMaintComplete]'; (*Maint Complete. Needs @PLC,@Bag*)
+	HTTP_GET_MAINT_COUNT_REPLY_STATE : STRING[100] := '/maintenance.api/api/Bags/bagCountUpdate?bagNumber='; (*Send count value, reply state. Needs @PLC,@Bag, @State OUTPUT>.*)
+	HTTP_GET_BATCH_CREATE_LOC_UPDATE : STRING[100] := '[SUPDB].[Master].[uspBatch_Create_UpdateLocation]'; (*Update batch location, or create batch if it doesn't exist.*)
+END_VAR
+(*MIS Batch Interface ADRETT SPECIAL*)
+VAR CONSTANT
+	HTTP_GET_BATCH_CREATE : STRING[100] := '[SUPDB].[PLC].[uspMIS_BatchCreate]'; (*Update batch location, or create batch if it doesn't exist.*)
+END_VAR

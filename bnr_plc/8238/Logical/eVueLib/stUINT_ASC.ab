@@ -1,0 +1,40 @@
+FUNCTION_BLOCK stUINT_ASC
+	(* Implementation of stUINT_ASC *)
+	
+	
+		Output[0] = 0
+		Output[1] = 0
+		Output[2] = 0
+		Output[3] = 0
+		
+	
+	IF Enable THEN
+		
+		;Get hex value
+		Value[0] = (Input AND $F)
+		Input = LSR(Input,4)
+		Value[1] = (Input AND $F)
+		Input = LSR(Input,4)
+		Value[2] = (Input AND $F)
+		Input = LSR(Input,4)
+		Value[3] = (Input AND $F)
+		
+		LOOP n = 0 TO 3 DO
+			
+			;Convert to ASCII
+			IF Value[n] < 10 THEN
+				Value[n] = Value[n] + $30
+			ELSE
+				Value[n] = Value[n] + $37
+			ENDIF
+			
+		ENDLOOP
+			
+		Output[0] = USINT(Value[0])
+		Output[1] = USINT(Value[1])
+		Output[2] = USINT(Value[2])
+		Output[3] = USINT(Value[3])
+	
+	ENDIF
+	
+END_FUNCTION_BLOCK

@@ -1,0 +1,42 @@
+1.00.0	30.06.2011 NEU
+1.01.0	02.07.2011 mnCnt ergänzt
+1.02.0	08.07.2011 Netlink 1.02.0
+1.03.0  19.07.2011 kgStd 1.01.0
+1.04.0	26.07.2011 Maschinentyp in der Infostruktur auf 11 Zeichen verringert
+1.05.0		   Keine Ahnung
+1.06.0	01.09.2011 Info_typ erweitert
+1.07.0	20.09.2011 Stat_typ ergänzt
+1.08.0	06.10.2011 Netlink 1.05.0
+1.08.1	14.10.2011 Netlink 1.06.0
+1.09.0  03.11.2011 Umstellung auf AS 3.0.90
+					- Stat_typ erweitert
+					- Funktionen zum Generieren einer Postennummer in KGstdLib ergänzt 1.02.0
+1.10.0	20.12.2011 Ringbufferfunktionen ergänzt
+				   KGBOM ergänzt
+				   KG_DEVICE_COMPACTFLASH ergänzt
+1.11.0	03.01.2012 kgGUIDisZero : Funktion prüft, ob eine GUID null ist.
+1.12.0	12.01.2012 kgNextBatchNoLong merkt sich die letzte Postennummer. BatchNo ist nur noch Output.
+1.13.0	24.01.2012 Erweiterung der Ringbuffer-Funktionen. Einführung des Startzeigers.
+				   Unabhängigkeit von Netlink. Netlink entfernt.
+				   Konstanten für Maschinenstati ergänzt
+				   Maschinentypen aus NetLink-Library übernommen. nlMachinetypeW3_typ --> kgMachinetypeW3_typ
+				   Datentypen utfName15 und utfName31 als abgeleiteten Datentyp deklariert
+1.14.0	03.02.2012 Im Pkg_KGStandardShare werden die Konstanten KG_DEVICE_USBSTICK1 und KG_DEVICE_USBSTICK2 als STRING[31] deklariert.
+				   In der sysconf sollten die Device-Namen für gültige USB-Massenspeicher definiert sein.
+1.15.0	08.02.2012 Funktionen: kgGetLineNumberW3 und kgGetMachineAdressW3. (mnEth Version 2.08.0 verwenden)
+1.15.1	15.02.2012 kgGetBatchNoUnique und kgNextBatchNoLong korrigiert
+1.16.0	15.03.2012 Konvertierung von Parametern entsprechend der Einheit (units.csv 2011-11-25T08:56:00)
+1.16.1	15.03.2012 Für Displaywerte werden auch die Nachkommastellen mit angegeben
+1.16.2	20.03.2012 Bugfix KGstdLib
+1.17.0	21.03.2012 KGstdLib erweitert
+1.17.1	22.03.2012 CP3585 ergänzt
+1.18.0	04.04.2012 _Info_ gibt es nicht mehr
+1.19.0	11.04.2012 Enumeration für Maschinenstati
+1.20.0	04.05.2012 Einheit (91) 0,1 g ergänzt
+1.21.0	18.06.2012 CP1584 ergänzt
+		19.06.2012 Bug 690: Programm lässt sich nicht laden behoben
+		21.06.2012 Maschinenstati in Hex-Notation und als USINT. Erweiterter Maschinenstatus als UINT mit Bit 8 für Stop und Bit 9 für Warten
+1.22.0	25.06.2012 Module Identifier ergänzt (X20DI9371, X20DO9322)
+1.23.0	03.07.2012 Module Identifier ergänzt (X20IF1072, X20IF2772, X20BR9300, X20PS2100, 4PP065IF231
+1.24.0	18.07.2012 Module Identifier ergänzt (X20BT9400, X67DM1321
+1.25.0	18.09.2012 CP3484 ergänzt

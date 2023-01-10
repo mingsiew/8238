@@ -1,0 +1,67 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Program: zzRoboPosnNamesTest
+ * File: zzRoboPosnNamesTest.ab
+ * Author: Dave
+ * Created: January 28, 2013
+ ********************************************************************
+ * Implementation of program zzRoboPosnNamesTest
+ ********************************************************************)
+
+PROGRAM _INIT
+
+
+(* TODO : Add your code here *)
+
+
+END_PROGRAM
+
+
+PROGRAM _CYCLIC
+
+
+;Position Names
+myVC = 1
+RB_PosnName[myVC].Name[1]	= posnNameHighLevelBagIn
+RB_PosnName[myVC].Extra[1]	= posnExtraNone
+RB_PosnName[myVC].Name[2]	= posnNameHighLevelBagOut
+RB_PosnName[myVC].Extra[2]	= posnExtraNone
+RB_PosnName[myVC].Name[3]	= posnNameLowLevelBagOut
+RB_PosnName[myVC].Extra[3]	= posnExtraNone
+RB_PosnName[myVC].Name[4]	= posnNameLowLevelBagIn
+RB_PosnName[myVC].Extra[4]	= posnExtraNone
+RB_PosnName[myVC].Name[5]	= posnNameNone
+RB_PosnName[myVC].Extra[5]	= posnExtraNone
+RB_PosnName[myVC].Name[6]	= posnNameNone
+RB_PosnName[myVC].Extra[6]	= posnExtraNone
+
+myVC = 2
+RB_PosnName[myVC].Name[1]	= posnNameHighLevelBagIn
+RB_PosnName[myVC].Extra[1]	= posnExtraNone
+RB_PosnName[myVC].Name[2]	= posnNameHighLevelBagOut
+RB_PosnName[myVC].Extra[2]	= posnExtraNone
+RB_PosnName[myVC].Name[3]	= posnNameLowLevelBagOut
+RB_PosnName[myVC].Extra[3]	= posnExtraNone
+RB_PosnName[myVC].Name[4]	= posnNameLowLevelBagIn
+RB_PosnName[myVC].Extra[4]	= posnExtraNone
+RB_PosnName[myVC].Name[5]	= posnNameNone
+RB_PosnName[myVC].Extra[5]	= posnExtraNone
+RB_PosnName[myVC].Name[6]	= posnNameNone
+RB_PosnName[myVC].Extra[6]	= posnExtraNone
+
+myVC = 3
+RB_PosnName[myVC].Name[1]	= posnNameHighLevelBagOut
+RB_PosnName[myVC].Extra[1]	= posnExtraNone
+RB_PosnName[myVC].Name[2]	= posnNameHighLevelBagIn
+RB_PosnName[myVC].Extra[2]	= posnExtraNone
+RB_PosnName[myVC].Name[3]	= posnNameLoading
+RB_PosnName[myVC].Extra[3]	= posnExtraNone
+RB_PosnName[myVC].Name[4]	= posnNameNone
+RB_PosnName[myVC].Extra[4]	= posnExtraNone
+RB_PosnName[myVC].Name[5]	= posnNameNone
+RB_PosnName[myVC].Extra[5]	= posnExtraNone
+RB_PosnName[myVC].Name[6]	= posnNameNone
+RB_PosnName[myVC].Extra[6]	= posnExtraNone
+
+END_PROGRAM

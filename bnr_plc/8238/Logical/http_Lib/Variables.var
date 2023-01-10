@@ -1,0 +1,10 @@
+VAR CONSTANT
+	HTTP_MAX_COMM : UINT := 20; (**Max number of interfaces to talk to http.*)
+END_VAR
+VAR
+	HTTP_Comm : ARRAY[0..HTTP_MAX_COMM] OF http_comm_typ;
+	HTTP_Config : httpConfig_typ;
+END_VAR
+VAR CONSTANT
+	DEFAULT_REQUEST_HEADER : httpRequestHeader_t := (protocol:='HTTP/1.1',host:='10.8.4.220',contentType:='text/plain',connection:='keep-alive',keepAlive:='max=100,timeout=10');
+END_VAR

@@ -1,0 +1,3 @@
+VAR
+	OPCuA_Client : ARRAY[0..MAX_OPCuA_CLIENTS] OF OPCuaClient_typ;
+END_VAR

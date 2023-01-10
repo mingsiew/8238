@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="1.00.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global variables">Global.var</Object>
+    <Object Type="File">Custom_Variables.var</Object>
+    <Object Type="Program" Language="IEC" Description="DBOUNCE">DBOUNCE</Object>
+    <Object Type="Program" Language="IEC" Description="ALARMS">ALARMS</Object>
+    <Object Type="Program" Language="IEC" Description="INSERTS">INSERTS</Object>
+    <Object Type="Program" Language="IEC" Description="WEIGHT">WEIGHT</Object>
+    <Object Type="Program" Language="IEC" Description="S_COMM_OUT">S_COMM_OUT</Object>
+    <Object Type="Program" Language="IEC" Description="IO_INPUTS">IO_INPUTS</Object>
+    <Object Type="Program" Language="IEC" Description="IO_OUTPUTS">IO_OUTPUTS</Object>
+    <Object Type="Program" Language="IEC">BRING_OK</Object>
+    <Object Type="Program" Language="IEC" Description="S_COMM_IN">S_COMM_IN</Object>
+    <Object Type="Program" Language="IEC">LIFTS</Object>
+    <Object Type="Program" Language="IEC" Description="RAIL_SUB">RAIL_SUB</Object>
+    <Object Type="Program" Language="IEC">OPENERS</Object>
+    <Object Type="Program" Language="IEC">CLOSERS</Object>
+    <Object Type="Program" Language="IEC">SWITCHES</Object>
+    <Object Type="Program" Language="IEC" Description="IO_SCANNING">IO_SCANNING</Object>
+    <Object Type="Program" Language="IEC" Description="SORTS">SORTS</Object>
+    <Object Type="Program" Language="IEC" Description="WARNINGS">WARNINGS</Object>
+    <Object Type="Program" Language="IEC" Description="TRANSFERS">TRANSFERS</Object>
+    <Object Type="Program" Language="IEC">custom</Object>
+    <Object Type="Package">mappView</Object>
+    <Object Type="Package">Standard</Object>
+    <Object Type="Package">Libraries</Object>
+    <Object Type="Package" Description="Supertrack Robo Drive Control Package">Robo_Drive_Control</Object>
+    <Object Type="Package">Rails</Object>
+    <Object Type="Program" Language="IEC" Description="SAFETY_ZONES">SAFETY_ZONES</Object>
+    <Object Type="Program" Language="IEC" Description="BELT_TO_TRANSFER">BELT_TO_TRANSFER</Object>
+    <Object Type="Program" Language="IEC" Description="CONVEYOR_MAP">CONVEYOR_MAP</Object>
+    <Object Type="Package" Description="COMMUNICATION">COMMUNICATION</Object>
+    <Object Type="Library" Language="IEC" Description="eVueLib">eVueLib</Object>
+    <Object Type="Package">Safety</Object>
+    <Object Type="Package">OPCuA_Client</Object>
+    <Object Type="Package">CSP_Control</Object>
+    <Object Type="Package">http_Lib</Object>
+    <Object Type="Program" Language="IEC" Description="LOADCELLS">LOADCELLS</Object>
+    <Object Type="Package">SortingSpecial</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,34 @@
+(********************************************************************
+ * COPYRIGHT -- HP
+ ********************************************************************
+ * Program: Kan_Driver
+ * File: Kan_Driver.var
+ * Author: treamsbottom
+ * Created: September 07, 2012
+ ********************************************************************
+ * Local variables of program Kan_Driver
+ ********************************************************************)
+VAR
+	n : UINT;
+	Index : UINT;
+	BagNumber : UINT;
+	GetTimeStamp : DTGetTime;
+	length : UDINT;
+	myCategoryString : STRING[11];
+	myCustomerString : STRING[11];
+	UnloadingPulse : ARRAY[0..HLKANLINK_MAX_CLIENTCONNS] OF R_TRIG;
+	UnloadingFinishPLS : ARRAY[0..HLKANLINK_MAX_CLIENTCONNS] OF F_TRIG;
+	SuperTrackState : USINT;
+	x : UINT;
+	BagIndex : UINT;
+	sCustomer : STRING[11];
+	sCategory : STRING[11];
+	sBatchID : STRING[16];
+	NoOfDataRequested : UINT;
+	DataOffset : ARRAY[0..HLKANLINK_MAX_CLIENTCONNS] OF UINT;
+	DataCount : UINT;
+	myProgramString : STRING[11];
+	sProgram : STRING[11];
+	t : UINT;
+	comm : REFERENCE TO Comm_typ;
+END_VAR

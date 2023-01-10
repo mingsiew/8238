@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="1.05.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Configuration of Messagestatistics">CfgMsgStat</Object>
+    <Object Type="File" Description="Package variables">Pkg_mnMsgShare.var</Object>
+  </Objects>
+</Package>

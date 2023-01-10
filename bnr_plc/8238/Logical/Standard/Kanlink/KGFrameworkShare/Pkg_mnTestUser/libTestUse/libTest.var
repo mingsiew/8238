@@ -1,0 +1,13 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Library: libTestUse
+ * File: libTest.var
+ * Author: hunholz
+ * Created: March 06, 2012
+ ********************************************************************
+ * Constants of library libTestUse
+ ********************************************************************)
+VAR CONSTANT
+	LIBTEST_STAT_POINTER_IS_NULL : UINT := 60000;
+END_VAR

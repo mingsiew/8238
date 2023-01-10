@@ -1,0 +1,7 @@
+PROGRAM	Main			PT=1	Main
+FUNCTION_BLOCK	Zone			PT=1	Zone
+FUNCTION_BLOCK	Output			PT=1	Output
+FUNCTION_BLOCK	SafeModuleOk			PT=1	SafeModuleOk
+FUNCTION_BLOCK	Decode			PT=1	Decode
+FUNCTION_BLOCK	ReleaseOutput			PT=1	ReleaseOutput
+FUNCTION_BLOCK	Output_Card			PT=1	Output_Card

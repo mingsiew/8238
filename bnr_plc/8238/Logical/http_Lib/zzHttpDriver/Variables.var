@@ -1,0 +1,37 @@
+VAR
+	n : UINT;
+	r : UINT;
+	httpComm : REFERENCE TO http_comm_typ;
+	ringBuffer : ARRAY[0..HTTP_MAX_COMM] OF UINT;
+	sizeRingArray : UDINT;
+	sizeRingData : UDINT;
+	moveSize : UDINT;
+	pUrl : UDINT;
+	URL : STRING[500];
+	pHost : UDINT;
+	pResponseHeader : UDINT;
+	pTempMem : UDINT;
+	sizeTempMem : UDINT;
+	pStatistics : UDINT;
+	responseHeader : httpResponseHeader_t;
+	http_Client : httpClient;
+	Statistics : {REDUND_UNREPLICABLE} httpStatistics_t;
+	emptyResponseHeader : httpResponseHeader_t;
+	DebugErrCount : UDINT;
+	pRequestHeader : UDINT;
+	requestHeader : httpRequestHeader_t;
+	remainingStringLen : DINT;
+END_VAR
+VAR CONSTANT
+	BLANK_CHARACTER : STRING[80] := '';
+END_VAR
+VAR
+	httpState : httpState_enum;
+	retryCount : USINT;
+	status : HTTP_Status_enum;
+	lastError : STRING[60];
+	replyCode : UINT;
+	count : UDINT;
+	testEnable : BOOL;
+	testAbort : BOOL;
+END_VAR

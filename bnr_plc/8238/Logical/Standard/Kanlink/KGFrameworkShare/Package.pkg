@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="0.04.2" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Package variables">hlDFII.Glob.var</Object>
+    <Object Type="File" Description="Package variables">mnCntGlob.var</Object>
+    <Object Type="File" Description="Package variables">mnTxtGlob.var</Object>
+    <Object Type="File" Description="Global variables">mnParamGlob.var</Object>
+    <Object Type="File" Description="Package variables">svCPCacheGlob.var</Object>
+    <Object Type="File" Description="Package variables">mnSystemGlob.var</Object>
+    <Object Type="Package" Description="Projektspezifische Einstellungen">Pkg_KGStandardShare</Object>
+    <Object Type="Package" Description="Anzupassende Werte">Pkg_mnEthShare</Object>
+    <Object Type="Package" Description="Konfiguration des mnMsg">Pkg_mnMsgShare</Object>
+    <Object Type="Package" Description="Kanlink User">Pkg_hlKanLinkUser</Object>
+    <Object Type="Package" Description="Testadapter für automatische Test">Pkg_mnTestUser</Object>
+  </Objects>
+</Package>

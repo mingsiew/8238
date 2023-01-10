@@ -1,0 +1,316 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Program: mnParam
+ * File: _mnParam.var
+ * Author: hunholz
+ * Created: July 23, 2011
+ ********************************************************************
+ * Local variables of program mnParam
+ ********************************************************************)
+(*Konstanten*)
+(*Single Step*)
+VAR
+	_xSingleStep : BOOL;
+	_lSingleStep : UDINT := 0;
+	_wSinglestep : UINT := 0;
+END_VAR
+(*Debug*)
+VAR
+	_xDebug : BOOL;
+	_xWeiter : BOOL;
+	_pl_InitState : REFERENCE TO UDINT;
+END_VAR
+(*Ergebnisse des InitUp*)
+VAR
+	_xInitOk : BOOL; (*Bleibt solange TRUE, wie es keinen Fehler in der Initialisierung gegeben hat*)
+END_VAR
+(*Statusvariablen*)
+VAR
+	_xAllContainerOK : BOOL;
+END_VAR
+(*Temporärer Speicher*)
+VAR
+	_MemPartCreate : AsMemPartCreate;
+	_MemPartAlloc : AsMemPartAllocClear;
+	_MemPartFree : AsMemPartFree;
+END_VAR
+(*Von Markus verwendete Variablen*)
+VAR
+	_PmIntern : PmIntern_typ;
+END_VAR
+(*Parsetable*)
+VAR
+	_plLineAdress : REFERENCE TO ARRAY[1..MNPARAM_MAXPARSELINES] OF UDINT;
+	_pwLineLen : REFERENCE TO ARRAY[1..MNPARAM_MAXPARSELINES] OF UINT;
+	_CountLines : mnParam_CountLines;
+	_wStartLine : UINT;
+	_GetCsvDat : mnParam_GetCsvDat;
+END_VAR
+(*Allgemeine Fileoperationen*)
+VAR
+	_FileOpen : FileOpen;
+	_FileInfo : FileInfo;
+	_fiFileInfo : fiFILE_INFO;
+	_FileCopy : FileCopy;
+	_FileRead : FileRead;
+	_FileClose : FileClose;
+END_VAR
+(*Datenmodell Datenobjekte*)
+VAR
+	_diContainer : DatObjInfo;
+	_diLogicalStruct : DatObjInfo;
+	_diParamNum : DatObjInfo;
+	_diParamString : DatObjInfo;
+	_ddContainer : DatObjDelete;
+	_ddLogicalStruct : DatObjDelete;
+	_ddParamNum : DatObjDelete;
+	_ddParamString : DatObjDelete;
+	_dcContainer : DatObjCreate;
+	_dcLogicalStruct : DatObjCreate;
+	_dcParamString : DatObjCreate;
+	_dcParamNum : DatObjCreate;
+	_pDoContainer : REFERENCE TO mnParam_ContainerDyn_typ;
+	_pDoLogicalStruct : REFERENCE TO mnParam_LogicalStructDyn_typ;
+	_pDoParamNum : REFERENCE TO mnParam_ParamNumDyn_typ;
+	_pDoParamString : REFERENCE TO mnParam_ParamStringDyn_typ;
+	_wIndex : UINT;
+END_VAR
+(*CSV Datenobjekte*)
+VAR
+	_diCSVNum : DatObjInfo;
+	_diCSVString : DatObjInfo;
+	_diDefaultDO : DatObjInfo;
+	_diDO : DatObjInfo;
+	_drDO : DatObjRead;
+	_ddCSVNum : DatObjDelete;
+	_ddCSVString : DatObjDelete;
+	_ddDataObjekt : DatObjDelete;
+	_dcCSVNum : DatObjCreate;
+	_dcCSVString : DatObjCreate;
+	_dcDataObjekt : DatObjCreate;
+	_pDoContainerNum : REFERENCE TO mnParam_CsvNumDyn_typ;
+	_pDoContainerString : REFERENCE TO mnParam_CsvStringDyn_typ;
+END_VAR
+(*Datencontainer*)
+VAR
+	_c : DINT;
+	_sIndex : STRING[3];
+END_VAR
+(*Struct-Root Erkennung*)
+VAR
+	_lPVadress : UDINT;
+	_lPVlen : UDINT;
+END_VAR
+(*CSV-Daten erzeugen*)
+VAR
+	_getContainerParamNum : mnParam_GetContainerOfParamNum;
+	_getContainerParamString : mnParam_GetContainerOfParamStrin;
+	_wIdxCsvNum : UINT;
+	_wIdxCsvString : UINT;
+	_i1 : UINT;
+	_i2 : UINT;
+	_i3 : UINT;
+	_i4 : UINT;
+	_dim1 : UINT;
+	_dim2 : UINT;
+	_dim3 : UINT;
+	_dim4 : UINT;
+	_i : UINT;
+	_sPVAdress : STRING[63];
+	_WritePVNum : mnParam_WritePVNum;
+	_WritePVString : mnParam_WritePVString;
+	_wDimension : UINT;
+	_dcpCSVNum : DatObjCopy;
+	_dcpCSVString : DatObjCopy;
+	_dcpDefaultDO : DatObjCopy;
+	_xFoundVersion : BOOL;
+	_xFoundDate : BOOL;
+	_CsvHeaderVersion : mnParam_HeaderVersionRow_typ;
+	_CsvHeaderDate : mnParam_HeaderTimeRow_typ;
+	_drCSVNum : DatObjRead;
+	_drCSVString : DatObjRead;
+	_binarySearchNum : mnParam_BinarySearchInNumeric;
+	_binarySearchString : mnParam_BinarySearchInString;
+	_dwCSVNum : DatObjWrite;
+	_DTGetTime : DTGetTime;
+	_dwCSVString : DatObjWrite;
+	_wStatus : UINT;
+	_PN : mnParam_ParamNumRow_typ;
+	_CN : mnParam_CsvNumRow_typ;
+	_PS : mnParam_ParamStringRow_typ;
+	_CS : mnParam_CsvStringRow_typ;
+	_dwDO : DatObjWrite;
+	_sNumeric : STRING[11];
+	TONwarn : TON;
+	_FileDelete : FileDelete;
+	_DirRead : DirRead;
+	_xFoundFile : BOOL;
+	_xFoundMachineNo : BOOL;
+	_CsvHeadMachineNo : mnParam_HeaderMachineNoRow_typ;
+	_dtStartSetPV : DATE_AND_TIME;
+	_dtEndSetPV : DATE_AND_TIME;
+	_WritePVrNum : mnParam_WritePVrNum;
+	_pdiValue : REFERENCE TO DINT;
+	_rValue : REAL;
+	_DirDeleteEx : DirDeleteEx;
+	_sPathMnrCsv : STRING[31];
+	_FileOpenCsv : FileOpen;
+	_utfParseMem : ARRAY[0..127] OF UINT;
+	_FileReadCsv : FileRead;
+	_lPosLF : UDINT;
+	_lPosCR : UDINT;
+	_FileCloseCsv : FileClose;
+	_AsArLogCreate : AsArLogCreate;
+	_AsArLogGetInfo : AsArLogGetInfo;
+	_xSysError : BOOL := FALSE;
+	_DirCreate : DirCreate;
+	_MemPartDestroy : AsMemPartDestroy;
+	_lAdrInfoMaschinennummer : UDINT;
+	_lLenInfoMaschinennummer : UDINT;
+	_utfMaschinennummer : REFERENCE TO WSTRING[15];
+	_lAdrInfoMaschinentyp : UDINT;
+	_lLenInfoMaschinentyp : UDINT;
+	_utfMaschinentyp : REFERENCE TO WSTRING[15];
+	_sPkgName : STRING[11];
+	_VerStruc : MoVerStruc_typ;
+	_lLineMem : UDINT;
+	_lModelMem : UDINT;
+	_lContMem : UDINT;
+	_ec : _ExportContainer;
+	_wIdxToc : UINT;
+	_ExportTableOfContent : _ExportToc;
+	_DefineActContainer : _DefActContainer;
+	_wIndexIndirect : UINT;
+	_EditNumValues : mnParam_EditNumValue_typ;
+	_EditStrValues : mnParam_EditStrValue_typ;
+	_wActRow : UINT;
+	_wActIdx : UINT;
+	_GetAccessRights : _GetRights;
+	_wActRefIdx : UINT;
+	_prValue : REFERENCE TO REAL;
+	_pFunctionTxt : REFERENCE TO ARRAY[0..MNTXT_MAX_IDX_TXT_FUNCTION] OF mnTxt_TxtLine_Typ;
+	_pInstanceTxt : REFERENCE TO ARRAY[0..MNTXT_MAX_IDX_TXT_INSTANCE] OF mnTxt_TxtLine_Typ;
+	_pParamTxt : REFERENCE TO ARRAY[0..MNTXT_MAX_IDX_TXT_PARAMETER] OF mnTxt_TxtLine_Typ;
+	_pParamHlpTxt : REFERENCE TO ARRAY[0..MNTXT_MAX_IDX_TXT_PARAMETER] OF mnTxt_HelpTxtLine_Typ;
+	_wIdxFunctionTxt : UINT;
+	_wIdxInstanceTxt : UINT;
+	_wIdxParamTxt : UINT;
+	_wIdxParamHlpTxt : UINT;
+	_wLenUtf : UINT;
+	_pDigits : UDINT;
+	_xNumDirty : BOOL;
+	_xStrDirty : BOOL;
+	_pUnit : UDINT;
+	_ii : USINT;
+	_prMinValue : REFERENCE TO REAL;
+	_prMaxValue : REFERENCE TO REAL;
+	_wDelCont : UINT;
+	_wDelInst : UINT;
+	_xImpSetDefault : BOOL;
+	_DirInfo : DirInfo;
+	_xFoundOneFile : BOOL;
+	_LogEntry : KG_ErrLog_typ;
+	_wPtrRBwrite : UINT;
+	_wPtrRBread : UINT;
+	_wPtrRBstart : UINT;
+	_kgRBcreatePMlog : kgRBcreate;
+	_wPtrRBloc : UINT;
+	_xRBReady : BOOL;
+	_InsertRB : kgRBinsert;
+	_LogEntryIn : KG_ErrLog_typ;
+	_ReadRB : kgRBread;
+	_wLogStep : UINT;
+	_xNextFile : BOOL;
+END_VAR
+VAR CONSTANT
+	_MNPARAM_LOG_STARTIMPORT : UINT := 1;
+	_MNPARAM_LOG_STARTDELETE : UINT := 2;
+	_MNPARAM_LOG_ENDIMPORT_SUCC : UINT := 3;
+	_MNPARAM_LOG_ENDIMPORT_FAILED : UINT := 4;
+	_MNPARAM_LOG_ENDDELETE_SUCC : UINT := 5;
+	_MNPARAM_LOG_ENDDELETE_FAILED : UINT := 6;
+	_MNPARAM_LOG_STARTSAVE : UINT := 7;
+	_MNPARAM_LOG_ENDSAVE_SUCC : UINT := 8;
+	_MNPARAM_LOG_ENDSAVE_FAILED : UINT := 9;
+	_MNPARAM_LOG_FOUNDFILES : UINT := 10;
+	_MNPARAM_LOG_FOUNDFILE : UINT := 11;
+	_MNPARAM_LOG_WRONGMACHINENO : UINT := 12;
+	_MNPARAM_LOG_WRONGMACHINETYPE : UINT := 13;
+	_MNPARAM_LOG_NOVERSION : UINT := 14;
+	_MNPARAM_LOG_CNTLINES : UINT := 15;
+	_MNPARAM_LOG_WRITEPROTECTED : UINT := 16;
+	_MNPARAM_LOG_SYSTEMFAULT : UINT := 17;
+	_MNPARAM_LOG_STARTRESTORE : UINT := 18;
+	_MNPARAM_LOG_STARTBACKUP : UINT := 19;
+	_MNPARAM_LOG_ENDRESTORE_SUCC : UINT := 20;
+	_MNPARAM_LOG_ENDRESTORE_FAILED : UINT := 21;
+	_MNPARAM_LOG_ENDBACKUP_SUCC : UINT := 22;
+	_MNPARAM_LOG_ENDBACKUP_FAILED : UINT := 23;
+	_MNPARAM_LOG_STARTCREATE : UINT := 24;
+	_MNPARAM_LOG_ENDCREATE_SUCC : UINT := 25;
+	_MNPARAM_LOG_ENDCREATE_FAILED : UINT := 26;
+	_MNPARAM_LOG_STARTCOPY : UINT := 27;
+	_MNPARAM_LOG_ENDCOPY_SUCC : UINT := 28;
+	_MNPARAM_LOG_ENDCOPY_FAILED : UINT := 29;
+	_MNPARAM_LOG_ROOTVAR : UINT := 30;
+	_MNPARAM_LOG_FOUNDIMPDIR : UINT := 31;
+END_VAR
+VAR
+	_CsvHeaderMachineNo : mnParam_HeaderMachineNoRow_typ;
+	_sUSBInterface : STRING[31];
+END_VAR
+VAR CONSTANT
+	_MNPARAM_TEMP_USBDEV : STRING[15] := 'TEMPUSB';
+END_VAR
+VAR
+	_DevLink : DevLink;
+	_sDevString : STRING[63];
+	_DevUnlink : DevUnlink;
+	_sImportDevice : STRING[31];
+	_lDevLinkHandle : UDINT;
+	_GetBackupTime : DTGetTime;
+	_BackupTimestamp : mnParam_datetoa;
+	_DirCopy : DirCopy;
+	_wCreateCont : UINT;
+	_wCreateInst : UINT;
+	_wCopyCont : UINT;
+	_wCopyInst : UINT;
+	_wCopyInstFrom : UINT;
+	_xAllowCommands : BOOL;
+	_wImpSource : UINT;
+	TONwarn2 : TON;
+	_wActListIdx : UINT;
+	_k : UINT;
+	_diProgname : DatObjInfo;
+	_pDoProgContainer : REFERENCE TO mnParam_CsvStringDyn_typ;
+	_lMaxIndexProgContainer : UDINT;
+	_TONshowfailed : TON;
+	_inst : UINT;
+	_xParamOK : BOOL;
+	_wStateImportDatamodel : UINT;
+	_xFoundDM : BOOL;
+	_lDirNum : UDINT;
+	_sTestFile : STRING[63];
+	_xImpDMOK : BOOL;
+	_xModelImportChecked : BOOL;
+	_fiDataModel : fiFILE_INFO;
+	_fiMNR : fiFILE_INFO;
+	_LP : _LimParam;
+	_wCntParams : UINT;
+	_xRun : BOOL;
+	_lLoop : UDINT;
+	_lLoopCount : UDINT;
+	_xNoWriteProtect : BOOL;
+	_cycStateWriteMno : enum_CycWriteMno;
+	_FileMnoDelete : FileDelete;
+	_FileMnoCreate : FileCreate;
+	_bBufMno : ARRAY[0..47] OF USINT;
+	_lAdrBuf : UDINT;
+	_lSizeBuf : UDINT;
+	_WriteBOM : mnParam_WriteBOM_Mem;
+	_WriteMno : mnParam_WriteCSV252_Mem;
+	_newMno : mnParam_HeaderMachineNoRow_typ;
+	_FileMnoWrite : FileWrite;
+	_FileMnoClose : FileClose;
+END_VAR

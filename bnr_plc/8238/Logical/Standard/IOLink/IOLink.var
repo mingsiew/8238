@@ -1,0 +1,5 @@
+VAR
+	IO_Link : IO_Link_Type;
+	Fuse_PB_Reset : ARRAY[0..2] OF BOOL;
+	Fuse_PB_Lamp : ARRAY[0..2] OF BOOL;
+END_VAR

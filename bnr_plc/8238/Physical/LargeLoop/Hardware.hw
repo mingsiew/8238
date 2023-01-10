@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.10.3.60 FileVersion="4.9"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="0AC808.9" Type="0AC808.9" Version="1.0.0.0">
+    <Connection Connector="ETH1" TargetModule="CP1584" TargetConnector="IF3">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="ETH3" TargetModule="X67BC8321-32" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="ETH4" TargetModule="X20BC0083" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="ETH7" TargetModule="FEPL-02_and_ACS380_STB1" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+  </Module>
+  <Module Name="CP1584" Type="X20CP1584" Version="1.9.0.0">
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="10.8.4.20" />
+      <Parameter ID="SubnetMask" Value="" />
+    </Connector>
+    <Connector Name="IF3">
+      <Parameter ID="DNAConfiguration" Value="manual" />
+      <Parameter ID="InternetAddress" Value="10.0.20.20" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
+      <Parameter ID="ActivateIna" Value="1" />
+      <Parameter ID="InaNodeNumber" Value="21" />
+    </Connector>
+    <Connector Name="IF6">
+      <Parameter ID="Stations" Value="100" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="AS4_2_BaseStandard_Supertrack" />
+    <Parameter ID="UserRamSize" Value="966656" />
+    <Parameter ID="RemMemSize" Value="65280" />
+    <Parameter ID="PermanentPvSize" Value="46956" />
+    <Parameter ID="RemanentGlobalPvSize" Value="12000" />
+    <Parameter ID="VolatileGlobalPvSize" Value="400000" />
+    <Parameter ID="CyclicObjects" Value="200" />
+    <Parameter ID="BRObjects" Value="600" />
+    <Parameter ID="EnableUsbRemoteInstall" Value="1" />
+    <Parameter ID="EnableCfRemoteInstall" Value="1" />
+    <Parameter ID="Cyclic1Duration" Value="5000" />
+    <Parameter ID="Cyclic2Duration" Value="10000" />
+    <Parameter ID="Cyclic2Tolerance" Value="10000" />
+    <Parameter ID="Cyclic8Duration" Value="5000" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="USBStick" />
+    <Parameter ID="FileDevicePath1" Value="/bd0\" />
+    <Parameter ID="EthernetHostName" Value="SupertrackPLC" />
+    <Parameter ID="EthernetDefaultGateway" Value="10.8.15.254" />
+    <Parameter ID="ActivateOpcUa" Value="1" />
+    <Parameter ID="OpcUa_Security_SoftwareCertificates" Value="" />
+    <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
+  </Module>
+  <Module Name="FEPL-02_and_ACS380_STB1" Type="FBE.ACS380_v2.04.0.3_FEPL-02_1.0_filerev1.0" Version="FFEPS10" OrderNumber="FEPL-02 and ACS380">
+    <Connection Connector="PLK1" TargetModule="0AC808.9" TargetConnector="ETH7" NodeNumber="101">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="p2201_direction" Value="ro" />
+    <Parameter ID="p2203_direction" Value="ro" />
+    <Parameter ID="p6040_direction" Value="wo" />
+    <Parameter ID="p6041_direction" Value="ro" />
+    <Parameter ID="p6042_direction" Value="wo" />
+    <Parameter ID="p6044_direction" Value="ro" />
+    <Parameter ID="p4001s07_direction" Value="ro" />
+    <Parameter ID="p4001s0A_direction" Value="ro" />
+    <Parameter ID="p401Cs48_direction" Value="wo" />
+    <Parameter ID="p401Cs49_direction" Value="wo" />
+    <Parameter ID="p4063s06_direction" Value="wo" />
+    <Parameter ID="p4063s09_direction" Value="wo" />
+    <Parameter ID="p4063s0A_direction" Value="wo" />
+  </Module>
+  <Module Name="SVC_Lift1" Type="FBC.0x0200008D.0x00000064.CO302A_4" Version="0x04.0x2A" OrderNumber="MCA105 CANopen">
+    <Connection Connector="CAN1" TargetModule="X20IF2772" TargetConnector="IF1" NodeNumber="11" />
+    <Parameter ID="p6040_connecttomaster" Value="6" />
+    <Parameter ID="p6041_connecttomaster" Value="2" />
+    <Parameter ID="p1400_transmissionselection" Value="0" />
+    <Parameter ID="p1401_transmissionselection" Value="1" />
+    <Parameter ID="p1402_transmissionselection" Value="0" />
+    <Parameter ID="p1403_transmissionselection" Value="0" />
+    <Parameter ID="p1800_transmissionselection" Value="0" />
+    <Parameter ID="p1801_transmissionselection" Value="1" />
+    <Parameter ID="p1802_transmissionselection" Value="0" />
+    <Parameter ID="p1803_transmissionselection" Value="1" />
+    <Parameter ID="pheartbeat_producertime" Value="500" />
+    <Parameter ID="p241a_subnumber" Value="0x08" />
+    <Parameter ID="p241a_parametername" Value="1050. Process Data Con" />
+    <Parameter ID="p241a_objecttype" Value="8" />
+    <Parameter ID="p241a_objflags" Value="0" />
+    <Parameter ID="p241a_parametervalue" Value="" />
+    <Parameter ID="p241asub0_parametername" Value="1050. Process Data Con index 0" />
+    <Parameter ID="p241asub0_objecttype" Value="7" />
+    <Parameter ID="p241asub0_accesstype" Value="RW" />
+    <Parameter ID="p241asub0_datatype" Value="6" />
+    <Parameter ID="p241asub0_pdomapping" Value="0" />
+    <Parameter ID="p241asub0_objflags" Value="0" />
+    <Parameter ID="p241asub0_lowlimit" Value="0x0" />
+    <Parameter ID="p241asub0_highlimit" Value="0x7d0" />
+    <Parameter ID="p241asub0_parametervalue" Value="" />
+    <Parameter ID="p241asub1_parametername" Value="1050. Process Data Con index 1" />
+    <Parameter ID="p241asub1_objecttype" Value="7" />
+    <Parameter ID="p241asub1_accesstype" Value="RW" />
+    <Parameter ID="p241asub1_datatype" Value="6" />
+    <Parameter ID="p241asub1_pdomapping" Value="0" />
+    <Parameter ID="p241asub1_objflags" Value="0" />
+    <Parameter ID="p241asub1_lowlimit" Value="0x0" />
+    <Parameter ID="p241asub1_highlimit" Value="0x7d0" />
+    <Parameter ID="p241asub1_parametervalue" Value="" />
+    <Parameter ID="p241asub2_parametername" Value="1050. Process Data Con index 2" />
+    <Parameter ID="p241asub2_objecttype" Value="7" />
+    <Parameter ID="p241asub2_accesstype" Value="RW" />
+    <Parameter ID="p241asub2_datatype" Value="6" />
+    <Parameter ID="p241asub2_pdomapping" Value="0" />
+    <Parameter ID="p241asub2_objflags" Value="0" />
+    <Parameter ID="p241asub2_lowlimit" Value="0x0" />
+    <Parameter ID="p241asub2_highlimit" Value="0x7d0" />
+    <Parameter ID="p241asub2_parametervalue" Value="" />
+    <Parameter ID="p241asub3_parametername" Value="1050. Process Data Con index 3" />
+    <Parameter ID="p241asub3_objecttype" Value="7" />
+    <Parameter ID="p241asub3_accesstype" Value="RW" />
+    <Parameter ID="p241asub3_datatype" Value="6" />
+    <Parameter ID="p241asub3_pdomapping" Value="0" />
+    <Parameter ID="p241asub3_objflags" Value="0" />
+    <Parameter ID="p241asub3_lowlimit" Value="0x0" />
+    <Parameter ID="p241asub3_highlimit" Value="0x7d0" />
+    <Parameter ID="p241asub3_parametervalue" Value="" />
+    <Parameter ID="p241asub4_parametername" Value="1050. Process Data Con index 4" />
+    <Parameter ID="p241asub4_objecttype" Value="7" />
+    <Parameter ID="p241asub4_accesstype" Value="RW" />
+    <Parameter ID="p241asub4_datatype" Value="6" />
+    <Parameter ID="p241asub4_pdomapping" Value="0" />
+    <Parameter ID="p241asub4_objflags" Value="0" />
+    <Parameter ID="p241asub4_lowlimit" Value="0x0" />
+    <Parameter ID="p241asub4_highlimit" Value="0x7d0" />
+    <Parameter ID="p241asub4_parametervalue" Value="" />
+    <Parameter ID="p241asub5_parametername" Value="1050. Process Data Con index 5" />
+    <Parameter ID="p241asub5_objecttype" Value="7" />
+    <Parameter ID="p241asub5_accesstype" Value="RW" />
+    <Parameter ID="p241asub5_datatype" Value="6" />
+    <Parameter ID="p241asub5_pdomapping" Value="0" />
+    <Parameter ID="p241asub5_objflags" Value="0" />
+    <Parameter ID="p241asub5_lowlimit" Value="0x0" />
+    <Parameter ID="p241asub5_highlimit" Value="0x7d0" />
+    <Parameter ID="p241asub5_parametervalue" Value="" />
+    <Parameter ID="p241asub6_parametername" Value="1050. Process Data Con index 6" />
+    <Parameter ID="p241asub6_objecttype" Value="7" />
+    <Parameter ID="p241asub6_accesstype" Value="RW" />
+    <Parameter ID="p241asub6_datatype" Value="6" />
+    <Parameter ID="p241asub6_pdomapping" Value="0" />
+    <Parameter ID="p241asub6_objflags" Value="0" />
+    <Parameter ID="p241asub6_lowlimit" Value="0x0" />
+    <Parameter ID="p241asub6_highlimit" Value="0x7d0" />
+    <Parameter ID="p241asub6_parametervalue" Value="" />
+    <Parameter ID="p241asub7_parametername" Value="1050. Process Data Con index 7" />
+    <Parameter ID="p241asub7_objecttype" Value="7" />
+    <Parameter ID="p241asub7_accesstype" Value="RW" />
+    <Parameter ID="p241asub7_datatype" Value="6" />
+    <Parameter ID="p241asub7_pdomapping" Value="0" />
+    <Parameter ID="p241asub7_objflags" Value="0" />
+    <Parameter ID="p241asub7_lowlimit" Value="0x0" />
+    <Parameter ID="p241asub7_highlimit" Value="0x7d0" />
+    <Parameter ID="p241asub7_parametervalue" Value="" />
+    <Parameter ID="p241b_subnumber" Value="0x08" />
+    <Parameter ID="p241b_parametername" Value="1051. Process Data Con" />
+    <Parameter ID="p241b_objecttype" Value="8" />
+    <Parameter ID="p241b_objflags" Value="0" />
+    <Parameter ID="p241b_parametervalue" Value="" />
+    <Parameter ID="p241bsub0_parametername" Value="1051. Process Data Con index 0" />
+    <Parameter ID="p241bsub0_objecttype" Value="7" />
+    <Parameter ID="p241bsub0_accesstype" Value="RW" />
+    <Parameter ID="p241bsub0_datatype" Value="6" />
+    <Parameter ID="p241bsub0_pdomapping" Value="0" />
+    <Parameter ID="p241bsub0_objflags" Value="0" />
+    <Parameter ID="p241bsub0_lowlimit" Value="0x0" />
+    <Parameter ID="p241bsub0_highlimit" Value="0x7d0" />
+    <Parameter ID="p241bsub0_parametervalue" Value="" />
+    <Parameter ID="p241bsub1_parametername" Value="1051. Process Data Con index 1" />
+    <Parameter ID="p241bsub1_objecttype" Value="7" />
+    <Parameter ID="p241bsub1_accesstype" Value="RW" />
+    <Parameter ID="p241bsub1_datatype" Value="6" />
+    <Parameter ID="p241bsub1_pdomapping" Value="0" />
+    <Parameter ID="p241bsub1_objflags" Value="0" />
+    <Parameter ID="p241bsub1_lowlimit" Value="0x0" />
+    <Parameter ID="p241bsub1_highlimit" Value="0x7d0" />
+    <Parameter ID="p241bsub1_parametervalue" Value="" />
+    <Parameter ID="p241bsub2_parametername" Value="1051. Process Data Con index 2" />
+    <Parameter ID="p241bsub2_objecttype" Value="7" />
+    <Parameter ID="p241bsub2_accesstype" Value="RW" />
+    <Parameter ID="p241bsub2_datatype" Value="6" />
+    <Parameter ID="p241bsub2_pdomapping" Value="0" />
+    <Parameter ID="p241bsub2_objflags" Value="0" />
+    <Parameter ID="p241bsub2_lowlimit" Value="0x0" />
+    <Parameter ID="p241bsub2_highlimit" Value="0x7d0" />
+    <Parameter ID="p241bsub2_parametervalue" Value="" />
+    <Parameter ID="p241bsub3_parametername" Value="1051. Process Data Con index 3" />
+    <Parameter ID="p241bsub3_objecttype" Value="7" />
+    <Parameter ID="p241bsub3_accesstype" Value="RW" />
+    <Parameter ID="p241bsub3_datatype" Value="6" />
+    <Parameter ID="p241bsub3_pdomapping" Value="0" />
+    <Parameter ID="p241bsub3_objflags" Value="0" />
+    <Parameter ID="p241bsub3_lowlimit" Value="0x0" />
+    <Parameter ID="p241bsub3_highlimit" Value="0x7d0" />
+    <Parameter ID="p241bsub3_parametervalue" Value="" />
+    <Parameter ID="p241bsub4_parametername" Value="1051. Process Data Con index 4" />
+    <Parameter ID="p241bsub4_objecttype" Value="7" />
+    <Parameter ID="p241bsub4_accesstype" Value="RW" />
+    <Parameter ID="p241bsub4_datatype" Value="6" />
+    <Parameter ID="p241bsub4_pdomapping" Value="0" />
+    <Parameter ID="p241bsub4_objflags" Value="0" />
+    <Parameter ID="p241bsub4_lowlimit" Value="0x0" />
+    <Parameter ID="p241bsub4_highlimit" Value="0x7d0" />
+    <Parameter ID="p241bsub4_parametervalue" Value="" />
+    <Parameter ID="p241bsub5_parametername" Value="1051. Process Data Con index 5" />
+    <Parameter ID="p241bsub5_objecttype" Value="7" />
+    <Parameter ID="p241bsub5_accesstype" Value="RW" />
+    <Parameter ID="p241bsub5_datatype" Value="6" />
+    <Parameter ID="p241bsub5_pdomapping" Value="0" />
+    <Parameter ID="p241bsub5_objflags" Value="0" />
+    <Parameter ID="p241bsub5_lowlimit" Value="0x0" />
+    <Parameter ID="p241bsub5_highlimit" Value="0x7d0" />
+    <Parameter ID="p241bsub5_parametervalue" Value="" />
+    <Parameter ID="p241bsub6_parametername" Value="1051. Process Data Con index 6" />
+    <Parameter ID="p241bsub6_objecttype" Value="7" />
+    <Parameter ID="p241bsub6_accesstype" Value="RW" />
+    <Parameter ID="p241bsub6_datatype" Value="6" />
+    <Parameter ID="p241bsub6_pdomapping" Value="0" />
+    <Parameter ID="p241bsub6_objflags" Value="0" />
+    <Parameter ID="p241bsub6_lowlimit" Value="0x0" />
+    <Parameter ID="p241bsub6_highlimit" Value="0x7d0" />
+    <Parameter ID="p241bsub6_parametervalue" Value="" />
+    <Parameter ID="p241bsub7_parametername" Value="1051. Process Data Con index 7" />
+    <Parameter ID="p241bsub7_objecttype" Value="7" />
+    <Parameter ID="p241bsub7_accesstype" Value="RW" />
+    <Parameter ID="p241bsub7_datatype" Value="6" />
+    <Parameter ID="p241bsub7_pdomapping" Value="0" />
+    <Parameter ID="p241bsub7_objflags" Value="0" />
+    <Parameter ID="p241bsub7_lowlimit" Value="0x0" />
+    <Parameter ID="p241bsub7_highlimit" Value="0x7d0" />
+    <Parameter ID="p241bsub7_parametervalue" Value="" />
+  </Module>
+  <Module Name="X20BB80" Type="X20BB80" Version="1.1.0.0" />
+  <Module Name="X20BB80b" Type="X20BB80" Version="1.1.0.0" />
+  <Module Name="X20BC0083" Type="X20BC0083" Version="2.14.0.0">
+    <Connection Connector="PLK1" TargetModule="0AC808.9" TargetConnector="ETH4" NodeNumber="2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="SL" TargetModule="X20BB80" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20BC0083b" Type="X20BC0083" Version="2.14.0.0">
+    <Connection Connector="SL" TargetModule="X20BB80b" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20BM11" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="CP1584" TargetConnector="IF6" />
+  </Module>
+  <Module Name="X20BM11a" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM11" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11b" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BB80" TargetConnector="IF1" />
+  </Module>
+  <Module Name="X20BM11c" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM33b" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11d" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM11a" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11e" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM11d" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11f" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM11e" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11g" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM11b" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11h" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM11f" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11i" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM11g" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11j" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM11i" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11k" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM11h" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11l" Type="X20BM11" Version="1.0.0.1">
+    <Connection Connector="X2X1" TargetModule="X20BM11c" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM33b" Type="X20BM33" Version="1.1.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BB80b" TargetConnector="IF1" />
+  </Module>
+  <Module Name="X20BT9100" Type="X20BT9100" Version="1.1.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12k" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11j" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20BT9100a" Type="X20BT9100" Version="1.1.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12l" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11k" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20BT9100b" Type="X20BT9100" Version="1.1.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12d" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11l" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20CS1020" Type="X20CS1020" Version="1.7.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12o" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11c" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DC1196_SVC1" Type="X20DC1196" Version="1.3.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12j" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11i" TargetConnector="SL1" />
+    <Parameter ID="FunctionModel" Value="FunctionModel001" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DM9324" Type="X20DM9324" Version="1.0.4.0">
+    <Connection Connector="SS1" TargetModule="X20TB12a" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DM9324a" Type="X20DM9324" Version="1.0.4.0">
+    <Connection Connector="SS1" TargetModule="X20TB12b" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11a" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DM9324b" Type="X20DM9324" Version="1.0.4.0">
+    <Connection Connector="SS1" TargetModule="X20TB12e" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11d" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DM9324x" Type="X20DM9324" Version="1.0.4.0">
+    <Connection Connector="SS1" TargetModule="X20TB12c" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11b" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DO8332" Type="X20DO8332" Version="1.0.2.0">
+    <Connection Connector="SS1" TargetModule="X20TB12f" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11e" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DO8332a" Type="X20DO8332" Version="1.0.2.0">
+    <Connection Connector="SS1" TargetModule="X20TB12g" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11f" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DO8332b" Type="X20DO8332" Version="1.0.2.0">
+    <Connection Connector="SS1" TargetModule="X20TB12i" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11h" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DO8332x" Type="X20DO8332" Version="1.0.2.0">
+    <Connection Connector="SS1" TargetModule="X20TB12h" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11g" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20IF2772" Type="X20IF2772" Version="1.5.0.0">
+    <Connection Connector="SS" TargetModule="CP1584" TargetConnector="SS1" />
+    <Connector Name="IF1">
+      <Parameter ID="Baudrate" Value="250000" />
+      <Parameter ID="ActivateCANIO" Value="0" />
+      <Parameter ID="ActivateCanOpen" Value="1" />
+      <Parameter ID="pcannodeid" Value="2" />
+      <Parameter ID="pnmtstartup_bit3" Value="1" />
+      <Parameter ID="pnmtstartup_maximumbootuptime" Value="20" />
+      <Parameter ID="pheartbeat_producertime" Value="500" />
+      <Parameter ID="pactivatesync" Value="1" />
+      <Parameter ID="pcycleperiod" Value="10000" />
+      <Parameter ID="pwindowlength" Value="10000" />
+      <Parameter ID="p1006_parametervalue" Value="0" />
+      <Parameter ID="p1007_parametervalue" Value="0" />
+      <Parameter ID="p100c_parametervalue" Value="1000" />
+      <Parameter ID="p100d_parametervalue" Value="3" />
+    </Connector>
+    <Connector Name="IF2">
+      <Parameter ID="Baudrate" Value="250000" />
+      <Parameter ID="ActivateCanOpen" Value="1" />
+      <Parameter ID="pcannodeid" Value="3" />
+      <Parameter ID="p1006_parametervalue" Value="0" />
+      <Parameter ID="p1007_parametervalue" Value="0" />
+      <Parameter ID="p100c_parametervalue" Value="1000" />
+      <Parameter ID="p100d_parametervalue" Value="3" />
+    </Connector>
+  </Module>
+  <Module Name="X20PS9400" Type="X20PS9400" Version="1.7.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="X20BB80" TargetConnector="PS1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20PS9400b" Type="X20PS9400" Version="1.7.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12m" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="X20BB80b" TargetConnector="PS1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20SO2110a" Type="X20SO2110" Version="2.2.1.0">
+    <Connection Connector="SS1" TargetModule="X20TB52d" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM33b" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="SafeModuleID" Value="4" />
+  </Module>
+  <Module Name="X20TB12" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12a" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12b" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12c" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12d" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12e" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12f" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12g" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12h" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12i" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12j" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12k" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12l" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12m" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12o" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB52d" Type="X20TB52" Version="1.0.0.2" />
+  <Module Name="X67AI2744_ES" Type="X67AI2744" Version="1.3.0.0">
+    <Connection Connector="X2X1" TargetModule="X67DM1321_ES1" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X67AI2744_ES2" Type="X67AI2744" Version="1.3.0.0">
+    <Connection Connector="X2X1" TargetModule="X67DM1321_ES2" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X67AI2744_ES3" Type="X67AI2744" Version="1.3.0.0">
+    <Connection Connector="X2X1" TargetModule="X67DM1321_ES3" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X67BC8321-32" Type="X67BC8321-1" Version="2.14.0.0">
+    <Connection Connector="PLK1" TargetModule="0AC808.9" TargetConnector="ETH3" NodeNumber="1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="IOSupervision" Value="off" />
+    <Parameter ID="Direction05" Value="output" />
+    <Parameter ID="Direction07" Value="output" />
+    <Parameter ID="Direction08" Value="output" />
+  </Module>
+  <Module Name="X67DM1321.L08_151" Type="X67DM1321.L08" Version="1.3.0.0">
+    <Connection Connector="X2X1" TargetModule="X67DM1321_88" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction09" Value="output" />
+    <Parameter ID="Direction10" Value="output" />
+    <Parameter ID="Direction11" Value="output" />
+    <Parameter ID="Direction12" Value="output" />
+    <Parameter ID="Direction13" Value="output" />
+    <Parameter ID="Direction14" Value="output" />
+    <Parameter ID="Direction15" Value="output" />
+    <Parameter ID="Direction16" Value="output" />
+  </Module>
+  <Module Name="X67DM1321.L08_152" Type="X67DM1321.L08" Version="1.3.0.0">
+    <Connection Connector="X2X1" TargetModule="X67DM1321_51" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction09" Value="output" />
+    <Parameter ID="Direction10" Value="output" />
+    <Parameter ID="Direction11" Value="output" />
+    <Parameter ID="Direction12" Value="output" />
+    <Parameter ID="Direction13" Value="output" />
+    <Parameter ID="Direction14" Value="output" />
+    <Parameter ID="Direction15" Value="output" />
+    <Parameter ID="Direction16" Value="output" />
+  </Module>
+  <Module Name="X67DM1321_31" Type="X67DM1321" Version="1.2.0.0">
+    <Connection Connector="X2X1" TargetModule="X67BC8321-32" TargetConnector="IF1">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction08" Value="output" />
+  </Module>
+  <Module Name="X67DM1321_51" Type="X67DM1321" Version="1.2.0.0">
+    <Connection Connector="X2X1" TargetModule="X67DM1321.L08_151" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction05" Value="output" />
+    <Parameter ID="Direction06" Value="output" />
+    <Parameter ID="Direction07" Value="output" />
+    <Parameter ID="Direction08" Value="output" />
+  </Module>
+  <Module Name="X67DM1321_67" Type="X67DM1321" Version="1.2.0.0">
+    <Connection Connector="X2X1" TargetModule="X67DM1321_72" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction04" Value="output" />
+    <Parameter ID="Direction05" Value="output" />
+    <Parameter ID="Direction06" Value="output" />
+    <Parameter ID="Direction07" Value="output" />
+    <Parameter ID="Direction08" Value="output" />
+  </Module>
+  <Module Name="X67DM1321_71" Type="X67DM1321" Version="1.2.0.0">
+    <Connection Connector="X2X1" TargetModule="X67DM1321.L08_152" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction03" Value="output" />
+    <Parameter ID="Direction04" Value="output" />
+    <Parameter ID="Direction05" Value="output" />
+    <Parameter ID="Direction06" Value="output" />
+    <Parameter ID="Direction07" Value="output" />
+    <Parameter ID="Direction08" Value="output" />
+  </Module>
+  <Module Name="X67DM1321_72" Type="X67DM1321" Version="1.2.0.0">
+    <Connection Connector="X2X1" TargetModule="X67DM1321_71" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction03" Value="output" />
+    <Parameter ID="Direction04" Value="output" />
+    <Parameter ID="Direction05" Value="output" />
+    <Parameter ID="Direction06" Value="output" />
+    <Parameter ID="Direction07" Value="output" />
+    <Parameter ID="Direction08" Value="output" />
+  </Module>
+  <Module Name="X67DM1321_88" Type="X67DM1321" Version="1.2.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BT9100a" TargetConnector="X2X1">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction06" Value="output" />
+    <Parameter ID="Direction07" Value="output" />
+    <Parameter ID="Direction08" Value="output" />
+  </Module>
+  <Module Name="X67DM1321_ES1" Type="X67DM1321" Version="1.2.0.0">
+    <Connection Connector="X2X1" TargetModule="X67AI2744_ES2" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction01" Value="output" />
+    <Parameter ID="Direction02" Value="output" />
+    <Parameter ID="Direction05" Value="output" />
+    <Parameter ID="Direction06" Value="output" />
+    <Parameter ID="Direction07" Value="output" />
+    <Parameter ID="Direction08" Value="output" />
+  </Module>
+  <Module Name="X67DM1321_ES2" Type="X67DM1321" Version="1.2.0.0">
+    <Connection Connector="X2X1" TargetModule="X67AI2744_ES3" TargetConnector="X2X2">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction01" Value="output" />
+    <Parameter ID="Direction02" Value="output" />
+    <Parameter ID="Direction05" Value="output" />
+    <Parameter ID="Direction06" Value="output" />
+    <Parameter ID="Direction07" Value="output" />
+    <Parameter ID="Direction08" Value="output" />
+  </Module>
+  <Module Name="X67DM1321_ES3" Type="X67DM1321" Version="1.2.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BT9100b" TargetConnector="X2X1">
+      <Cable Type="X2XCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="Direction01" Value="output" />
+    <Parameter ID="Direction02" Value="output" />
+    <Parameter ID="Direction05" Value="output" />
+    <Parameter ID="Direction06" Value="output" />
+    <Parameter ID="Direction07" Value="output" />
+    <Parameter ID="Direction08" Value="output" />
+  </Module>
+</Hardware>

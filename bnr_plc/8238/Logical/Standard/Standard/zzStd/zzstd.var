@@ -1,0 +1,6 @@
+VAR
+	TimerClkB : ARRAY[0..4] OF TON_10ms;
+	TimerClkA : ARRAY[0..4] OF TON_10ms;
+	n : UINT;
+	TimerClkPT : ARRAY[0..4] OF UINT;
+END_VAR

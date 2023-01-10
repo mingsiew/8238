@@ -1,0 +1,25 @@
+VAR
+	visu : visu_typ;
+	n : USINT;
+	visu_camera : REFERENCE TO Camera_typ;
+	camera : REFERENCE TO Camera_typ;
+	state : REFERENCE TO Camera_state_enum;
+	settings : REFERENCE TO Camera_Settings_typ;
+	tof_repeat : TOF;
+	visu_settings : REFERENCE TO Camera_Settings_typ;
+	lastID : USINT;
+	getPowerlinkNodeIP : GetPowerlinkNodeIP;
+	eplIpAddress : STRING[16];
+	web_path : ARRAY[0..MAX_CAMERAS] OF STRING[50];
+	index : USINT;
+	xRun : BOOL;
+	getNode : getNodeFromPV;
+	pvName : STRING[75];
+	camNo : STRING[10];
+	init : USINT;
+	moduleAddress : STRING[30];
+	getModuleName : GetModuleName;
+	sNode : STRING[10];
+	timeString : STRING[20];
+	buildURL : STRING[100];
+END_VAR

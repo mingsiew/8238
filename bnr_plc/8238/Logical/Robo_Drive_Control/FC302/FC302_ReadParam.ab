@@ -1,0 +1,31 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Library: FC302
+ * File: FC302_ReadParam.ab
+ * Author: D.Jefferys
+ * Created: February 13, 2009
+ ********************************************************************
+ * Implementation of library FC302
+ ********************************************************************) 
+
+(*Read Parameter from Danfoss FC302*)
+FUNCTION_BLOCK FC302_ReadParam
+	
+	status = 65535 ;Busy
+	
+	CANopenSDORead8_0.enable 	= enable
+	CANopenSDORead8_0.pDevice 	= pDevice
+	CANopenSDORead8_0.node 		= node
+	CANopenSDORead8_0.index 	= $2000 + index 
+	CANopenSDORead8_0.subindex 	= subindex
+	
+	CANopenSDORead8_0 FUB CANopenSDORead8()
+	
+	IF (CANopenSDORead8_0.status = 0) THEN
+		data = 0
+		memcpy(ADR(data),ADR(CANopenSDORead8_0.data0),CANopenSDORead8_0.datalen) 
+		status = CANopenSDORead8_0.status
+	ENDIF
+	
+END_FUNCTION_BLOCK

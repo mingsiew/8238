@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles id="KannegiesserLoginDialog" xmlns="http://www.br-automation.com/iat2015/styles/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!--<Style xsi:type="" id="" />-->
+	
+	
+	
+	<Style id="Kannegiesser_Logout" xsi:type="widgets.brease.LogoutButton" 
+		fontSize="12px" 
+		bold="true" 
+		textColor="#474747" 
+		mouseDownTextColor="#066dab" 
+		cornerRadius="5px" 
+		borderWidth="0px 0px 0px 0px" 
+		mouseDownBorderWidth="0px 0px 0px 0px" 
+		borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" 
+		mouseDownBorderColor="#FFA947 #FD7B01 #FD7B01 #FFA947" 
+		backGroundGradient="linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(229,229,229,1) 100%)"
+		mouseDownBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " 
+		disabledBackGroundGradient="linear-gradient(135deg, #777777 0%,#bbbbbb 0%,#777777 4%,#777777 4%,#777777 86%,#eeeeee 98%)" 
+		shadow="4px 4px 10px 0px rgba(62, 79, 92, 0.75)" 
+		mouseDownShadow="2px 2px 6px 0px rgba(62, 79, 92, 0.75)"
+	/>
+
+	<!--login button-->
+	
+	<Style id="Kannegiesser_Login" xsi:type="widgets.brease.LoginButton" 
+		fontSize="12px" 
+		bold="true" 
+		textColor="#474747" 
+		mouseDownTextColor="#066dab" 
+		cornerRadius="5px" 
+		borderWidth="0px 0px 0px 0px" 
+		mouseDownBorderWidth="0px 0px 0px 0px" 
+		borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" 
+		mouseDownBorderColor="#FFA947 #FD7B01 #FD7B01 #FFA947" 
+		backGroundGradient="linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(229,229,229,1) 100%)"
+		mouseDownBackGroundGradient="linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%) " 
+		disabledBackGroundGradient="linear-gradient(135deg, #777777 0%,#bbbbbb 0%,#777777 4%,#777777 4%,#777777 86%,#eeeeee 98%)" 
+		shadow="4px 4px 10px 0px rgba(62, 79, 92, 0.75)" 
+		mouseDownShadow="2px 2px 6px 0px rgba(62, 79, 92, 0.75)"
+	/>
+	
+	<Style id="KgLoginLabel" xsi:type="widgets.brease.Label" textColor="#ffffff" borderStyle="none" fontSize="14px" bold="true"  backColor="rgba(255, 255, 255, 0)"/>
+	
+	<Style id="KgPassword" xsi:type="widgets.brease.Password" textColor="#ffffff" borderStyle="solid" borderWidth="1px 1px 1px 1px" borderColor="#ffffff" fontSize="12px" textAlign="left" backColor="#077cc5" margin="5px" />
+	
+</Styles>

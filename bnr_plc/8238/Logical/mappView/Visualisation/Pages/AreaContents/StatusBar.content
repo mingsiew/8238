@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="ContentStatusBar" height="100" width="1024" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.DateTimeOutput" id="DateTimeOutputDate" top="14" left="817" width="97" height="24" zIndex="5" format="dd.MM.yyyy" borderWidth="1px" backColor="rgba(8, 140, 221, 1)" borderColor="rgba(255, 255, 255, 1)" textColor="rgba(0, 0, 0, 1)" fontSize="12px" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputVCHoistIp" top="14" left="249" width="139" height="24" zIndex="6" value="0.0.0.0" backColor="rgba(8, 140, 221, 1)" textAlign="center" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputMainPlcIp" top="37" left="249" width="139" height="24" zIndex="7" value="0.0.0.0" backColor="rgba(8, 140, 221, 1)" textAlign="center" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="RectangleMainPlcStatus" top="60" left="249" width="139" height="24" zIndex="8" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(8, 140, 221, 1)" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle16" top="63" left="292" width="18" height="18" zIndex="9" lineColor="rgba(0, 0, 0, 1)" backColor="rgba(255, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="RectangleValidConnectionMainPlc" top="63" left="292" width="18" height="18" zIndex="10" lineColor="rgba(0, 0, 0, 1)" backColor="rgba(0, 192, 0, 1)" visible="false" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonReconnect" top="63" left="329" width="18" height="18" zIndex="11" image="Media/Images/Refresh.png" mouseDownImage="Media/Images/Refresh_Push.png" borderStyle="none" cornerRadius="0px" backColor="rgba(8, 140, 221, 1)" mouseDownBackColor="rgba(8, 140, 221, 1)" shadow="none" mouseDownShadow="none" />
+    <Widget xsi:type="widgets.brease.DateTimeOutput" id="DateTimeOutputTime" top="14" left="910" width="97" height="24" zIndex="12" format="HH:mm:ss" borderWidth="1px" backColor="rgba(8, 140, 221, 1)" borderColor="rgba(255, 255, 255, 1)" textColor="rgba(0, 0, 0, 1)" fontSize="12px" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputWebServerIp" top="37" left="636" width="139" height="24" zIndex="13" value="0.0.0.0" backColor="rgba(8, 140, 221, 1)" textAlign="center" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="RectangleWebServerStatus" top="60" left="636" width="139" height="24" zIndex="14" lineColor="rgba(255, 255, 255, 1)" backColor="rgba(8, 140, 221, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelConnectedPlc" top="14" left="18" width="233" height="24" zIndex="4" text="$StatusBar.LabelConnectedPlc" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelConnectedMainPlc" top="37" left="18" width="233" height="24" zIndex="3" text="$StatusBar.LabelConnectedMainPlc" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelConnectionStatusMainPlc" top="60" left="18" width="233" height="24" zIndex="2" text="$StatusBar.LabelConnectionStatusMainPlc" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelConnectedWebserver" top="37" left="405" width="233" height="24" zIndex="1" text="$StatusBar.LabelConnectedWebserver" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelConnectionStatusWebserver" top="60" left="405" width="233" height="24" zIndex="0" text="$StatusBar.LabelConnectionStatusWebserver" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.ImageList" id="ImageListWebserverStatus" top="64" left="698" width="16" height="16" zIndex="15" imageList="['StatusOK.png', 'Uploading.png', 'Downloading.png']" imagePrefix="Media/Webserver/" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputSoftwareVersion" top="14" left="636" width="139" height="24" zIndex="17" value="1.0" backColor="rgba(8, 140, 221, 1)" textAlign="center" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelSoftwareVersion" top="14" left="405" width="233" height="24" zIndex="16" text="$StatusBar.LabelSWVersion" style="Kannegiesser1" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputVCHoist_ID" top="37" left="817" width="190" height="46" zIndex="18" value="SSL1" borderWidth="1px" backColor="rgba(8, 140, 221, 1)" borderColor="rgba(255, 255, 255, 1)" borderStyle="solid" textAlign="left" fontSize="32px" bold="false" style="Default" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="42" left="953" width="42" height="35" zIndex="19" image="Media/Images/Warning.png" />
+  </Widgets>
+</Content>

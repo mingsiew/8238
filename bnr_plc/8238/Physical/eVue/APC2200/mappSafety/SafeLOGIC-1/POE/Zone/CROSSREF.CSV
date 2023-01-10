@@ -1,0 +1,29 @@
+Access_Request,POE\Zone\Variables.VBB,0,,22,0,,,BOOL,,,VAR,NOT USED,,
+Auto_Reset,POE\Zone\Zone.GB,5,IN,136,44,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,Hoist need auto reset set to true
+Auto_Reset,POE\Zone\Zone.GB,6,IN,145,36,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,Hoist need auto reset set to true
+EDM_Diag_Code,POE\Zone\Zone.GB,2,OUT,132,83,Write,,WORD,,,VAR_OUTPUT,LOCAL,,EDM Error Code
+EDM_Error,POE\Zone\Zone.GB,3,OUT,131,18,Write,,BOOL,,,VAR_OUTPUT,LOCAL,,EDM Error
+EDM_Ready,POE\Zone\Zone.GB,3,OUT,130,18,Write,,BOOL,,,VAR_OUTPUT,LOCAL,,EDM Status
+ENCODE_STATUS,POE\Zone\Zone.GB,4,,250,65,,,,,,VAR,FB,,
+F_TRIG_1,POE\Zone\Zone.GB,4,,237,52,,,,,,VAR,FB,,F TRIG FB
+F_TRIG_S_1,POE\Zone\Zone.GB,4,,289,30,,,,,,VAR,FB,,
+R_TRIG_S_1,POE\Zone\Zone.GB,4,,241,43,,,,,,VAR,FB,,R TRIG FB
+RequestAccess,POE\Zone\Zone.GB,7,IN,148,47,Read,,BOOL,,,VAR_INPUT,LOCAL,,Request Access into the zone
+SafeSystemOk,POE\Zone\Zone.GB,1,IN,128,4,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,Activate Zone Safety
+SF_EDM_V1_00_1,POE\Zone\Zone.GB,0,,239,69,,,,,,VAR,FB,,EDM FB
+SF_EmergencyStop_V1_00_1,POE\Zone\Zone.GB,4,,236,70,,,,,,VAR,FB,,ES FB
+zone_dep,POE\Zone\Variables.VBB,0,,24,0,,,SAFEBOOL,,,VAR,NOT USED,,
+Zone_Dependancys,POE\Zone\Zone.GB,1,IN,139,57,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,Zone Dependancy
+Zone_Dependancys,POE\Zone\Zone.GB,6,IN,143,33,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,Zone Dependancy
+Zone_Diag_Code,POE\Zone\Zone.GB,6,OUT,123,70,Write,,WORD,,,VAR_OUTPUT,LOCAL,,Zone Error Code
+Zone_EDM_Disbale,POE\Zone\Zone.GB,1,IN,134,8,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,Set to true to disable zone EDM
+Zone_EDM_Disbale,POE\Zone\Zone.GB,6,IN,144,38,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,Set to true to disable zone EDM
+Zone_EDM_Input,POE\Zone\Zone.GB,1,IN,133,11,Read,,BOOL,,,VAR_INPUT,LOCAL,,First contact for monitoring
+Zone_EDM_Input,POE\Zone\Zone.GB,7,IN,142,0,Read,,BOOL,,,VAR_INPUT,LOCAL,,First contact for monitoring
+Zone_Error,POE\Zone\Zone.GB,6,OUT,126,41,Write,,BOOL,,,VAR_OUTPUT,LOCAL,,Zone Error
+Zone_Input,POE\Zone\Zone.GB,5,IN,135,26,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,Zone inputs for monitoring
+Zone_Ready,POE\Zone\Zone.GB,3,OUT,125,20,Write,,BOOL,,,VAR_OUTPUT,LOCAL,,Zone Ready
+Zone_Release,POE\Zone\Zone.GB,3,OUT,122,81,Write,,SAFEBOOL,,,VAR_OUTPUT,LOCAL,,Zone Status
+Zone_Reset,POE\Zone\Zone.GB,5,IN,127,37,Read,,BOOL,,,VAR_INPUT,LOCAL,,Reset Zone
+Zone_Reset,POE\Zone\Zone.GB,7,IN,147,50,Read,,BOOL,,,VAR_INPUT,LOCAL,,Reset Zone
+Zone_Status,POE\Zone\Zone.GB,7,OUT,146,0,Write,,WORD,,,VAR_OUTPUT,LOCAL,,Compacted Zone Status for Comm

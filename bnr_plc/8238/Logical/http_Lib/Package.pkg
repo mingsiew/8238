@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">Request_Constants.var</Object>
+    <Object Type="File">Server_Functions.var</Object>
+    <Object Type="File">Constants.var</Object>
+    <Object Type="File">Variables.var</Object>
+    <Object Type="File" Description="Exported data types">Types.typ</Object>
+    <Object Type="File">Http_Info.docx</Object>
+    <Object Type="Library" Language="IEC">KanHttp</Object>
+    <Object Type="Program" Language="IEC" Description="*Listen for http requests">httpServer</Object>
+    <Object Type="File">HttpInstances.txt</Object>
+    <Object Type="Program" Language="IEC">zzHttpDriver</Object>
+  </Objects>
+</Package>

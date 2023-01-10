@@ -1,0 +1,21 @@
+(********************************************************************
+ * COPYRIGHT -- Herbert Kannegiesser GmbH
+ ********************************************************************
+ * Package: Pkg_KGStandard
+ * File: KG_Cmd.var
+ * Author: hunholz
+ * Created: March 05, 2012
+ ********************************************************************
+ * Variables of package Pkg_KGStandard
+ ********************************************************************)
+VAR CONSTANT
+	KG_CMD_NOCOMMAND : UINT := 0; (*Kein Kommando*)
+	KG_CMD_GETLOCK : UINT := 59998; (*Lock für xxxCmdAd Struktur anfordern*)
+	KG_CMD_RELEASELOCK : UINT := 59999; (*Lock für xxxCmdAd Struktur freigeben*)
+	KG_CMDSTAT_NOTREADY : UINT := 65529; (*Nicht bereit*)
+	KG_CMDSTAT_INVALID_PARAMETER : UINT := 65530; (*Mindestens ein Parameter ist nicht zulässig*)
+	KG_CMDSTAT_GETLOCKFAILED : UINT := 65531; (*Lock konnte nicht gesetzt werden*)
+	KG_CMDSTAT_RELEASELOCKFAILED : UINT := 65532; (*Lock darf nicht freigegeben werden.*)
+	KG_CMDSTAT_NOTVALID : UINT := 65533; (*Kommando ungültig*)
+	KG_CMDSTAT_BUSY : UINT := 65535; (*Kommando wird bearbeitet*)
+END_VAR

@@ -1,0 +1,171 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Program: hlDFII
+ * File: hlDFII.var
+ * Author: hunholz
+ * Created: April 05, 2011
+ ********************************************************************
+ * Local variables of program hlDFII
+ ********************************************************************)
+VAR
+	_eStep : SQLREQ_STEPS_enum;
+	_eTrackStep : SQLREQ_STEPS_enum;
+	_DFII_Connect : dbConnect;
+	_lConnectionIdent : UDINT;
+	_DFII_DBErrMsg : dbGetErrorMessage;
+	_DFII_Disconnect : dbDisconnect;
+	_sSQLstring : STRING[1023];
+	_sMNo : STRING[15];
+	_sCat : STRING[11];
+	_DFII_DBExecute : dbExecuteSql;
+	_DFII_DBFetch : dbFetchNextRow;
+	_bCol : USINT;
+	_DFII_GetData : dbGetData;
+	_iProgNo : INT;
+	_eCmdDFIIStep : cmdSqlReq_enum;
+	_eCmdTrackStep : cmdSqlReq_enum;
+	_GTlastAction : DTGetTime;
+	_GTCurrent : DTGetTime;
+	_wScheduleStep : UINT := 0;
+	_xReady : BOOL;
+	_bCntWrMsg : USINT;
+	_sFunctionID : STRING[5];
+	_sMsgNo : STRING[5];
+	_sInstance : STRING[15];
+	_sClass : STRING[3];
+	_sEvent : STRING[5];
+	_sTimeStamp : STRING[11];
+	_sTime : STRING[11];
+	_sValue : STRING[11];
+	_bEventRegMach : USINT;
+	_sShortName : STRING[15];
+	TONrepReg : TON;
+	_xInitDone : BOOL := FALSE;
+END_VAR
+VAR CONSTANT
+	HLDFII_MSG_PROGBYCAT_ERR : UINT := 1000;
+	HLDFII_MSG_MSGEVT_ERR : UINT := 1000;
+	HLDFII_MSG_CNTBATCHEVT_ERR : UINT := 1000;
+	HLDFII_MSG_CNTCNTEVT_ERR : UINT := 1000;
+	HLDFII_MSG_CNTTIMEVT_ERR : UINT := 1000;
+	HLDFII_MSG_CNTDOSEVT_ERR : UINT := 1000;
+	_HLDFII_REQ_INACTIVE : USINT := 0;
+	_HLDFII_REQ_START : USINT := 1;
+	_HLDFII_REQ_RUN : USINT := 2;
+	_HLDFII_REQ_FINISHED : USINT := 3;
+	_HLDFII_REQ_FAULT : USINT := 255;
+	_HLDFII_SCHEDSTEP_T_GETTIME : UINT := 0;
+	_HLDFII_SCHEDSTEP_T_UPDLOC : UINT := 1;
+	_HLDFII_SCHEDSTEP_T_UPDSTAT : UINT := 2;
+	_HLDFII_SCHEDSTEP_T_MAX : UINT := 2;
+	_HLDFII_SCHEDSTEP_GETTIME : UINT := 0;
+	_HLDFII_SCHEDSTEP_REGMACHINE : UINT := 1;
+	_HLDFII_SCHEDSTEP_PROGBYCAT : UINT := 2;
+	_HLDFII_SCHEDSTEP_MSGEVENT : UINT := 3;
+	_HLDFII_SCHEDSTEP_CNTBATCH : UINT := 4;
+	_HLDFII_SCHEDSTEP_CNTCNT : UINT := 5;
+	_HLDFII_SCHEDSTEP_CNTTIME : UINT := 6;
+	_HLDFII_SCHEDSTEP_CNTDOS : UINT := 7;
+	_HLDFII_SCHEDSTEP_MAX : UINT := 7;
+END_VAR
+VAR
+	_bCntWrCntBatchEvt : USINT;
+	_bCntWrCntCntEvt : USINT;
+	_kgUSINT16toGUID : kgUSINT16toGUID;
+	_sUDINT : STRING[11];
+	_kgGUIDtoSTRING : kgGUIDtoSTRING;
+	_mnParam_datetimetoa : mnParam_datetimetoa;
+	_ii : UINT;
+	_xWaitReqMsgEvtIsZero : BOOL;
+	_xWaitReqProgByCatIsZero : BOOL;
+	_xWaitReqCntBatchIsZero : BOOL;
+	_xWaitReqCntCntIsZero : BOOL;
+	_xWaitReqCntTimIsZero : BOOL;
+	_xWaitReqCntDosIsZero : BOOL;
+	_bEventGetTime : USINT;
+	_wScheduleStepHelp : UINT;
+	TONrepGettime : TON;
+	_diTime : DINT;
+	_DTSetTime : DTSetTime;
+	_kgArLogWrite : kgArLogWrite;
+	_AsArLogCreate : AsArLogCreate;
+	_AsArLogGetInfo : AsArLogGetInfo;
+END_VAR
+VAR RETAIN
+	_wPtrRBwrite : UINT;
+	_wPtrRBread : UINT;
+	_wPtrRBloc : UINT;
+END_VAR
+VAR
+	_xRBReady : BOOL;
+	_InsertRB : kgRBinsert;
+	_ReadRB : kgRBread;
+	_UdpOpen : UdpOpen;
+	_wStepUdp : UINT;
+	_sLogEntry : STRING[511];
+	_UdpSend : UdpSend;
+	_UdpClose : UdpClose;
+	_sAction : STRING[31];
+	_sPkgName : STRING[11];
+	_VerStruc : MoVerStruc_typ;
+	_sMark : STRING[31];
+	_bCntWrCntTimeEvt : USINT;
+	_bCntWrCntDoseEvt : USINT;
+	_sDoseName : STRING[23];
+END_VAR
+VAR RETAIN
+	_wPtrRBstart : UINT;
+END_VAR
+VAR
+	_kgRBcreateDFIIlog : kgRBcreate;
+	_sLogEntryI : STRING[511];
+	_wStartDebug : UINT;
+	_sDebugSQLstring : REFERENCE TO STRING[31];
+	_sSQLBatchEventString : STRING[1023];
+	_idxCustomer : UINT;
+	_rLoadfactor : REAL;
+	_diColIdxFor : DINT;
+	_diColIdxBack : DINT;
+	_sName : STRING[31];
+	_Track_Connect : dbConnect;
+	_CreateConnStringDFII : _CreateConnectionString;
+	_CreateConnStringTracking : _CreateConnectionString;
+	_wScheduleTrackStep : UINT;
+	_bEventGetTrackTime : USINT;
+	_GTlastActionTrack : DTGetTime;
+	TONrepGettimeTrack : TON;
+	_lConnectionTrackIdent : UDINT;
+	_sLogEntryT : STRING[511];
+	_InsertRBT : kgRBinsert;
+	_sTrackAction : STRING[31];
+	_Track_Disconnect : dbDisconnect;
+	_sSQLstringTrack : STRING[1023];
+	_Track_DBExecute : dbExecuteSql;
+	_Track_DBFetch : dbFetchNextRow;
+	_bTrackCol : USINT;
+	_Track_GetData : dbGetData;
+	_diTimeTrack : DINT;
+	_Track_DBErrMsg : dbGetErrorMessage;
+	_sTrackValue : STRING[11];
+	_kgArLogWriteTrack : kgArLogWrite;
+	_xReadyForRequestUpdateLocation : BOOL := TRUE;
+	_xChange : BOOL;
+	_dtTimeStampUpdBatch : ARRAY[1..HLDFII_MAXIDX_REQ_UPDATEBATCH] OF DATE_AND_TIME;
+	_ReqUpdBatch : ARRAY[1..HLDFII_MAXIDX_REQ_UPDATEBATCH] OF IFhlDFII_In_ReqUpdBatch_typ;
+	_xReadyForRequestUpdateState : BOOL := TRUE;
+	_wStatusX : ARRAY[1..HLDFII_MAXIDX_REQ_UPDATESTATUS] OF UINT;
+	_ReqUpdStatus : ARRAY[1..HLDFII_MAXIDX_REQ_UPDATESTATUS] OF IFhlDFII_In_ReqUpdStatus_typ;
+	_wScheduleTrackStepHelp : UINT;
+	_xUpdateLocationFinished : BOOL;
+	_wIdxWriteUpdateLocation : UINT;
+	_lBatchNo : UDINT;
+	_GetBatchno : kgUSINT16toGUID;
+	_TONRefreshTrack : TON;
+	_wIdxWriteUpdateStatus : UINT;
+	_xUpdateStatusFinished : BOOL;
+	_sTrackMachineNo : STRING[15];
+	_sSubState : STRING[23];
+	_wSubState : ARRAY[1..HLDFII_MAXIDX_REQ_UPDATESTATUS] OF UINT;
+	_sSubStates : ARRAY[1..HLDFII_MAXIDX_REQ_UPDATESTATUS] OF STRING[23];
+END_VAR

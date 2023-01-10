@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="en" Type="Language">
+    <Property ID="LanguageName" Value="English" />
+    <Property ID="IsDesignLanguage" Value="TRUE" />
+  </Element>
+  <Element ID="de" Type="Language">
+    <Property ID="LanguageName" Value="German" />
+  </Element>
+  <Element ID="fr" Type="Language">
+    <Property ID="LanguageName" Value="French" />
+  </Element>
+  <Element ID="es" Type="Language">
+    <Property ID="LanguageName" Value="Spanish" />
+  </Element>
+  <Element ID="zh" Type="Language">
+    <Property ID="LanguageName" Value="Chinese" />
+  </Element>
+  <Element ID="ja" Type="Language">
+    <Property ID="LanguageName" Value="Japanese" />
+  </Element>
+  <Element ID="cs" Type="Language">
+    <Property ID="LanguageName" Value="Chzech" />
+  </Element>
+  <Element ID="fi" Type="Language">
+    <Property ID="LanguageName" Value="Finish" />
+  </Element>
+  <Element ID="hu" Type="Language">
+    <Property ID="LanguageName" Value="Hungerian" />
+  </Element>
+  <Element ID="ru" Type="Language">
+    <Property ID="LanguageName" Value="Russian" />
+  </Element>
+  <Element ID="it" Type="Language">
+    <Property ID="LanguageName" Value="Italian" />
+  </Element>
+  <Element ID="ko" Type="Language">
+    <Property ID="LanguageName" Value="Korean" />
+  </Element>
+  <Element ID="ar" Type="Language">
+    <Property ID="LanguageName" Value="Arabic" />
+  </Element>
+  <Element ID="bg" Type="Language">
+    <Property ID="LanguageName" Value="Bulgarian" />
+  </Element>
+  <Element ID="nl" Type="Language">
+    <Property ID="LanguageName" Value="Netherlands" />
+  </Element>
+  <Element ID="pl" Type="Language">
+    <Property ID="LanguageName" Value="Polish" />
+  </Element>
+  <Element ID="pt" Type="Language">
+    <Property ID="LanguageName" Value="Portuguese" />
+  </Element>
+  <Element ID="sk" Type="Language">
+    <Property ID="LanguageName" Value="Slovakian" />
+  </Element>
+  <Element ID="sl" Type="Language">
+    <Property ID="LanguageName" Value="Slovenian" />
+  </Element>
+  <Element ID="sv" Type="Language">
+    <Property ID="LanguageName" Value="Swedish" />
+  </Element>
+  <Element ID="tr" Type="Language">
+    <Property ID="LanguageName" Value="Turkey" />
+  </Element>
+</Configuration>

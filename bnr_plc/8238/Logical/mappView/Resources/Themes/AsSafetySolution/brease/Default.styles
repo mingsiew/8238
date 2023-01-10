@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles id="AsSafetySolutiondefaultStyles" xmlns="http://www.br-automation.com/iat2015/styles/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <Style id="default" xsi:type="system.brease.Page"  
+  />  
+  
+  <!--dialog-->
+  
+  <Style id="default" xsi:type="system.brease.Dialog" 
+    headerGradient="linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)" 
+    fontSize="20px" 
+    textColor="#474747" 
+    cornerRadius="8px 8px 0px 0px" 
+    borderWidth="1px" 
+    borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" 
+  shadow="none" />
+  
+  <!--numeric keyboard-->
+	
+  <Style id="default" xsi:type="widgets.brease.NumPad" 
+    headerGradient="linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)" 
+    backColor="#CCCCCC"
+    borderColor="#7C7C7C"  
+    textColor="#000000" 
+    showSlider="false"/>
+  
+  <!--label-->
+  
+  <Style id="default" xsi:type="widgets.brease.Label" 
+    fontSize="12px" 
+    textColor="rgba(0, 0, 0, 1)" 
+    textAlign="left"
+    backColor="transparent" 
+    borderStyle="none" 
+    padding="0px 0px 0px 0px" 
+  bold="false"/>
+  
+  <!--textpicker-->
+	
+  <Style id="default" xsi:type="widgets.brease.TextPicker" 
+    backColor="rgba(255, 255, 255, 1)"
+    bold="false"
+    borderWidth="1px"
+    borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" 
+    fontSize="12px"
+    itemTextColor="rgba(0, 0, 0, 1)"
+    itemActiveBorderWidth="0px"
+    itemActiveBackColor="rgba(255, 255, 255, 1)"
+    itemShadow="none"
+    disabledItemActiveBackColor="rgba(255, 255, 255, 1)"
+    disabledItemActiveTextColor="rgba(0, 0, 0, 1)"
+    itemActiveTextColor="rgba(0, 0, 0, 1)"
+    disabledMarkerColor="rgba(255, 255, 255, 1)"
+    markerColor="rgba(255, 255, 255, 1)"
+    itemBorderWidth="0px"/> 
+  
+  <!--group box-->
+  
+  <Style id="default" xsi:type="widgets.brease.GroupBox" 
+    headerGradient="linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)"  
+    fontSize="12px" 
+    textColor="rgba(0, 0, 0, 1)" 
+    textAlign="left"
+    cornerRadius="4px 4px 0px 0px" 
+    borderWidth="1px" 
+    backColor="transparent" 
+    borderColor="#A899A0 #5F5F5F #5F5F5F #A899A0" 
+  shadow="none" />
+  
+  <!--momentary push button-->
+	
+  <Style id="default" xsi:type="widgets.brease.MomentaryPushButton" 
+    fontSize="12px" 
+    bold="true" 
+    textColor="#474747"
+    backColor="rgba(219, 219, 219, 1)"
+    mouseDownTextColor="#FFFFFF" 
+    cornerRadius="4px" 
+    borderWidth="0px 0px 0px 0px" 
+    mouseDownBorderWidth="0px 0px 0px 0px" 
+    backGroundGradient="linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)" 
+    mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%) " 
+    disabledBackGroundGradient="linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)" 
+    shadow="none" 
+  mouseDownShadow="2px 2px 8px 0px rgba(62, 79, 92, 0.75)" />
+  
+  <Style id="orange" xsi:type="widgets.brease.MomentaryPushButton" 
+    fontSize="12px" 
+    bold="true" 
+    textColor="#474747"
+    backColor="rgba(219, 219, 219, 1)"
+    mouseDownTextColor="#FFFFFF" 
+    cornerRadius="4px" 
+    borderWidth="0px 0px 0px 0px" 
+    mouseDownBorderWidth="0px 0px 0px 0px" 
+    backGroundGradient="linear-gradient(to bottom,#F7F7F7 0%,#FF920A 100%)" 
+    mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%) " 
+    disabledBackGroundGradient="linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)" 
+    shadow="none" 
+  mouseDownShadow="2px 2px 8px 0px rgba(62, 79, 92, 0.75)" />
+  
+  <!--numeric input-->
+	
+  <Style id="default" xsi:type="widgets.brease.NumericInput" 
+    textColor="rgba(0, 0, 0, 1)" 
+    borderWidth="1px 1px 1px 1px" 
+    activeBorderWidth="1px 1px 1px 1px" 
+    disabledBorderWidth="1px 1px 1px 1px"
+    borderColor="rgba(0, 0, 0, 1)" 
+    activeBorderColor="rgba(0, 0, 0, 1)" 
+    fontSize="12px" 
+    backColor="#FFFFFF" 
+    activeBackColor="#EBEBEB" 
+    activeTextColor="rgba(0, 0, 0, 1)" 
+    bold="false" 
+    shadow="none"
+  textAlign="right" />
+    
+  <!--text input-->
+	
+  <Style id="default" xsi:type="widgets.brease.TextInput" 
+    textColor="rgba(0, 0, 0, 1)" 
+    borderWidth="1px 1px 1px 1px"
+    activeBorderWidth="1px 1px 1px 1px"
+    disabledBorderWidth="1px 1px 1px 1px" 
+    borderColor="rgba(0, 0, 0, 1)" 
+    activeBorderColor="rgba(0, 0, 0, 1)" 
+    fontSize="12px" 
+    backColor="#FFFFFF" 
+    activeBackColor="#EBEBEB" 
+    activeTextColor="rgba(0, 0, 0, 1)" 
+    bold="false" 
+    shadow="none" 
+  textAlign="right" />
+		
+</Styles>

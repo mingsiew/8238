@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Cpu xmlns="http://br-automation.co.at/AS/Cpu">
+  <Objects>
+    <Object Type="File" Description="Software configuration">Cpu.sw</Object>
+    <Object Type="File" Description="Declaration of permanent variables">Cpu.per</Object>
+    <Object Type="File" Description="IO mapping file">IoMap.iom</Object>
+    <Object Type="File" Description="PV mapping file">PvMap.vvm</Object>
+    <Object Type="File">OpcUaMap.uad</Object>
+    <Object Type="Package">AccessAndSecurity</Object>
+    <Object Type="File" Description="SafeDESIGNER project">SafeLOGIC-1.swt</Object>
+    <Object Type="Package">ExternalHardware</Object>
+  </Objects>
+  <Configuration ClassID="X20CP1486" GeneratePPCode="false" HasNcOperatingSystem="true" LocalVariablesMemory="MemoryPool" ModuleID="CP1486" OnlineConfigurationName="10.8.4.20" Target="SG4">
+    <AutomationRuntime Version="E4.34" />
+    <Build GccVersion="4.1.2" />
+    <DefaultTargetMemory DataObjects="UserROM" Libraries="UserROM" Tasks="UserROM" />
+    <Io ArConfigDataModule="false" ArConfigDataModulePath="$(AS_CPU_PATH)\AS\CfgData.br" IoMapDataModule="false" IoMapDataModulePath="$(AS_CPU_PATH)\AS\IomData.br" Supervision="false" />
+    <Safety SafetyRelease="0.0" />
+    <TaskClasses DefaultIoTaskClass="Automatic" DefaultTaskClass="Cyclic2" />
+    <Transfer AddToUserPart="false" AdditionalUserDir="" AllowInitialTransfer="false" AllowPartitioning="false" AllowWarmRestart="true" DownloadMode="Overload" ExecuteInitExitProgram="true" ForceInitialTransfer="false" GeneratePviTransferList="true" IdentificationTypeValue="" IgnoreBrDependencies="false" IgnoreTargetOnlyObjects="false" IgnoreVersion="true" KeepNonVolatileMemory="false" ModuleSystemForPip="" PackedArConfig="false" PackedIoMap="false" PreserveVariableValues="true" ProjectConsistent="true" PromptBeforeProject="true" PromptBeforeTask="false" RebootDuringTransfer="false" TargetIdentificationType="Always" TransferOnlyRelevantChanges="false" UserFilesIgnoreDifference="false" />
+    <Vc FirmwareVersion="V4.33.0" />
+    <OnlineConfiguration Name="10.8.4.20" DeviceType="TCPIP" DeviceParameters="/IF=tcpip /LOPO=11159 /SA=25" ConnectionParameters="/RT=1000 /AM=* /DAIP=10.8.4.21 /REPO=11159 /ANSL=1" Description="" />
+  </Configuration>
+</Cpu>
